@@ -317,15 +317,15 @@ body {
         <div class="subcategories">
 
           <div class="subcategory-card">
-            <div class="status-badge coming">Coming Soon</div>
+            <div class="status-badge ready">Ready</div>
             <div class="subcategory-header">
               <div class="subcategory-title">1.1 Simple Arithmetic</div>
               <div class="subcategory-description">Direct arithmetic operations — addition, subtraction, multiplication, division with small numbers</div>
             </div>
-            <div class="question-count">📊 ~50 Questions (3-4 pts)</div>
+            <div class="question-count">📊 50 Questions (3-4 pts)</div>
             <div class="action-buttons">
-              <button class="btn btn-disabled" disabled>📥 Questions PDF</button>
-              <button class="btn btn-disabled" disabled>📥 Answers PDF</button>
+              <button onclick="downloadPDF('1.1', 'questions')" class="btn btn-primary">📥 Questions PDF</button>
+              <button onclick="downloadPDF('1.1', 'answers')" class="btn btn-primary">📥 Answers PDF</button>
             </div>
           </div>
 
@@ -921,6 +921,36 @@ body {
   </div><!-- end .categories -->
 
   <div class="footer">
-    Grade 3–4 (Écolier) · 12 categories · 35 sub-categories · Practice sets coming soon
+    Grade 3–4 (Écolier) · 12 categories · 35 sub-categories
   </div>
 </div>
+
+<script src="grade34_data.js"></script>
+<script>
+function downloadPDF(category, type) {
+  try {
+    const base64Key = category + '_' + type;
+    const base64Data = pdfData[base64Key];
+    if (!base64Data) {
+      alert('PDF not available yet for ' + category + ' ' + type);
+      return;
+    }
+    const binaryString = atob(base64Data);
+    const bytes = new Uint8Array(binaryString.length);
+    for (let i = 0; i < binaryString.length; i++) {
+      bytes[i] = binaryString.charCodeAt(i);
+    }
+    const blob = new Blob([bytes], { type: 'application/pdf' });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = 'Grade34_' + category.replace('.', '-') + '_' + type + '.pdf';
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+    URL.revokeObjectURL(url);
+  } catch (e) {
+    alert('Error downloading PDF: ' + e.message);
+  }
+}
+</script>
