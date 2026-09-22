@@ -67,6 +67,118 @@ CONTENT = {
             ("If p and q are prime numbers and p × q = 77, what is p + q?", "A) 14", "B) 15", "C) 18", "D) 22", "Answer: C", 4),
         ]
     },
+    "1.3": {
+        "title": "Percentages & Ratios",
+        "description": "Percentage calculations, percentage increase/decrease, ratio comparison and scaling, proportion problems, part-to-whole relationships",
+        "questions": [
+            # --- Percentage Calculations (Q1–Q10) ---
+            # Q1: 25% of 80 = 0.25 × 80 = 20
+            ("What is 25% of 80?", "A) 15", "B) 20", "C) 25", "D) 40", "Answer: B", 3),
+            # Q2: 50% of 120 = 0.50 × 120 = 60
+            ("What is 50% of 120?", "A) 50", "B) 55", "C) 60", "D) 65", "Answer: C", 3),
+            # Q3: 10% of 350 = 0.10 × 350 = 35
+            ("What is 10% of 350?", "A) 35", "B) 40", "C) 45", "D) 50", "Answer: A", 3),
+            # Q4: 75% of 40 = 0.75 × 40 = 30
+            ("What is 75% of 40?", "A) 20", "B) 25", "C) 28", "D) 30", "Answer: D", 3),
+            # Q5: 20% of 65 = 0.20 × 65 = 13
+            ("What is 20% of 65?", "A) 11", "B) 13", "C) 15", "D) 17", "Answer: B", 3),
+            # Q6: 40% of 90 = 0.40 × 90 = 36
+            ("What is 40% of 90?", "A) 30", "B) 34", "C) 36", "D) 38", "Answer: C", 3),
+            # Q7: 15% of 60 = 0.15 × 60 = 9
+            ("What is 15% of 60?", "A) 9", "B) 10", "C) 12", "D) 15", "Answer: A", 3),
+            # Q8: 30% of 150 = 0.30 × 150 = 45
+            ("What is 30% of 150?", "A) 35", "B) 45", "C) 50", "D) 55", "Answer: B", 3),
+            # Q9: 5% of 200 = 0.05 × 200 = 10
+            ("What is 5% of 200?", "A) 5", "B) 8", "C) 10", "D) 15", "Answer: C", 3),
+            # Q10: 60% of 45 = 0.60 × 45 = 27
+            ("What is 60% of 45?", "A) 24", "B) 25", "C) 26", "D) 27", "Answer: D", 3),
+            # --- Part-to-Whole Relationships (Q11–Q15) ---
+            # Q11: 15/60 × 100 = 25%
+            ("15 out of 60 students passed a test. What percentage passed?", "A) 20%", "B) 25%", "C) 30%", "D) 35%", "Answer: B", 3),
+            # Q12: 24/80 × 100 = 30%
+            ("A shop sold 24 out of 80 items. What percentage of items were sold?", "A) 25%", "B) 28%", "C) 30%", "D) 32%", "Answer: C", 3),
+            # Q13: 7/28 × 100 = 25%
+            ("7 out of 28 apples are green. What percentage are green?", "A) 20%", "B) 25%", "C) 30%", "D) 35%", "Answer: B", 3),
+            # Q14: 45/180 × 100 = 25%
+            ("45 out of 180 seats in a cinema are empty. What percentage are empty?", "A) 25%", "B) 30%", "C) 35%", "D) 40%", "Answer: A", 3),
+            # Q15: 36/45 × 100 = 80%
+            ("A student scored 36 out of 45 marks. What is their percentage score?", "A) 75%", "B) 80%", "C) 85%", "D) 90%", "Answer: B", 3),
+            # --- Percentage Increase & Decrease (Q16–Q22) ---
+            # Q16: increase 40→48: 8/40 × 100 = 20%
+            ("A price increased from $40 to $48. What is the percentage increase?", "A) 15%", "B) 18%", "C) 20%", "D) 25%", "Answer: C", 4),
+            # Q17: decrease 60→45: 15/60 × 100 = 25%
+            ("A price decreased from $60 to $45. What is the percentage decrease?", "A) 20%", "B) 25%", "C) 30%", "D) 35%", "Answer: B", 4),
+            # Q18: increase 200→250: 50/200 × 100 = 25%
+            ("A town's population grew from 200 to 250. What is the percentage increase?", "A) 20%", "B) 22%", "C) 24%", "D) 25%", "Answer: D", 4),
+            # Q19: decrease 80→72: 8/80 × 100 = 10%
+            ("A bag's weight decreased from 80 kg to 72 kg. What is the percentage decrease?", "A) 10%", "B) 12%", "C) 15%", "D) 8%", "Answer: A", 4),
+            # Q20: increase 50→60: 10/50 × 100 = 20%
+            ("A score increased from 50 to 60. What is the percentage increase?", "A) 15%", "B) 18%", "C) 20%", "D) 25%", "Answer: C", 4),
+            # Q21: $30 after 25% increase → original = 30/1.25 = 24; but better: price $40 after 20% increase = 40×1.2=48
+            # Use: original $50, increased by 10% → new = 55, decreased by 10% → 55×0.9=49.5 ≠ 50
+            # Clean: price was $25, increased by 20% → new price = 25×1.2 = 30
+            ("A jacket costs $25. After a 20% price increase, what is the new price?", "A) $27", "B) $28", "C) $30", "D) $32", "Answer: C", 3),
+            # Q22: price $80, 15% discount → discount = 12, sale price = 68
+            ("A bicycle costs $80. A 15% discount is applied. What is the sale price?", "A) $60", "B) $64", "C) $68", "D) $72", "Answer: C", 3),
+            # --- Ratio Comparison and Simplification (Q23–Q30) ---
+            # Q23: 12:18 = 2:3
+            ("Write the ratio 12:18 in its simplest form.", "A) 3:4", "B) 4:6", "C) 2:3", "D) 6:9", "Answer: C", 3),
+            # Q24: 15:25 = 3:5
+            ("Write the ratio 15:25 in its simplest form.", "A) 3:5", "B) 5:3", "C) 5:8", "D) 1:2", "Answer: A", 3),
+            # Q25: 24:36 = 2:3
+            ("Simplify the ratio 24:36.", "A) 3:4", "B) 2:3", "C) 4:6", "D) 6:9", "Answer: B", 3),
+            # Q26: 16:20 = 4:5
+            ("Simplify the ratio 16:20.", "A) 2:3", "B) 3:4", "C) 3:5", "D) 4:5", "Answer: D", 3),
+            # Q27: 30:45 = 2:3
+            ("Simplify the ratio 30:45.", "A) 1:2", "B) 2:3", "C) 3:4", "D) 5:6", "Answer: B", 3),
+            # Q28: ratio comparison: 3:4 vs 4:5. 3/4=0.75, 4/5=0.8, so 4:5 is larger
+            ("Which ratio is larger: 3:4 or 4:5?", "A) 3:4", "B) 4:5", "C) They are equal", "D) Cannot compare", "Answer: B", 3),
+            # Q29: ratio 2:3, if first part = 8, second = 8×3/2 = 12
+            ("Two quantities are in the ratio 2:3. If the first quantity is 8, what is the second?", "A) 10", "B) 12", "C) 14", "D) 16", "Answer: B", 3),
+            # Q30: if x:6 = 4:8 → x = 6×4/8 = 3
+            ("If x:6 = 4:8, what is x?", "A) 3", "B) 4", "C) 6", "D) 8", "Answer: A", 3),
+            # --- Proportion Problems (Q31–Q40) ---
+            # Q31: 3:x = 9:12 → x = 3×12/9 = 4
+            ("If 3:x = 9:12, find x.", "A) 3", "B) 4", "C) 6", "D) 9", "Answer: B", 4),
+            # Q32: if 4 pens cost $6, 10 pens cost = 6/4 × 10 = 15
+            ("If 4 pens cost $6, how much do 10 pens cost?", "A) $12", "B) $15", "C) $18", "D) $20", "Answer: B", 3),
+            # Q33: map scale 1:50000; 4 cm on map = 4×50000 cm = 200000 cm = 2 km
+            ("A map has scale 1:50 000. A distance of 4 cm on the map represents how many km in real life?", "A) 1 km", "B) 1.5 km", "C) 2 km", "D) 4 km", "Answer: C", 4),
+            # Q34: recipe 2 cups for 12 cookies. For 60 cookies: 60/12 × 2 = 10 cups
+            ("A recipe uses 2 cups of flour to make 12 cookies. How many cups are needed to make 60 cookies?", "A) 6", "B) 8", "C) 10", "D) 12", "Answer: C", 4),
+            # Q35: 3 workers in 12 days = 36 worker-days. 4 workers → 36/4 = 9 days
+            ("3 workers can finish a job in 12 days. How many days will it take 4 workers to finish the same job?", "A) 8", "B) 9", "C) 10", "D) 16", "Answer: B", 4),
+            # Q36: ratio boys:girls = 5:3, total = 40. boys = 5/8 × 40 = 25
+            ("In a class of 40 students, the ratio of boys to girls is 5:3. How many boys are there?", "A) 20", "B) 24", "C) 25", "D) 30", "Answer: C", 3),
+            # Q37: ratio 3:5, total = 40. smaller part = 3/8 × 40 = 15
+            ("Two friends share 40 stickers in the ratio 3:5. How many stickers does the friend with fewer stickers get?", "A) 12", "B) 15", "C) 18", "D) 20", "Answer: B", 3),
+            # Q38: ratio 7:3, share $100. larger share = 7/10 × 100 = 70
+            ("Two children share $100 in the ratio 7:3. What is the larger share?", "A) $60", "B) $65", "C) $70", "D) $75", "Answer: C", 3),
+            # Q39: mix 3 parts red: 2 parts blue = 600 ml. red = 3/5 × 600 = 360 ml
+            ("A drink is made by mixing red juice and blue juice in the ratio 3:2. If 600 ml of drink is made, how many ml of red juice are used?", "A) 240 ml", "B) 300 ml", "C) 320 ml", "D) 360 ml", "Answer: D", 3),
+            # Q40: A:B = 2:3, B:C = 3:4. A:B:C = 2:3:4. A:C = 2:4 = 1:2
+            ("If A:B = 2:3 and B:C = 3:4, what is the ratio A:C?", "A) 1:2", "B) 2:4", "C) 3:4", "D) 2:3", "Answer: A", 4),
+            # --- Mixed / Harder Percentage & Ratio (Q41–Q49) ---
+            # Q41: increased 20% then decreased 20%. 100 → 120 → 96. Net change = -4%
+            ("A number is increased by 20% and then decreased by 20%. What is the overall percentage change?", "A) 0% (no change)", "B) -2%", "C) -4%", "D) +4%", "Answer: C", 4),
+            # Q42: 12% of N = 60 → N = 60/0.12 = 500
+            ("12% of a number is 60. What is the number?", "A) 400", "B) 450", "C) 480", "D) 500", "Answer: D", 4),
+            # Q43: shirt costs $24 after 20% discount. original × 0.8 = 24 → original = 30
+            ("A shirt costs $24 after a 20% discount. What was the original price?", "A) $28", "B) $29", "C) $30", "D) $32", "Answer: C", 4),
+            # Q44: price increased by 25%, now $50. original = 50/1.25 = 40
+            ("After a 25% price increase, a toy costs $50. What was the original price?", "A) $35", "B) $38", "C) $40", "D) $45", "Answer: C", 4),
+            # Q45: 15% of N = 12 → N = 12/0.15 = 80
+            ("If 15% of a number is 12, what is the number?", "A) 80", "B) 90", "C) 100", "D) 120", "Answer: A", 4),
+            # Q46: two numbers ratio 3:5, sum = 40. smaller = 3/8×40=15, larger=25. difference = 10
+            ("Two numbers are in the ratio 3:5 and their sum is 40. What is the difference between the two numbers?", "A) 8", "B) 10", "C) 12", "D) 15", "Answer: B", 4),
+            # Q47: 3 is to 4 as 15 is to ? → 15 × 4/3 = 20
+            ("3 is to 4 as 15 is to what number?", "A) 16", "B) 18", "C) 20", "D) 24", "Answer: C", 3),
+            # Q48: 4/5 as percentage = 80%. If 4/5 = 80%, what is 2/5? = 40%
+            ("If 4/5 is written as a percentage it equals 80%. What percentage does 2/5 equal?", "A) 20%", "B) 35%", "C) 40%", "D) 45%", "Answer: C", 3),
+            # Q49: three parts ratio 2:3:5, total = 200. largest part = 5/10 × 200 = 100
+            ("Three friends share 200 sweets in the ratio 2:3:5. How many sweets does the friend with the most sweets receive?", "A) 40", "B) 60", "C) 80", "D) 100", "Answer: D", 4),
+        ]
+    },
     "1.4": {
         "title": "Fractions & Decimals",
         "description": "Fraction operations, conversions, comparisons",
