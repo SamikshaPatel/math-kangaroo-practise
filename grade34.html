@@ -6,9 +6,14 @@
 :root {
   --primary: #2563eb;
   --primary-light: #dbeafe;
+  --success: #10b981;
+  --success-light: #d1fae5;
+  --warning: #f59e0b;
+  --warning-light: #fef3c7;
   --gray-light: #f3f4f6;
   --gray-lighter: #f9fafb;
   --gray-medium: #9ca3af;
+  --gray-dark: #374151;
   --text-primary: #1f2937;
   --text-secondary: #6b7280;
   --border: #e5e7eb;
@@ -19,9 +24,14 @@
   :root:not([data-theme="light"]) {
     --primary: #3b82f6;
     --primary-light: #1e3a8a;
+    --success: #059669;
+    --success-light: #064e3b;
+    --warning: #d97706;
+    --warning-light: #78350f;
     --gray-light: #2d3748;
     --gray-lighter: #1a202c;
     --gray-medium: #6b7280;
+    --gray-dark: #f3f4f6;
     --text-primary: #f3f4f6;
     --text-secondary: #d1d5db;
     --border: #4b5563;
@@ -32,9 +42,14 @@
 :root[data-theme="dark"] {
   --primary: #3b82f6;
   --primary-light: #1e3a8a;
+  --success: #059669;
+  --success-light: #064e3b;
+  --warning: #d97706;
+  --warning-light: #78350f;
   --gray-light: #2d3748;
   --gray-lighter: #1a202c;
   --gray-medium: #6b7280;
+  --gray-dark: #f3f4f6;
   --text-primary: #f3f4f6;
   --text-secondary: #d1d5db;
   --border: #4b5563;
@@ -49,72 +64,863 @@ body {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif;
   font-size: 14px;
   line-height: 1.6;
-  min-height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 24px;
+  padding: 16px;
 }
 
-.container {
-  max-width: 520px;
-  width: 100%;
-  text-align: center;
+.container { max-width: 1200px; margin: 0 auto; }
+
+.header {
+  margin-bottom: 32px;
+  padding-bottom: 24px;
+  border-bottom: 2px solid var(--border);
 }
 
-.icon { font-size: 56px; margin-bottom: 20px; }
-
-h1 {
-  font-size: 28px;
+.header h1 {
+  font-size: 32px;
   font-weight: 700;
+  margin-bottom: 8px;
   color: var(--primary);
-  margin-bottom: 10px;
 }
 
-.grade-label {
-  font-size: 13px;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-  color: var(--text-secondary);
-  margin-bottom: 16px;
-}
-
-p {
+.header p {
   color: var(--text-secondary);
   font-size: 15px;
   line-height: 1.7;
-  margin-bottom: 32px;
 }
 
-.back-link {
+.status-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 12px;
+  margin-top: 16px;
+}
+
+.status-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+}
+
+.status-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.status-dot.ready { background: var(--success); }
+.status-dot.draft { background: var(--warning); }
+.status-dot.coming { background: var(--gray-medium); }
+
+.categories { display: flex; flex-direction: column; gap: 16px; }
+
+.category {
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  overflow: hidden;
+  background: var(--gray-lighter);
+}
+
+.category-header {
+  background: var(--primary-light);
+  padding: 16px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  user-select: none;
+  transition: background-color 0.2s;
+}
+
+.category-header:hover { background: var(--primary); color: white; }
+
+@media (prefers-color-scheme: dark) {
+  .category-header { background: var(--primary-light); color: white; }
+  .category-header:hover { background: var(--primary); }
+}
+
+.category-header h2 {
+  font-size: 16px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.category-number {
   display: inline-flex;
   align-items: center;
-  gap: 6px;
-  color: var(--primary);
-  text-decoration: none;
-  font-size: 14px;
-  font-weight: 500;
-  border: 1px solid var(--primary);
-  padding: 8px 20px;
-  border-radius: 8px;
-  transition: background 0.15s;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  background: var(--primary);
+  color: white;
+  border-radius: 50%;
+  font-size: 12px;
+  font-weight: 700;
+  flex-shrink: 0;
 }
 
-.back-link:hover {
-  background: var(--primary-light);
+.expand-icon { font-size: 18px; transition: transform 0.3s; flex-shrink: 0; }
+.category.expanded .expand-icon { transform: rotate(180deg); }
+
+.category-content { display: none; padding: 24px; background: var(--bg-body); }
+.category.expanded .category-content { display: block; }
+
+.subcategories {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 16px;
+}
+
+.subcategory-card {
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 16px;
+  background: var(--gray-lighter);
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.subcategory-card:hover {
+  border-color: var(--primary);
+  box-shadow: 0 2px 8px rgba(37, 99, 235, 0.1);
+}
+
+@media (prefers-color-scheme: dark) {
+  .subcategory-card:hover { box-shadow: 0 2px 8px rgba(59, 130, 246, 0.2); }
+}
+
+.subcategory-header { margin-bottom: 12px; }
+
+.subcategory-title {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 4px;
+}
+
+.subcategory-description {
+  font-size: 12px;
+  color: var(--text-secondary);
+  line-height: 1.5;
+}
+
+.status-badge {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 600;
+  padding: 4px 8px;
+  border-radius: 4px;
+  margin-bottom: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.status-badge.ready { background: var(--success-light); color: #065f46; }
+.status-badge.draft { background: var(--warning-light); color: #92400e; }
+.status-badge.coming { background: var(--gray-light); color: var(--gray-medium); }
+
+@media (prefers-color-scheme: dark) {
+  .status-badge.ready { background: var(--success-light); color: #d1fae5; }
+  .status-badge.draft { background: var(--warning-light); color: #fef3c7; }
+}
+
+.question-count {
+  font-size: 12px;
+  color: var(--text-secondary);
+  margin-bottom: 12px;
+  padding: 8px 0;
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+}
+
+.action-buttons { display: flex; gap: 8px; flex-wrap: wrap; }
+
+.btn {
+  flex: 1;
+  min-width: 100px;
+  padding: 8px 12px;
+  border: none;
+  border-radius: 6px;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+  text-align: center;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+}
+
+.btn-primary { background: var(--primary); color: white; }
+.btn-primary:hover { background: #1d4ed8; transform: translateY(-1px); }
+.btn-primary:active { transform: translateY(0); }
+
+.btn-disabled {
+  background: var(--gray-light);
+  color: var(--gray-medium);
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+.btn-disabled:hover { transform: none; }
+
+.footer {
+  margin-top: 48px;
+  padding-top: 24px;
+  border-top: 2px solid var(--border);
+  text-align: center;
+  color: var(--text-secondary);
+  font-size: 13px;
+}
+
+@media (max-width: 768px) {
+  .header h1 { font-size: 24px; }
+  .subcategories { grid-template-columns: 1fr; }
+  .status-grid { grid-template-columns: repeat(2, 1fr); }
 }
 </style>
 
-<body>
-  <div class="container">
-    <div class="icon">🚧</div>
-    <div class="grade-label">Grades 3–4 · Écolier</div>
-    <h1>Coming Soon</h1>
-    <p>
-      Practice sets for Grade 3–4 are currently being prepared.<br>
-      Check back soon!
-    </p>
-    <a class="back-link" href="index.html">← Back to Home</a>
+<div class="container">
+  <div style="margin-bottom:16px;">
+    <a href="index.html" style="color:var(--primary);text-decoration:none;font-size:13px;font-weight:500;">← Back to Home</a>
   </div>
-</body>
+  <div class="header">
+    <h1>Grade 3–4 Math Kangaroo Practice Sets</h1>
+    <p>Écolier level — organized by topic across 12 categories and 35 sub-categories. Expand each category to explore subcategories and access practice resources.</p>
+    <div class="status-grid">
+      <div class="status-item">
+        <div class="status-dot ready"></div>
+        <span>Ready</span>
+      </div>
+      <div class="status-item">
+        <div class="status-dot draft"></div>
+        <span>Draft/Building</span>
+      </div>
+      <div class="status-item">
+        <div class="status-dot coming"></div>
+        <span>Coming Soon</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="categories">
+
+    <!-- Category 1: Arithmetic & Calculation -->
+    <div class="category expanded">
+      <div class="category-header" onclick="this.parentElement.classList.toggle('expanded')">
+        <h2><span class="category-number">1</span>Arithmetic &amp; Calculation</h2>
+        <span class="expand-icon">⌄</span>
+      </div>
+      <div class="category-content">
+        <div class="subcategories">
+
+          <div class="subcategory-card">
+            <div class="status-badge coming">Coming Soon</div>
+            <div class="subcategory-header">
+              <div class="subcategory-title">1.1 Simple Arithmetic</div>
+              <div class="subcategory-description">Direct arithmetic operations — addition, subtraction, multiplication, division with small numbers</div>
+            </div>
+            <div class="question-count">📊 ~50 Questions (3-4 pts)</div>
+            <div class="action-buttons">
+              <button class="btn btn-disabled" disabled>📥 Questions PDF</button>
+              <button class="btn btn-disabled" disabled>📥 Answers PDF</button>
+            </div>
+          </div>
+
+          <div class="subcategory-card">
+            <div class="status-badge coming">Coming Soon</div>
+            <div class="subcategory-header">
+              <div class="subcategory-title">1.2 Multi-step Calculations</div>
+              <div class="subcategory-description">Chained operations, balance scales, weight systems — combining multiple arithmetic steps</div>
+            </div>
+            <div class="question-count">📊 ~50 Questions (4-5 pts)</div>
+            <div class="action-buttons">
+              <button class="btn btn-disabled" disabled>📥 Questions PDF</button>
+              <button class="btn btn-disabled" disabled>📥 Answers PDF</button>
+            </div>
+          </div>
+
+          <div class="subcategory-card">
+            <div class="status-badge coming">Coming Soon</div>
+            <div class="subcategory-header">
+              <div class="subcategory-title">1.3 Number Patterns &amp; Sequences</div>
+              <div class="subcategory-description">Identifying patterns in sequences, digit patterns, consecutive numbers</div>
+            </div>
+            <div class="question-count">📊 ~50 Questions (3-4 pts)</div>
+            <div class="action-buttons">
+              <button class="btn btn-disabled" disabled>📥 Questions PDF</button>
+              <button class="btn btn-disabled" disabled>📥 Answers PDF</button>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <!-- Category 2: Geometry & Spatial Reasoning -->
+    <div class="category">
+      <div class="category-header" onclick="this.parentElement.classList.toggle('expanded')">
+        <h2><span class="category-number">2</span>Geometry &amp; Spatial Reasoning</h2>
+        <span class="expand-icon">⌄</span>
+      </div>
+      <div class="category-content">
+        <div class="subcategories">
+
+          <div class="subcategory-card">
+            <div class="status-badge coming">Coming Soon</div>
+            <div class="subcategory-header">
+              <div class="subcategory-title">2.1 2D Shape Analysis</div>
+              <div class="subcategory-description">Properties of flat shapes — squares, rectangles, circles, triangles; area and overlap problems</div>
+            </div>
+            <div class="question-count">📊 ~50 Questions (3-5 pts)</div>
+            <div class="action-buttons">
+              <button class="btn btn-disabled" disabled>📥 Questions PDF</button>
+              <button class="btn btn-disabled" disabled>📥 Answers PDF</button>
+            </div>
+          </div>
+
+          <div class="subcategory-card">
+            <div class="status-badge coming">Coming Soon</div>
+            <div class="subcategory-header">
+              <div class="subcategory-title">2.2 Perimeter &amp; Measurement</div>
+              <div class="subcategory-description">Calculating perimeters, proportional relationships, dimension problems</div>
+            </div>
+            <div class="question-count">📊 ~50 Questions (3-4 pts)</div>
+            <div class="action-buttons">
+              <button class="btn btn-disabled" disabled>📥 Questions PDF</button>
+              <button class="btn btn-disabled" disabled>📥 Answers PDF</button>
+            </div>
+          </div>
+
+          <div class="subcategory-card">
+            <div class="status-badge coming">Coming Soon</div>
+            <div class="subcategory-header">
+              <div class="subcategory-title">2.3 3D Objects &amp; Cubes</div>
+              <div class="subcategory-description">Visualizing 3D structures — cube stacking, spatial relationships, 3D reasoning</div>
+            </div>
+            <div class="question-count">📊 ~50 Questions (3-4 pts)</div>
+            <div class="action-buttons">
+              <button class="btn btn-disabled" disabled>📥 Questions PDF</button>
+              <button class="btn btn-disabled" disabled>📥 Answers PDF</button>
+            </div>
+          </div>
+
+          <div class="subcategory-card">
+            <div class="status-badge coming">Coming Soon</div>
+            <div class="subcategory-header">
+              <div class="subcategory-title">2.4 Visual Patterns &amp; Transformations</div>
+              <div class="subcategory-description">Rotations, reflections, symmetry, perspective changes and mirror problems</div>
+            </div>
+            <div class="question-count">📊 ~50 Questions (3-4 pts)</div>
+            <div class="action-buttons">
+              <button class="btn btn-disabled" disabled>📥 Questions PDF</button>
+              <button class="btn btn-disabled" disabled>📥 Answers PDF</button>
+            </div>
+          </div>
+
+          <div class="subcategory-card">
+            <div class="status-badge coming">Coming Soon</div>
+            <div class="subcategory-header">
+              <div class="subcategory-title">2.5 Tiling &amp; Grid Problems</div>
+              <div class="subcategory-description">Tiling patterns, rectangular/square combinations, dimension inference from patterns</div>
+            </div>
+            <div class="question-count">📊 ~50 Questions (4-5 pts)</div>
+            <div class="action-buttons">
+              <button class="btn btn-disabled" disabled>📥 Questions PDF</button>
+              <button class="btn btn-disabled" disabled>📥 Answers PDF</button>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <!-- Category 3: Logic & Reasoning Puzzles -->
+    <div class="category">
+      <div class="category-header" onclick="this.parentElement.classList.toggle('expanded')">
+        <h2><span class="category-number">3</span>Logic &amp; Reasoning Puzzles</h2>
+        <span class="expand-icon">⌄</span>
+      </div>
+      <div class="category-content">
+        <div class="subcategories">
+
+          <div class="subcategory-card">
+            <div class="status-badge coming">Coming Soon</div>
+            <div class="subcategory-header">
+              <div class="subcategory-title">3.1 Logical Deduction</div>
+              <div class="subcategory-description">If-then logic, property assignment, rule application to deduce answers systematically</div>
+            </div>
+            <div class="question-count">📊 ~50 Questions (4-5 pts)</div>
+            <div class="action-buttons">
+              <button class="btn btn-disabled" disabled>📥 Questions PDF</button>
+              <button class="btn btn-disabled" disabled>📥 Answers PDF</button>
+            </div>
+          </div>
+
+          <div class="subcategory-card">
+            <div class="status-badge coming">Coming Soon</div>
+            <div class="subcategory-header">
+              <div class="subcategory-title">3.2 Set &amp; Venn Diagram Problems</div>
+              <div class="subcategory-description">Set theory, union/intersection, logical statements — "in circle and triangle but not square"</div>
+            </div>
+            <div class="question-count">📊 ~50 Questions (3-4 pts)</div>
+            <div class="action-buttons">
+              <button class="btn btn-disabled" disabled>📥 Questions PDF</button>
+              <button class="btn btn-disabled" disabled>📥 Answers PDF</button>
+            </div>
+          </div>
+
+          <div class="subcategory-card">
+            <div class="status-badge coming">Coming Soon</div>
+            <div class="subcategory-header">
+              <div class="subcategory-title">3.3 Pattern Recognition &amp; Completion</div>
+              <div class="subcategory-description">Repeating patterns, alternating sequences, predicting next elements in multi-dimensional patterns</div>
+            </div>
+            <div class="question-count">📊 ~50 Questions (3-5 pts)</div>
+            <div class="action-buttons">
+              <button class="btn btn-disabled" disabled>📥 Questions PDF</button>
+              <button class="btn btn-disabled" disabled>📥 Answers PDF</button>
+            </div>
+          </div>
+
+          <div class="subcategory-card">
+            <div class="status-badge coming">Coming Soon</div>
+            <div class="subcategory-header">
+              <div class="subcategory-title">3.4 Constraint Satisfaction</div>
+              <div class="subcategory-description">Finding solutions meeting multiple simultaneous conditions — ring sums, marble distributions</div>
+            </div>
+            <div class="question-count">📊 ~50 Questions (4-5 pts)</div>
+            <div class="action-buttons">
+              <button class="btn btn-disabled" disabled>📥 Questions PDF</button>
+              <button class="btn btn-disabled" disabled>📥 Answers PDF</button>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <!-- Category 4: Word Problems -->
+    <div class="category">
+      <div class="category-header" onclick="this.parentElement.classList.toggle('expanded')">
+        <h2><span class="category-number">4</span>Word Problems</h2>
+        <span class="expand-icon">⌄</span>
+      </div>
+      <div class="category-content">
+        <div class="subcategories">
+
+          <div class="subcategory-card">
+            <div class="status-badge coming">Coming Soon</div>
+            <div class="subcategory-header">
+              <div class="subcategory-title">4.1 Money &amp; Shopping</div>
+              <div class="subcategory-description">Purchasing constraints, cost analysis, coin combinations and monetary transactions</div>
+            </div>
+            <div class="question-count">📊 ~50 Questions (3-4 pts)</div>
+            <div class="action-buttons">
+              <button class="btn btn-disabled" disabled>📥 Questions PDF</button>
+              <button class="btn btn-disabled" disabled>📥 Answers PDF</button>
+            </div>
+          </div>
+
+          <div class="subcategory-card">
+            <div class="status-badge coming">Coming Soon</div>
+            <div class="subcategory-header">
+              <div class="subcategory-title">4.2 Distribution &amp; Division</div>
+              <div class="subcategory-description">Sharing items among people, equal/unequal distribution, sequential subtraction problems</div>
+            </div>
+            <div class="question-count">📊 ~50 Questions (3-4 pts)</div>
+            <div class="action-buttons">
+              <button class="btn btn-disabled" disabled>📥 Questions PDF</button>
+              <button class="btn btn-disabled" disabled>📥 Answers PDF</button>
+            </div>
+          </div>
+
+          <div class="subcategory-card">
+            <div class="status-badge coming">Coming Soon</div>
+            <div class="subcategory-header">
+              <div class="subcategory-title">4.3 Counting &amp; Combination</div>
+              <div class="subcategory-description">Counting objects and possibilities with constraints — combinatorics in real-world contexts</div>
+            </div>
+            <div class="question-count">📊 ~50 Questions (4-5 pts)</div>
+            <div class="action-buttons">
+              <button class="btn btn-disabled" disabled>📥 Questions PDF</button>
+              <button class="btn btn-disabled" disabled>📥 Answers PDF</button>
+            </div>
+          </div>
+
+          <div class="subcategory-card">
+            <div class="status-badge coming">Coming Soon</div>
+            <div class="subcategory-header">
+              <div class="subcategory-title">4.4 Rate &amp; Sequence Problems</div>
+              <div class="subcategory-description">Changes over time, linear growth, repeated actions — "when will two quantities be equal?"</div>
+            </div>
+            <div class="question-count">📊 ~50 Questions (3-4 pts)</div>
+            <div class="action-buttons">
+              <button class="btn btn-disabled" disabled>📥 Questions PDF</button>
+              <button class="btn btn-disabled" disabled>📥 Answers PDF</button>
+            </div>
+          </div>
+
+          <div class="subcategory-card">
+            <div class="status-badge coming">Coming Soon</div>
+            <div class="subcategory-header">
+              <div class="subcategory-title">4.5 Weight &amp; Measurement</div>
+              <div class="subcategory-description">Comparing and calculating weights/quantities, balance scale problems and systems of equations</div>
+            </div>
+            <div class="question-count">📊 ~50 Questions (3-5 pts)</div>
+            <div class="action-buttons">
+              <button class="btn btn-disabled" disabled>📥 Questions PDF</button>
+              <button class="btn btn-disabled" disabled>📥 Answers PDF</button>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <!-- Category 5: Time & Scheduling -->
+    <div class="category">
+      <div class="category-header" onclick="this.parentElement.classList.toggle('expanded')">
+        <h2><span class="category-number">5</span>Time &amp; Scheduling</h2>
+        <span class="expand-icon">⌄</span>
+      </div>
+      <div class="category-content">
+        <div class="subcategories">
+
+          <div class="subcategory-card">
+            <div class="status-badge coming">Coming Soon</div>
+            <div class="subcategory-header">
+              <div class="subcategory-title">5.1 Time Duration &amp; Calculation</div>
+              <div class="subcategory-description">Time intervals, adding/subtracting time, film schedules, overlapping light intervals</div>
+            </div>
+            <div class="question-count">📊 ~50 Questions (3-4 pts)</div>
+            <div class="action-buttons">
+              <button class="btn btn-disabled" disabled>📥 Questions PDF</button>
+              <button class="btn btn-disabled" disabled>📥 Answers PDF</button>
+            </div>
+          </div>
+
+          <div class="subcategory-card">
+            <div class="status-badge coming">Coming Soon</div>
+            <div class="subcategory-header">
+              <div class="subcategory-title">5.2 Repeating Events</div>
+              <div class="subcategory-description">Periodic patterns, accumulation over time — events repeating at fixed intervals</div>
+            </div>
+            <div class="question-count">📊 ~50 Questions (4-5 pts)</div>
+            <div class="action-buttons">
+              <button class="btn btn-disabled" disabled>📥 Questions PDF</button>
+              <button class="btn btn-disabled" disabled>📥 Answers PDF</button>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <!-- Category 6: Counting & Combinatorics -->
+    <div class="category">
+      <div class="category-header" onclick="this.parentElement.classList.toggle('expanded')">
+        <h2><span class="category-number">6</span>Counting &amp; Combinatorics</h2>
+        <span class="expand-icon">⌄</span>
+      </div>
+      <div class="category-content">
+        <div class="subcategories">
+
+          <div class="subcategory-card">
+            <div class="status-badge coming">Coming Soon</div>
+            <div class="subcategory-header">
+              <div class="subcategory-title">6.1 Counting with Constraints</div>
+              <div class="subcategory-description">Multiplication principle applied to constrained scenarios — ends, arrangements with rules</div>
+            </div>
+            <div class="question-count">📊 ~50 Questions (3-4 pts)</div>
+            <div class="action-buttons">
+              <button class="btn btn-disabled" disabled>📥 Questions PDF</button>
+              <button class="btn btn-disabled" disabled>📥 Answers PDF</button>
+            </div>
+          </div>
+
+          <div class="subcategory-card">
+            <div class="status-badge coming">Coming Soon</div>
+            <div class="subcategory-header">
+              <div class="subcategory-title">6.2 Combinations &amp; Arrangements</div>
+              <div class="subcategory-description">Counting different ways to arrange or select items — permutations with restriction constraints</div>
+            </div>
+            <div class="question-count">📊 ~50 Questions (4-5 pts)</div>
+            <div class="action-buttons">
+              <button class="btn btn-disabled" disabled>📥 Questions PDF</button>
+              <button class="btn btn-disabled" disabled>📥 Answers PDF</button>
+            </div>
+          </div>
+
+          <div class="subcategory-card">
+            <div class="status-badge coming">Coming Soon</div>
+            <div class="subcategory-header">
+              <div class="subcategory-title">6.3 Digit / Number Covering</div>
+              <div class="subcategory-description">Calculating hidden or covered quantities — working backwards from totals using digit sense</div>
+            </div>
+            <div class="question-count">📊 ~50 Questions (4-5 pts)</div>
+            <div class="action-buttons">
+              <button class="btn btn-disabled" disabled>📥 Questions PDF</button>
+              <button class="btn btn-disabled" disabled>📥 Answers PDF</button>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <!-- Category 7: Maze & Navigation -->
+    <div class="category">
+      <div class="category-header" onclick="this.parentElement.classList.toggle('expanded')">
+        <h2><span class="category-number">7</span>Maze &amp; Navigation</h2>
+        <span class="expand-icon">⌄</span>
+      </div>
+      <div class="category-content">
+        <div class="subcategories">
+
+          <div class="subcategory-card">
+            <div class="status-badge coming">Coming Soon</div>
+            <div class="subcategory-header">
+              <div class="subcategory-title">7.1 Maze Navigation</div>
+              <div class="subcategory-description">Following paths through mazes with arrow rules, bee pathfinding, hexagon road networks</div>
+            </div>
+            <div class="question-count">📊 ~50 Questions (4-5 pts)</div>
+            <div class="action-buttons">
+              <button class="btn btn-disabled" disabled>📥 Questions PDF</button>
+              <button class="btn btn-disabled" disabled>📥 Answers PDF</button>
+            </div>
+          </div>
+
+          <div class="subcategory-card">
+            <div class="status-badge coming">Coming Soon</div>
+            <div class="subcategory-header">
+              <div class="subcategory-title">7.2 Ladder / Path Problems</div>
+              <div class="subcategory-description">Finding shortest or valid paths with constraints — constraint-aware pathfinding problems</div>
+            </div>
+            <div class="question-count">📊 ~50 Questions (3-4 pts)</div>
+            <div class="action-buttons">
+              <button class="btn btn-disabled" disabled>📥 Questions PDF</button>
+              <button class="btn btn-disabled" disabled>📥 Answers PDF</button>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <!-- Category 8: Visual Logic & Image Analysis -->
+    <div class="category">
+      <div class="category-header" onclick="this.parentElement.classList.toggle('expanded')">
+        <h2><span class="category-number">8</span>Visual Logic &amp; Image Analysis</h2>
+        <span class="expand-icon">⌄</span>
+      </div>
+      <div class="category-content">
+        <div class="subcategories">
+
+          <div class="subcategory-card">
+            <div class="status-badge coming">Coming Soon</div>
+            <div class="subcategory-header">
+              <div class="subcategory-title">8.1 Picture Completion</div>
+              <div class="subcategory-description">Completing patterns or identifying missing pieces — shape relationships and visual logic</div>
+            </div>
+            <div class="question-count">📊 ~50 Questions (3-4 pts)</div>
+            <div class="action-buttons">
+              <button class="btn btn-disabled" disabled>📥 Questions PDF</button>
+              <button class="btn btn-disabled" disabled>📥 Answers PDF</button>
+            </div>
+          </div>
+
+          <div class="subcategory-card">
+            <div class="status-badge coming">Coming Soon</div>
+            <div class="subcategory-header">
+              <div class="subcategory-title">8.2 Image Selection</div>
+              <div class="subcategory-description">Selecting correct images from options — visual interpretation, property matching, grid coordinates</div>
+            </div>
+            <div class="question-count">📊 ~50 Questions (3-5 pts)</div>
+            <div class="action-buttons">
+              <button class="btn btn-disabled" disabled>📥 Questions PDF</button>
+              <button class="btn btn-disabled" disabled>📥 Answers PDF</button>
+            </div>
+          </div>
+
+          <div class="subcategory-card">
+            <div class="status-badge coming">Coming Soon</div>
+            <div class="subcategory-header">
+              <div class="subcategory-title">8.3 3D Visualization &amp; Rotation</div>
+              <div class="subcategory-description">Mental rotation of 3D objects — paper folding, punch holes, building blocks from above</div>
+            </div>
+            <div class="question-count">📊 ~50 Questions (4-5 pts)</div>
+            <div class="action-buttons">
+              <button class="btn btn-disabled" disabled>📥 Questions PDF</button>
+              <button class="btn btn-disabled" disabled>📥 Answers PDF</button>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <!-- Category 9: Grid & Arrangement Problems -->
+    <div class="category">
+      <div class="category-header" onclick="this.parentElement.classList.toggle('expanded')">
+        <h2><span class="category-number">9</span>Grid &amp; Arrangement Problems</h2>
+        <span class="expand-icon">⌄</span>
+      </div>
+      <div class="category-content">
+        <div class="subcategories">
+
+          <div class="subcategory-card">
+            <div class="status-badge coming">Coming Soon</div>
+            <div class="subcategory-header">
+              <div class="subcategory-title">9.1 Grid Placement</div>
+              <div class="subcategory-description">Placing items in grids following multiple rules — constraint satisfaction within grid structures</div>
+            </div>
+            <div class="question-count">📊 ~50 Questions (5 pts)</div>
+            <div class="action-buttons">
+              <button class="btn btn-disabled" disabled>📥 Questions PDF</button>
+              <button class="btn btn-disabled" disabled>📥 Answers PDF</button>
+            </div>
+          </div>
+
+          <div class="subcategory-card">
+            <div class="status-badge coming">Coming Soon</div>
+            <div class="subcategory-header">
+              <div class="subcategory-title">9.2 Grid Counting</div>
+              <div class="subcategory-description">Counting items in grids — area, overlap counting, magic square error detection</div>
+            </div>
+            <div class="question-count">📊 ~50 Questions (3-4 pts)</div>
+            <div class="action-buttons">
+              <button class="btn btn-disabled" disabled>📥 Questions PDF</button>
+              <button class="btn btn-disabled" disabled>📥 Answers PDF</button>
+            </div>
+          </div>
+
+          <div class="subcategory-card">
+            <div class="status-badge coming">Coming Soon</div>
+            <div class="subcategory-header">
+              <div class="subcategory-title">9.3 Honeycomb &amp; Network Problems</div>
+              <div class="subcategory-description">Hexagonal structures, neighbor logic, network path-finding with adjacency constraints</div>
+            </div>
+            <div class="question-count">📊 ~50 Questions (5 pts)</div>
+            <div class="action-buttons">
+              <button class="btn btn-disabled" disabled>📥 Questions PDF</button>
+              <button class="btn btn-disabled" disabled>📥 Answers PDF</button>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <!-- Category 10: Attribute & Filtering Problems -->
+    <div class="category">
+      <div class="category-header" onclick="this.parentElement.classList.toggle('expanded')">
+        <h2><span class="category-number">10</span>Attribute &amp; Filtering Problems</h2>
+        <span class="expand-icon">⌄</span>
+      </div>
+      <div class="category-content">
+        <div class="subcategories">
+
+          <div class="subcategory-card">
+            <div class="status-badge coming">Coming Soon</div>
+            <div class="subcategory-header">
+              <div class="subcategory-title">10.1 Multi-attribute Selection</div>
+              <div class="subcategory-description">Choosing items matching multiple attributes simultaneously — set intersection and attribute optimization</div>
+            </div>
+            <div class="question-count">📊 ~50 Questions (5 pts)</div>
+            <div class="action-buttons">
+              <button class="btn btn-disabled" disabled>📥 Questions PDF</button>
+              <button class="btn btn-disabled" disabled>📥 Answers PDF</button>
+            </div>
+          </div>
+
+          <div class="subcategory-card">
+            <div class="status-badge coming">Coming Soon</div>
+            <div class="subcategory-header">
+              <div class="subcategory-title">10.2 Preference / Matching</div>
+              <div class="subcategory-description">Matching preferences or properties with selections — systematic elimination and logical assignment</div>
+            </div>
+            <div class="question-count">📊 ~50 Questions (4 pts)</div>
+            <div class="action-buttons">
+              <button class="btn btn-disabled" disabled>📥 Questions PDF</button>
+              <button class="btn btn-disabled" disabled>📥 Answers PDF</button>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <!-- Category 11: Digit & Number Puzzles -->
+    <div class="category">
+      <div class="category-header" onclick="this.parentElement.classList.toggle('expanded')">
+        <h2><span class="category-number">11</span>Digit &amp; Number Puzzles</h2>
+        <span class="expand-icon">⌄</span>
+      </div>
+      <div class="category-content">
+        <div class="subcategories">
+
+          <div class="subcategory-card">
+            <div class="status-badge coming">Coming Soon</div>
+            <div class="subcategory-header">
+              <div class="subcategory-title">11.1 Hidden Digit Problems</div>
+              <div class="subcategory-description">Finding or calculating hidden/missing digits — visual-number mapping and place value puzzles</div>
+            </div>
+            <div class="question-count">📊 ~50 Questions (3-4 pts)</div>
+            <div class="action-buttons">
+              <button class="btn btn-disabled" disabled>📥 Questions PDF</button>
+              <button class="btn btn-disabled" disabled>📥 Answers PDF</button>
+            </div>
+          </div>
+
+          <div class="subcategory-card">
+            <div class="status-badge coming">Coming Soon</div>
+            <div class="subcategory-header">
+              <div class="subcategory-title">11.2 Card / Symbol Digit Mapping</div>
+              <div class="subcategory-description">Determining which digits cards or symbols represent — solving systems of symbolic equations</div>
+            </div>
+            <div class="question-count">📊 ~50 Questions (5 pts)</div>
+            <div class="action-buttons">
+              <button class="btn btn-disabled" disabled>📥 Questions PDF</button>
+              <button class="btn btn-disabled" disabled>📥 Answers PDF</button>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <!-- Category 12: Probability & Likelihood -->
+    <div class="category">
+      <div class="category-header" onclick="this.parentElement.classList.toggle('expanded')">
+        <h2><span class="category-number">12</span>Probability &amp; Likelihood</h2>
+        <span class="expand-icon">⌄</span>
+      </div>
+      <div class="category-content">
+        <div class="subcategories">
+
+          <div class="subcategory-card">
+            <div class="status-badge coming">Coming Soon</div>
+            <div class="subcategory-header">
+              <div class="subcategory-title">12.1 Frequency &amp; Rolling</div>
+              <div class="subcategory-description">Determining frequency of events based on constraints — die rolling totals, constraint-based deduction</div>
+            </div>
+            <div class="question-count">📊 ~50 Questions (3-4 pts)</div>
+            <div class="action-buttons">
+              <button class="btn btn-disabled" disabled>📥 Questions PDF</button>
+              <button class="btn btn-disabled" disabled>📥 Answers PDF</button>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+  </div><!-- end .categories -->
+
+  <div class="footer">
+    Grade 3–4 (Écolier) · 12 categories · 35 sub-categories · Practice sets coming soon
+  </div>
+</div>
