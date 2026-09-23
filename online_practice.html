@@ -672,12 +672,12 @@ function renderQuestion() {
   // Label
   if (mode === 'retry') {
     const pos = modeQueue.indexOf(currentIndex);
-    qLabel.textContent = `RETRY ${pos + 1} OF ${modeQueue.length}`;
+    qLabel.textContent = `Q${currentIndex + 1} · RETRY ${pos + 1} OF ${modeQueue.length}`;
     document.getElementById('mode-banner-text').textContent =
       `🔁 Retry Mode — question ${pos + 1} of ${modeQueue.length}`;
   } else if (mode === 'skipped') {
     const pos = modeQueue.indexOf(currentIndex);
-    qLabel.textContent = `SKIPPED ${pos + 1} OF ${modeQueue.length}`;
+    qLabel.textContent = `Q${currentIndex + 1} · SKIPPED ${pos + 1} OF ${modeQueue.length}`;
     document.getElementById('mode-banner-text').textContent =
       `📝 Answering skipped — question ${pos + 1} of ${modeQueue.length}`;
   } else {
@@ -966,6 +966,7 @@ function startRetry() {
   const q = answers.map((a, i) => ({a, i})).filter(({a, i}) => a !== null && a !== questions[i].answer).map(({i}) => i);
   if (!q.length) return;
   mode = 'retry'; modeQueue = q; modePos = 0; currentIndex = q[0];
+  q.forEach(i => { answers[i] = null; checked[i] = false; });
   document.getElementById('mode-banner').style.display = 'flex';
   document.getElementById('fab-pill').style.display = 'flex';
   switchScreen('quiz'); renderQuestion(); window.scrollTo(0, 0);
