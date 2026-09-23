@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>FAB Nav — Demo</title>
+  <style>
+    :root {
+      --primary: #2563eb;
+      --primary-light: #dbeafe;
+      --success: #10b981;
+      --success-light: #d1fae5;
+      --danger: #ef4444;
+      --danger-light: #fee2e2;
+      --border: #e5e7eb;
+      --gray-light: #f3f4f6;
+      --gray-medium: #9ca3af;
+      --text-primary: #1f2937;
+      --text-secondary: #6b7280;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background: #f9fafb;
+      color: var(--text-primary);
+      min-height: 100vh;
+      padding-bottom: 120px;
+    }
+
+    /* ── Demo note ── */
+    .demo-note {
+      background: #fef9c3;
+      border-bottom: 1px solid #fde047;
+      padding: 10px 20px;
+      font-size: 12px;
+      color: #713f12;
+      text-align: center;
+      font-weight: 600;
+    }
+
+    /* ── Back link ── */
+    .back-link-bar { padding: 14px 20px 0; max-width: 680px; margin: 0 auto; }
+    .back-link-bar a { font-size: 13px; color: var(--primary); text-decoration: none; font-weight: 500; }
+
+    /* ── Title block ── */
+    .page-title-block { max-width: 680px; margin: 10px auto 0; padding: 0 20px; }
+    .page-title-block h1 { font-size: 26px; font-weight: 800; margin-bottom: 4px; }
+    .page-title-block .subtitle { font-size: 13px; color: var(--text-secondary); }
+
+    /* ── Stats row ── */
+    .stats-row {
+      max-width: 680px; margin: 14px auto 0; padding: 0 20px;
+      display: flex; gap: 20px; font-size: 13px; color: var(--text-secondary);
+    }
+    .stats-row strong { color: var(--text-primary); }
+
+    /* ── Progress bar ── */
+    .progress-bar-wrap { max-width: 680px; margin: 8px auto 0; padding: 0 20px; }
+    .progress-bar-bg { height: 5px; background: var(--gray-light); border-radius: 99px; overflow: hidden; }
+    .progress-bar-fill { height: 100%; background: var(--primary); border-radius: 99px; width: 22%; }
+
+    /* ── Main ── */
+    .main { max-width: 680px; margin: 20px auto; padding: 0 20px; }
+
+    /* ── Question card ── */
+    .question-card {
+      background: #fff; border: 1px solid var(--border); border-radius: 12px;
+      padding: 28px; margin-bottom: 14px; box-shadow: 0 1px 4px rgba(0,0,0,.06);
+    }
+    .question-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px; }
+    .question-label { font-size: 12px; font-weight: 700; color: var(--text-secondary); text-transform: uppercase; letter-spacing: .6px; }
+    .points-badge { background: #d1fae5; color: #065f46; font-size: 12px; font-weight: 700; padding: 3px 10px; border-radius: 99px; }
+    .question-text { font-size: 17px; line-height: 1.65; font-weight: 500; }
+    .choices { display: flex; flex-direction: column; gap: 10px; margin-top: 22px; }
+    .choice-btn {
+      display: flex; align-items: center; gap: 14px; padding: 14px 18px;
+      border: 2px solid var(--border); border-radius: 10px; background: #fff;
+      cursor: pointer; text-align: left; font-size: 15px; width: 100%;
+    }
+    .choice-btn.correct  { border-color: var(--success); background: var(--success-light); }
+    .choice-btn.incorrect{ border-color: var(--danger);  background: var(--danger-light); }
+    .circle {
+      width: 30px; height: 30px; border-radius: 50%; border: 2px solid var(--gray-medium);
+      flex-shrink: 0; display: flex; align-items: center; justify-content: center;
+      font-size: 12px; font-weight: 700;
+    }
+    .choice-btn.correct  .circle { border-color: var(--success); background: var(--success); color: #fff; }
+    .choice-btn.incorrect .circle { border-color: var(--danger);  background: var(--danger);  color: #fff; }
+    .feedback {
+      border-radius: 8px; padding: 14px 18px; margin-top: 14px;
+      background: var(--danger-light); color: #991b1b;
+    }
+    .feedback-title { font-size: 14px; font-weight: 700; margin-bottom: 4px; }
+    .feedback-body  { font-size: 13px; line-height: 1.5; }
+
+    /* ── Nav ── */
+    .nav-row-1 { display: flex; gap: 10px; margin-bottom: 10px; }
+    .nav-row-2 { display: flex; }
+    .btn-nav {
+      padding: 12px 20px; border: none; border-radius: 8px; font-size: 14px;
+      font-weight: 700; cursor: pointer; display: inline-flex; align-items: center;
+      justify-content: center; gap: 6px;
+    }
+    .btn-back  { background: var(--gray-light); color: var(--text-primary); border: 1px solid var(--border); flex: 1; }
+    .btn-check { background: #93c5fd; color: #1e3a8a; flex: 2; cursor: default; }
+    .btn-next  { background: var(--primary); color: #fff; width: 100%; }
+
+    /* ════════════════════════════════════════
+       FAB PILL — the only always-visible piece
+       ════════════════════════════════════════ */
+    .fab-pill {
+      position: fixed;
+      bottom: 28px;
+      right: 24px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      background: #1e3a8a;
+      color: #fff;
+      border: none;
+      border-radius: 99px;
+      padding: 12px 20px;
+      font-size: 14px;
+      font-weight: 700;
+      cursor: pointer;
+      box-shadow: 0 4px 18px rgba(30,58,138,.45);
+      z-index: 200;
+      transition: transform .15s, box-shadow .15s;
+    }
+    .fab-pill:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 22px rgba(30,58,138,.55);
+    }
+    .fab-pill .fab-dots {
+      display: flex;
+      gap: 4px;
+      align-items: center;
+    }
+    .fab-dot {
+      width: 8px; height: 8px; border-radius: 50%;
+    }
+    .fab-dot.d-done    { background: #34d399; }
+    .fab-dot.d-wrong   { background: #f87171; }
+    .fab-dot.d-pending { background: rgba(255,255,255,.4); }
+
+    /* ════════════════════════════════════════
+       MODAL SHEET
+       ════════════════════════════════════════ */
+    .modal-backdrop {
+      position: fixed; inset: 0;
+      background: rgba(15,23,42,.45);
+      z-index: 300;
+      display: none;
+      align-items: flex-end;       /* sheet rises from bottom */
+      justify-content: center;
+    }
+    .modal-backdrop.open { display: flex; }
+
+    .modal-sheet {
+      background: #fff;
+      border-radius: 20px 20px 0 0;
+      width: 100%;
+      max-width: 680px;
+      padding: 20px 22px 32px;
+      box-shadow: 0 -8px 40px rgba(0,0,0,.18);
+      /* animate up */
+      transform: translateY(100%);
+      transition: transform .25s cubic-bezier(.4,0,.2,1);
+    }
+    .modal-backdrop.open .modal-sheet {
+      transform: translateY(0);
+    }
+
+    /* drag handle */
+    .sheet-handle {
+      width: 40px; height: 4px; background: #d1d5db; border-radius: 99px;
+      margin: 0 auto 18px;
+    }
+
+    .sheet-header {
+      display: flex; justify-content: space-between; align-items: center;
+      margin-bottom: 14px;
+    }
+    .sheet-title { font-size: 15px; font-weight: 800; color: var(--text-primary); }
+    .sheet-close {
+      background: var(--gray-light); border: none; border-radius: 50%;
+      width: 30px; height: 30px; font-size: 16px; cursor: pointer; color: var(--text-secondary);
+      display: flex; align-items: center; justify-content: center;
+    }
+    .sheet-close:hover { background: var(--border); }
+
+    /* grid inside sheet */
+    .sheet-grid {
+      display: flex; flex-wrap: wrap; gap: 7px; margin-bottom: 16px;
+    }
+    .sheet-cell {
+      width: 40px; height: 40px; border-radius: 8px;
+      border: 2px solid var(--border); background: #fff;
+      color: var(--text-secondary); font-size: 12px; font-weight: 600;
+      display: flex; align-items: center; justify-content: center;
+      cursor: pointer; transition: border-color .1s, background .1s;
+    }
+    .sheet-cell:hover        { border-color: var(--primary); color: var(--primary); }
+    .sheet-cell.sc-current   { border-color: var(--primary); color: var(--primary); font-weight: 800; background: var(--primary-light); }
+    .sheet-cell.sc-correct   { border-color: var(--success); background: var(--success-light); color: #065f46; }
+    .sheet-cell.sc-wrong     { border-color: var(--danger);  background: var(--danger-light);  color: #991b1b; }
+
+    /* legend */
+    .sheet-legend {
+      display: flex; gap: 16px; margin-bottom: 18px;
+    }
+    .legend-item { display: flex; align-items: center; gap: 6px; font-size: 12px; color: var(--text-secondary); }
+    .legend-swatch { width: 14px; height: 14px; border-radius: 3px; border: 2px solid var(--border); flex-shrink: 0; }
+    .legend-swatch.sw-current { border-color: var(--primary); background: var(--primary-light); }
+    .legend-swatch.sw-correct { border-color: var(--success); background: var(--success-light); }
+    .legend-swatch.sw-wrong   { border-color: var(--danger);  background: var(--danger-light); }
+
+    /* action buttons */
+    .sheet-actions { display: flex; gap: 10px; }
+    .btn-startover {
+      flex: 1; padding: 11px 14px; background: var(--gray-light);
+      color: var(--text-primary); border: 1px solid var(--border);
+      border-radius: 8px; font-size: 13px; font-weight: 700; cursor: pointer;
+    }
+    .btn-startover:hover { background: var(--border); }
+    .btn-finish {
+      flex: 2; padding: 11px 14px; background: #1e3a8a; color: #fff;
+      border: none; border-radius: 8px; font-size: 13px; font-weight: 700; cursor: pointer;
+    }
+    .btn-finish:hover { background: #1e40af; }
+
+    @media (min-width: 600px) {
+      /* On wider screens the sheet is a centered card, not full-width */
+      .modal-backdrop { align-items: center; }
+      .modal-sheet {
+        border-radius: 16px;
+        max-width: 480px;
+        margin: 0 16px;
+        padding-bottom: 24px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<div class="demo-note">⚡ DEMO ONLY — showing FAB nav style. No real quiz logic.</div>
+
+<!-- Back link -->
+<div class="back-link-bar">
+  <a href="#">← Back to Grade 3–4 Practice Sets</a>
+</div>
+
+<!-- Title -->
+<div class="page-title-block">
+  <h1>1.1 Basic Arithmetic</h1>
+  <div class="subtitle">Grade 3–4 (Écolier) · 50 questions</div>
+</div>
+
+<!-- Stats -->
+<div class="stats-row">
+  <span>Answered <strong>11</strong> / <strong>50</strong></span>
+  <span>Correct <strong>8</strong></span>
+  <span>Points <strong>24</strong></span>
+</div>
+
+<!-- Progress bar -->
+<div class="progress-bar-wrap">
+  <div class="progress-bar-bg">
+    <div class="progress-bar-fill" style="width: 22%;"></div>
+  </div>
+</div>
+
+<!-- Quiz content -->
+<div class="main">
+
+  <div class="question-card">
+    <div class="question-header">
+      <span class="question-label">QUESTION 12 OF 50</span>
+      <span class="points-badge">3 points</span>
+    </div>
+    <div class="question-text">What is 1000 − 100 + 10 − 1?</div>
+    <div class="choices">
+      <button class="choice-btn correct">
+        <span class="circle">A</span><span>909</span>
+      </button>
+      <button class="choice-btn incorrect">
+        <span class="circle">B</span><span>911</span>
+      </button>
+      <button class="choice-btn"><span class="circle">C</span><span>889</span></button>
+      <button class="choice-btn"><span class="circle">D</span><span>1111</span></button>
+      <button class="choice-btn"><span class="circle">E</span><span>999</span></button>
+    </div>
+    <div class="feedback">
+      <div class="feedback-title">✗ Not quite. The answer is (A) 909.</div>
+      <div class="feedback-body">Work left to right: 1000 − 100 = 900, 900 + 10 = 910, 910 − 1 = 909.</div>
+    </div>
+  </div>
+
+  <div class="nav-row-1">
+    <button class="btn-nav btn-back">← Previous</button>
+    <button class="btn-nav btn-check">Checked ✓</button>
+  </div>
+  <div class="nav-row-2">
+    <button class="btn-nav btn-next">Next →</button>
+  </div>
+
+</div>
+
+<!-- ══ FAB PILL ══ -->
+<button class="fab-pill" onclick="openSheet()">
+  <div class="fab-dots">
+    <!-- 3 sample dots to hint at progress -->
+    <div class="fab-dot d-done"></div>
+    <div class="fab-dot d-done"></div>
+    <div class="fab-dot d-wrong"></div>
+    <div class="fab-dot d-pending"></div>
+    <div class="fab-dot d-pending"></div>
+  </div>
+  Q 12 / 50 &nbsp;▲
+</button>
+
+<!-- ══ MODAL SHEET ══ -->
+<div class="modal-backdrop" id="modal" onclick="handleBackdropClick(event)">
+  <div class="modal-sheet" id="sheet">
+    <div class="sheet-handle"></div>
+    <div class="sheet-header">
+      <span class="sheet-title">Jump to question</span>
+      <button class="sheet-close" onclick="closeSheet()">✕</button>
+    </div>
+
+    <div class="sheet-grid" id="sheet-grid"></div>
+
+    <div class="sheet-legend">
+      <span class="legend-item">
+        <span class="legend-swatch sw-current"></span> Current
+      </span>
+      <span class="legend-item">
+        <span class="legend-swatch sw-correct"></span> Correct
+      </span>
+      <span class="legend-item">
+        <span class="legend-swatch sw-wrong"></span> Wrong
+      </span>
+      <span class="legend-item">
+        <span class="legend-swatch"></span> Not answered
+      </span>
+    </div>
+
+    <div class="sheet-actions">
+      <button class="btn-startover" onclick="closeSheet()">↺ Start over</button>
+      <button class="btn-finish"    onclick="closeSheet()">Finish &amp; see results</button>
+    </div>
+  </div>
+</div>
+
+<script>
+  // ── Demo data: simulate answered questions ─────────────────
+  const TOTAL = 50;
+  const CURRENT = 12; // 1-based
+  // Simulate some results: 1–11 answered (mixed), 12 = current, 13+ unanswered
+  const results = {
+    1:'correct', 2:'correct', 3:'correct', 4:'wrong',  5:'correct',
+    6:'correct', 7:'wrong',   8:'correct', 9:'correct', 10:'wrong',
+    11:'correct'
+  };
+
+  // Build grid
+  const grid = document.getElementById('sheet-grid');
+  for (let i = 1; i <= TOTAL; i++) {
+    const cell = document.createElement('div');
+    cell.className = 'sheet-cell';
+    cell.textContent = i;
+
+    if (i === CURRENT)          cell.classList.add('sc-current');
+    else if (results[i] === 'correct') cell.classList.add('sc-correct');
+    else if (results[i] === 'wrong')   cell.classList.add('sc-wrong');
+
+    cell.onclick = () => { alert(`Navigate to Q${i}`); closeSheet(); };
+    grid.appendChild(cell);
+  }
+
+  // ── Sheet open/close ───────────────────────────────────────
+  function openSheet()  { document.getElementById('modal').classList.add('open'); }
+  function closeSheet() { document.getElementById('modal').classList.remove('open'); }
+
+  function handleBackdropClick(e) {
+    if (e.target === document.getElementById('modal')) closeSheet();
+  }
+
+  // Keyboard close
+  document.addEventListener('keydown', e => { if (e.key === 'Escape') closeSheet(); });
+</script>
+
+</body>
+</html>
