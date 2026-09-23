@@ -1004,16 +1004,16 @@ function showResults() {
   document.getElementById('results-emoji').textContent = emoji;
   document.getElementById('results-title').textContent = title;
 
-  // Retry button
+  // Retry button — skipped questions excluded (skipped ≠ wrong)
   const failedIndices = answers
     .map((a, i) => ({ a, i }))
-    .filter(({ a, i }) => a === null || a !== questions[i].answer)
+    .filter(({ a, i }) => a !== null && a !== questions[i].answer)
     .map(({ i }) => i);
 
   const retryBtn = document.getElementById('btn-retry-failed');
   if (failedIndices.length > 0) {
     retryBtn.style.display = 'block';
-    retryBtn.textContent = `🔁 Retry ${failedIndices.length} failed question${failedIndices.length > 1 ? 's' : ''}`;
+    retryBtn.textContent = `🔁 Retry ${failedIndices.length} wrong question${failedIndices.length > 1 ? 's' : ''}`;
   } else {
     retryBtn.style.display = 'none';
   }
@@ -1045,13 +1045,13 @@ function showOriginalResults() {
   document.getElementById('res-skipped').textContent = skipped;
 
   const failedIndices = lastFull.questions
-    .filter(q => !q.correct)
+    .filter(q => !q.correct && q.user_answer !== null)
     .map(q => q.index);
 
   const retryBtn = document.getElementById('btn-retry-failed');
   if (failedIndices.length > 0) {
     retryBtn.style.display = 'block';
-    retryBtn.textContent = `🔁 Retry ${failedIndices.length} failed question${failedIndices.length > 1 ? 's' : ''}`;
+    retryBtn.textContent = `🔁 Retry ${failedIndices.length} wrong question${failedIndices.length > 1 ? 's' : ''}`;
   } else {
     retryBtn.style.display = 'none';
   }
@@ -1099,14 +1099,14 @@ function startRetry() {
   let failedIndices;
   if (lastFull) {
     failedIndices = lastFull.questions
-      .filter(q => !q.correct)
+      .filter(q => !q.correct && q.user_answer !== null)
       .map(q => q.index);
     parentAttemptId = lastFull.id;
   } else {
     // Fallback: use current session answers
     failedIndices = answers
       .map((a, i) => ({ a, i }))
-      .filter(({ a, i }) => a === null || a !== questions[i].answer)
+      .filter(({ a, i }) => a !== null && a !== questions[i].answer)
       .map(({ i }) => i);
     parentAttemptId = currentAttemptId;
   }
