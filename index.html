@@ -1,3 +1,6 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
 <title>Math Kangaroo Practice Sets</title>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -11,184 +14,147 @@
   --gray-light: #f3f4f6;
   --gray-lighter: #f9fafb;
   --gray-medium: #9ca3af;
-  --gray-dark: #374151;
   --text-primary: #1f2937;
   --text-secondary: #6b7280;
   --border: #e5e7eb;
   --bg-body: #ffffff;
 }
-
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme="light"]) {
-    --primary: #3b82f6;
-    --primary-light: #1e3a8a;
-    --success: #059669;
-    --success-light: #064e3b;
-    --gray-light: #2d3748;
-    --gray-lighter: #1a202c;
+    --primary: #3b82f6; --primary-light: #1e3a8a;
+    --success: #059669; --success-light: #064e3b;
+    --gray-light: #2d3748; --gray-lighter: #1a202c;
     --gray-medium: #6b7280;
-    --gray-dark: #f3f4f6;
-    --text-primary: #f3f4f6;
-    --text-secondary: #d1d5db;
-    --border: #4b5563;
-    --bg-body: #111827;
+    --text-primary: #f3f4f6; --text-secondary: #d1d5db;
+    --border: #4b5563; --bg-body: #111827;
   }
 }
-
-:root[data-theme="dark"] {
-  --primary: #3b82f6;
-  --primary-light: #1e3a8a;
-  --success: #059669;
-  --success-light: #064e3b;
-  --gray-light: #2d3748;
-  --gray-lighter: #1a202c;
-  --gray-medium: #6b7280;
-  --gray-dark: #f3f4f6;
-  --text-primary: #f3f4f6;
-  --text-secondary: #d1d5db;
-  --border: #4b5563;
-  --bg-body: #111827;
-}
-
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
+* { margin:0; padding:0; box-sizing:border-box; }
 body {
-  background: var(--bg-body);
-  color: var(--text-primary);
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif;
-  font-size: 14px;
-  line-height: 1.6;
-  min-height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 24px;
+  background:var(--bg-body); color:var(--text-primary);
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
+  font-size:14px; line-height:1.6; min-height:100vh;
 }
 
-.container {
-  max-width: 720px;
-  width: 100%;
-  text-align: center;
+/* ── Home page ── */
+#home-page {
+  display:none; /* shown after login */
+  align-items:center; justify-content:center;
+  min-height:100vh; padding:24px;
 }
-
-.logo {
-  font-size: 48px;
-  margin-bottom: 16px;
-}
-
-h1 {
-  font-size: 36px;
-  font-weight: 700;
-  color: var(--primary);
-  margin-bottom: 12px;
-}
-
-.subtitle {
-  color: var(--text-secondary);
-  font-size: 16px;
-  line-height: 1.7;
-  margin-bottom: 48px;
-}
-
-.grade-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 24px;
-}
-
-@media (max-width: 520px) {
-  .grade-grid {
-    grid-template-columns: 1fr;
-  }
-}
-
+#home-page.visible { display:flex; }
+.home-wrap { max-width:720px; width:100%; text-align:center; }
+.logo { font-size:48px; margin-bottom:16px; }
+h1 { font-size:36px; font-weight:700; color:var(--primary); margin-bottom:12px; }
+.subtitle { color:var(--text-secondary); font-size:16px; line-height:1.7; margin-bottom:48px; }
+.grade-grid { display:grid; grid-template-columns:1fr 1fr; gap:24px; }
+@media (max-width:520px) { .grade-grid { grid-template-columns:1fr; } }
 .grade-card {
-  display: block;
-  text-decoration: none;
-  border: 2px solid var(--border);
-  border-radius: 16px;
-  padding: 36px 28px;
-  background: var(--gray-lighter);
-  transition: border-color 0.2s, transform 0.15s, box-shadow 0.2s;
-  cursor: pointer;
+  display:block; text-decoration:none; border:2px solid var(--border);
+  border-radius:16px; padding:36px 28px; background:var(--gray-lighter);
+  transition:border-color .2s, transform .15s, box-shadow .2s; cursor:pointer;
 }
-
 .grade-card:hover {
-  border-color: var(--primary);
-  transform: translateY(-3px);
-  box-shadow: 0 8px 24px rgba(37, 99, 235, 0.15);
+  border-color:var(--primary); transform:translateY(-3px);
+  box-shadow:0 8px 24px rgba(37,99,235,.15);
+}
+.grade-icon { font-size:40px; margin-bottom:16px; }
+.grade-label { font-size:13px; font-weight:600; text-transform:uppercase; letter-spacing:.08em; color:var(--text-secondary); margin-bottom:6px; }
+.grade-title { font-size:22px; font-weight:700; color:var(--text-primary); margin-bottom:10px; }
+.grade-desc  { font-size:13px; color:var(--text-secondary); line-height:1.6; }
+.badge { display:inline-block; margin-top:16px; padding:4px 12px; border-radius:20px; font-size:12px; font-weight:600; }
+.badge.ready { background:var(--success-light); color:var(--success); }
+.footer { margin-top:48px; color:var(--text-secondary); font-size:13px; }
+
+/* ── Profile picker overlay ── */
+#profile-overlay {
+  position:fixed; inset:0; background:var(--bg-body);
+  z-index:9999; display:flex; align-items:center; justify-content:center;
+  flex-direction:column; padding:24px;
+}
+#profile-overlay.hidden { display:none; }
+.picker-logo { font-size:44px; margin-bottom:12px; }
+.picker-title { font-size:24px; font-weight:800; margin-bottom:6px; text-align:center; }
+.picker-sub   { font-size:14px; color:var(--text-secondary); margin-bottom:32px; text-align:center; }
+.profile-cards { display:flex; flex-direction:column; gap:12px; width:100%; max-width:340px; }
+.profile-card {
+  padding:16px 20px; border:2px solid var(--border); border-radius:14px;
+  background:#fff; cursor:pointer; font-size:17px; font-weight:700;
+  display:flex; align-items:center; gap:14px; text-align:left;
+  transition:border-color .15s, background .15s;
+  box-shadow:0 1px 4px rgba(0,0,0,.06); font-family:inherit; width:100%;
+}
+.profile-avatar {
+  width:44px; height:44px; border-radius:50%; color:#fff;
+  font-size:19px; font-weight:800; display:flex; align-items:center;
+  justify-content:center; flex-shrink:0;
 }
 
-.grade-card.building {
-  opacity: 0.85;
+/* ── Passcode modal ── */
+#passcode-overlay {
+  position:fixed; inset:0; background:rgba(15,23,42,.5);
+  z-index:10000; display:none; align-items:center; justify-content:center; padding:24px;
 }
-
-.grade-icon {
-  font-size: 40px;
-  margin-bottom: 16px;
+#passcode-overlay.open { display:flex; }
+.passcode-card {
+  background:#fff; border-radius:20px; padding:32px 28px;
+  width:100%; max-width:340px; box-shadow:0 8px 40px rgba(0,0,0,.2); text-align:center;
 }
-
-.grade-label {
-  font-size: 13px;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-  color: var(--text-secondary);
-  margin-bottom: 6px;
+.pc-avatar {
+  width:60px; height:60px; border-radius:50%; margin:0 auto 14px;
+  font-size:26px; font-weight:800; color:#fff;
+  display:flex; align-items:center; justify-content:center;
 }
-
-.grade-title {
-  font-size: 22px;
-  font-weight: 700;
-  color: var(--text-primary);
-  margin-bottom: 10px;
+.pc-title    { font-size:18px; font-weight:800; margin-bottom:4px; }
+.pc-subtitle { font-size:13px; color:var(--text-secondary); margin-bottom:20px; }
+.pc-input {
+  width:100%; padding:14px 16px; border:2px solid var(--border); border-radius:12px;
+  font-size:22px; font-weight:700; text-align:center; letter-spacing:10px;
+  margin-bottom:8px; outline:none; font-family:inherit;
 }
-
-.grade-desc {
-  font-size: 13px;
-  color: var(--text-secondary);
-  line-height: 1.6;
-}
-
-.badge {
-  display: inline-block;
-  margin-top: 16px;
-  padding: 4px 12px;
-  border-radius: 20px;
-  font-size: 12px;
-  font-weight: 600;
-}
-
-.badge.ready {
-  background: var(--success-light);
-  color: var(--success);
-}
-
-.badge.soon {
-  background: var(--gray-light);
-  color: var(--gray-medium);
-}
-
-.footer {
-  margin-top: 48px;
-  color: var(--text-secondary);
-  font-size: 13px;
-}
+.pc-input:focus { border-color:var(--primary); }
+.pc-error { font-size:12px; color:#ef4444; min-height:18px; margin-bottom:14px; }
+.pc-btns  { display:flex; gap:10px; }
+.pc-cancel { flex:1; padding:12px; background:var(--gray-light); border:1px solid var(--border); border-radius:10px; font-size:14px; font-weight:700; cursor:pointer; font-family:inherit; }
+.pc-unlock { flex:2; padding:12px; background:#1e3a8a; color:#fff; border:none; border-radius:10px; font-size:14px; font-weight:700; cursor:pointer; font-family:inherit; }
+.pc-unlock:hover { background:#1e40af; }
 </style>
-
+</head>
 <body>
-  <div class="container">
+
+<!-- ══ PROFILE PICKER ══ -->
+<div id="profile-overlay">
+  <div class="picker-logo">🦘</div>
+  <div class="picker-title">Who's practicing?</div>
+  <div class="picker-sub">Choose your name to get started.</div>
+  <div class="profile-cards" id="profile-cards"></div>
+</div>
+
+<!-- ══ PASSCODE MODAL ══ -->
+<div id="passcode-overlay">
+  <div class="passcode-card">
+    <div class="pc-avatar" id="pc-avatar"></div>
+    <div class="pc-title" id="pc-title"></div>
+    <div class="pc-subtitle">Enter your passcode to continue</div>
+    <input type="password" id="pc-input" class="pc-input" maxlength="6"
+           placeholder="••••" onkeydown="if(event.key==='Enter') unlockProfile()">
+    <div class="pc-error" id="pc-error"></div>
+    <div class="pc-btns">
+      <button class="pc-cancel" onclick="closePasscode()">Cancel</button>
+      <button class="pc-unlock" onclick="unlockProfile()">Enter</button>
+    </div>
+  </div>
+</div>
+
+<!-- ══ HOME PAGE ══ -->
+<div id="home-page">
+  <div class="home-wrap">
     <div class="logo">🦘</div>
     <h1>Math Kangaroo Practice</h1>
     <p class="subtitle">
       Targeted practice sets organized by topic and difficulty.<br>
       Choose your grade level to get started.
     </p>
-
     <div class="grade-grid">
       <a class="grade-card" href="grade34.html">
         <div class="grade-icon">📐</div>
@@ -197,7 +163,6 @@ h1 {
         <div class="grade-desc">Écolier level — arithmetic, geometry, logic &amp; word problems</div>
         <span class="badge ready">Ready</span>
       </a>
-
       <a class="grade-card" href="grade5_kangaroo_practice.html">
         <div class="grade-icon">📊</div>
         <div class="grade-label">Grade Level</div>
@@ -206,7 +171,76 @@ h1 {
         <span class="badge ready">Ready</span>
       </a>
     </div>
-
     <div class="footer">Math Kangaroo practice sets • All problems hand-curated</div>
   </div>
+</div>
+
+<script src="profile.js"></script>
+<script>
+let pendingProfile = null;
+
+// Build profile cards
+const CARD_HOVER_COLOR = { Anishka: '#7c3aed', Nivaan: '#2563eb', Vivan: '#0891b2' };
+const cardsEl = document.getElementById('profile-cards');
+PROFILES.forEach(cfg => {
+  const btn = document.createElement('button');
+  btn.className = 'profile-card';
+  btn.innerHTML = `
+    <div class="profile-avatar" style="background:${cfg.color}">${cfg.name[0]}</div>
+    <span>${cfg.name}</span>
+  `;
+  btn.onmouseenter = () => { btn.style.borderColor = cfg.color; btn.style.background = cfg.color + '18'; };
+  btn.onmouseleave = () => { btn.style.borderColor = ''; btn.style.background = ''; };
+  btn.onclick = () => openPasscode(cfg);
+  cardsEl.appendChild(btn);
+});
+
+function openPasscode(cfg) {
+  pendingProfile = cfg;
+  document.getElementById('pc-avatar').style.background = cfg.color;
+  document.getElementById('pc-avatar').textContent = cfg.name[0];
+  document.getElementById('pc-title').textContent = 'Hi, ' + cfg.name + '!';
+  document.getElementById('pc-error').textContent = '';
+  document.getElementById('pc-input').value = '';
+  document.getElementById('passcode-overlay').classList.add('open');
+  setTimeout(() => document.getElementById('pc-input').focus(), 100);
+}
+
+function closePasscode() {
+  pendingProfile = null;
+  document.getElementById('passcode-overlay').classList.remove('open');
+  document.getElementById('pc-input').value = '';
+  document.getElementById('pc-error').textContent = '';
+}
+
+function unlockProfile() {
+  if (!pendingProfile) return;
+  const entered = document.getElementById('pc-input').value;
+  if (entered === pendingProfile.passcode) {
+    setActiveProfile(pendingProfile.name);
+    document.getElementById('passcode-overlay').classList.remove('open');
+    document.getElementById('profile-overlay').classList.add('hidden');
+    showHome();
+  } else {
+    const err = document.getElementById('pc-error');
+    err.textContent = 'Wrong passcode — try again.';
+    document.getElementById('pc-input').value = '';
+    document.getElementById('pc-input').focus();
+    err.style.animation = 'none';
+    requestAnimationFrame(() => err.style.animation = '');
+  }
+}
+
+function showHome() {
+  document.getElementById('home-page').classList.add('visible');
+  injectProfileChip();
+}
+
+// On load: if already logged in, skip picker
+if (getActiveProfile()) {
+  document.getElementById('profile-overlay').classList.add('hidden');
+  showHome();
+}
+</script>
 </body>
+</html>

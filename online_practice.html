@@ -294,43 +294,6 @@
     .empty-state { text-align: center; padding: 60px 20px; color: var(--text-secondary); }
     .empty-state h2 { font-size: 22px; margin-bottom: 8px; color: var(--text-primary); }
 
-    /* ── Profile picker overlay ── */
-    .profile-overlay {
-      position: fixed; inset: 0; background: var(--bg-body);
-      z-index: 9999; display: flex; align-items: center; justify-content: center;
-      flex-direction: column; padding: 24px;
-    }
-    .profile-overlay.hidden { display: none; }
-    .profile-overlay h2 { font-size: 22px; font-weight: 800; margin-bottom: 6px; text-align: center; }
-    .profile-overlay p  { font-size: 14px; color: var(--text-secondary); margin-bottom: 28px; text-align: center; }
-    .profile-cards { display: flex; flex-direction: column; gap: 12px; width: 100%; max-width: 320px; }
-    .profile-card {
-      padding: 18px 22px; border: 2px solid var(--border); border-radius: 14px;
-      background: #fff; cursor: pointer; font-size: 17px; font-weight: 700;
-      display: flex; align-items: center; gap: 14px;
-      transition: border-color .15s, background .15s; box-shadow: 0 1px 4px rgba(0,0,0,.06);
-    }
-    .profile-card:hover { border-color: var(--primary); background: var(--primary-light); }
-    .profile-avatar {
-      width: 42px; height: 42px; border-radius: 50%; background: var(--primary);
-      color: #fff; font-size: 18px; font-weight: 800;
-      display: flex; align-items: center; justify-content: center; flex-shrink: 0;
-    }
-
-    /* ── Profile chip (top-right corner during quiz) ── */
-    .profile-chip {
-      position: fixed; top: 14px; right: 16px; z-index: 400;
-      background: #fff; border: 1.5px solid var(--border); border-radius: 99px;
-      padding: 5px 12px 5px 6px; display: flex; align-items: center; gap: 7px;
-      font-size: 13px; font-weight: 700; cursor: pointer; box-shadow: 0 1px 4px rgba(0,0,0,.08);
-    }
-    .profile-chip:hover { border-color: var(--primary); }
-    .profile-chip-avatar {
-      width: 24px; height: 24px; border-radius: 50%; background: var(--primary);
-      color: #fff; font-size: 11px; font-weight: 800;
-      display: flex; align-items: center; justify-content: center; flex-shrink: 0;
-    }
-
     @media (min-width: 600px) {
       .modal-backdrop { align-items: center; }
       .modal-sheet { border-radius: 16px; max-width: 480px; margin: 0 16px; padding-bottom: 24px; }
@@ -344,19 +307,6 @@
   </style>
 </head>
 <body>
-
-<!-- ══ PROFILE PICKER ══ -->
-<div class="profile-overlay" id="profile-overlay">
-  <h2>Who's practicing?</h2>
-  <p>Choose your name to keep your progress separate.</p>
-  <div class="profile-cards" id="profile-cards"></div>
-</div>
-
-<!-- PROFILE CHIP -->
-<div class="profile-chip" id="profile-chip" onclick="switchProfile()" title="Switch profile" style="display:none">
-  <div class="profile-chip-avatar" id="profile-chip-avatar"></div>
-  <span id="profile-chip-name"></span>
-</div>
 
 <!-- BACK LINK -->
 <div class="back-link-bar">
@@ -504,74 +454,10 @@
   </div>
 </div>
 
+<script src="profile.js"></script>
+<script>requireProfile(); injectProfileChip();</script>
 <script src="questions_data.js"></script>
 <script>
-// ─────────────────────────────────────────────────────────────
-// PROFILES
-// ─────────────────────────────────────────────────────────────
-const PROFILES = ['Anishka', 'Nivaan', 'Vivan'];
-const AVATAR_COLORS = ['#2563eb', '#7c3aed', '#0891b2'];
-
-function getActiveProfile() {
-  return sessionStorage.getItem('mkp_profile') || null;
-}
-
-function setActiveProfile(name) {
-  sessionStorage.setItem('mkp_profile', name);
-}
-
-function profileKey(key) {
-  const p = getActiveProfile();
-  return p ? `${p}_${key}` : key;
-}
-
-function renderProfileChip(name) {
-  const chip   = document.getElementById('profile-chip');
-  const avatar = document.getElementById('profile-chip-avatar');
-  const label  = document.getElementById('profile-chip-name');
-  avatar.textContent = name[0];
-  avatar.style.background = AVATAR_COLORS[PROFILES.indexOf(name)] || '#2563eb';
-  label.textContent = name;
-  chip.style.display = 'flex';
-}
-
-function switchProfile() {
-  sessionStorage.removeItem('mkp_profile');
-  // Reset in-memory state so the next profile starts clean
-  answers = new Array(questions.length).fill(null);
-  checked = new Array(questions.length).fill(false);
-  currentIndex = 0; currentAttemptId = null;
-  mode = 'quiz'; modeQueue = []; modePos = 0;
-  document.getElementById('profile-chip').style.display = 'none';
-  document.getElementById('mode-banner').style.display = 'none';
-  document.getElementById('fab-pill').style.display = 'none';
-  switchScreen('quiz');
-  document.getElementById('profile-overlay').classList.remove('hidden');
-}
-
-(function initProfilePicker() {
-  const cards = document.getElementById('profile-cards');
-  PROFILES.forEach((name, idx) => {
-    const card = document.createElement('button');
-    card.className = 'profile-card';
-    card.innerHTML = `<div class="profile-avatar" style="background:${AVATAR_COLORS[idx]}">${name[0]}</div>${name}`;
-    card.onclick = () => {
-      setActiveProfile(name);
-      document.getElementById('profile-overlay').classList.add('hidden');
-      renderProfileChip(name);
-      if (setData && questions.length > 0) initState();
-    };
-    cards.appendChild(card);
-  });
-
-  const active = getActiveProfile();
-  if (active && PROFILES.includes(active)) {
-    document.getElementById('profile-overlay').classList.add('hidden');
-    renderProfileChip(active);
-  }
-  // else overlay stays visible — user must pick
-})();
-
 // ─────────────────────────────────────────────────────────────
 // CONSTANTS & CONFIG
 // ─────────────────────────────────────────────────────────────
@@ -658,10 +544,9 @@ if (!setData || questions.length === 0) {
   document.getElementById('stats-row').style.display = 'none';
   document.querySelector('.progress-bar-wrap').style.display = 'none';
   document.getElementById('fab-pill').style.display = 'none';
-} else if (getActiveProfile()) {
+} else {
   initState();
 }
-// else: profile overlay is visible; initState() will be called after profile selection
 
 function initState() {
   // 1. Resume in-progress quiz
