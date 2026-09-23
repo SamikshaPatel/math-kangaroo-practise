@@ -12,9 +12,10 @@
       --success-light: #d1fae5;
       --danger: #ef4444;
       --danger-light: #fee2e2;
+      --warning: #f59e0b;
+      --warning-light: #fef3c7;
       --gray-light: #f3f4f6;
       --gray-medium: #9ca3af;
-      --gray-dark: #374151;
       --text-primary: #1f2937;
       --text-secondary: #6b7280;
       --border: #e5e7eb;
@@ -22,548 +23,314 @@
     }
 
     * { margin: 0; padding: 0; box-sizing: border-box; }
-
     body {
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
       background: var(--bg-body);
       color: var(--text-primary);
       min-height: 100vh;
+      padding-bottom: 100px;
     }
 
     /* ── Back link ── */
-    .back-link-bar {
-      padding: 12px 20px 0;
-      max-width: 680px;
-      margin: 0 auto;
-    }
-    .back-link-bar a {
-      font-size: 13px;
-      color: var(--primary);
-      text-decoration: none;
-      font-weight: 500;
-    }
+    .back-link-bar { padding: 12px 20px 0; max-width: 680px; margin: 0 auto; }
+    .back-link-bar a { font-size: 13px; color: var(--primary); text-decoration: none; font-weight: 500; }
     .back-link-bar a:hover { text-decoration: underline; }
 
-    /* ── Page title block ── */
-    .page-title-block {
-      max-width: 680px;
-      margin: 10px auto 0;
-      padding: 0 20px;
-    }
-    .page-title-block h1 {
-      font-size: 26px;
-      font-weight: 800;
-      color: var(--text-primary);
-      margin-bottom: 4px;
-    }
-    .page-title-block .subtitle {
-      font-size: 13px;
-      color: var(--text-secondary);
-    }
+    /* ── Page title ── */
+    .page-title-block { max-width: 680px; margin: 10px auto 0; padding: 0 20px; }
+    .page-title-block h1 { font-size: 26px; font-weight: 800; color: var(--text-primary); margin-bottom: 4px; }
+    .page-title-block .subtitle { font-size: 13px; color: var(--text-secondary); }
 
     /* ── Stats row ── */
     .stats-row {
-      max-width: 680px;
-      margin: 14px auto 0;
-      padding: 0 20px;
-      display: flex;
-      gap: 20px;
-      font-size: 13px;
-      color: var(--text-secondary);
+      max-width: 680px; margin: 14px auto 0; padding: 0 20px;
+      display: flex; gap: 20px; font-size: 13px; color: var(--text-secondary);
     }
     .stats-row strong { color: var(--text-primary); }
 
     /* ── Progress bar ── */
-    .progress-bar-wrap {
-      max-width: 680px;
-      margin: 8px auto 0;
-      padding: 0 20px;
-    }
-    .progress-bar-bg {
-      height: 5px;
-      background: var(--gray-light);
-      border-radius: 99px;
-      overflow: hidden;
-    }
-    .progress-bar-fill {
-      height: 100%;
-      background: var(--primary);
-      border-radius: 99px;
-      transition: width 0.4s ease;
+    .progress-bar-wrap { max-width: 680px; margin: 8px auto 0; padding: 0 20px; }
+    .progress-bar-bg { height: 5px; background: var(--gray-light); border-radius: 99px; overflow: hidden; }
+    .progress-bar-fill { height: 100%; background: var(--primary); border-radius: 99px; transition: width 0.4s ease; }
+
+    /* ── Retry banner ── */
+    .retry-banner {
+      background: var(--warning-light);
+      border: 1px solid #fbbf24;
+      border-radius: 10px;
+      padding: 10px 16px;
+      margin-bottom: 14px;
+      font-size: 13px;
+      font-weight: 600;
+      color: #92400e;
+      display: flex;
+      align-items: center;
+      gap: 8px;
     }
 
-    /* ── Main content ── */
-    .main {
-      max-width: 680px;
-      margin: 20px auto 40px;
-      padding: 0 20px;
-    }
+    /* ── Main ── */
+    .main { max-width: 680px; margin: 20px auto 40px; padding: 0 20px; }
 
     /* ── Question card ── */
     .question-card {
-      background: #fff;
-      border: 1px solid var(--border);
-      border-radius: 12px;
-      padding: 28px;
-      margin-bottom: 14px;
-      box-shadow: 0 1px 4px rgba(0,0,0,.06);
+      background: #fff; border: 1px solid var(--border); border-radius: 12px;
+      padding: 28px; margin-bottom: 14px; box-shadow: 0 1px 4px rgba(0,0,0,.06);
     }
-
-    .question-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-bottom: 16px;
-    }
-    .question-label {
-      font-size: 12px;
-      font-weight: 700;
-      color: var(--text-secondary);
-      text-transform: uppercase;
-      letter-spacing: .6px;
-    }
-    .points-badge {
-      background: #d1fae5;
-      color: #065f46;
-      font-size: 12px;
-      font-weight: 700;
-      padding: 3px 10px;
-      border-radius: 99px;
-    }
-
-    .question-text {
-      font-size: 17px;
-      line-height: 1.65;
-      color: var(--text-primary);
-      font-weight: 500;
-    }
+    .question-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px; }
+    .question-label { font-size: 12px; font-weight: 700; color: var(--text-secondary); text-transform: uppercase; letter-spacing: .6px; }
+    .points-badge { background: #d1fae5; color: #065f46; font-size: 12px; font-weight: 700; padding: 3px 10px; border-radius: 99px; }
+    .question-text { font-size: 17px; line-height: 1.65; color: var(--text-primary); font-weight: 500; }
 
     /* ── Choices ── */
-    .choices {
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-      margin-top: 22px;
-    }
-
+    .choices { display: flex; flex-direction: column; gap: 10px; margin-top: 22px; }
     .choice-btn {
-      display: flex;
-      align-items: center;
-      gap: 14px;
-      padding: 14px 18px;
-      border: 2px solid var(--border);
-      border-radius: 10px;
-      background: #fff;
-      cursor: pointer;
-      text-align: left;
-      font-size: 15px;
-      color: var(--text-primary);
-      transition: border-color .15s, background .15s;
-      width: 100%;
+      display: flex; align-items: center; gap: 14px; padding: 14px 18px;
+      border: 2px solid var(--border); border-radius: 10px; background: #fff;
+      cursor: pointer; text-align: left; font-size: 15px; color: var(--text-primary);
+      transition: border-color .15s, background .15s; width: 100%;
     }
     .choice-btn:hover:not(:disabled):not(.selected):not(.correct):not(.incorrect) {
-      border-color: var(--primary);
-      background: var(--primary-light);
+      border-color: var(--primary); background: var(--primary-light);
     }
     .choice-btn .circle {
-      width: 30px;
-      height: 30px;
-      border-radius: 50%;
-      border: 2px solid var(--gray-medium);
-      flex-shrink: 0;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 12px;
-      font-weight: 700;
-      transition: border-color .15s, background .15s, color .15s;
+      width: 30px; height: 30px; border-radius: 50%; border: 2px solid var(--gray-medium);
+      flex-shrink: 0; display: flex; align-items: center; justify-content: center;
+      font-size: 12px; font-weight: 700; transition: border-color .15s, background .15s, color .15s;
     }
+    .choice-btn.selected { border-color: var(--primary); background: var(--primary-light); }
+    .choice-btn.selected .circle { border-color: var(--primary); background: var(--primary); color: #fff; }
+    .choice-btn.correct { border-color: var(--success); background: var(--success-light); }
+    .choice-btn.correct .circle { border-color: var(--success); background: var(--success); color: #fff; }
+    .choice-btn.incorrect { border-color: var(--danger); background: var(--danger-light); }
+    .choice-btn.incorrect .circle { border-color: var(--danger); background: var(--danger); color: #fff; }
 
-    /* Selected (pending check) */
-    .choice-btn.selected {
-      border-color: var(--primary);
-      background: var(--primary-light);
-    }
-    .choice-btn.selected .circle {
-      border-color: var(--primary);
-      background: var(--primary);
-      color: #fff;
-    }
-
-    /* Correct */
-    .choice-btn.correct {
-      border-color: var(--success);
-      background: var(--success-light);
-    }
-    .choice-btn.correct .circle {
-      border-color: var(--success);
-      background: var(--success);
-      color: #fff;
-    }
-
-    /* Incorrect */
-    .choice-btn.incorrect {
-      border-color: var(--danger);
-      background: var(--danger-light);
-    }
-    .choice-btn.incorrect .circle {
-      border-color: var(--danger);
-      background: var(--danger);
-      color: #fff;
-    }
-
-    /* ── Feedback banner ── */
-    .feedback {
-      display: none;
-      border-radius: 8px;
-      padding: 14px 18px;
-      margin-top: 14px;
-    }
+    /* ── Feedback ── */
+    .feedback { display: none; border-radius: 8px; padding: 14px 18px; margin-top: 14px; }
     .feedback.show { display: block; }
-    .feedback-title {
-      font-size: 14px;
-      font-weight: 700;
-      margin-bottom: 4px;
-    }
-    .feedback-body {
-      font-size: 13px;
-      line-height: 1.5;
-    }
-    .feedback.correct-fb  { background: var(--success-light); color: #065f46; }
+    .feedback-title { font-size: 14px; font-weight: 700; margin-bottom: 4px; }
+    .feedback-body { font-size: 13px; line-height: 1.5; }
+    .feedback.correct-fb { background: var(--success-light); color: #065f46; }
     .feedback.incorrect-fb { background: var(--danger-light); color: #991b1b; }
 
     /* ── Nav rows ── */
-    .nav-row-1 {
-      display: flex;
-      gap: 10px;
-      margin-bottom: 10px;
-    }
+    .nav-row-1 { display: flex; gap: 10px; margin-bottom: 10px; }
     .nav-row-2 { display: flex; }
-
     .btn-nav {
-      padding: 12px 20px;
-      border: none;
-      border-radius: 8px;
-      font-size: 14px;
-      font-weight: 700;
-      cursor: pointer;
-      transition: all .2s;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 6px;
+      padding: 12px 20px; border: none; border-radius: 8px; font-size: 14px;
+      font-weight: 700; cursor: pointer; display: inline-flex; align-items: center;
+      justify-content: center; gap: 6px;
     }
-
-    .btn-back {
-      background: var(--gray-light);
-      color: var(--text-primary);
-      border: 1px solid var(--border);
-      flex: 1;
-    }
+    .btn-back { background: var(--gray-light); color: var(--text-primary); border: 1px solid var(--border); flex: 1; }
     .btn-back:hover { background: var(--border); }
-
-    .btn-check {
-      background: var(--primary);
-      color: #fff;
-      flex: 2;
-    }
+    .btn-check { background: var(--primary); color: #fff; flex: 2; }
     .btn-check:hover:not(:disabled) { background: #1d4ed8; }
-    .btn-check:disabled {
-      background: var(--gray-light);
-      color: var(--gray-medium);
-      cursor: not-allowed;
-    }
-    .btn-check.checked-state {
-      background: #93c5fd;
-      color: #1e3a8a;
-      cursor: default;
-    }
-
-    .btn-next {
-      background: var(--gray-light);
-      color: var(--gray-medium);
-      width: 100%;
-      border: 1px solid var(--border);
-    }
-    .btn-next.active {
-      background: var(--primary);
-      color: #fff;
-      border-color: var(--primary);
-    }
+    .btn-check:disabled { background: var(--gray-light); color: var(--gray-medium); cursor: not-allowed; }
+    .btn-check.checked-state { background: #93c5fd; color: #1e3a8a; cursor: default; }
+    .btn-next { background: var(--gray-light); color: var(--gray-medium); width: 100%; border: 1px solid var(--border); }
+    .btn-next.active { background: var(--primary); color: #fff; border-color: var(--primary); }
     .btn-next.active:hover { background: #1d4ed8; }
 
     /* ── FAB pill ── */
     .fab-pill {
-      position: fixed;
-      bottom: 28px;
-      right: 24px;
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      background: #1e3a8a;
-      color: #fff;
-      border: none;
-      border-radius: 99px;
-      padding: 12px 20px;
-      font-size: 14px;
-      font-weight: 700;
-      cursor: pointer;
-      box-shadow: 0 4px 18px rgba(30,58,138,.45);
-      z-index: 200;
+      position: fixed; bottom: 28px; right: 24px;
+      display: flex; align-items: center; gap: 10px;
+      background: #1e3a8a; color: #fff; border: none; border-radius: 99px;
+      padding: 12px 20px; font-size: 14px; font-weight: 700; cursor: pointer;
+      box-shadow: 0 4px 18px rgba(30,58,138,.45); z-index: 200;
       transition: transform .15s, box-shadow .15s;
     }
-    .fab-pill:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 6px 22px rgba(30,58,138,.55);
-    }
-    .fab-dots {
-      display: flex;
-      gap: 4px;
-      align-items: center;
-    }
-    .fab-dot {
-      width: 8px;
-      height: 8px;
-      border-radius: 50%;
-      flex-shrink: 0;
-    }
+    .fab-pill:hover { transform: translateY(-2px); box-shadow: 0 6px 22px rgba(30,58,138,.55); }
+    .fab-dots { display: flex; gap: 4px; align-items: center; }
+    .fab-dot { width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0; }
     .fab-dot.d-correct { background: #34d399; }
     .fab-dot.d-wrong   { background: #f87171; }
     .fab-dot.d-pending { background: rgba(255,255,255,.35); }
 
     /* ── Modal backdrop ── */
     .modal-backdrop {
-      position: fixed;
-      inset: 0;
-      background: rgba(15,23,42,.45);
-      z-index: 300;
-      display: none;
-      align-items: flex-end;
-      justify-content: center;
+      position: fixed; inset: 0; background: rgba(15,23,42,.45);
+      z-index: 300; display: none; align-items: flex-end; justify-content: center;
     }
     .modal-backdrop.open { display: flex; }
-
-    /* ── Modal sheet ── */
     .modal-sheet {
-      background: #fff;
-      border-radius: 20px 20px 0 0;
-      width: 100%;
-      max-width: 680px;
-      padding: 20px 22px 32px;
-      box-shadow: 0 -8px 40px rgba(0,0,0,.18);
-      transform: translateY(100%);
-      transition: transform .25s cubic-bezier(.4,0,.2,1);
+      background: #fff; border-radius: 20px 20px 0 0; width: 100%; max-width: 680px;
+      padding: 20px 22px 32px; box-shadow: 0 -8px 40px rgba(0,0,0,.18);
+      transform: translateY(100%); transition: transform .25s cubic-bezier(.4,0,.2,1);
     }
     .modal-backdrop.open .modal-sheet { transform: translateY(0); }
-
-    .sheet-handle {
-      width: 40px;
-      height: 4px;
-      background: #d1d5db;
-      border-radius: 99px;
-      margin: 0 auto 18px;
-    }
-    .sheet-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-bottom: 14px;
-    }
+    .sheet-handle { width: 40px; height: 4px; background: #d1d5db; border-radius: 99px; margin: 0 auto 18px; }
+    .sheet-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 14px; }
     .sheet-title { font-size: 15px; font-weight: 800; color: var(--text-primary); }
     .sheet-close {
-      background: var(--gray-light);
-      border: none;
-      border-radius: 50%;
-      width: 30px;
-      height: 30px;
-      font-size: 16px;
-      cursor: pointer;
-      color: var(--text-secondary);
-      display: flex;
-      align-items: center;
-      justify-content: center;
+      background: var(--gray-light); border: none; border-radius: 50%;
+      width: 30px; height: 30px; font-size: 16px; cursor: pointer; color: var(--text-secondary);
+      display: flex; align-items: center; justify-content: center;
     }
     .sheet-close:hover { background: var(--border); }
-
-    .sheet-grid {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 7px;
-      margin-bottom: 16px;
-    }
+    .sheet-grid { display: flex; flex-wrap: wrap; gap: 7px; margin-bottom: 16px; }
     .sheet-cell {
-      width: 40px;
-      height: 40px;
-      border-radius: 8px;
-      border: 2px solid var(--border);
-      background: #fff;
-      color: var(--text-secondary);
-      font-size: 12px;
-      font-weight: 600;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      cursor: pointer;
+      width: 40px; height: 40px; border-radius: 8px; border: 2px solid var(--border);
+      background: #fff; color: var(--text-secondary); font-size: 12px; font-weight: 600;
+      display: flex; align-items: center; justify-content: center; cursor: pointer;
       transition: border-color .1s, background .1s;
     }
-    .sheet-cell:hover        { border-color: var(--primary); color: var(--primary); }
-    .sheet-cell.sc-current   { border-color: var(--primary); background: var(--primary-light); color: var(--primary); font-weight: 800; }
-    .sheet-cell.sc-correct   { border-color: var(--success); background: var(--success-light); color: #065f46; }
-    .sheet-cell.sc-wrong     { border-color: var(--danger);  background: var(--danger-light);  color: #991b1b; }
-
-    .sheet-legend {
-      display: flex;
-      gap: 14px;
-      flex-wrap: wrap;
-      margin-bottom: 18px;
-    }
-    .legend-item {
-      display: flex;
-      align-items: center;
-      gap: 6px;
-      font-size: 12px;
-      color: var(--text-secondary);
-    }
-    .legend-swatch {
-      width: 14px;
-      height: 14px;
-      border-radius: 3px;
-      border: 2px solid var(--border);
-      flex-shrink: 0;
-    }
+    .sheet-cell:hover { border-color: var(--primary); color: var(--primary); }
+    .sheet-cell.sc-current { border-color: var(--primary); background: var(--primary-light); color: var(--primary); font-weight: 800; }
+    .sheet-cell.sc-correct { border-color: var(--success); background: var(--success-light); color: #065f46; }
+    .sheet-cell.sc-wrong   { border-color: var(--danger);  background: var(--danger-light);  color: #991b1b; }
+    .sheet-legend { display: flex; gap: 14px; flex-wrap: wrap; margin-bottom: 18px; }
+    .legend-item { display: flex; align-items: center; gap: 6px; font-size: 12px; color: var(--text-secondary); }
+    .legend-swatch { width: 14px; height: 14px; border-radius: 3px; border: 2px solid var(--border); flex-shrink: 0; }
     .legend-swatch.sw-current { border-color: var(--primary); background: var(--primary-light); }
     .legend-swatch.sw-correct { border-color: var(--success); background: var(--success-light); }
     .legend-swatch.sw-wrong   { border-color: var(--danger);  background: var(--danger-light); }
-
-    .sheet-actions {
-      display: flex;
-      gap: 10px;
-    }
-    .btn-startover {
-      flex: 1;
-      padding: 11px 14px;
-      background: var(--gray-light);
-      color: var(--text-primary);
-      border: 1px solid var(--border);
-      border-radius: 8px;
-      font-size: 13px;
-      font-weight: 700;
-      cursor: pointer;
-    }
+    .sheet-actions { display: flex; gap: 10px; }
+    .btn-startover { flex: 1; padding: 11px 14px; background: var(--gray-light); color: var(--text-primary); border: 1px solid var(--border); border-radius: 8px; font-size: 13px; font-weight: 700; cursor: pointer; }
     .btn-startover:hover { background: var(--border); }
-    .btn-finish {
-      flex: 2;
-      padding: 11px 14px;
-      background: #1e3a8a;
-      color: #fff;
-      border: none;
-      border-radius: 8px;
-      font-size: 13px;
-      font-weight: 700;
-      cursor: pointer;
-    }
+    .btn-finish { flex: 2; padding: 11px 14px; background: #1e3a8a; color: #fff; border: none; border-radius: 8px; font-size: 13px; font-weight: 700; cursor: pointer; }
     .btn-finish:hover { background: #1e40af; }
 
-    @media (min-width: 600px) {
-      .modal-backdrop { align-items: center; }
-      .modal-sheet {
-        border-radius: 16px;
-        max-width: 480px;
-        margin: 0 16px;
-        padding-bottom: 24px;
-      }
+    /* ── Passcode modal ── */
+    .passcode-backdrop {
+      position: fixed; inset: 0; background: rgba(15,23,42,.5);
+      z-index: 500; display: none; align-items: center; justify-content: center; padding: 20px;
     }
+    .passcode-backdrop.open { display: flex; }
+    .passcode-card {
+      background: #fff; border-radius: 16px; padding: 28px 24px;
+      width: 100%; max-width: 340px; box-shadow: 0 8px 40px rgba(0,0,0,.2);
+      text-align: center;
+    }
+    .passcode-icon { font-size: 32px; margin-bottom: 12px; }
+    .passcode-title { font-size: 17px; font-weight: 800; margin-bottom: 6px; }
+    .passcode-subtitle { font-size: 13px; color: var(--text-secondary); margin-bottom: 20px; }
+    .passcode-input {
+      width: 100%; padding: 12px 16px; border: 2px solid var(--border); border-radius: 10px;
+      font-size: 20px; font-weight: 700; text-align: center; letter-spacing: 8px;
+      margin-bottom: 8px; outline: none;
+    }
+    .passcode-input:focus { border-color: var(--primary); }
+    .passcode-error { font-size: 12px; color: var(--danger); min-height: 18px; margin-bottom: 16px; }
+    .passcode-btns { display: flex; gap: 10px; }
+    .btn-passcode-cancel { flex: 1; padding: 11px; background: var(--gray-light); border: 1px solid var(--border); border-radius: 8px; font-size: 14px; font-weight: 700; cursor: pointer; }
+    .btn-passcode-unlock { flex: 2; padding: 11px; background: #1e3a8a; color: #fff; border: none; border-radius: 8px; font-size: 14px; font-weight: 700; cursor: pointer; }
+    .btn-passcode-unlock:hover { background: #1e40af; }
 
     /* ── Results screen ── */
     #results-screen { display: none; }
-
     .results-card {
-      background: #fff;
-      border: 1px solid var(--border);
-      border-radius: 12px;
-      padding: 40px 32px;
-      text-align: center;
-      box-shadow: 0 1px 4px rgba(0,0,0,.06);
+      background: #fff; border: 1px solid var(--border); border-radius: 12px;
+      padding: 36px 28px; text-align: center; box-shadow: 0 1px 4px rgba(0,0,0,.06);
     }
-    .results-emoji { font-size: 56px; margin-bottom: 16px; }
-    .results-title { font-size: 26px; font-weight: 800; margin-bottom: 8px; }
-    .results-score { font-size: 48px; font-weight: 900; color: var(--primary); margin: 16px 0; }
-    .results-label { font-size: 15px; color: var(--text-secondary); margin-bottom: 32px; }
-    .results-points { font-size: 18px; font-weight: 700; color: #065f46; margin-bottom: 8px; }
-
-    .results-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 16px;
-      margin: 24px 0 32px;
-    }
-    .results-stat { background: var(--gray-light); border-radius: 8px; padding: 16px; }
-    .results-stat-num { font-size: 28px; font-weight: 800; color: var(--text-primary); }
+    .attempt-meta { font-size: 12px; color: var(--text-secondary); margin-bottom: 12px; letter-spacing: .3px; }
+    .results-emoji { font-size: 52px; margin-bottom: 12px; }
+    .results-title { font-size: 24px; font-weight: 800; margin-bottom: 6px; }
+    .results-score { font-size: 48px; font-weight: 900; color: var(--primary); margin: 12px 0; }
+    .results-label { font-size: 14px; color: var(--text-secondary); margin-bottom: 8px; }
+    .results-points { font-size: 16px; font-weight: 700; color: #065f46; margin-bottom: 24px; }
+    .results-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-bottom: 24px; }
+    .results-stat { background: var(--gray-light); border-radius: 8px; padding: 14px; }
+    .results-stat-num { font-size: 26px; font-weight: 800; }
     .results-stat-num.green { color: var(--success); }
     .results-stat-num.red   { color: var(--danger); }
-    .results-stat-label { font-size: 12px; color: var(--text-secondary); margin-top: 4px; }
+    .results-stat-label { font-size: 11px; color: var(--text-secondary); margin-top: 3px; }
+    .results-btns { display: flex; flex-direction: column; gap: 10px; }
+    .btn-retry-failed {
+      width: 100%; padding: 13px; background: #fef3c7; color: #92400e;
+      border: 2px solid #fbbf24; border-radius: 8px; font-size: 14px; font-weight: 700; cursor: pointer;
+    }
+    .btn-retry-failed:hover { background: #fde68a; }
+    .results-btns-row { display: flex; gap: 10px; }
+    .btn-review-ans {
+      flex: 1; padding: 12px; background: var(--gray-light); color: var(--text-primary);
+      border: 1px solid var(--border); border-radius: 8px; font-size: 13px; font-weight: 700; cursor: pointer;
+    }
+    .btn-review-ans:hover { background: var(--border); }
+    .btn-new-attempt {
+      flex: 1; padding: 12px; background: var(--primary); color: #fff;
+      border: none; border-radius: 8px; font-size: 13px; font-weight: 700; cursor: pointer;
+    }
+    .btn-new-attempt:hover { background: #1d4ed8; }
 
-    .results-btns {
-      display: flex;
-      gap: 12px;
-      justify-content: center;
-      flex-wrap: wrap;
+    /* ── Attempt history ── */
+    .history-section { margin-top: 20px; text-align: left; border-top: 1px solid var(--border); padding-top: 16px; }
+    .history-title { font-size: 12px; font-weight: 700; color: var(--text-secondary); text-transform: uppercase; letter-spacing: .5px; margin-bottom: 10px; }
+    .history-item {
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 10px 0; border-bottom: 1px solid var(--gray-light); font-size: 13px;
     }
-    .btn-restart {
-      background: var(--primary);
-      color: #fff;
-      padding: 12px 28px;
-      border: none;
-      border-radius: 8px;
-      font-size: 14px;
-      font-weight: 700;
-      cursor: pointer;
+    .history-item:last-child { border-bottom: none; }
+    .history-item-label { color: var(--text-secondary); }
+    .history-item-label strong { color: var(--text-primary); }
+    .history-item-score { font-weight: 700; color: var(--primary); }
+    .history-item-score.retry-score { color: var(--warning); }
+
+    /* ── Retry results screen ── */
+    #retry-results-screen { display: none; }
+    .retry-results-card {
+      background: #fff; border: 1px solid var(--border); border-radius: 12px;
+      padding: 36px 28px; text-align: center; box-shadow: 0 1px 4px rgba(0,0,0,.06);
     }
-    .btn-restart:hover { background: #1d4ed8; }
-    .btn-review {
-      background: var(--gray-light);
-      color: var(--text-primary);
-      border: 1px solid var(--border);
-      padding: 12px 28px;
-      border-radius: 8px;
-      font-size: 14px;
-      font-weight: 700;
-      cursor: pointer;
+    .retry-results-icon { font-size: 48px; margin-bottom: 12px; }
+    .retry-results-title { font-size: 22px; font-weight: 800; margin-bottom: 6px; }
+    .retry-fixed-display {
+      font-size: 52px; font-weight: 900; color: var(--warning); margin: 12px 0;
     }
-    .btn-review:hover { background: var(--border); }
+    .retry-fixed-label { font-size: 14px; color: var(--text-secondary); margin-bottom: 8px; }
+    .retry-still-wrong {
+      display: inline-block; background: var(--danger-light); color: #991b1b;
+      font-size: 13px; font-weight: 600; padding: 6px 14px; border-radius: 99px; margin-bottom: 24px;
+    }
+    .retry-all-done {
+      display: inline-block; background: var(--success-light); color: #065f46;
+      font-size: 13px; font-weight: 600; padding: 6px 14px; border-radius: 99px; margin-bottom: 24px;
+    }
+    .retry-btns { display: flex; flex-direction: column; gap: 10px; }
+    .btn-retry-again {
+      width: 100%; padding: 13px; background: var(--warning-light); color: #92400e;
+      border: 2px solid #fbbf24; border-radius: 8px; font-size: 14px; font-weight: 700; cursor: pointer;
+    }
+    .btn-retry-again:hover { background: #fde68a; }
+    .retry-btns-row { display: flex; gap: 10px; }
+    .btn-back-results {
+      flex: 1; padding: 12px; background: var(--gray-light); color: var(--text-primary);
+      border: 1px solid var(--border); border-radius: 8px; font-size: 13px; font-weight: 700; cursor: pointer;
+    }
+    .btn-back-results:hover { background: var(--border); }
+    .btn-review-retry {
+      flex: 1; padding: 12px; background: var(--primary); color: #fff;
+      border: none; border-radius: 8px; font-size: 13px; font-weight: 700; cursor: pointer;
+    }
+    .btn-review-retry:hover { background: #1d4ed8; }
 
     /* ── Review screen ── */
     #review-screen { display: none; }
-
+    .review-lock-banner {
+      background: #f8fafc; border: 1px solid var(--border); border-radius: 10px;
+      padding: 14px 18px; margin-bottom: 16px; display: flex;
+      align-items: center; justify-content: space-between; gap: 12px; flex-wrap: wrap;
+    }
+    .review-lock-text { font-size: 13px; color: var(--text-secondary); display: flex; align-items: center; gap: 6px; }
+    .btn-unlock { padding: 8px 16px; background: #1e3a8a; color: #fff; border: none; border-radius: 8px; font-size: 13px; font-weight: 700; cursor: pointer; }
+    .btn-unlock:hover { background: #1e40af; }
+    .unlock-badge { background: var(--success-light); color: #065f46; border: 1px solid var(--success); padding: 6px 14px; border-radius: 8px; font-size: 13px; font-weight: 700; }
     .review-item {
-      background: #fff;
-      border: 1px solid var(--border);
-      border-radius: 10px;
-      padding: 20px 24px;
-      margin-bottom: 14px;
+      background: #fff; border: 1px solid var(--border); border-radius: 10px;
+      padding: 18px 22px; margin-bottom: 12px;
     }
     .review-item.review-correct { border-left: 4px solid var(--success); }
     .review-item.review-wrong   { border-left: 4px solid var(--danger); }
     .review-item.review-skipped { border-left: 4px solid var(--gray-medium); }
-    .review-qnum { font-size: 12px; font-weight: 700; text-transform: uppercase; color: var(--text-secondary); margin-bottom: 8px; }
-    .review-qtext { font-size: 15px; font-weight: 500; margin-bottom: 10px; }
+    .review-qnum { font-size: 11px; font-weight: 700; text-transform: uppercase; color: var(--text-secondary); margin-bottom: 6px; }
+    .review-qtext { font-size: 14px; font-weight: 500; margin-bottom: 10px; }
     .review-answer { font-size: 13px; color: var(--text-secondary); }
     .review-answer .correct-ans { color: var(--success); font-weight: 700; }
-    .review-answer .wrong-ans   { color: var(--danger);  font-weight: 700; }
-
+    .review-answer .wrong-ans   { color: var(--danger); font-weight: 700; }
+    .review-locked { font-size: 12px; color: var(--gray-medium); margin-top: 6px; display: flex; align-items: center; gap: 4px; }
     .back-to-results {
-      background: var(--primary);
-      color: #fff;
-      padding: 10px 22px;
-      border: none;
-      border-radius: 8px;
-      font-size: 14px;
-      font-weight: 700;
-      cursor: pointer;
-      margin-bottom: 20px;
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
+      background: var(--primary); color: #fff; padding: 10px 20px; border: none;
+      border-radius: 8px; font-size: 14px; font-weight: 700; cursor: pointer;
+      margin-bottom: 16px; display: inline-flex; align-items: center; gap: 6px;
     }
     .back-to-results:hover { background: #1d4ed8; }
 
@@ -571,13 +338,15 @@
     .empty-state { text-align: center; padding: 60px 20px; color: var(--text-secondary); }
     .empty-state h2 { font-size: 22px; margin-bottom: 8px; color: var(--text-primary); }
 
+    @media (min-width: 600px) {
+      .modal-backdrop { align-items: center; }
+      .modal-sheet { border-radius: 16px; max-width: 480px; margin: 0 16px; padding-bottom: 24px; }
+    }
     @media (max-width: 600px) {
       .question-card { padding: 18px; }
       .question-text { font-size: 15px; }
       .choice-btn { font-size: 14px; padding: 12px 14px; }
       .sheet-cell { width: 34px; height: 34px; font-size: 11px; }
-      .results-grid { gap: 8px; }
-      .page-title-block h1 { font-size: 22px; }
     }
   </style>
 </head>
@@ -596,7 +365,7 @@
 
 <!-- STATS ROW -->
 <div class="stats-row" id="stats-row">
-  <span>Answered <strong id="stat-answered">0</strong> / <strong id="stat-total">0</strong></span>
+  <span id="stat-answered-label">Answered <strong id="stat-answered">0</strong> / <strong id="stat-total">0</strong></span>
   <span>Correct <strong id="stat-correct-live">0</strong></span>
   <span>Points <strong id="stat-points-live">0</strong></span>
 </div>
@@ -608,10 +377,12 @@
   </div>
 </div>
 
-<!-- QUIZ SCREEN -->
+<!-- ══ QUIZ SCREEN ══ -->
 <div class="main" id="quiz-screen">
+  <div class="retry-banner" id="retry-banner" style="display:none">
+    🔁 <span id="retry-banner-text">Retry Mode</span>
+  </div>
 
-  <!-- Question card -->
   <div class="question-card">
     <div class="question-header">
       <span class="question-label" id="q-label">QUESTION 1 OF 50</span>
@@ -621,61 +392,23 @@
     <div class="choices" id="q-choices"></div>
     <div class="feedback" id="q-feedback">
       <div class="feedback-title" id="q-feedback-title"></div>
-      <div class="feedback-body" id="q-feedback-body"></div>
+      <div class="feedback-body"  id="q-feedback-body"></div>
     </div>
   </div>
 
-  <!-- Nav row 1: Previous + Check -->
   <div class="nav-row-1">
-    <button class="btn-nav btn-back" id="btn-back" onclick="goBack()">← Previous</button>
+    <button class="btn-nav btn-back"  id="btn-back"  onclick="goBack()">← Previous</button>
     <button class="btn-nav btn-check" id="btn-check" onclick="checkAnswer()" disabled>Check</button>
   </div>
-  <!-- Nav row 2: Next -->
   <div class="nav-row-2">
     <button class="btn-nav btn-next" id="btn-next" onclick="goNext()">Next →</button>
   </div>
-
 </div>
 
-<!-- FAB PILL -->
-<button class="fab-pill" id="fab-pill" onclick="openSheet()">
-  <div class="fab-dots" id="fab-dots"></div>
-  <span id="fab-label">Q 1 / 50 ▲</span>
-</button>
-
-<!-- MODAL SHEET -->
-<div class="modal-backdrop" id="modal-backdrop" onclick="handleBackdropClick(event)">
-  <div class="modal-sheet">
-    <div class="sheet-handle"></div>
-    <div class="sheet-header">
-      <span class="sheet-title">Jump to question</span>
-      <button class="sheet-close" onclick="closeSheet()">✕</button>
-    </div>
-    <div class="sheet-grid" id="sheet-grid"></div>
-    <div class="sheet-legend">
-      <span class="legend-item">
-        <span class="legend-swatch sc-current"></span> Current
-      </span>
-      <span class="legend-item">
-        <span class="legend-swatch sw-correct"></span> Correct
-      </span>
-      <span class="legend-item">
-        <span class="legend-swatch sw-wrong"></span> Wrong
-      </span>
-      <span class="legend-item">
-        <span class="legend-swatch"></span> Not answered
-      </span>
-    </div>
-    <div class="sheet-actions">
-      <button class="btn-startover" onclick="restartQuiz()">↺ Start over</button>
-      <button class="btn-finish" onclick="finishAndClose()">Finish &amp; see results</button>
-    </div>
-  </div>
-</div>
-
-<!-- RESULTS SCREEN -->
+<!-- ══ RESULTS SCREEN ══ -->
 <div class="main" id="results-screen">
   <div class="results-card">
+    <div class="attempt-meta" id="attempt-meta"></div>
     <div class="results-emoji" id="results-emoji">🎉</div>
     <div class="results-title" id="results-title">Practice Complete!</div>
     <div class="results-score" id="results-score">0/50</div>
@@ -696,74 +429,185 @@
       </div>
     </div>
     <div class="results-btns">
-      <button class="btn-review" onclick="showReview()">📋 Review Answers</button>
-      <button class="btn-restart" onclick="restartQuiz()">↺ Try Again</button>
+      <button class="btn-retry-failed" id="btn-retry-failed" onclick="startRetry()" style="display:none">
+        🔁 Retry failed questions
+      </button>
+      <div class="results-btns-row">
+        <button class="btn-review-ans" onclick="showReview('full')">📋 Review Answers</button>
+        <button class="btn-new-attempt" onclick="newAttempt()">↺ New Attempt</button>
+      </div>
+    </div>
+    <div class="history-section" id="history-section" style="display:none">
+      <div class="history-title">Previous Attempts</div>
+      <div id="history-list"></div>
     </div>
   </div>
 </div>
 
-<!-- REVIEW SCREEN -->
+<!-- ══ RETRY RESULTS SCREEN ══ -->
+<div class="main" id="retry-results-screen">
+  <div class="retry-results-card">
+    <div class="retry-results-icon" id="retry-res-icon">🔁</div>
+    <div class="retry-results-title">Retry Session Complete</div>
+    <div class="retry-fixed-display" id="retry-fixed-display">0/0</div>
+    <div class="retry-fixed-label">questions fixed</div>
+    <div id="retry-still-wrong-wrap"></div>
+    <div class="retry-btns">
+      <button class="btn-retry-again" id="btn-retry-again" onclick="startRetry()" style="display:none">
+        🔁 Retry remaining failed questions
+      </button>
+      <div class="retry-btns-row">
+        <button class="btn-back-results" onclick="showOriginalResults()">← Back to Results</button>
+        <button class="btn-review-retry" onclick="showReview('retry')">📋 Review Answers</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══ REVIEW SCREEN ══ -->
 <div class="main" id="review-screen">
-  <button class="back-to-results" onclick="showResults()">‹ Back to Results</button>
+  <button class="back-to-results" id="review-back-btn" onclick="goBackFromReview()">‹ Back to Results</button>
+  <div class="review-lock-banner" id="review-lock-banner">
+    <div class="review-lock-text">🔒 Answers are hidden — enter passcode to reveal</div>
+    <button class="btn-unlock" onclick="openPasscode()">Enter Passcode</button>
+  </div>
   <div id="review-list"></div>
+</div>
+
+<!-- ══ FAB PILL ══ -->
+<button class="fab-pill" id="fab-pill" onclick="openSheet()">
+  <div class="fab-dots" id="fab-dots"></div>
+  <span id="fab-label">Q 1 / 50 ▲</span>
+</button>
+
+<!-- ══ JUMP SHEET MODAL ══ -->
+<div class="modal-backdrop" id="modal-backdrop" onclick="handleBackdropClick(event)">
+  <div class="modal-sheet">
+    <div class="sheet-handle"></div>
+    <div class="sheet-header">
+      <span class="sheet-title" id="sheet-title">Jump to question</span>
+      <button class="sheet-close" onclick="closeSheet()">✕</button>
+    </div>
+    <div class="sheet-grid" id="sheet-grid"></div>
+    <div class="sheet-legend">
+      <span class="legend-item"><span class="legend-swatch sw-current"></span> Current</span>
+      <span class="legend-item"><span class="legend-swatch sw-correct"></span> Correct</span>
+      <span class="legend-item"><span class="legend-swatch sw-wrong"></span> Wrong</span>
+      <span class="legend-item"><span class="legend-swatch"></span> Not answered</span>
+    </div>
+    <div class="sheet-actions">
+      <button class="btn-startover" onclick="newAttempt()">↺ Start over</button>
+      <button class="btn-finish"    onclick="finishAndClose()">Finish &amp; see results</button>
+    </div>
+  </div>
+</div>
+
+<!-- ══ PASSCODE MODAL ══ -->
+<div class="passcode-backdrop" id="passcode-backdrop" onclick="handlePasscodeBackdrop(event)">
+  <div class="passcode-card">
+    <div class="passcode-icon">🔐</div>
+    <div class="passcode-title">Enter Passcode</div>
+    <div class="passcode-subtitle">Enter the parent/teacher passcode to reveal correct answers</div>
+    <input type="password" id="passcode-input" class="passcode-input"
+           maxlength="8" placeholder="••••"
+           onkeydown="if(event.key==='Enter') checkPasscode()">
+    <div class="passcode-error" id="passcode-error"></div>
+    <div class="passcode-btns">
+      <button class="btn-passcode-cancel" onclick="closePasscode()">Cancel</button>
+      <button class="btn-passcode-unlock" onclick="checkPasscode()">Unlock</button>
+    </div>
+  </div>
 </div>
 
 <script src="questions_data.js"></script>
 <script>
+// ─────────────────────────────────────────────────────────────
+// CONSTANTS & CONFIG
+// ─────────────────────────────────────────────────────────────
 const POINTS_PER_Q = 3;
+const PASSCODE     = '1234';
 
-// ── URL params ────────────────────────────────────────────────
-function getParam(name) {
-  return new URLSearchParams(window.location.search).get(name);
-}
+// ─────────────────────────────────────────────────────────────
+// URL PARAMS & DATA LOAD
+// ─────────────────────────────────────────────────────────────
+function getParam(name) { return new URLSearchParams(window.location.search).get(name); }
 const grade      = getParam('grade') || '34';
 const sub        = getParam('sub')   || '1.1';
 const returnPage = grade === '56' ? 'grade5_kangaroo_practice.html' : 'grade34.html';
 
-// ── Load question set ─────────────────────────────────────────
 const gradeData = questionsData[grade];
 const setData   = gradeData && gradeData[sub];
 const questions = setData ? setData.questions : [];
 const setTitle  = setData ? setData.title : sub;
 
-// ── DOM refs ──────────────────────────────────────────────────
-const quizScreen    = document.getElementById('quiz-screen');
-const resultsScreen = document.getElementById('results-screen');
-const reviewScreen  = document.getElementById('review-screen');
-const progressFill  = document.getElementById('progress-fill');
-const qLabel        = document.getElementById('q-label');
-const qPointsBadge  = document.getElementById('q-points-badge');
-const qText         = document.getElementById('q-text');
-const qChoices      = document.getElementById('q-choices');
-const qFeedback     = document.getElementById('q-feedback');
-const qFeedbackTitle = document.getElementById('q-feedback-title');
-const qFeedbackBody  = document.getElementById('q-feedback-body');
-const btnBack       = document.getElementById('btn-back');
-const btnCheck      = document.getElementById('btn-check');
-const btnNext       = document.getElementById('btn-next');
-const sheetGrid     = document.getElementById('sheet-grid');
-const fabDots       = document.getElementById('fab-dots');
-const fabLabel      = document.getElementById('fab-label');
+// ─────────────────────────────────────────────────────────────
+// DOM REFS
+// ─────────────────────────────────────────────────────────────
+const quizScreen         = document.getElementById('quiz-screen');
+const resultsScreen      = document.getElementById('results-screen');
+const retryResultsScreen = document.getElementById('retry-results-screen');
+const reviewScreen       = document.getElementById('review-screen');
+const progressFill       = document.getElementById('progress-fill');
+const qLabel             = document.getElementById('q-label');
+const qText              = document.getElementById('q-text');
+const qChoices           = document.getElementById('q-choices');
+const qFeedback          = document.getElementById('q-feedback');
+const qFeedbackTitle     = document.getElementById('q-feedback-title');
+const qFeedbackBody      = document.getElementById('q-feedback-body');
+const btnBack            = document.getElementById('btn-back');
+const btnCheck           = document.getElementById('btn-check');
+const btnNext            = document.getElementById('btn-next');
+const sheetGrid          = document.getElementById('sheet-grid');
+const fabDots            = document.getElementById('fab-dots');
+const fabLabel           = document.getElementById('fab-label');
 
-// ── Page metadata ─────────────────────────────────────────────
+// ─────────────────────────────────────────────────────────────
+// PAGE METADATA
+// ─────────────────────────────────────────────────────────────
 document.getElementById('back-link').href        = returnPage;
 document.getElementById('back-link').textContent =
   '← Back to ' + (grade === '56' ? 'Grade 5–6' : 'Grade 3–4') + ' Practice Sets';
 document.getElementById('page-title').textContent   = setTitle;
 document.getElementById('page-subtitle').textContent =
-  (grade === '56' ? 'Grade 5–6 (Benjamin)' : 'Grade 3–4 (Écolier)') +
-  ' · ' + questions.length + ' questions';
+  (grade === '56' ? 'Grade 5–6 (Benjamin)' : 'Grade 3–4 (Écolier)') + ' · ' + questions.length + ' questions';
 document.getElementById('stat-total').textContent = questions.length;
-qPointsBadge.textContent = POINTS_PER_Q + ' points';
+document.getElementById('q-points-badge').textContent = POINTS_PER_Q + ' points';
 
-// ── State ─────────────────────────────────────────────────────
-const STORAGE_KEY = `mkp_progress_${grade}_${sub}`;
-let currentIndex = 0;
-let answers  = new Array(questions.length).fill(null);  // null | choice index
-let checked  = new Array(questions.length).fill(false); // whether Check was clicked
-let pendingSelection = null; // choice index selected but not yet checked
+// ─────────────────────────────────────────────────────────────
+// STATE — full quiz
+// ─────────────────────────────────────────────────────────────
+const PROGRESS_KEY = `mkp_progress_${grade}_${sub}`;
+const ATTEMPT_KEY  = `mkp_attempts_${grade}_${sub}`;
 
-// ── Init ──────────────────────────────────────────────────────
+let currentIndex     = 0;
+let answers          = new Array(questions.length).fill(null);
+let checked          = new Array(questions.length).fill(false);
+let pendingSelection = null;
+let questionTimes    = {};   // { questionIndex: ms }
+let qStartTime       = null; // timestamp when current question was rendered
+let currentAttemptId = null; // id of the full attempt just completed
+
+// ─────────────────────────────────────────────────────────────
+// STATE — retry mode
+// ─────────────────────────────────────────────────────────────
+let isRetryMode    = false;
+let retryQueue     = []; // original question indices to retry
+let retryPos       = 0;  // position in retryQueue
+let retryAnswers   = {}; // { originalIndex: choiceIndex }
+let retryChecked   = new Set();
+let retryTimes     = {}; // { originalIndex: ms }
+let retryStartTime = null;
+let parentAttemptId = null;
+
+// ─────────────────────────────────────────────────────────────
+// STATE — review
+// ─────────────────────────────────────────────────────────────
+let reviewUnlocked  = false;
+let reviewMode      = 'full'; // 'full' | 'retry'
+
+// ─────────────────────────────────────────────────────────────
+// INIT
+// ─────────────────────────────────────────────────────────────
 if (!setData || questions.length === 0) {
   quizScreen.innerHTML = `
     <div class="empty-state">
@@ -771,70 +615,150 @@ if (!setData || questions.length === 0) {
       <p>Online practice for <strong>${sub}</strong> is not yet available.</p>
       <p style="margin-top:16px"><a href="${returnPage}" style="color:var(--primary)">← Back to Practice Sets</a></p>
     </div>`;
-  document.getElementById('stats-row').style.display = 'none';
+  document.getElementById('stats-row').style.display  = 'none';
   document.querySelector('.progress-bar-wrap').style.display = 'none';
+  document.getElementById('fab-pill').style.display   = 'none';
 } else {
   loadProgress();
   renderQuestion();
   renderFAB();
 }
 
-// ── Progress persistence ──────────────────────────────────────
+// ─────────────────────────────────────────────────────────────
+// PROGRESS PERSISTENCE (in-progress session)
+// ─────────────────────────────────────────────────────────────
 function loadProgress() {
   try {
-    const saved = JSON.parse(localStorage.getItem(STORAGE_KEY));
+    const saved = JSON.parse(localStorage.getItem(PROGRESS_KEY));
     if (saved && saved.answers && saved.answers.length === questions.length) {
       answers = saved.answers;
       checked = saved.checked || new Array(questions.length).fill(false);
-      // mark checked wherever we have an answer
       answers.forEach((a, i) => { if (a !== null) checked[i] = true; });
       const firstUnanswered = answers.findIndex(a => a === null);
       currentIndex = firstUnanswered === -1 ? questions.length - 1 : firstUnanswered;
     }
   } catch(e) {}
 }
-
 function saveProgress() {
-  try { localStorage.setItem(STORAGE_KEY, JSON.stringify({ answers, checked })); } catch(e) {}
+  try { localStorage.setItem(PROGRESS_KEY, JSON.stringify({ answers, checked })); } catch(e) {}
 }
-
 function clearProgress() {
-  try { localStorage.removeItem(STORAGE_KEY); } catch(e) {}
+  try { localStorage.removeItem(PROGRESS_KEY); } catch(e) {}
 }
 
-// ── Live stats ────────────────────────────────────────────────
+// ─────────────────────────────────────────────────────────────
+// ATTEMPT HISTORY
+// ─────────────────────────────────────────────────────────────
+function loadAttemptHistory() {
+  try {
+    const h = JSON.parse(localStorage.getItem(ATTEMPT_KEY));
+    return h && Array.isArray(h.attempts) ? h : { attempts: [] };
+  } catch(e) { return { attempts: [] }; }
+}
+
+function generateId() {
+  return Date.now().toString(36) + Math.random().toString(36).slice(2, 7);
+}
+
+function saveAttempt(type, parentId) {
+  const history = loadAttemptHistory();
+  const id = generateId();
+  const attemptNum = history.attempts.filter(a => a.type === 'full').length + (type === 'full' ? 1 : 0);
+
+  let questionResults, score, total;
+
+  if (type === 'full') {
+    questionResults = answers.map((ans, i) => ({
+      index: i, user_answer: ans,
+      correct: ans !== null && ans === questions[i].answer,
+      ms: questionTimes[i] || 0
+    }));
+    score = questionResults.filter(q => q.correct).length;
+    total = questions.length;
+  } else {
+    questionResults = retryQueue.map(i => ({
+      index: i, user_answer: retryAnswers[i] ?? null,
+      correct: retryAnswers[i] === questions[i].answer,
+      ms: retryTimes[i] || 0
+    }));
+    score = questionResults.filter(q => q.correct).length;
+    total = retryQueue.length;
+  }
+
+  const attempt = {
+    id, date: new Date().toISOString(), type,
+    parent_attempt_id: parentId || null,
+    attempt_num: type === 'full' ? attemptNum : null,
+    questions: questionResults, score, total
+  };
+
+  history.attempts.push(attempt);
+  try { localStorage.setItem(ATTEMPT_KEY, JSON.stringify(history)); } catch(e) {}
+  return id;
+}
+
+// ─────────────────────────────────────────────────────────────
+// STATS ROW
+// ─────────────────────────────────────────────────────────────
 function updateStats() {
-  const answered = answers.filter(a => a !== null).length;
-  const correct  = answers.filter((a, i) => a !== null && a === questions[i].answer).length;
-  document.getElementById('stat-answered').textContent    = answered;
-  document.getElementById('stat-correct-live').textContent = correct;
-  document.getElementById('stat-points-live').textContent  = correct * POINTS_PER_Q;
-  const pct = questions.length ? Math.round((answered / questions.length) * 100) : 0;
-  progressFill.style.width = pct + '%';
+  if (isRetryMode) {
+    const done    = Object.keys(retryAnswers).length;
+    const correct = Object.keys(retryAnswers).filter(i => retryAnswers[i] === questions[i].answer).length;
+    document.getElementById('stat-answered-label').innerHTML =
+      `Retry <strong>${retryPos + 1}</strong> / <strong>${retryQueue.length}</strong>`;
+    document.getElementById('stat-correct-live').textContent = correct;
+    document.getElementById('stat-points-live').textContent  = correct * POINTS_PER_Q;
+    progressFill.style.width = (done / retryQueue.length * 100) + '%';
+  } else {
+    const answered = answers.filter(a => a !== null).length;
+    const correct  = answers.filter((a, i) => a !== null && a === questions[i].answer).length;
+    document.getElementById('stat-answered-label').innerHTML =
+      `Answered <strong>${answered}</strong> / <strong>${questions.length}</strong>`;
+    document.getElementById('stat-correct-live').textContent = correct;
+    document.getElementById('stat-points-live').textContent  = correct * POINTS_PER_Q;
+    progressFill.style.width = (answered / questions.length * 100) + '%';
+  }
 }
 
-// ── Render question ───────────────────────────────────────────
+// ─────────────────────────────────────────────────────────────
+// RENDER QUESTION
+// ─────────────────────────────────────────────────────────────
 function renderQuestion() {
   pendingSelection = null;
-  const q = questions[currentIndex];
-  const n = questions.length;
+  qStartTime = Date.now();
 
-  qLabel.textContent = `QUESTION ${currentIndex + 1} OF ${n}`;
-  qText.textContent  = q.text;
+  const q = questions[currentIndex];
+  const labels = ['A','B','C','D','E'];
+
+  // Determine state for current question
+  const isChecked = isRetryMode ? retryChecked.has(currentIndex) : checked[currentIndex];
+  const userAnswer = isRetryMode ? (retryAnswers[currentIndex] ?? null) : answers[currentIndex];
+  const isCorrect  = userAnswer !== null && userAnswer === q.answer;
+
+  // Label
+  if (isRetryMode) {
+    const pos = retryQueue.indexOf(currentIndex);
+    qLabel.textContent = `RETRY QUESTION ${pos + 1} OF ${retryQueue.length}`;
+    document.getElementById('retry-banner-text').textContent =
+      `Retry Mode · Question ${pos + 1} of ${retryQueue.length}`;
+  } else {
+    qLabel.textContent = `QUESTION ${currentIndex + 1} OF ${questions.length}`;
+  }
+
+  qText.textContent = q.text;
 
   // Choices
   qChoices.innerHTML = '';
-  const labels = ['A', 'B', 'C', 'D', 'E'];
   q.choices.forEach((choice, i) => {
     const btn = document.createElement('button');
     btn.className = 'choice-btn';
-    btn.innerHTML = `<span class="circle">${labels[i]}</span><span>${choice.replace(/^[A-E]\.\s*/, '')}</span>`;
+    btn.innerHTML = `<span class="circle">${labels[i]}</span><span>${choice.replace(/^[A-E]\.\s*/,'')}</span>`;
 
-    if (checked[currentIndex]) {
-      // Already checked — show result
+    if (isChecked) {
       btn.disabled = true;
-      if (i === q.answer) btn.classList.add('correct');
-      else if (i === answers[currentIndex]) btn.classList.add('incorrect');
+      if (isCorrect && i === q.answer)       btn.classList.add('correct');
+      else if (!isCorrect && i === userAnswer) btn.classList.add('incorrect');
+      // wrong answer: only red on selected, correct stays neutral (hidden)
     } else {
       btn.onclick = () => selectChoice(i);
     }
@@ -842,8 +766,8 @@ function renderQuestion() {
   });
 
   // Feedback
-  if (checked[currentIndex]) {
-    showFeedbackUI(answers[currentIndex] === q.answer);
+  if (isChecked) {
+    showFeedbackUI(isCorrect);
   } else {
     qFeedback.className = 'feedback';
     qFeedbackTitle.textContent = '';
@@ -851,66 +775,73 @@ function renderQuestion() {
   }
 
   // Nav buttons
-  btnBack.style.visibility = currentIndex === 0 ? 'hidden' : 'visible';
+  const isFirst = isRetryMode ? retryPos === 0 : currentIndex === 0;
+  const isLast  = isRetryMode ? retryPos === retryQueue.length - 1 : currentIndex === questions.length - 1;
+  btnBack.style.visibility = isFirst ? 'hidden' : 'visible';
 
-  if (checked[currentIndex]) {
-    // Already checked
+  if (isChecked) {
     btnCheck.disabled = true;
     btnCheck.className = 'btn-nav btn-check checked-state';
     btnCheck.textContent = 'Checked ✓';
     btnNext.className = 'btn-nav btn-next active';
-    btnNext.textContent = currentIndex === n - 1 ? 'Finish ✓' : 'Next →';
+    btnNext.textContent = isLast ? 'Finish ✓' : 'Next →';
   } else {
-    // Not yet checked
     btnCheck.disabled = true;
     btnCheck.className = 'btn-nav btn-check';
     btnCheck.textContent = 'Check';
     btnNext.className = 'btn-nav btn-next';
-    btnNext.textContent = currentIndex === n - 1 ? 'Finish ✓' : 'Next →';
+    btnNext.textContent = isLast ? 'Finish ✓' : 'Next →';
   }
 
   updateStats();
   renderFAB();
 }
 
-// ── Select choice (pending — not yet checked) ─────────────────
+// ─────────────────────────────────────────────────────────────
+// SELECT CHOICE (pending)
+// ─────────────────────────────────────────────────────────────
 function selectChoice(i) {
   pendingSelection = i;
-
-  // Visual update: highlight selected, reset others
-  const btns = qChoices.querySelectorAll('.choice-btn');
-  btns.forEach((btn, idx) => {
+  qChoices.querySelectorAll('.choice-btn').forEach((btn, idx) => {
     btn.classList.toggle('selected', idx === i);
   });
-
-  // Enable Check button
   btnCheck.disabled = false;
 }
 
-// ── Check answer ──────────────────────────────────────────────
+// ─────────────────────────────────────────────────────────────
+// CHECK ANSWER
+// ─────────────────────────────────────────────────────────────
 function checkAnswer() {
   if (pendingSelection === null) return;
   const q = questions[currentIndex];
   const i = pendingSelection;
+  const isCorrect = i === q.answer;
 
-  answers[currentIndex] = i;
-  checked[currentIndex] = true;
-  saveProgress();
+  // Record time
+  const elapsed = qStartTime ? Date.now() - qStartTime : 0;
+  if (isRetryMode) {
+    retryAnswers[currentIndex] = i;
+    retryChecked.add(currentIndex);
+    retryTimes[currentIndex] = elapsed;
+  } else {
+    answers[currentIndex] = i;
+    checked[currentIndex] = true;
+    questionTimes[currentIndex] = elapsed;
+    saveProgress();
+  }
 
-  // Lock and style choices
-  const btns = qChoices.querySelectorAll('.choice-btn');
-  btns.forEach((btn, idx) => {
+  // Style choices — wrong answer: only red on selected, correct stays neutral
+  qChoices.querySelectorAll('.choice-btn').forEach((btn, idx) => {
     btn.onclick  = null;
     btn.disabled = true;
     btn.classList.remove('selected');
-    if (idx === q.answer) btn.classList.add('correct');
-    else if (idx === i)   btn.classList.add('incorrect');
+    if (isCorrect && idx === q.answer)  btn.classList.add('correct');
+    else if (!isCorrect && idx === i)   btn.classList.add('incorrect');
+    // correct answer intentionally NOT highlighted when wrong
   });
 
-  // Show feedback
-  showFeedbackUI(i === q.answer);
+  showFeedbackUI(isCorrect);
 
-  // Update nav buttons
   btnCheck.disabled = true;
   btnCheck.className = 'btn-nav btn-check checked-state';
   btnCheck.textContent = 'Checked ✓';
@@ -920,82 +851,112 @@ function checkAnswer() {
   renderFAB();
 }
 
-// ── Feedback UI ───────────────────────────────────────────────
+// ─────────────────────────────────────────────────────────────
+// FEEDBACK UI
+// ─────────────────────────────────────────────────────────────
 function showFeedbackUI(isCorrect) {
   const q = questions[currentIndex];
-  const labels = ['A', 'B', 'C', 'D', 'E'];
-  const correctLabel = labels[q.answer];
-  const correctText  = q.choices[q.answer].replace(/^[A-E]\.\s*/, '');
-
   if (isCorrect) {
     qFeedback.className    = 'feedback correct-fb show';
     qFeedbackTitle.textContent = '✓ Correct!';
     qFeedbackBody.textContent  = q.explanation || '';
   } else {
     qFeedback.className    = 'feedback incorrect-fb show';
-    qFeedbackTitle.textContent = `✗ Not quite. The answer is (${correctLabel}) ${correctText}.`;
-    qFeedbackBody.textContent  = q.explanation || '';
+    qFeedbackTitle.textContent = '✗ Wrong answer.';
+    qFeedbackBody.textContent  = '';  // correct answer intentionally hidden
   }
 }
 
-// ── Navigation ────────────────────────────────────────────────
+// ─────────────────────────────────────────────────────────────
+// NAVIGATION
+// ─────────────────────────────────────────────────────────────
 function goNext() {
   if (!btnNext.classList.contains('active')) return;
-  if (currentIndex < questions.length - 1) {
-    currentIndex++;
-    renderQuestion();
-    window.scrollTo(0, 0);
+
+  if (isRetryMode) {
+    if (retryPos < retryQueue.length - 1) {
+      retryPos++;
+      currentIndex = retryQueue[retryPos];
+      renderQuestion();
+      window.scrollTo(0, 0);
+    } else {
+      showRetryResults();
+    }
   } else {
-    showResults();
+    if (currentIndex < questions.length - 1) {
+      currentIndex++;
+      renderQuestion();
+      window.scrollTo(0, 0);
+    } else {
+      showResults();
+    }
   }
 }
 
 function goBack() {
-  if (currentIndex > 0) {
-    currentIndex--;
-    renderQuestion();
-    window.scrollTo(0, 0);
+  if (isRetryMode) {
+    if (retryPos > 0) {
+      retryPos--;
+      currentIndex = retryQueue[retryPos];
+      renderQuestion();
+      window.scrollTo(0, 0);
+    }
+  } else {
+    if (currentIndex > 0) {
+      currentIndex--;
+      renderQuestion();
+      window.scrollTo(0, 0);
+    }
   }
 }
 
-// ── FAB pill + sheet ──────────────────────────────────────────
+// ─────────────────────────────────────────────────────────────
+// FAB + SHEET
+// ─────────────────────────────────────────────────────────────
 function renderFAB() {
-  const n       = questions.length;
-  const correct = answers.filter((a, i) => a !== null && a === questions[i].answer).length;
-  const wrong   = answers.filter((a, i) => a !== null && a !== questions[i].answer).length;
+  const displayList   = isRetryMode ? retryQueue : questions.map((_,i) => i);
+  const getAnswer     = i => isRetryMode ? (retryAnswers[i] ?? null) : answers[i];
+  const getChecked    = i => isRetryMode ? retryChecked.has(i) : checked[i];
 
-  // Update pill label
-  fabLabel.textContent = `Q ${currentIndex + 1} / ${n} ▲`;
+  fabLabel.textContent = isRetryMode
+    ? `Retry ${retryPos + 1} / ${retryQueue.length} ▲`
+    : `Q ${currentIndex + 1} / ${questions.length} ▲`;
 
-  // Update summary dots (max 5 representative dots)
-  const dotCount  = Math.min(5, n);
-  const step      = n / dotCount;
+  document.getElementById('sheet-title').textContent = isRetryMode ? 'Retry questions' : 'Jump to question';
+
+  // Dots (5 representative)
+  const n = displayList.length;
+  const dotCount = Math.min(5, n);
   fabDots.innerHTML = '';
   for (let d = 0; d < dotCount; d++) {
-    const idx = Math.floor(d * step);
+    const idx = displayList[Math.floor(d * n / dotCount)];
+    const ans = getAnswer(idx);
     const dot = document.createElement('div');
-    dot.className = 'fab-dot ' +
-      (answers[idx] === null                        ? 'd-pending' :
-       answers[idx] === questions[idx].answer       ? 'd-correct'  : 'd-wrong');
+    dot.className = 'fab-dot ' + (
+      ans === null ? 'd-pending' :
+      ans === questions[idx].answer ? 'd-correct' : 'd-wrong'
+    );
     fabDots.appendChild(dot);
   }
 
-  // Rebuild sheet grid
+  // Sheet grid
   sheetGrid.innerHTML = '';
-  questions.forEach((q, i) => {
+  displayList.forEach((origIdx, pos) => {
     const cell = document.createElement('div');
-    cell.className = 'sheet-cell';
-    cell.textContent = i + 1;
+    cell.className  = 'sheet-cell';
+    cell.textContent = pos + 1;
+    const ans = getAnswer(origIdx);
 
-    if (i === currentIndex)       cell.classList.add('sc-current');
-    else if (answers[i] !== null) cell.classList.add(answers[i] === q.answer ? 'sc-correct' : 'sc-wrong');
+    if (origIdx === currentIndex) cell.classList.add('sc-current');
+    else if (ans !== null) cell.classList.add(ans === questions[origIdx].answer ? 'sc-correct' : 'sc-wrong');
 
-    cell.title = answers[i] !== null
-      ? (answers[i] === q.answer ? '✓ Correct' : '✗ Incorrect')
+    cell.title = ans !== null
+      ? (ans === questions[origIdx].answer ? '✓ Correct' : '✗ Incorrect')
       : 'Not answered';
 
     cell.onclick = () => {
-      currentIndex = i;
+      if (isRetryMode) { retryPos = pos; }
+      currentIndex = origIdx;
       closeSheet();
       renderQuestion();
       window.scrollTo(0, 0);
@@ -1006,19 +967,13 @@ function renderFAB() {
 
 function openSheet()  { document.getElementById('modal-backdrop').classList.add('open'); }
 function closeSheet() { document.getElementById('modal-backdrop').classList.remove('open'); }
+function handleBackdropClick(e) { if (e.target === document.getElementById('modal-backdrop')) closeSheet(); }
+function finishAndClose() { closeSheet(); isRetryMode ? showRetryResults() : showResults(); }
+document.addEventListener('keydown', e => { if (e.key === 'Escape') { closeSheet(); closePasscode(); } });
 
-function handleBackdropClick(e) {
-  if (e.target === document.getElementById('modal-backdrop')) closeSheet();
-}
-
-function finishAndClose() {
-  closeSheet();
-  showResults();
-}
-
-document.addEventListener('keydown', e => { if (e.key === 'Escape') closeSheet(); });
-
-// ── Results ───────────────────────────────────────────────────
+// ─────────────────────────────────────────────────────────────
+// FULL RESULTS
+// ─────────────────────────────────────────────────────────────
 function showResults() {
   const n       = questions.length;
   const correct = answers.filter((a, i) => a !== null && a === questions[i].answer).length;
@@ -1027,8 +982,19 @@ function showResults() {
   const pct     = Math.round((correct / n) * 100);
   const pts     = correct * POINTS_PER_Q;
 
+  // Save attempt
+  currentAttemptId = saveAttempt('full', null);
+  clearProgress();
+
+  // Populate
+  const history    = loadAttemptHistory();
+  const fullAttempts = history.attempts.filter(a => a.type === 'full');
+  const attemptNum = fullAttempts.length;
+
+  document.getElementById('attempt-meta').textContent =
+    `Attempt #${attemptNum} · ${formatDate(new Date())}`;
   document.getElementById('results-score').textContent         = `${correct}/${n}`;
-  document.getElementById('results-points-display').textContent = `🏅 ${pts} points earned`;
+  document.getElementById('results-points-display').textContent = `🏅 ${pts} points`;
   document.getElementById('res-correct').textContent = correct;
   document.getElementById('res-wrong').textContent   = wrong;
   document.getElementById('res-skipped').textContent = skipped;
@@ -1038,42 +1004,216 @@ function showResults() {
   document.getElementById('results-emoji').textContent = emoji;
   document.getElementById('results-title').textContent = title;
 
-  progressFill.style.width = '100%';
-  updateStats();
+  // Retry button
+  const failedIndices = answers
+    .map((a, i) => ({ a, i }))
+    .filter(({ a, i }) => a === null || a !== questions[i].answer)
+    .map(({ i }) => i);
 
-  quizScreen.style.display    = 'none';
-  resultsScreen.style.display = 'block';
-  reviewScreen.style.display  = 'none';
-  document.getElementById('fab-pill').style.display = 'none';
-  window.scrollTo(0, 0);
-  clearProgress();
+  const retryBtn = document.getElementById('btn-retry-failed');
+  if (failedIndices.length > 0) {
+    retryBtn.style.display = 'block';
+    retryBtn.textContent = `🔁 Retry ${failedIndices.length} failed question${failedIndices.length > 1 ? 's' : ''}`;
+  } else {
+    retryBtn.style.display = 'none';
+  }
+
+  // History
+  renderAttemptHistory();
+
+  progressFill.style.width = '100%';
+  switchScreen('results');
 }
 
-// ── Restart ───────────────────────────────────────────────────
-function restartQuiz() {
-  answers  = new Array(questions.length).fill(null);
-  checked  = new Array(questions.length).fill(false);
-  currentIndex = 0;
+function showOriginalResults() {
+  // Re-render results from saved attempt
+  const history = loadAttemptHistory();
+  const lastFull = [...history.attempts].reverse().find(a => a.type === 'full');
+  if (!lastFull) { switchScreen('results'); return; }
+
+  const correct = lastFull.questions.filter(q => q.correct).length;
+  const wrong   = lastFull.questions.filter(q => !q.correct && q.user_answer !== null).length;
+  const skipped = lastFull.questions.filter(q => q.user_answer === null).length;
+  const pct     = Math.round((correct / lastFull.total) * 100);
+
+  document.getElementById('attempt-meta').textContent =
+    `Attempt #${lastFull.attempt_num} · ${formatDate(new Date(lastFull.date))}`;
+  document.getElementById('results-score').textContent = `${correct}/${lastFull.total}`;
+  document.getElementById('results-points-display').textContent = `🏅 ${correct * POINTS_PER_Q} points`;
+  document.getElementById('res-correct').textContent = correct;
+  document.getElementById('res-wrong').textContent   = wrong;
+  document.getElementById('res-skipped').textContent = skipped;
+
+  const failedIndices = lastFull.questions
+    .filter(q => !q.correct)
+    .map(q => q.index);
+
+  const retryBtn = document.getElementById('btn-retry-failed');
+  if (failedIndices.length > 0) {
+    retryBtn.style.display = 'block';
+    retryBtn.textContent = `🔁 Retry ${failedIndices.length} failed question${failedIndices.length > 1 ? 's' : ''}`;
+  } else {
+    retryBtn.style.display = 'none';
+  }
+
+  renderAttemptHistory();
+  switchScreen('results');
+}
+
+function renderAttemptHistory() {
+  const history = loadAttemptHistory();
+  const section  = document.getElementById('history-section');
+  const list     = document.getElementById('history-list');
+
+  // Show all attempts except the very latest full one (already displayed as main result)
+  const allAttempts = history.attempts;
+  if (allAttempts.length <= 1) { section.style.display = 'none'; return; }
+
+  const toShow = allAttempts.slice(0, -1).reverse().slice(0, 5); // last 5 excluding current
+  list.innerHTML = '';
+  toShow.forEach(a => {
+    const div = document.createElement('div');
+    div.className = 'history-item';
+    const label = a.type === 'full'
+      ? `<strong>Attempt #${a.attempt_num}</strong> · ${formatDate(new Date(a.date))}`
+      : `↩ Retry · ${formatDate(new Date(a.date))}`;
+    const scoreText = a.type === 'full'
+      ? `${a.score}/${a.total}`
+      : `${a.score}/${a.total} fixed`;
+    div.innerHTML = `
+      <div class="history-item-label">${label}</div>
+      <div class="history-item-score ${a.type === 'retry' ? 'retry-score' : ''}">${scoreText}</div>`;
+    list.appendChild(div);
+  });
+  section.style.display = 'block';
+}
+
+// ─────────────────────────────────────────────────────────────
+// RETRY FLOW
+// ─────────────────────────────────────────────────────────────
+function startRetry() {
+  // Build retry queue from last full attempt's failures (cross-session aware)
+  const history = loadAttemptHistory();
+  const lastFull = [...history.attempts].reverse().find(a => a.type === 'full');
+
+  let failedIndices;
+  if (lastFull) {
+    failedIndices = lastFull.questions
+      .filter(q => !q.correct)
+      .map(q => q.index);
+    parentAttemptId = lastFull.id;
+  } else {
+    // Fallback: use current session answers
+    failedIndices = answers
+      .map((a, i) => ({ a, i }))
+      .filter(({ a, i }) => a === null || a !== questions[i].answer)
+      .map(({ i }) => i);
+    parentAttemptId = currentAttemptId;
+  }
+
+  if (failedIndices.length === 0) return;
+
+  // Reset retry state
+  isRetryMode   = true;
+  retryQueue    = failedIndices;
+  retryPos      = 0;
+  retryAnswers  = {};
+  retryChecked  = new Set();
+  retryTimes    = {};
+  currentIndex  = retryQueue[0];
+
+  document.getElementById('retry-banner').style.display = 'flex';
+  document.getElementById('fab-pill').style.display = 'flex';
+  switchScreen('quiz');
+  renderQuestion();
+  window.scrollTo(0, 0);
+}
+
+function showRetryResults() {
+  const retryAttemptId = saveAttempt('retry', parentAttemptId);
+
+  const fixed    = retryQueue.filter(i => retryAnswers[i] === questions[i].answer).length;
+  const total    = retryQueue.length;
+  const stillBad = retryQueue.filter(i => retryAnswers[i] !== questions[i].answer);
+
+  document.getElementById('retry-fixed-display').textContent = `${fixed}/${total}`;
+
+  const icon = fixed === total ? '🎉' : fixed > total / 2 ? '👍' : '💪';
+  document.getElementById('retry-res-icon').textContent = icon;
+
+  const wrapEl = document.getElementById('retry-still-wrong-wrap');
+  if (stillBad.length === 0) {
+    wrapEl.innerHTML = '<div class="retry-all-done">🌟 All failed questions fixed!</div>';
+    document.getElementById('btn-retry-again').style.display = 'none';
+  } else {
+    wrapEl.innerHTML = `<div class="retry-still-wrong">${stillBad.length} question${stillBad.length > 1 ? 's' : ''} still need work</div>`;
+    const btn = document.getElementById('btn-retry-again');
+    btn.style.display = 'block';
+    btn.textContent = `🔁 Retry ${stillBad.length} remaining question${stillBad.length > 1 ? 's' : ''}`;
+  }
+
+  // Update retryQueue for next retry = only still-wrong questions
+  retryQueue = stillBad;
+
+  document.getElementById('fab-pill').style.display = 'none';
+  switchScreen('retry-results');
+  window.scrollTo(0, 0);
+}
+
+// ─────────────────────────────────────────────────────────────
+// NEW ATTEMPT / RESTART
+// ─────────────────────────────────────────────────────────────
+function newAttempt() {
+  isRetryMode   = false;
+  retryQueue    = [];
+  retryPos      = 0;
+  retryAnswers  = {};
+  retryChecked  = new Set();
+  answers       = new Array(questions.length).fill(null);
+  checked       = new Array(questions.length).fill(false);
+  questionTimes = {};
+  currentIndex  = 0;
   clearProgress();
 
-  quizScreen.style.display    = 'block';
-  resultsScreen.style.display = 'none';
-  reviewScreen.style.display  = 'none';
+  document.getElementById('retry-banner').style.display = 'none';
   document.getElementById('fab-pill').style.display = 'flex';
-
+  closeSheet();
+  switchScreen('quiz');
   renderQuestion();
   renderFAB();
   window.scrollTo(0, 0);
 }
 
-// ── Review ────────────────────────────────────────────────────
-function showReview() {
-  const labels = ['A', 'B', 'C', 'D', 'E'];
+// ─────────────────────────────────────────────────────────────
+// REVIEW SCREEN
+// ─────────────────────────────────────────────────────────────
+function showReview(mode) {
+  reviewMode = mode || 'full';
   const list = document.getElementById('review-list');
+  const labels = ['A','B','C','D','E'];
   list.innerHTML = '';
 
-  questions.forEach((q, i) => {
-    const userAns  = answers[i];
+  // Determine which answers to review
+  let questionsToReview;
+  if (reviewMode === 'retry') {
+    questionsToReview = Object.keys(retryAnswers).map(i => parseInt(i));
+    if (questionsToReview.length === 0) {
+      // fall back to last retry attempt
+      const h = loadAttemptHistory();
+      const lastRetry = [...h.attempts].reverse().find(a => a.type === 'retry');
+      if (lastRetry) {
+        questionsToReview = lastRetry.questions.map(q => q.index);
+      }
+    }
+  } else {
+    questionsToReview = questions.map((_, i) => i);
+  }
+
+  questionsToReview.forEach(i => {
+    const q       = questions[i];
+    const userAns = reviewMode === 'retry'
+      ? (retryAnswers[i] ?? null)
+      : answers[i];
     const isCorrect = userAns === q.answer;
     const isSkipped = userAns === null;
 
@@ -1084,25 +1224,105 @@ function showReview() {
     const userLabel = userAns !== null ? q.choices[userAns] : 'Not answered';
     const corrLabel = q.choices[q.answer];
 
+    let answerHTML;
+    if (isSkipped) {
+      answerHTML = `<span>Not answered.</span>
+        ${reviewUnlocked ? `<span class="correct-ans"> Correct: ${corrLabel}</span>` : ''}`;
+    } else if (isCorrect) {
+      answerHTML = `<span class="correct-ans">Your answer: ${userLabel} ✓</span>`;
+    } else {
+      answerHTML = `<span class="wrong-ans">Your answer: ${userLabel} ✗</span>
+        ${reviewUnlocked ? ` &nbsp;·&nbsp; <span class="correct-ans">Correct: ${corrLabel}</span>` : ''}`;
+    }
+
+    const explanationHTML = (reviewUnlocked && q.explanation)
+      ? `<div style="margin-top:8px;font-size:13px;color:var(--text-secondary);line-height:1.5">${q.explanation}</div>`
+      : '';
+
+    const lockedHint = (!reviewUnlocked && !isCorrect && !isSkipped)
+      ? `<div class="review-locked">🔒 Enter passcode to see correct answer</div>`
+      : (!reviewUnlocked && isSkipped)
+      ? `<div class="review-locked">🔒 Enter passcode to see correct answer</div>`
+      : '';
+
     item.innerHTML = `
       <div class="review-qnum">${icon} Question ${i + 1}</div>
       <div class="review-qtext">${q.text}</div>
-      <div class="review-answer">
-        ${isSkipped
-          ? `<span>Not answered. </span><span class="correct-ans">Correct: ${corrLabel}</span>`
-          : isCorrect
-          ? `<span class="correct-ans">Your answer: ${userLabel} ✓</span>`
-          : `<span class="wrong-ans">Your answer: ${userLabel} ✗</span> &nbsp;·&nbsp; <span class="correct-ans">Correct: ${corrLabel}</span>`
-        }
-      </div>`;
+      <div class="review-answer">${answerHTML}</div>
+      ${lockedHint}
+      ${explanationHTML}`;
     list.appendChild(item);
   });
 
-  quizScreen.style.display    = 'none';
-  resultsScreen.style.display = 'none';
-  reviewScreen.style.display  = 'block';
+  // Lock banner
+  const banner = document.getElementById('review-lock-banner');
+  if (reviewUnlocked) {
+    banner.innerHTML = '<div class="unlock-badge">🔓 Answers unlocked for this session</div>';
+  } else {
+    banner.innerHTML = `
+      <div class="review-lock-text">🔒 Answers are hidden — enter passcode to reveal</div>
+      <button class="btn-unlock" onclick="openPasscode()">Enter Passcode</button>`;
+  }
+
+  document.getElementById('review-back-btn').textContent =
+    reviewMode === 'retry' ? '‹ Back to Retry Results' : '‹ Back to Results';
+
   document.getElementById('fab-pill').style.display = 'none';
+  switchScreen('review');
   window.scrollTo(0, 0);
+}
+
+function goBackFromReview() {
+  document.getElementById('fab-pill').style.display = 'none';
+  switchScreen(reviewMode === 'retry' ? 'retry-results' : 'results');
+}
+
+// ─────────────────────────────────────────────────────────────
+// PASSCODE
+// ─────────────────────────────────────────────────────────────
+function openPasscode() {
+  document.getElementById('passcode-input').value = '';
+  document.getElementById('passcode-error').textContent = '';
+  document.getElementById('passcode-backdrop').classList.add('open');
+  setTimeout(() => document.getElementById('passcode-input').focus(), 100);
+}
+
+function closePasscode() {
+  document.getElementById('passcode-backdrop').classList.remove('open');
+}
+
+function handlePasscodeBackdrop(e) {
+  if (e.target === document.getElementById('passcode-backdrop')) closePasscode();
+}
+
+function checkPasscode() {
+  const val = document.getElementById('passcode-input').value.trim();
+  if (val === PASSCODE) {
+    reviewUnlocked = true;
+    closePasscode();
+    showReview(reviewMode); // re-render with unlocked answers
+  } else {
+    document.getElementById('passcode-error').textContent = 'Incorrect passcode. Please try again.';
+    document.getElementById('passcode-input').value = '';
+    document.getElementById('passcode-input').focus();
+  }
+}
+
+// ─────────────────────────────────────────────────────────────
+// SCREEN SWITCHER
+// ─────────────────────────────────────────────────────────────
+function switchScreen(name) {
+  quizScreen.style.display         = name === 'quiz'         ? 'block' : 'none';
+  resultsScreen.style.display      = name === 'results'      ? 'block' : 'none';
+  retryResultsScreen.style.display = name === 'retry-results'? 'block' : 'none';
+  reviewScreen.style.display       = name === 'review'       ? 'block' : 'none';
+}
+
+// ─────────────────────────────────────────────────────────────
+// UTILITIES
+// ─────────────────────────────────────────────────────────────
+function formatDate(d) {
+  return d.toLocaleDateString('en-GB', { day: 'numeric', month: 'short', year: 'numeric' });
 }
 </script>
 </body>
