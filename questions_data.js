@@ -14388,6 +14388,231 @@ const questionsData = {
           text: "Anna jumps 2.40 m, Beth jumps 2.35 m, and Cara jumps 2.42 m. What is the average jump?",
           choices: ["A. 2.38 m", "B. 2.39 m", "C. 2.40 m", "D. 2.41 m", "E. 2.42 m"],
           answer: 1
+        },
+        {
+          text: "A football team plays 20 games. They win 11, draw 4, and lose the rest. How many points do they have (3 for win, 1 for draw, 0 for loss)?",
+          choices: ["A. 35", "B. 37", "C. 39", "D. 41", "E. 43"],
+          answer: 1
+        },
+        {
+          text: "In a round-robin tournament with 6 teams, every team plays every other team once. How many games are played in total?",
+          choices: ["A. 12", "B. 13", "C. 14", "D. 15", "E. 16"],
+          answer: 3
+        },
+        {
+          text: "A runner's personal best for 100 m is 12.4 s. Today she ran it in 13.0 s. By what percentage did her time increase?",
+          choices: ["A. 4.6%", "B. 4.8%", "C. 5.0%", "D. 5.2%", "E. 6.0%"],
+          answer: 1
+        },
+        {
+          text: "In a relay race, four runners complete 400 m each. Their times are 58 s, 62 s, 59 s, and 61 s. What is the team's total time in minutes and seconds?",
+          choices: ["A. 3 min 58 s", "B. 3 min 60 s", "C. 4 min 0 s", "D. 4 min 2 s", "E. 4 min 10 s"],
+          answer: 2
+        },
+        {
+          text: "After 5 games, a basketball player's scoring average is 18 points. After the 6th game, the average rises to 19 points. How many points did the player score in the 6th game?",
+          choices: ["A. 20", "B. 22", "C. 24", "D. 25", "E. 26"],
+          answer: 2
+        },
+        {
+          text: "A league table shows: 1st place 30 pts, 2nd place 27 pts, 3rd place 25 pts. Team A is in 3rd and still has 3 games left. How many wins (worth 3 pts each) does Team A need to guarantee reaching at least 34 pts?",
+          choices: ["A. 1", "B. 2", "C. 3", "D. 4", "E. 5"],
+          answer: 2
+        },
+        {
+          text: "In an archery competition, scoring zones are worth 10, 8, 6, 4, or 1 point. A competitor shoots 6 arrows and scores 10, 8, 8, 6, 4, and 1. What is the total score?",
+          choices: ["A. 35", "B. 37", "C. 38", "D. 39", "E. 40"],
+          answer: 1
+        },
+        {
+          text: "Three athletes in a triathlon each cover the same course. Their times are 2 h 14 min, 2 h 08 min, and 2 h 22 min. What is the average time?",
+          choices: ["A. 2 h 12 min", "B. 2 h 14 min", "C. 2 h 15 min", "D. 2 h 16 min", "E. 2 h 18 min"],
+          answer: 1
+        },
+        {
+          text: "A handball team plays 18 games. Their goal difference is +24. They scored 78 goals in total. How many goals did they concede?",
+          choices: ["A. 50", "B. 52", "C. 54", "D. 56", "E. 58"],
+          answer: 2
+        },
+        {
+          text: "In a points-based gymnastics competition, a judge gives scores of 8.5, 9.0, 7.5, 9.2, and 8.8. The highest and lowest scores are dropped. What is the average of the remaining scores?",
+          choices: ["A. 8.5", "B. 8.6", "C. 8.7", "D. 8.8", "E. 8.9"],
+          answer: 2
+        },
+        {
+          text: "A knockout tournament starts with 32 teams. How many rounds are needed to decide the champion?",
+          choices: ["A. 4", "B. 5", "C. 6", "D. 7", "E. 8"],
+          answer: 1
+        },
+        {
+          text: "A swimmer's best 100 m time is 58.2 s. A competitor swims the same distance 3% faster. What is the competitor's time (to 1 decimal place)?",
+          choices: ["A. 56.2 s", "B. 56.5 s", "C. 56.7 s", "D. 57.0 s", "E. 57.5 s"],
+          answer: 2
+        },
+        {
+          text: "In a cycling stage race, a rider completes 5 stages in 3 h 40 min, 4 h 05 min, 3 h 55 min, 4 h 15 min, and 3 h 30 min. What is the total time?",
+          choices: ["A. 19 h 15 min", "B. 19 h 20 min", "C. 19 h 25 min", "D. 19 h 30 min", "E. 19 h 35 min"],
+          answer: 2
+        },
+        {
+          text: "A team receives a 4-point handicap. After the match, their score plus the handicap is 24, and the opponent scored 22. Who wins on adjusted score?",
+          choices: ["A. Opponent wins by 2", "B. Draw", "C. The team wins by 2", "D. The team wins by 4", "E. Cannot be determined"],
+          answer: 2
+        },
+        {
+          text: "In a league with 8 teams, every team plays every other team twice (home and away). How many games are played in total?",
+          choices: ["A. 48", "B. 52", "C. 56", "D. 60", "E. 64"],
+          answer: 2
+        },
+        {
+          text: "A cross-country team of 6 runners finishes in positions 2, 5, 7, 9, 12, and 15. In cross-country, the team with the lowest total position score wins. What is this team's score?",
+          choices: ["A. 48", "B. 50", "C. 52", "D. 54", "E. 56"],
+          answer: 1
+        },
+        {
+          text: "A high jumper cleared 1.80 m, 1.85 m, and failed at 1.90 m on all three attempts. A second jumper cleared 1.75 m and 1.85 m, and also failed at 1.90 m, but only needed two attempts at 1.85 m while the first needed three. Who wins?",
+          choices: ["A. First jumper, same height", "B. Second jumper, fewer failures at last height", "C. First jumper, better second-best jump", "D. It is a tie", "E. First jumper wins by cleared height"],
+          answer: 1
+        },
+        {
+          text: "In a decathlon, an athlete earns points in 10 events. His scores are 820, 750, 910, 680, 790, 840, 770, 830, 760, and 850. What is his total?",
+          choices: ["A. 7900", "B. 8000", "C. 8100", "D. 8200", "E. 8300"],
+          answer: 1
+        },
+        {
+          text: "A football league has 10 teams. Each team plays each other twice. After half the season, Team X has played 9 games and has 20 points. What is the maximum points they can finish with?",
+          choices: ["A. 44", "B. 45", "C. 46", "D. 47", "E. 48"],
+          answer: 3
+        },
+        {
+          text: "A relay swimming team's target time is 3 min 48 s. The first three swimmers take 58 s, 55 s, and 57 s. How fast must the fourth swimmer go to meet the target?",
+          choices: ["A. 54 s", "B. 56 s", "C. 58 s", "D. 60 s", "E. 62 s"],
+          answer: 2
+        },
+        {
+          text: "In a biathlon, competitors get 2 minutes added for each missed shot. A racer finishes the skiing in 22 min 30 s and misses 4 shots. What is the total time?",
+          choices: ["A. 29 min 30 s", "B. 30 min 30 s", "C. 31 min 30 s", "D. 32 min 30 s", "E. 33 min 30 s"],
+          answer: 1
+        },
+        {
+          text: "A basketball player scored 24, 18, 31, 27, and 20 points in five games. How many points does she need in the sixth game to raise her average to 25?",
+          choices: ["A. 28", "B. 29", "C. 30", "D. 31", "E. 32"],
+          answer: 2
+        },
+        {
+          text: "In a quiz competition, correct answers score +3 and wrong answers score −1. A student answers 20 questions, gets 14 correct. What is the final score?",
+          choices: ["A. 36", "B. 38", "C. 40", "D. 42", "E. 44"],
+          answer: 0
+        },
+        {
+          text: "A 400 m track is used for a race. Athletes must complete 3200 m. How many full laps do they run?",
+          choices: ["A. 6", "B. 7", "C. 8", "D. 9", "E. 10"],
+          answer: 2
+        },
+        {
+          text: "Three long jumpers have personal bests of 6.85 m, 7.02 m, and 6.94 m. What is the average personal best?",
+          choices: ["A. 6.92 m", "B. 6.93 m", "C. 6.94 m", "D. 6.95 m", "E. 6.97 m"],
+          answer: 1
+        },
+        {
+          text: "In a penalty shootout, 5 players each take one shot. The team scores 4 out of 5. The opponent scores 3 out of 5. By how many does the first team win?",
+          choices: ["A. 0", "B. 1", "C. 2", "D. 3", "E. 4"],
+          answer: 1
+        },
+        {
+          text: "A marathon is 42.195 km. A runner completes it in 3 h 30 min. What is the runner's average speed in km/h (to 1 decimal place)?",
+          choices: ["A. 11.8 km/h", "B. 12.0 km/h", "C. 12.1 km/h", "D. 12.4 km/h", "E. 12.6 km/h"],
+          answer: 2
+        },
+        {
+          text: "A league table: Team A has won 7, drawn 3, and lost 4. Team B has won 6, drawn 5, and lost 3. Using 3-1-0 scoring, which team leads and by how many points?",
+          choices: ["A. Team A by 1", "B. Team B by 1", "C. Team A by 2", "D. They are level", "E. Team B by 2"],
+          answer: 3
+        },
+        {
+          text: "A gymnast receives these scores from 6 judges: 8.4, 9.1, 8.6, 8.9, 9.3, 8.7. The highest and lowest are removed. What is the mean of the remaining four scores?",
+          choices: ["A. 8.65", "B. 8.70", "C. 8.75", "D. 8.80", "E. 8.85"],
+          answer: 1
+        },
+        {
+          text: "In a points race, a cyclist earns 5 points for a sprint win, 3 for second, 1 for third. In 6 sprints, she wins 2, finishes second 3 times, and third once. What is her total?",
+          choices: ["A. 18", "B. 19", "C. 20", "D. 21", "E. 22"],
+          answer: 3
+        },
+        {
+          text: "A team's average goals scored per game after 12 games is 2.5. After three more games they score 4, 2, and 3 goals. What is their new average (to 2 decimal places)?",
+          choices: ["A. 2.60", "B. 2.61", "C. 2.62", "D. 2.63", "E. 2.65"],
+          answer: 0
+        },
+        {
+          text: "In a round-robin chess tournament with 5 players, each pair plays once. The winner of each game gets 1 point, a draw gives 0.5 each, and a loss gives 0. After the tournament, the scores are 4, 3.5, 2.5, 2, and 1. How many games ended in a draw?",
+          choices: ["A. 1", "B. 2", "C. 3", "D. 4", "E. 5"],
+          answer: 2
+        },
+        {
+          text: "A football player scored 12 goals in 15 games last season and 9 goals in 12 games this season. In which season was his average goals per game higher?",
+          choices: ["A. Last season, by 0.05 goals/game", "B. This season, by 0.05 goals/game", "C. They are the same", "D. Last season, by 0.10 goals/game", "E. This season, by 0.10 goals/game"],
+          answer: 2
+        },
+        {
+          text: "In a knockout tournament with 16 teams, exactly one team is eliminated per game. How many games are played to produce the champion?",
+          choices: ["A. 12", "B. 13", "C. 14", "D. 15", "E. 16"],
+          answer: 3
+        },
+        {
+          text: "A darts player's average score per turn (3 darts) across 8 turns is 45. In the 9th turn, she scores 72. What is her new average per turn?",
+          choices: ["A. 47", "B. 48", "C. 49", "D. 50", "E. 51"],
+          answer: 1
+        },
+        {
+          text: "In a multi-event athletics competition, points are awarded as: 1st = 8, 2nd = 7, 3rd = 6, down to 8th = 1. An athlete finishes 2nd, 4th, 1st, 3rd, and 5th across five events. What is the total points score?",
+          choices: ["A. 29", "B. 30", "C. 31", "D. 32", "E. 33"],
+          answer: 2
+        },
+        {
+          text: "A club awards medals to the top 3 finishers in each of 4 events. Gold = 5 pts, Silver = 3 pts, Bronze = 1 pt. An athlete wins 2 golds, 1 silver, and 1 bronze. What is the total?",
+          choices: ["A. 12", "B. 13", "C. 14", "D. 15", "E. 16"],
+          answer: 3
+        },
+        {
+          text: "In a team relay, each of 4 legs is 200 m. The team's average time per leg is 25.5 s. What is the total relay time?",
+          choices: ["A. 100 s", "B. 102 s", "C. 104 s", "D. 106 s", "E. 108 s"],
+          answer: 1
+        },
+        {
+          text: "A league season has 38 rounds. A team wins 22, draws 8, and loses 8. If each win = 3 pts, draw = 1, loss = 0, what is their total?",
+          choices: ["A. 72", "B. 74", "C. 76", "D. 78", "E. 80"],
+          answer: 2
+        },
+        {
+          text: "In a tennis tournament (best of 3 sets), Player A wins sets 1 and 3 and loses set 2. The game counts are 6-4, 3-6, 7-5. How many total games were played?",
+          choices: ["A. 29", "B. 30", "C. 31", "D. 32", "E. 33"],
+          answer: 2
+        },
+        {
+          text: "A sprinter runs 100 m in 11.5 s. A second sprinter is 8% slower. How long does the second sprinter take (to 1 decimal place)?",
+          choices: ["A. 12.2 s", "B. 12.4 s", "C. 12.6 s", "D. 12.8 s", "E. 13.0 s"],
+          answer: 1
+        },
+        {
+          text: "After 6 games, a volleyball team's average points per game is 24. They need an average of 25 over 8 games to qualify. What total must they score in the next 2 games?",
+          choices: ["A. 46", "B. 48", "C. 50", "D. 52", "E. 54"],
+          answer: 3
+        },
+        {
+          text: "In a round-robin tournament with 6 teams, each pair plays once. How many matches are played in total?",
+          choices: ["A. 12", "B. 15", "C. 18", "D. 20", "E. 24"],
+          answer: 1
+        },
+        {
+          text: "A cyclist's average speed over 3 stages is 40 km/h. Stage 1 was 38 km/h, Stage 2 was 42 km/h. What was the speed in Stage 3?",
+          choices: ["A. 38 km/h", "B. 39 km/h", "C. 40 km/h", "D. 41 km/h", "E. 42 km/h"],
+          answer: 2
+        },
+        {
+          text: "A football team scores a total of 63 goals in 21 matches. In the next 3 matches they score 4, 2, and 3 goals. What is their new goals-per-match average?",
+          choices: ["A. 3.0", "B. 3.1", "C. 3.2", "D. 3.3", "E. 3.5"],
+          answer: 0
         }
       ]
     },
@@ -14418,6 +14643,231 @@ const questionsData = {
         {
           text: "Apples cost €1.20 per kg and oranges cost €1.80 per kg. How much does a mixture of 3 kg apples and 2 kg oranges cost?",
           choices: ["A. €5.60", "B. €6.00", "C. €6.40", "D. €7.20", "E. €7.80"],
+          answer: 1
+        },
+        {
+          text: "A cookie recipe for 24 cookies uses 300 g of sugar. How much sugar is needed to make 36 cookies?",
+          choices: ["A. 400 g", "B. 420 g", "C. 450 g", "D. 480 g", "E. 500 g"],
+          answer: 2
+        },
+        {
+          text: "A recipe uses flour, butter, and sugar in the ratio 4:3:2. If the total mixture weighs 900 g, how much flour is used?",
+          choices: ["A. 350 g", "B. 380 g", "C. 400 g", "D. 420 g", "E. 450 g"],
+          answer: 2
+        },
+        {
+          text: "A baker uses 2.5 kg of flour per day. How many 500 g bags of flour does he need for 5 days?",
+          choices: ["A. 20", "B. 22", "C. 24", "D. 25", "E. 30"],
+          answer: 3
+        },
+        {
+          text: "A rectangular garden is 18 m long and 12 m wide. A gardener plants flowers in rows 60 cm apart across the width. How many rows fit?",
+          choices: ["A. 18", "B. 19", "C. 20", "D. 21", "E. 22"],
+          answer: 2
+        },
+        {
+          text: "A cake requires 200 g of chocolate costing €0.80 per 100 g and 150 g of cream costing €0.60 per 100 g. What is the total ingredient cost?",
+          choices: ["A. €2.30", "B. €2.50", "C. €2.60", "D. €2.80", "E. €3.00"],
+          answer: 0
+        },
+        {
+          text: "A recipe for bread uses 750 ml of milk. The baker wants to make 2.5 times the recipe. How many litres of milk does he need?",
+          choices: ["A. 1.5 l", "B. 1.75 l", "C. 1.875 l", "D. 2.0 l", "E. 2.25 l"],
+          answer: 2
+        },
+        {
+          text: "A garden bed is 8 m × 5 m. A path 0.5 m wide runs around the outside. What is the total area including the path?",
+          choices: ["A. 45 m²", "B. 50 m²", "C. 54 m²", "D. 58 m²", "E. 60 m²"],
+          answer: 2
+        },
+        {
+          text: "A jam recipe uses 3 kg of fruit for every 2 kg of sugar. How much sugar is needed for 7.5 kg of fruit?",
+          choices: ["A. 4 kg", "B. 4.5 kg", "C. 5 kg", "D. 5.5 kg", "E. 6 kg"],
+          answer: 2
+        },
+        {
+          text: "A baker produces 180 croissants per morning. He works 5 mornings per week. If each croissant sells for €1.20, what is the weekly revenue?",
+          choices: ["A. €960", "B. €1,000", "C. €1,040", "D. €1,080", "E. €1,120"],
+          answer: 3
+        },
+        {
+          text: "A smoothie uses 250 ml of juice, 100 g of banana, and 50 g of berries. A café wants to make 8 smoothies. How much banana do they need?",
+          choices: ["A. 700 g", "B. 750 g", "C. 800 g", "D. 850 g", "E. 900 g"],
+          answer: 2
+        },
+        {
+          text: "A rectangular allotment is 30 m × 20 m. A 2 m wide path divides it in half lengthwise. What is the area available for planting?",
+          choices: ["A. 540 m²", "B. 556 m²", "C. 560 m²", "D. 576 m²", "E. 580 m²"],
+          answer: 0
+        },
+        {
+          text: "A recipe requires 3 eggs per batch. Each batch makes 12 muffins. A baker needs 60 muffins. How many eggs are needed?",
+          choices: ["A. 12", "B. 13", "C. 14", "D. 15", "E. 16"],
+          answer: 3
+        },
+        {
+          text: "Flour costs €0.90 per kg. A bakery uses 15 kg per day. What is the weekly (7-day) flour bill?",
+          choices: ["A. €88.50", "B. €92.00", "C. €94.50", "D. €97.50", "E. €100.00"],
+          answer: 2
+        },
+        {
+          text: "A recipe for 4 servings uses 320 ml of cream. If you have a 500 ml carton of cream, how many full servings can you make?",
+          choices: ["A. 5", "B. 6", "C. 7", "D. 8", "E. 9"],
+          answer: 1
+        },
+        {
+          text: "A herb garden is a square with side 6 m. A 1 m wide gravel border runs around the inside. What area remains for planting?",
+          choices: ["A. 12 m²", "B. 14 m²", "C. 16 m²", "D. 18 m²", "E. 20 m²"],
+          answer: 2
+        },
+        {
+          text: "A baker mixes 3 kg of raisins at €4/kg with 2 kg of nuts at €7/kg. What is the average cost per kg of the mixture?",
+          choices: ["A. €5.00", "B. €5.20", "C. €5.40", "D. €5.60", "E. €5.80"],
+          answer: 1
+        },
+        {
+          text: "A pasta recipe calls for 80 g of pasta per person. How many kg of pasta is needed for 25 people?",
+          choices: ["A. 1.8 kg", "B. 2.0 kg", "C. 2.2 kg", "D. 2.4 kg", "E. 2.5 kg"],
+          answer: 1
+        },
+        {
+          text: "A garden has 5 rows of tomatoes with 8 plants per row and 3 rows of courgettes with 6 plants per row. If each tomato yields 2 kg and each courgette yields 3 kg, what is the total yield?",
+          choices: ["A. 124 kg", "B. 128 kg", "C. 132 kg", "D. 134 kg", "E. 136 kg"],
+          answer: 1
+        },
+        {
+          text: "A cake is baked at 180°C. The oven is preheated from 20°C and takes 12 minutes to reach temperature. The cake bakes for 45 minutes. How long in total is the oven on before the cake is done?",
+          choices: ["A. 45 min", "B. 55 min", "C. 57 min", "D. 60 min", "E. 65 min"],
+          answer: 2
+        },
+        {
+          text: "A recipe uses 1.2 litres of milk. Milk comes in 330 ml cartons. What is the minimum number of cartons needed?",
+          choices: ["A. 3", "B. 4", "C. 5", "D. 6", "E. 7"],
+          answer: 1
+        },
+        {
+          text: "A baker makes 3 types of bread: rye (2 kg), white (3 kg), and wholegrain (1.5 kg). She wraps each type in 500 g packs. How many packs does she have in total?",
+          choices: ["A. 12", "B. 13", "C. 14", "D. 15", "E. 16"],
+          answer: 1
+        },
+        {
+          text: "A vegetable garden plot has an area of 48 m². The length is twice the width. What is the perimeter of the plot?",
+          choices: ["A. 28 m", "B. 30 m", "C. 32 m", "D. 34 m", "E. 36 m"],
+          answer: 0
+        },
+        {
+          text: "A sauce recipe calls for tomatoes and peppers in a 5:2 ratio by weight. If 700 g of peppers are used, how many kg of tomatoes are needed?",
+          choices: ["A. 1.50 kg", "B. 1.75 kg", "C. 2.00 kg", "D. 2.25 kg", "E. 2.50 kg"],
+          answer: 1
+        },
+        {
+          text: "A baker spends €120 on ingredients and sells all products for €190. The oven electricity costs €15 and packaging costs €8. What is the net profit?",
+          choices: ["A. €44", "B. €47", "C. €50", "D. €52", "E. €55"],
+          answer: 1
+        },
+        {
+          text: "A fruit cake recipe in a 20 cm tin needs 250 g of dried fruit. To use a 25 cm tin the quantities must be scaled by the ratio of areas. How much dried fruit is needed for the 25 cm tin?",
+          choices: ["A. 340 g", "B. 360 g", "C. 375 g", "D. 390 g", "E. 400 g"],
+          answer: 3
+        },
+        {
+          text: "A gardener plants seedlings 40 cm apart in rows that are 60 cm apart. The rectangular plot is 4 m wide and 6 m long. How many seedlings fit?",
+          choices: ["A. 90", "B. 100", "C. 110", "D. 120", "E. 130"],
+          answer: 1
+        },
+        {
+          text: "A baker converts 2.75 kg of flour into bread. Each loaf requires 550 g of flour. How many loaves can he make and what is the leftover flour?",
+          choices: ["A. 4 loaves, 200 g left", "B. 5 loaves, 0 g left", "C. 5 loaves, 25 g left", "D. 4 loaves, 550 g left", "E. 5 loaves, 50 g left"],
+          answer: 1
+        },
+        {
+          text: "A rectangular garden plot is 12 m × 9 m. A gardener wants to put a gravel path 1.5 m wide around the outside. What is the area of the path?",
+          choices: ["A. 75 m²", "B. 81 m²", "C. 87 m²", "D. 90 m²", "E. 93 m²"],
+          answer: 2
+        },
+        {
+          text: "A recipe calls for 3 parts water to 1 part cordial. A jug holds 1.2 litres. How much cordial (in ml) should be poured in first?",
+          choices: ["A. 250 ml", "B. 280 ml", "C. 300 ml", "D. 320 ml", "E. 350 ml"],
+          answer: 2
+        },
+        {
+          text: "A bakery produces 240 rolls each day. They sell 75% on the day and discount the rest to half price. Day-price is €0.60 each, discount-price is €0.30 each. What is the daily revenue?",
+          choices: ["A. €115", "B. €120", "C. €124", "D. €126", "E. €130"],
+          answer: 3
+        },
+        {
+          text: "Apple trees are planted 3 m apart in rows, with rows 4 m apart. A rectangular orchard is 30 m × 24 m. How many trees fit (counting boundary trees)?",
+          choices: ["A. 55", "B. 63", "C. 66", "D. 70", "E. 77"],
+          answer: 2
+        },
+        {
+          text: "A soup recipe serves 4 and uses 600 ml of broth. For a party of 14, how much broth is needed? Give your answer in litres.",
+          choices: ["A. 1.9 l", "B. 2.0 l", "C. 2.1 l", "D. 2.2 l", "E. 2.3 l"],
+          answer: 2
+        },
+        {
+          text: "A baker uses 3 kg of butter per week. Butter is sold in 250 g packs. How many packs does the baker buy per week?",
+          choices: ["A. 10", "B. 11", "C. 12", "D. 13", "E. 14"],
+          answer: 2
+        },
+        {
+          text: "A garden is 20 m × 15 m. Tulip bulbs are planted 25 cm apart in a grid pattern covering the whole garden. How many bulbs are needed?",
+          choices: ["A. 4700", "B. 4800", "C. 4900", "D. 4961", "E. 5000"],
+          answer: 3
+        },
+        {
+          text: "A cake costs €3.60 to make and is cut into 8 equal slices. Each slice is sold for €0.80. What is the profit on the whole cake?",
+          choices: ["A. €2.60", "B. €2.80", "C. €2.90", "D. €3.00", "E. €3.20"],
+          answer: 0
+        },
+        {
+          text: "A bread recipe uses 500 g flour, 10 g salt, 7 g yeast, and 325 ml water. A baker scales this up by a factor of 6. How much salt (in grams) is needed?",
+          choices: ["A. 50 g", "B. 54 g", "C. 56 g", "D. 60 g", "E. 66 g"],
+          answer: 3
+        },
+        {
+          text: "A jam requires 1.5 kg of fruit per 1 kg jar produced. A market stall wants to sell 20 jars. How much fruit (in kg) must be prepared?",
+          choices: ["A. 25 kg", "B. 28 kg", "C. 30 kg", "D. 32 kg", "E. 35 kg"],
+          answer: 2
+        },
+        {
+          text: "A square kitchen garden has a perimeter of 56 m. A gardener divides it into 4 equal rectangular beds by adding two paths (one across the width, one along the length), each 1 m wide. What is the planting area of each bed?",
+          choices: ["A. 85.75 m²", "B. 87.5 m²", "C. 90 m²", "D. 91.5 m²", "E. 95 m²"],
+          answer: 0
+        },
+        {
+          text: "A recipe uses 400 g of mixed nuts: almonds, walnuts, and cashews in the ratio 2:2:1. How many grams of cashews are used?",
+          choices: ["A. 60 g", "B. 70 g", "C. 75 g", "D. 80 g", "E. 85 g"],
+          answer: 3
+        },
+        {
+          text: "A baker bakes 5 trays of biscuits with 12 biscuits per tray. He uses 240 g of sugar in total. How many grams of sugar does each biscuit contain?",
+          choices: ["A. 3 g", "B. 4 g", "C. 5 g", "D. 6 g", "E. 7 g"],
+          answer: 1
+        },
+        {
+          text: "A garden path runs along two sides of a rectangular lawn (20 m × 12 m). The path is 2 m wide. What area does the path cover?",
+          choices: ["A. 56 m²", "B. 60 m²", "C. 64 m²", "D. 68 m²", "E. 72 m²"],
+          answer: 1
+        },
+        {
+          text: "A cupcake recipe needs 120 g of butter, 100 g of sugar, and 150 g of flour for 12 cupcakes. What is the total weight of ingredients for 18 cupcakes?",
+          choices: ["A. 460 g", "B. 510 g", "C. 540 g", "D. 555 g", "E. 560 g"],
+          answer: 3
+        },
+        {
+          text: "A gardener uses 3.5 kg of fertiliser for every 10 m² of lawn. How much fertiliser (in kg) is needed for a lawn of 80 m²?",
+          choices: ["A. 24 kg", "B. 26 kg", "C. 28 kg", "D. 30 kg", "E. 32 kg"],
+          answer: 2
+        },
+        {
+          text: "A baker prepares 5 trays of rolls. Each tray holds 15 rolls. Each roll requires 60 g of dough. How many kg of dough are needed in total?",
+          choices: ["A. 3.5 kg", "B. 4.0 kg", "C. 4.5 kg", "D. 5.0 kg", "E. 5.5 kg"],
+          answer: 2
+        },
+        {
+          text: "A rectangular flower bed is 9 m long and 4 m wide. Sunflower seeds are planted in a grid with 30 cm spacing in both directions. How many seeds are needed?",
+          choices: ["A. 450", "B. 506", "C. 510", "D. 560", "E. 600"],
           answer: 1
         }
       ]
@@ -14450,6 +14900,231 @@ const questionsData = {
           text: "A number is tripled and then 8 is subtracted. The result is 37. What is the number?",
           choices: ["A. 12", "B. 13", "C. 14", "D. 15", "E. 16"],
           answer: 3
+        },
+        {
+          text: "Solve: 5x − 3 = 2x + 12",
+          choices: ["A. 3", "B. 4", "C. 5", "D. 6", "E. 7"],
+          answer: 2
+        },
+        {
+          text: "Maria is 4 years older than her brother. The sum of their ages is 28. How old is Maria?",
+          choices: ["A. 14", "B. 15", "C. 16", "D. 17", "E. 18"],
+          answer: 2
+        },
+        {
+          text: "Three consecutive integers sum to 63. What is the smallest?",
+          choices: ["A. 18", "B. 19", "C. 20", "D. 21", "E. 22"],
+          answer: 2
+        },
+        {
+          text: "Solve: (x + 5) / 3 = 7",
+          choices: ["A. 14", "B. 15", "C. 16", "D. 17", "E. 18"],
+          answer: 2
+        },
+        {
+          text: "A bag of apples costs the same as 3 bags of oranges. Together they cost €8. How much does the bag of apples cost?",
+          choices: ["A. €5", "B. €6", "C. €7", "D. €8", "E. €4"],
+          answer: 1
+        },
+        {
+          text: "If 7x + 4 = 53, what is x?",
+          choices: ["A. 6", "B. 7", "C. 8", "D. 9", "E. 10"],
+          answer: 1
+        },
+        {
+          text: "Two friends have a total of 84 stickers. One friend has twice as many as the other. How many does the friend with more stickers have?",
+          choices: ["A. 48", "B. 52", "C. 56", "D. 58", "E. 60"],
+          answer: 2
+        },
+        {
+          text: "Solve: 3(2x − 4) = 24",
+          choices: ["A. 4", "B. 5", "C. 6", "D. 7", "E. 8"],
+          answer: 2
+        },
+        {
+          text: "A father is 3 times his son's age. In 12 years, the father will be twice his son's age. How old is the son now?",
+          choices: ["A. 10", "B. 11", "C. 12", "D. 13", "E. 14"],
+          answer: 2
+        },
+        {
+          text: "If 8 − 3x = 2x − 7, what is x?",
+          choices: ["A. 2", "B. 3", "C. 4", "D. 5", "E. 6"],
+          answer: 1
+        },
+        {
+          text: "The product of a number and 6 is 18 more than the number itself. What is the number?",
+          choices: ["A. 3", "B. 4", "C. 5", "D. 6", "E. 7"],
+          answer: 1
+        },
+        {
+          text: "Solve the system: x + y = 15 and x − y = 3. What is x?",
+          choices: ["A. 7", "B. 8", "C. 9", "D. 10", "E. 11"],
+          answer: 2
+        },
+        {
+          text: "In 5 years, Anna will be 3 times as old as she was 3 years ago. How old is Anna now?",
+          choices: ["A. 6", "B. 7", "C. 8", "D. 9", "E. 10"],
+          answer: 1
+        },
+        {
+          text: "Solve: x/4 + 3 = 8",
+          choices: ["A. 16", "B. 18", "C. 20", "D. 22", "E. 24"],
+          answer: 2
+        },
+        {
+          text: "Two numbers are in the ratio 3:5. Their sum is 72. What is the larger number?",
+          choices: ["A. 36", "B. 40", "C. 42", "D. 45", "E. 48"],
+          answer: 3
+        },
+        {
+          text: "Solve: 2(3x + 1) = 4(x + 3)",
+          choices: ["A. 3", "B. 4", "C. 5", "D. 6", "E. 7"],
+          answer: 2
+        },
+        {
+          text: "A number decreased by 15 equals twice the number minus 27. What is the number?",
+          choices: ["A. 10", "B. 11", "C. 12", "D. 13", "E. 14"],
+          answer: 2
+        },
+        {
+          text: "Tickets cost €5 for children and €8 for adults. A group of 12 people pays €78. How many adults are in the group?",
+          choices: ["A. 4", "B. 5", "C. 6", "D. 7", "E. 8"],
+          answer: 2
+        },
+        {
+          text: "Solve: 4x − 7 = 3(x + 2)",
+          choices: ["A. 11", "B. 12", "C. 13", "D. 14", "E. 15"],
+          answer: 2
+        },
+        {
+          text: "The sum of four consecutive even integers is 100. What is the largest?",
+          choices: ["A. 24", "B. 26", "C. 28", "D. 30", "E. 32"],
+          answer: 2
+        },
+        {
+          text: "Solve the system: 2x + y = 11 and x + 2y = 10. What is y?",
+          choices: ["A. 2", "B. 3", "C. 4", "D. 5", "E. 6"],
+          answer: 1
+        },
+        {
+          text: "A rectangle's length is 5 more than its width. Its perimeter is 46 cm. What is the width?",
+          choices: ["A. 7 cm", "B. 8 cm", "C. 9 cm", "D. 10 cm", "E. 11 cm"],
+          answer: 2
+        },
+        {
+          text: "Half a number plus 7 equals 19. What is the number?",
+          choices: ["A. 20", "B. 22", "C. 24", "D. 26", "E. 28"],
+          answer: 2
+        },
+        {
+          text: "Solve: (2x + 3) / 5 = (x − 1) / 2",
+          choices: ["A. 9", "B. 10", "C. 11", "D. 12", "E. 13"],
+          answer: 2
+        },
+        {
+          text: "A jar has red and blue marbles. There are 8 more red than blue, and 40 in total. How many blue marbles are there?",
+          choices: ["A. 14", "B. 15", "C. 16", "D. 17", "E. 18"],
+          answer: 2
+        },
+        {
+          text: "If 5(x − 2) = 3(x + 4), what is x?",
+          choices: ["A. 9", "B. 10", "C. 11", "D. 12", "E. 13"],
+          answer: 2
+        },
+        {
+          text: "The difference between two numbers is 9, and one number is 4 times the other. What is the smaller number?",
+          choices: ["A. 2", "B. 3", "C. 4", "D. 5", "E. 6"],
+          answer: 1
+        },
+        {
+          text: "A school bought pencils and pens in equal numbers. Pencils cost €0.30 each and pens cost €0.70 each. The total cost was €24. How many of each were bought?",
+          choices: ["A. 20", "B. 22", "C. 24", "D. 26", "E. 30"],
+          answer: 2
+        },
+        {
+          text: "Solve: 6x + 4 = 10x − 12",
+          choices: ["A. 3", "B. 4", "C. 5", "D. 6", "E. 7"],
+          answer: 1
+        },
+        {
+          text: "Tom has twice as many cards as Ali. If Tom gives Ali 10 cards they will have the same. How many cards does Tom have originally?",
+          choices: ["A. 30", "B. 35", "C. 40", "D. 45", "E. 50"],
+          answer: 2
+        },
+        {
+          text: "Solve: (x + 4)(1) = 2x − 5 (i.e. x + 4 = 2x − 5)",
+          choices: ["A. 7", "B. 8", "C. 9", "D. 10", "E. 11"],
+          answer: 2
+        },
+        {
+          text: "The sum of three consecutive odd numbers is 81. What is the middle number?",
+          choices: ["A. 25", "B. 27", "C. 29", "D. 31", "E. 33"],
+          answer: 1
+        },
+        {
+          text: "A coach orders jerseys at €15 each and shorts at €10 each for 11 players. The total cost is €275. How many of each does she order per player? (One jersey and one pair of shorts each; verify the equation holds.)",
+          choices: ["A. 10", "B. 11", "C. 12", "D. 13", "E. 14"],
+          answer: 1
+        },
+        {
+          text: "Solve: 9 − (2x − 3) = 4",
+          choices: ["A. 3", "B. 4", "C. 5", "D. 6", "E. 7"],
+          answer: 0
+        },
+        {
+          text: "Two numbers multiply to 36 and add to 13. What is the larger number?",
+          choices: ["A. 7", "B. 8", "C. 9", "D. 10", "E. 11"],
+          answer: 2
+        },
+        {
+          text: "Solve: 3x/4 − 2 = 7",
+          choices: ["A. 10", "B. 11", "C. 12", "D. 13", "E. 14"],
+          answer: 2
+        },
+        {
+          text: "A number is doubled, then 5 is added, then the result is halved to give 11. What is the number?",
+          choices: ["A. 7", "B. 8", "C. 9", "D. 10", "E. 11"],
+          answer: 2
+        },
+        {
+          text: "Solve: 2x + 3y = 17 and x = 2y − 1. What is y?",
+          choices: ["A. 2", "B. 3", "C. 4", "D. 5", "E. 6"],
+          answer: 1
+        },
+        {
+          text: "A piggy bank has coins worth €0.10 and €0.20. There are 30 coins totalling €4.50. How many €0.20 coins are there?",
+          choices: ["A. 12", "B. 13", "C. 14", "D. 15", "E. 16"],
+          answer: 3
+        },
+        {
+          text: "Ben's age plus his sister's age is 35. Ben is 5 years older. Solve to find Ben's age.",
+          choices: ["A. 18", "B. 19", "C. 20", "D. 21", "E. 22"],
+          answer: 2
+        },
+        {
+          text: "Solve: 4(x + 3) − 2(x − 1) = 22",
+          choices: ["A. 3", "B. 4", "C. 5", "D. 6", "E. 7"],
+          answer: 0
+        },
+        {
+          text: "A number is multiplied by 6 and then 9 is subtracted. The result is 33. What is the number?",
+          choices: ["A. 5", "B. 6", "C. 7", "D. 8", "E. 9"],
+          answer: 2
+        },
+        {
+          text: "Maria has three times as many stickers as Leo. Together they have 48 stickers. How many stickers does Maria have?",
+          choices: ["A. 12", "B. 24", "C. 30", "D. 36", "E. 40"],
+          answer: 3
+        },
+        {
+          text: "A tank holds 120 litres. Water flows in at 8 litres per minute and is pumped out at 3 litres per minute. How many minutes until the tank is full, starting from empty?",
+          choices: ["A. 20", "B. 22", "C. 24", "D. 26", "E. 28"],
+          answer: 2
+        },
+        {
+          text: "Solve for x: 5x − 3 = 3x + 11",
+          choices: ["A. 5", "B. 6", "C. 7", "D. 8", "E. 9"],
+          answer: 2
         }
       ]
     },
@@ -14481,6 +15156,231 @@ const questionsData = {
           text: "If p = 3 and q = −2, what is p² − q²?",
           choices: ["A. 1", "B. 3", "C. 5", "D. 7", "E. 9"],
           answer: 2
+        },
+        {
+          text: "Expand and simplify: 2(x + 4) + 3(x − 2)",
+          choices: ["A. 5x + 1", "B. 5x + 2", "C. 5x − 2", "D. 5x + 14", "E. 5x − 14"],
+          answer: 1
+        },
+        {
+          text: "Which expression is equivalent to 4x − 8?",
+          choices: ["A. 4(x + 2)", "B. 2(2x − 4)", "C. 8(x − 1)", "D. 4(x + 8)", "E. 2(x − 4)"],
+          answer: 1
+        },
+        {
+          text: "If m = 5 and n = −3, what is 2m² − n²?",
+          choices: ["A. 38", "B. 39", "C. 40", "D. 41", "E. 42"],
+          answer: 3
+        },
+        {
+          text: "Simplify: (2x + 1)² − (2x − 1)²",
+          choices: ["A. 4x", "B. 8x", "C. 4x²", "D. 8x²", "E. 2x"],
+          answer: 1
+        },
+        {
+          text: "Evaluate 3a − 2b + c when a = 4, b = −1, and c = 5.",
+          choices: ["A. 17", "B. 18", "C. 19", "D. 20", "E. 21"],
+          answer: 2
+        },
+        {
+          text: "Factor completely: 6x² − 9x",
+          choices: ["A. 3x(2x − 3)", "B. 3(2x² − 3x)", "C. 6x(x − 9)", "D. 9x(x − 1)", "E. x(6x − 9)"],
+          answer: 0
+        },
+        {
+          text: "Simplify: (3x − 2)(x + 4)",
+          choices: ["A. 3x² + 10x − 8", "B. 3x² + 12x − 8", "C. 3x² − 8", "D. 3x² + 10x + 8", "E. 3x² − 10x − 8"],
+          answer: 0
+        },
+        {
+          text: "If x = −2, what is the value of x³ − x²?",
+          choices: ["A. −12", "B. −8", "C. 4", "D. −4", "E. 12"],
+          answer: 0
+        },
+        {
+          text: "Which of the following is equal to (a + b)² − 2ab?",
+          choices: ["A. a² − b²", "B. a² + b²", "C. a² + 2ab + b²", "D. (a − b)²", "E. 2(a + b)"],
+          answer: 1
+        },
+        {
+          text: "Simplify: 5(2x − 3) − 3(x + 2)",
+          choices: ["A. 7x − 21", "B. 7x − 9", "C. 7x + 9", "D. 13x − 21", "E. 7x − 19"],
+          answer: 0
+        },
+        {
+          text: "If x + y = 9 and xy = 18, what is x² + y²?",
+          choices: ["A. 42", "B. 44", "C. 45", "D. 47", "E. 49"],
+          answer: 2
+        },
+        {
+          text: "Expand: (x − 5)²",
+          choices: ["A. x² − 25", "B. x² − 10x + 25", "C. x² + 10x + 25", "D. x² − 10x − 25", "E. x² + 25"],
+          answer: 1
+        },
+        {
+          text: "Substitute x = 3 into the expression 2x² − 5x + 4.",
+          choices: ["A. 5", "B. 6", "C. 7", "D. 8", "E. 9"],
+          answer: 2
+        },
+        {
+          text: "Simplify: (5a + 3b) − 2(a − b)",
+          choices: ["A. 3a + 5b", "B. 3a + b", "C. 7a + 5b", "D. 3a − b", "E. 7a + b"],
+          answer: 0
+        },
+        {
+          text: "Which expression is equivalent to x² − 16?",
+          choices: ["A. (x − 4)(x − 4)", "B. (x + 4)(x − 4)", "C. (x − 8)(x + 2)", "D. (x − 16)(x + 1)", "E. (x + 8)(x − 2)"],
+          answer: 1
+        },
+        {
+          text: "If a = 2 and b = 3, what is (a + b)³ − a³ − b³?",
+          choices: ["A. 90", "B. 96", "C. 100", "D. 108", "E. 112"],
+          answer: 0
+        },
+        {
+          text: "Simplify: (4x² − 1) / (2x − 1)",
+          choices: ["A. 2x + 1", "B. 2x − 1", "C. 4x + 1", "D. 4x − 1", "E. 2x"],
+          answer: 0
+        },
+        {
+          text: "If x = 4, evaluate: (x + 2)(x − 2) − x",
+          choices: ["A. 8", "B. 9", "C. 10", "D. 11", "E. 12"],
+          answer: 3
+        },
+        {
+          text: "Which two expressions are equivalent? I: 2(x − 3) + 4x  II: 6x − 6  III: 6x + 6",
+          choices: ["A. I and II only", "B. I and III only", "C. II and III only", "D. All three", "E. None"],
+          answer: 0
+        },
+        {
+          text: "Expand and simplify: (x + 2)(x + 3) − (x + 1)(x + 4)",
+          choices: ["A. −2", "B. 2", "C. 6", "D. −6", "E. 0"],
+          answer: 1
+        },
+        {
+          text: "If the expression 3x² − kx + 4 equals 10 when x = 2, what is k?",
+          choices: ["A. 1", "B. 2", "C. 3", "D. 4", "E. 5"],
+          answer: 1
+        },
+        {
+          text: "Simplify: 4(3x − 2) − (5x − 8)",
+          choices: ["A. 7x", "B. 7x + 8", "C. 7x − 8", "D. 7x + 16", "E. 17x"],
+          answer: 0
+        },
+        {
+          text: "What is the value of a² + 2ab + b² when a = 7 and b = 3?",
+          choices: ["A. 80", "B. 90", "C. 100", "D. 110", "E. 120"],
+          answer: 2
+        },
+        {
+          text: "Factorise: x² + 7x + 12",
+          choices: ["A. (x + 2)(x + 6)", "B. (x + 3)(x + 4)", "C. (x + 1)(x + 12)", "D. (x + 6)(x + 2)", "E. (x + 4)(x + 3)"],
+          answer: 1
+        },
+        {
+          text: "Simplify: (2x + y)² − 4x²",
+          choices: ["A. y² + 4xy", "B. y² − 4xy", "C. 4xy + y²", "D. 4xy − y²", "E. y²"],
+          answer: 0
+        },
+        {
+          text: "If f(x) = x² − 3x + 2, what is f(5) − f(2)?",
+          choices: ["A. 10", "B. 12", "C. 14", "D. 16", "E. 18"],
+          answer: 1
+        },
+        {
+          text: "Which value of x makes 2x² − 8 equal to 0?",
+          choices: ["A. x = 1", "B. x = 2", "C. x = 3", "D. x = 4", "E. x = −1"],
+          answer: 1
+        },
+        {
+          text: "Simplify: (x + 1)(x + 2)(x + 3) when only the x coefficient (coefficient of x) in the expanded form is needed.",
+          choices: ["A. 5", "B. 6", "C. 11", "D. 9", "E. 7"],
+          answer: 2
+        },
+        {
+          text: "If ab = 12 and a + b = 8, what is (a − b)²?",
+          choices: ["A. 14", "B. 15", "C. 16", "D. 17", "E. 18"],
+          answer: 2
+        },
+        {
+          text: "The expression 9x² − 6x + 1 can be written as which perfect square?",
+          choices: ["A. (3x − 1)²", "B. (3x + 1)²", "C. (9x − 1)²", "D. (3x − 2)²", "E. (x − 3)²"],
+          answer: 0
+        },
+        {
+          text: "Evaluate the expression (p − q)(p + q) + q² when p = 6 and q = 2.",
+          choices: ["A. 32", "B. 34", "C. 36", "D. 38", "E. 40"],
+          answer: 2
+        },
+        {
+          text: "Which expression gives the same result as 25 − x² for all x?",
+          choices: ["A. (5 − x)²", "B. (x − 5)(x + 5)", "C. (5 − x)(5 + x)", "D. (x + 5)²", "E. 5(5 − x)"],
+          answer: 2
+        },
+        {
+          text: "If x = 1/2, what is the value of 4x² + 4x + 1?",
+          choices: ["A. 3", "B. 4", "C. 5", "D. 6", "E. 7"],
+          answer: 1
+        },
+        {
+          text: "Simplify: 3x(x − 4) − x(x − 6)",
+          choices: ["A. 2x² − 6x", "B. 2x² + 6x", "C. 2x² − 18x", "D. 2x² − 6", "E. 4x² − 6x"],
+          answer: 0
+        },
+        {
+          text: "Given that a − b = 5 and a² − b² = 45, find a + b.",
+          choices: ["A. 7", "B. 8", "C. 9", "D. 10", "E. 11"],
+          answer: 2
+        },
+        {
+          text: "Which expression is NOT equivalent to (x + 2)²?",
+          choices: ["A. x² + 4x + 4", "B. (x + 2)(x + 2)", "C. x² + 4 + 4x", "D. x² + 2² + 2x", "E. (2 + x)²"],
+          answer: 3
+        },
+        {
+          text: "Simplify: (a + b + c)² − (a + b)² when c = 0 scenario excluded; leave in terms of variables.",
+          choices: ["A. c² + 2ac + 2bc", "B. c² + 2c", "C. c(c + 2)", "D. 2c(a + b) + c²", "E. c² + a + b"],
+          answer: 3
+        },
+        {
+          text: "If x = −3, what is (x − 2)² − (x + 2)²?",
+          choices: ["A. −20", "B. −16", "C. 16", "D. 20", "E. 24"],
+          answer: 0
+        },
+        {
+          text: "Factor: 12ab − 8a²",
+          choices: ["A. 4a(3b − 2a)", "B. 4b(3a − 2b)", "C. 2a(6b − 4a)", "D. 12a(b − a)", "E. 4ab(3 − 2)"],
+          answer: 0
+        },
+        {
+          text: "If x + 1/x = 5, what is x² + 1/x²?",
+          choices: ["A. 21", "B. 23", "C. 25", "D. 27", "E. 29"],
+          answer: 1
+        },
+        {
+          text: "Which expression is equivalent to 2(3x − 4) + 3(x + 2)?",
+          choices: ["A. 9x − 2", "B. 9x + 2", "C. 9x − 4", "D. 6x + 2", "E. 6x − 2"],
+          answer: 0
+        },
+        {
+          text: "If a = 3 and b = −2, what is the value of 2a² − 3b?",
+          choices: ["A. 12", "B. 18", "C. 22", "D. 24", "E. 28"],
+          answer: 3
+        },
+        {
+          text: "Simplify: (5x + 3) − (2x − 7)",
+          choices: ["A. 3x − 4", "B. 3x + 4", "C. 3x + 10", "D. 7x − 4", "E. 7x + 10"],
+          answer: 2
+        },
+        {
+          text: "Which value of x makes the expressions 4x + 5 and 6x − 3 equal?",
+          choices: ["A. 2", "B. 3", "C. 4", "D. 5", "E. 6"],
+          answer: 2
+        },
+        {
+          text: "Expand and simplify: (x + 4)(x + 2) − x²",
+          choices: ["A. 6x + 6", "B. 6x + 8", "C. 8x + 6", "D. 6x + 10", "E. 8x + 8"],
+          answer: 1
         }
       ]
     },
@@ -14512,6 +15412,231 @@ const questionsData = {
           text: "If 5 < 2x − 1 ≤ 13, what are the integer values of x?",
           choices: ["A. 3, 4, 5, 6, 7", "B. 3, 4, 5, 6", "C. 4, 5, 6, 7", "D. 4, 5, 6", "E. 3, 4, 5"],
           answer: 2
+        },
+        {
+          text: "Solve: 4x − 5 < 19. What is the largest integer solution?",
+          choices: ["A. 4", "B. 5", "C. 6", "D. 7", "E. 8"],
+          answer: 2
+        },
+        {
+          text: "How many positive integers satisfy 3n + 1 ≤ 25?",
+          choices: ["A. 6", "B. 7", "C. 8", "D. 9", "E. 10"],
+          answer: 2
+        },
+        {
+          text: "A bag can hold at most 15 kg. Each box weighs 2.4 kg. What is the maximum number of boxes that can fit in the bag?",
+          choices: ["A. 4", "B. 5", "C. 6", "D. 7", "E. 8"],
+          answer: 2
+        },
+        {
+          text: "Which of the following values of x satisfies −3 < 2x + 1 < 9?",
+          choices: ["A. −3", "B. −2", "C. 4", "D. 5", "E. −4"],
+          answer: 1
+        },
+        {
+          text: "A student needs a score of at least 80 on a test. She has scored 74, 82, 78, and 85. What minimum score does she need on the 5th test for her average to be at least 80?",
+          choices: ["A. 78", "B. 79", "C. 80", "D. 81", "E. 82"],
+          answer: 3
+        },
+        {
+          text: "Solve: −2x + 7 ≥ 3. Which value of x satisfies this inequality?",
+          choices: ["A. 3", "B. 4", "C. 2", "D. 5", "E. 6"],
+          answer: 2
+        },
+        {
+          text: "A cinema has 200 seats. At least 160 must be sold for a profit. If 45 seats are already reserved, what is the minimum number of remaining seats to sell?",
+          choices: ["A. 110", "B. 112", "C. 114", "D. 115", "E. 120"],
+          answer: 3
+        },
+        {
+          text: "How many integers satisfy both x > −4 and x ≤ 2?",
+          choices: ["A. 5", "B. 6", "C. 7", "D. 8", "E. 9"],
+          answer: 2
+        },
+        {
+          text: "A budget of €120 is to be spent on chairs (€15 each) and tables (€30 each). If at least 2 tables must be bought, what is the maximum number of chairs that can be purchased?",
+          choices: ["A. 3", "B. 4", "C. 5", "D. 6", "E. 7"],
+          answer: 1
+        },
+        {
+          text: "Solve: 5 − 3x < 14. Which is the correct solution set?",
+          choices: ["A. x > −3", "B. x < −3", "C. x > 3", "D. x < 3", "E. x > −1"],
+          answer: 0
+        },
+        {
+          text: "What is the smallest integer n such that 7n > 100?",
+          choices: ["A. 13", "B. 14", "C. 15", "D. 16", "E. 17"],
+          answer: 2
+        },
+        {
+          text: "A plank of wood is at most 3.6 m long. Pieces of 0.45 m are cut from it. What is the maximum number of pieces?",
+          choices: ["A. 6", "B. 7", "C. 8", "D. 9", "E. 10"],
+          answer: 2
+        },
+        {
+          text: "If −1 ≤ x ≤ 4 and x is an integer, how many values satisfy 2x + 1 > 5?",
+          choices: ["A. 1", "B. 2", "C. 3", "D. 4", "E. 5"],
+          answer: 1
+        },
+        {
+          text: "A runner must complete a 5 km course in less than 25 minutes. Her pace for the first 2 km is 5.5 min/km. What is the maximum time per km she can average for the remaining 3 km?",
+          choices: ["A. 4.5 min/km", "B. 4.67 min/km", "C. 5.0 min/km", "D. 5.2 min/km", "E. 5.5 min/km"],
+          answer: 1
+        },
+        {
+          text: "Find the number of integer values of k satisfying −10 < 3k − 1 ≤ 17.",
+          choices: ["A. 7", "B. 8", "C. 9", "D. 10", "E. 11"],
+          answer: 2
+        },
+        {
+          text: "A box can carry at most 50 kg. Identical parcels each weigh 3.5 kg. What is the maximum number of parcels the box can hold?",
+          choices: ["A. 12", "B. 13", "C. 14", "D. 15", "E. 16"],
+          answer: 2
+        },
+        {
+          text: "Which condition must x satisfy so that x² < x?",
+          choices: ["A. x > 1", "B. x < 0", "C. 0 < x < 1", "D. x > 0", "E. x ≥ 1"],
+          answer: 2
+        },
+        {
+          text: "A taxi can carry at most 4 passengers. What is the minimum number of taxis needed to transport 26 people?",
+          choices: ["A. 5", "B. 6", "C. 7", "D. 8", "E. 9"],
+          answer: 2
+        },
+        {
+          text: "Solve: |x − 3| ≤ 5. What is the range of x?",
+          choices: ["A. −2 ≤ x ≤ 8", "B. −3 ≤ x ≤ 8", "C. −2 ≤ x ≤ 9", "D. 0 ≤ x ≤ 8", "E. −2 < x < 8"],
+          answer: 0
+        },
+        {
+          text: "If a + b ≤ 20 and a ≥ 8, what is the maximum value of b?",
+          choices: ["A. 10", "B. 11", "C. 12", "D. 13", "E. 14"],
+          answer: 2
+        },
+        {
+          text: "A student buys pens at €2 each and notebooks at €4 each. She has €24 and must buy at least 3 notebooks. What is the maximum number of pens she can buy?",
+          choices: ["A. 3", "B. 4", "C. 5", "D. 6", "E. 7"],
+          answer: 3
+        },
+        {
+          text: "How many integers n satisfy n² ≤ 100 and n is positive?",
+          choices: ["A. 8", "B. 9", "C. 10", "D. 11", "E. 12"],
+          answer: 2
+        },
+        {
+          text: "Solve: 2(x − 4) ≤ 3(x + 2). Which is the correct solution?",
+          choices: ["A. x ≥ −14", "B. x ≤ −14", "C. x ≥ 14", "D. x ≤ 14", "E. x ≥ −2"],
+          answer: 0
+        },
+        {
+          text: "A shop has a minimum order of €50. Mugs cost €8 each. What is the minimum number of mugs needed to place an order?",
+          choices: ["A. 5", "B. 6", "C. 7", "D. 8", "E. 9"],
+          answer: 2
+        },
+        {
+          text: "If 3 < x + 4 < 12 and x is an integer, how many values does x have?",
+          choices: ["A. 6", "B. 7", "C. 8", "D. 9", "E. 10"],
+          answer: 0
+        },
+        {
+          text: "A cargo plane can lift at most 800 kg. Already loaded are 3 boxes of 80 kg each and 5 boxes of 50 kg each. How many additional 30 kg bags can it still carry?",
+          choices: ["A. 7", "B. 8", "C. 9", "D. 10", "E. 11"],
+          answer: 2
+        },
+        {
+          text: "Which of the following pairs (x, y) satisfies x + y ≤ 10 and y > 2x?",
+          choices: ["A. (4, 5)", "B. (3, 7)", "C. (2, 6)", "D. (5, 4)", "E. (1, 1)"],
+          answer: 1
+        },
+        {
+          text: "Solve: 1/2 · x + 3 > 7. What is the smallest integer solution?",
+          choices: ["A. 7", "B. 8", "C. 9", "D. 10", "E. 11"],
+          answer: 2
+        },
+        {
+          text: "A class can have at most 30 students. Currently 22 are enrolled. The school expects 3 more definite sign-ups. What is the maximum number of additional optional sign-ups allowed?",
+          choices: ["A. 3", "B. 4", "C. 5", "D. 6", "E. 7"],
+          answer: 2
+        },
+        {
+          text: "Find all integers x satisfying x² − x − 6 ≤ 0.",
+          choices: ["A. −1, 0, 1, 2", "B. −2, −1, 0, 1, 2", "C. −1, 0, 1, 2, 3", "D. −2, −1, 0, 1, 2, 3", "E. 0, 1, 2, 3"],
+          answer: 1
+        },
+        {
+          text: "A farmer can plant at most 5 rows of carrots and at most 4 rows of beans. Each carrot row needs 6 m and each bean row needs 8 m. If the available length is 56 m, what is the maximum total number of rows?",
+          choices: ["A. 6", "B. 7", "C. 8", "D. 9", "E. 10"],
+          answer: 2
+        },
+        {
+          text: "If 2n − 1 is a prime number less than 30, how many values of positive integer n are there?",
+          choices: ["A. 7", "B. 8", "C. 9", "D. 10", "E. 11"],
+          answer: 1
+        },
+        {
+          text: "Solve: 3x + 2 > 2x + 7 and x < 10. How many integer solutions are there?",
+          choices: ["A. 3", "B. 4", "C. 5", "D. 6", "E. 7"],
+          answer: 1
+        },
+        {
+          text: "A ship can carry at most 500 tonnes. It has already loaded 320 tonnes. Each container weighs 45 tonnes. What is the maximum number of additional containers it can carry?",
+          choices: ["A. 3", "B. 4", "C. 5", "D. 6", "E. 7"],
+          answer: 1
+        },
+        {
+          text: "Which whole number values of x satisfy both x + 3 > 7 and 2x − 1 < 15?",
+          choices: ["A. 5, 6, 7", "B. 4, 5, 6, 7", "C. 5, 6, 7, 8", "D. 4, 5, 6", "E. 6, 7"],
+          answer: 0
+        },
+        {
+          text: "A fundraiser needs to raise at least €500. Tickets cost €12 each. At least how many tickets must be sold?",
+          choices: ["A. 40", "B. 41", "C. 42", "D. 43", "E. 44"],
+          answer: 2
+        },
+        {
+          text: "If x and y are positive integers with x < y and x + y = 20, how many pairs (x, y) are possible?",
+          choices: ["A. 7", "B. 8", "C. 9", "D. 10", "E. 11"],
+          answer: 2
+        },
+        {
+          text: "A lift can carry at most 630 kg. Average passenger weight is 70 kg. What is the maximum number of passengers?",
+          choices: ["A. 7", "B. 8", "C. 9", "D. 10", "E. 11"],
+          answer: 2
+        },
+        {
+          text: "Solve: 4x + 3 ≥ 2x + 11 and 3x − 5 < 10. What integer values satisfy both?",
+          choices: ["A. 4", "B. 4 and 5", "C. 4, 5, and 6", "D. 5 and 6", "E. No solution"],
+          answer: 1
+        },
+        {
+          text: "What is the greatest integer n such that 2^n < 1000?",
+          choices: ["A. 8", "B. 9", "C. 10", "D. 11", "E. 12"],
+          answer: 1
+        },
+        {
+          text: "A class test has 20 questions. Correct answers score +2 and incorrect answers score −1. A student needs at least 25 points. What is the minimum number of questions the student must answer correctly (assuming all others are wrong)?",
+          choices: ["A. 13", "B. 14", "C. 15", "D. 16", "E. 17"],
+          answer: 2
+        },
+        {
+          text: "If x is a positive integer and 2x − 3 < 11, how many values can x take?",
+          choices: ["A. 5", "B. 6", "C. 7", "D. 8", "E. 9"],
+          answer: 0
+        },
+        {
+          text: "A phone plan charges a flat fee of €10 plus €0.05 per minute. How many minutes can you use if your budget is at most €22.50?",
+          choices: ["A. 240 min", "B. 245 min", "C. 250 min", "D. 255 min", "E. 260 min"],
+          answer: 2
+        },
+        {
+          text: "Which pair of integers (a, b) with a < b satisfies a + b = 7 and a × b > 10?",
+          choices: ["A. (1, 6)", "B. (2, 5)", "C. (3, 4)", "D. (0, 7)", "E. (−1, 8)"],
+          answer: 2
+        },
+        {
+          text: "Solve: 3x − 1 > 5 and 2x + 3 ≤ 17. What integer values satisfy both conditions?",
+          choices: ["A. 2, 3, 4, 5, 6, 7", "B. 3, 4, 5, 6, 7", "C. 2, 3, 4, 5, 6", "D. 3, 4, 5, 6", "E. 3, 4, 5"],
+          answer: 3
         }
       ]
     }
