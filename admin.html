@@ -1,0 +1,800 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Admin Dashboard · Math Kangaroo</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+:root {
+  --primary: #2563eb;
+  --primary-light: #dbeafe;
+  --success: #10b981;
+  --success-light: #d1fae5;
+  --warning: #f59e0b;
+  --warning-light: #fef3c7;
+  --orange: #ea580c;
+  --orange-light: #ffedd5;
+  --gray-light: #f3f4f6;
+  --gray-lighter: #f9fafb;
+  --gray-medium: #9ca3af;
+  --gray-dark: #374151;
+  --text-primary: #1f2937;
+  --text-secondary: #6b7280;
+  --border: #e5e7eb;
+  --bg-body: #ffffff;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --primary: #3b82f6;
+    --primary-light: #1e3a8a;
+    --success: #059669;
+    --success-light: #064e3b;
+    --warning: #d97706;
+    --warning-light: #78350f;
+    --orange: #c2410c;
+    --orange-light: #431407;
+    --gray-light: #2d3748;
+    --gray-lighter: #1a202c;
+    --gray-medium: #6b7280;
+    --gray-dark: #f3f4f6;
+    --text-primary: #f3f4f6;
+    --text-secondary: #d1d5db;
+    --border: #4b5563;
+    --bg-body: #111827;
+  }
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  background: var(--bg-body);
+  color: var(--text-primary);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif;
+  font-size: 14px;
+  line-height: 1.6;
+  padding: 16px;
+}
+.container { max-width: 1400px; margin: 0 auto; }
+.page-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 24px;
+  padding-bottom: 16px;
+  border-bottom: 2px solid var(--border);
+  flex-wrap: wrap;
+  gap: 12px;
+}
+.page-header h1 {
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--primary);
+}
+.page-header .back-link {
+  font-size: 13px;
+  color: var(--primary);
+  text-decoration: none;
+  font-weight: 500;
+}
+.page-header .back-link:hover { text-decoration: underline; }
+
+/* ── Tabs ── */
+.tabs {
+  display: flex;
+  gap: 0;
+  border-bottom: 2px solid var(--border);
+  margin-bottom: 24px;
+}
+.tab-btn {
+  padding: 10px 20px;
+  border: none;
+  background: none;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-secondary);
+  cursor: pointer;
+  border-bottom: 2px solid transparent;
+  margin-bottom: -2px;
+  transition: color .15s, border-color .15s;
+}
+.tab-btn.active {
+  color: var(--primary);
+  border-bottom-color: var(--primary);
+}
+.tab-btn:hover:not(.active) { color: var(--text-primary); }
+.tab-panel { display: none; }
+.tab-panel.active { display: block; }
+
+/* ── Loading / Error ── */
+#auth-loading {
+  text-align: center;
+  padding: 80px 20px;
+  color: var(--text-secondary);
+  font-size: 16px;
+}
+.spinner {
+  width: 32px; height: 32px;
+  border: 3px solid var(--border);
+  border-top-color: var(--primary);
+  border-radius: 50%;
+  animation: spin .7s linear infinite;
+  margin: 0 auto 16px;
+}
+@keyframes spin { to { transform: rotate(360deg); } }
+
+/* ── Progress table ── */
+.table-wrap {
+  overflow-x: auto;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13px;
+  min-width: 400px;
+}
+thead th {
+  background: var(--gray-lighter);
+  padding: 10px 14px;
+  text-align: left;
+  font-weight: 700;
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  font-size: 11px;
+  letter-spacing: .5px;
+  border-bottom: 1px solid var(--border);
+  white-space: nowrap;
+}
+thead th:not(:first-child) { text-align: center; }
+tbody td {
+  padding: 9px 14px;
+  border-bottom: 1px solid var(--border);
+  vertical-align: middle;
+}
+tbody tr:last-child td { border-bottom: none; }
+tbody tr:hover td { background: var(--gray-lighter); }
+
+/* summary row */
+.summary-row td {
+  background: var(--primary-light);
+  font-weight: 700;
+  font-size: 12px;
+  color: var(--primary);
+}
+.summary-row:hover td { background: var(--primary-light) !important; }
+
+/* module label col */
+td.module-label {
+  font-weight: 600;
+  white-space: nowrap;
+  color: var(--text-primary);
+}
+td.cell-center { text-align: center; }
+
+/* cell states */
+.cell-none {
+  color: var(--gray-medium);
+  font-weight: 500;
+}
+.cell-inprogress {
+  display: inline-block;
+  background: var(--warning-light);
+  color: #92400e;
+  font-weight: 700;
+  font-size: 11px;
+  padding: 2px 8px;
+  border-radius: 99px;
+}
+.cell-perfect {
+  display: inline-block;
+  background: var(--success-light);
+  color: #065f46;
+  font-weight: 700;
+  font-size: 11px;
+  padding: 2px 8px;
+  border-radius: 99px;
+}
+.cell-partial {
+  display: inline-block;
+  background: var(--orange-light);
+  color: #7c2d12;
+  font-weight: 700;
+  font-size: 11px;
+  padding: 2px 8px;
+  border-radius: 99px;
+}
+@media (prefers-color-scheme: dark) {
+  .cell-inprogress { color: #fef3c7; }
+  .cell-perfect    { color: #d1fae5; }
+  .cell-partial    { color: #fed7aa; }
+  .summary-row td  { color: #93c5fd; }
+}
+
+/* ── Manage Kids ── */
+.kids-list { display: flex; flex-direction: column; gap: 12px; max-width: 560px; }
+.kid-row {
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 14px 16px;
+  background: var(--gray-lighter);
+}
+.kid-row-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.kid-dot {
+  width: 28px; height: 28px;
+  border-radius: 50%;
+  flex-shrink: 0;
+  display: flex; align-items: center; justify-content: center;
+  color: #fff; font-weight: 800; font-size: 13px;
+}
+.kid-name { font-weight: 700; font-size: 15px; flex: 1; }
+.btn-edit {
+  padding: 5px 14px;
+  border: 1.5px solid var(--border);
+  background: var(--bg-body);
+  border-radius: 6px;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  color: var(--primary);
+  transition: background .15s, border-color .15s;
+}
+.btn-edit:hover { background: var(--primary-light); border-color: var(--primary); }
+
+.edit-form {
+  display: none;
+  margin-top: 14px;
+  padding-top: 14px;
+  border-top: 1px solid var(--border);
+}
+.edit-form.open { display: block; }
+.edit-form label {
+  display: block;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--text-secondary);
+  margin-bottom: 4px;
+  margin-top: 10px;
+}
+.edit-form label:first-child { margin-top: 0; }
+.edit-form input[type="text"] {
+  width: 100%;
+  padding: 7px 10px;
+  border: 1.5px solid var(--border);
+  border-radius: 6px;
+  font-size: 14px;
+  background: var(--bg-body);
+  color: var(--text-primary);
+  font-family: inherit;
+}
+.edit-form input[type="text"]:focus {
+  outline: none;
+  border-color: var(--primary);
+}
+.color-picker-wrap {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-top: 6px;
+}
+.color-swatch {
+  width: 28px; height: 28px;
+  border-radius: 50%;
+  cursor: pointer;
+  border: 3px solid transparent;
+  transition: transform .15s, border-color .15s;
+}
+.color-swatch.selected {
+  border-color: var(--text-primary);
+  transform: scale(1.15);
+}
+.edit-form-actions {
+  display: flex;
+  gap: 8px;
+  margin-top: 14px;
+}
+.btn-save {
+  padding: 7px 18px;
+  background: var(--primary);
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background .15s;
+}
+.btn-save:hover { background: #1d4ed8; }
+.btn-save:disabled { opacity: .6; cursor: not-allowed; }
+.btn-cancel {
+  padding: 7px 14px;
+  background: none;
+  color: var(--text-secondary);
+  border: 1.5px solid var(--border);
+  border-radius: 6px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+}
+.btn-cancel:hover { border-color: var(--gray-medium); }
+.save-status {
+  font-size: 12px;
+  padding: 6px 10px;
+  border-radius: 6px;
+  display: none;
+}
+.save-status.ok { background: var(--success-light); color: #065f46; display: inline-block; }
+.save-status.err { background: #fee2e2; color: #991b1b; display: inline-block; }
+
+.manage-note {
+  margin-top: 20px;
+  padding: 12px 16px;
+  background: var(--gray-lighter);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  font-size: 13px;
+  color: var(--text-secondary);
+  max-width: 560px;
+}
+.manage-note strong { color: var(--text-primary); }
+
+/* ── Refresh btn ── */
+.section-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 16px;
+  flex-wrap: wrap;
+}
+.section-actions h2 { font-size: 17px; font-weight: 700; flex: 1; }
+.btn-refresh {
+  padding: 6px 14px;
+  background: none;
+  border: 1.5px solid var(--border);
+  border-radius: 6px;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--primary);
+  cursor: pointer;
+}
+.btn-refresh:hover { background: var(--primary-light); }
+.load-note { font-size: 12px; color: var(--text-secondary); }
+</style>
+</head>
+<body>
+<div class="container">
+
+  <!-- Auth loading overlay -->
+  <div id="auth-loading">
+    <div class="spinner"></div>
+    Checking admin access…
+  </div>
+
+  <!-- Main content (hidden until auth passes) -->
+  <div id="main-content" style="display:none;">
+    <div class="page-header">
+      <div>
+        <a href="index.html" class="back-link">← Back to Home</a>
+        <h1 style="margin-top:4px;">Admin Dashboard</h1>
+      </div>
+    </div>
+
+    <div class="tabs">
+      <button class="tab-btn active" onclick="switchTab('progress')">Progress</button>
+      <button class="tab-btn" onclick="switchTab('kids')">Manage Kids</button>
+    </div>
+
+    <!-- Progress Tab -->
+    <div id="tab-progress" class="tab-panel active">
+      <div class="section-actions">
+        <h2>Module Progress by Kid</h2>
+        <button class="btn-refresh" onclick="loadProgressData()">↻ Refresh</button>
+        <span class="load-note" id="progress-load-note"></span>
+      </div>
+      <div id="progress-content">
+        <div style="color:var(--text-secondary);padding:20px 0;">Loading progress data…</div>
+      </div>
+    </div>
+
+    <!-- Manage Kids Tab -->
+    <div id="tab-kids" class="tab-panel">
+      <div class="section-actions">
+        <h2>Kids</h2>
+      </div>
+      <div id="kids-content">
+        <div style="color:var(--text-secondary);padding:20px 0;">Loading kids…</div>
+      </div>
+      <div class="manage-note">
+        <strong>Note:</strong> To add kids or change passcodes, go to the
+        <a href="https://supabase.com/dashboard/project/dlwbedohwifrxuxvijrp/auth/users"
+           target="_blank" style="color:var(--primary);">Supabase Auth dashboard</a>.
+        This panel only lets you edit display name and color.
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
+<script src="supabase_client.js"></script>
+<script src="profile.js"></script>
+<script>
+// ─────────────────────────────────────────────────────────────
+// CONSTANTS
+// ─────────────────────────────────────────────────────────────
+const COLOR_PALETTE = [
+  '#2563eb','#7c3aed','#db2777','#dc2626',
+  '#d97706','#059669','#0891b2','#65a30d',
+  '#374151','#f97316',
+];
+
+// ─────────────────────────────────────────────────────────────
+// AUTH CHECK
+// ─────────────────────────────────────────────────────────────
+async function checkAdminAccess() {
+  try {
+    const { data: { session } } = await sbClient.auth.getSession();
+    if (!session) { redirectOut(); return; }
+
+    const { data: kid, error } = await sbClient
+      .from('kids')
+      .select('id, name, color, is_admin')
+      .eq('auth_id', session.user.id)
+      .single();
+
+    if (error || !kid || !kid.is_admin) { redirectOut(); return; }
+
+    // Set session profile so the chip works
+    setActiveProfile(kid.name);
+    setActiveKidId(kid.id);
+    setActiveKidColor(kid.color || '#2563eb');
+
+    document.getElementById('auth-loading').style.display = 'none';
+    document.getElementById('main-content').style.display = 'block';
+    injectProfileChip();
+
+    // Load initial data
+    loadProgressData();
+    loadKidsData();
+  } catch(e) {
+    redirectOut();
+  }
+}
+
+function redirectOut() {
+  window.location.replace('index.html');
+}
+
+// ─────────────────────────────────────────────────────────────
+// TABS
+// ─────────────────────────────────────────────────────────────
+function switchTab(name) {
+  document.querySelectorAll('.tab-btn').forEach((b, i) => {
+    const panels = ['progress','kids'];
+    b.classList.toggle('active', panels[i] === name);
+  });
+  document.querySelectorAll('.tab-panel').forEach(p => {
+    p.classList.toggle('active', p.id === 'tab-' + name);
+  });
+}
+
+// ─────────────────────────────────────────────────────────────
+// PROGRESS TAB
+// ─────────────────────────────────────────────────────────────
+async function loadProgressData() {
+  const note = document.getElementById('progress-load-note');
+  const container = document.getElementById('progress-content');
+  note.textContent = 'Loading…';
+  container.innerHTML = '<div style="color:var(--text-secondary);padding:20px 0;">Loading…</div>';
+
+  try {
+    // Fetch non-admin kids
+    const { data: kids, error: kErr } = await sbClient
+      .from('kids')
+      .select('id, name, color')
+      .eq('is_admin', false)
+      .order('name');
+    if (kErr) throw kErr;
+
+    // Fetch all attempts
+    const { data: attempts, error: aErr } = await sbClient
+      .from('attempts')
+      .select('kid_id, grade, sub, correct_count, total_questions, completed_at')
+      .order('completed_at', { ascending: true });
+    if (aErr) throw aErr;
+
+    // Fetch all in-progress records
+    const { data: progRows, error: pErr } = await sbClient
+      .from('progress')
+      .select('kid_id, grade, sub, answers');
+    if (pErr) throw pErr;
+
+    note.textContent = 'Last updated: ' + new Date().toLocaleTimeString();
+    renderProgressTable(kids, attempts, progRows);
+  } catch(e) {
+    note.textContent = '';
+    container.innerHTML = `<div style="color:#dc2626;padding:20px 0;">Error loading data: ${e.message}</div>`;
+  }
+}
+
+function renderProgressTable(kids, attempts, progRows) {
+  const container = document.getElementById('progress-content');
+  if (!kids || kids.length === 0) {
+    container.innerHTML = '<div style="color:var(--text-secondary);padding:20px 0;">No kids found.</div>';
+    return;
+  }
+
+  // Collect all modules mentioned in attempts or progress
+  const moduleSet = new Set();
+  (attempts || []).forEach(a => moduleSet.add(`${a.grade}|${a.sub}`));
+  (progRows  || []).forEach(p => moduleSet.add(`${p.grade}|${p.sub}`));
+
+  // Sort modules: grade first, then sub numerically
+  const modules = Array.from(moduleSet).sort((a, b) => {
+    const [ga, sa] = a.split('|');
+    const [gb, sb] = b.split('|');
+    if (ga !== gb) return ga.localeCompare(gb);
+    return parseFloat(sa) - parseFloat(sb);
+  });
+
+  // Build lookup: { `kidId|grade|sub` → { attempts:[], hasProgress:bool } }
+  const lookup = {};
+  function key(kidId, grade, sub) { return `${kidId}|${grade}|${sub}`; }
+
+  (attempts || []).forEach(a => {
+    const k = key(a.kid_id, a.grade, a.sub);
+    if (!lookup[k]) lookup[k] = { attempts: [], hasProgress: false };
+    lookup[k].attempts.push(a);
+  });
+  (progRows || []).forEach(p => {
+    const k = key(p.kid_id, p.grade, p.sub);
+    if (!lookup[k]) lookup[k] = { attempts: [], hasProgress: false };
+    // hasProgress = has at least one non-null answer saved
+    if (p.answers && Array.isArray(p.answers) && p.answers.some(a => a !== null)) {
+      lookup[k].hasProgress = true;
+    }
+  });
+
+  // Per-kid summary
+  const summaryStarted = {};
+  const summaryPerfect = {};
+  kids.forEach(k => {
+    summaryStarted[k.id] = 0;
+    summaryPerfect[k.id] = 0;
+  });
+  modules.forEach(mod => {
+    const [grade, sub] = mod.split('|');
+    kids.forEach(k => {
+      const entry = lookup[key(k.id, grade, sub)];
+      if (!entry) return;
+      const hasAttempts = entry.attempts.length > 0;
+      const hasProg = entry.hasProgress;
+      if (hasAttempts || hasProg) summaryStarted[k.id]++;
+      if (hasAttempts && entry.attempts.some(a => a.correct_count === a.total_questions)) {
+        summaryPerfect[k.id]++;
+      }
+    });
+  });
+
+  // Grade label helper
+  function gradeLabel(g) {
+    if (g === '34') return 'Grade 3-4';
+    if (g === '56') return 'Grade 5-6';
+    return 'Grade ' + g;
+  }
+
+  let html = '<div class="table-wrap"><table><thead><tr>';
+  html += '<th>Module</th>';
+  kids.forEach(k => {
+    html += `<th>
+      <div style="display:flex;align-items:center;justify-content:center;gap:6px;">
+        <span style="width:10px;height:10px;border-radius:50%;background:${k.color || '#9ca3af'};display:inline-block;flex-shrink:0;"></span>
+        ${escHtml(k.name)}
+      </div>
+    </th>`;
+  });
+  html += '</tr>';
+
+  // Summary row
+  html += '<tr class="summary-row"><td class="module-label">Summary</td>';
+  kids.forEach(k => {
+    html += `<td class="cell-center" style="font-size:12px;">
+      ${summaryStarted[k.id]} started · ${summaryPerfect[k.id]} perfect
+    </td>`;
+  });
+  html += '</tr></thead><tbody>';
+
+  // Module rows
+  modules.forEach(mod => {
+    const [grade, sub] = mod.split('|');
+    html += `<tr>
+      <td class="module-label">${gradeLabel(grade)} · ${escHtml(sub)}</td>`;
+    kids.forEach(k => {
+      html += '<td class="cell-center">';
+      const entry = lookup[key(k.id, grade, sub)];
+      if (!entry || (entry.attempts.length === 0 && !entry.hasProgress)) {
+        html += '<span class="cell-none">–</span>';
+      } else if (entry.attempts.length === 0 && entry.hasProgress) {
+        html += '<span class="cell-inprogress">In Progress</span>';
+      } else {
+        // Has attempts
+        const best = entry.attempts.reduce((b, a) => {
+          return (a.correct_count > b.correct_count) ? a : b;
+        }, entry.attempts[0]);
+        const total = best.total_questions || 50;
+        const isPerfect = (best.correct_count === total);
+        if (isPerfect) {
+          html += `<span class="cell-perfect">✓ ${best.correct_count}/${total}</span>`;
+        } else if (entry.hasProgress) {
+          // Still has in-progress + imperfect attempts
+          html += `<span class="cell-inprogress">In Progress</span>`;
+        } else {
+          html += `<span class="cell-partial">${best.correct_count}/${total} (${entry.attempts.length} tries)</span>`;
+        }
+      }
+      html += '</td>';
+    });
+    html += '</tr>';
+  });
+
+  html += '</tbody></table></div>';
+  container.innerHTML = html;
+}
+
+// ─────────────────────────────────────────────────────────────
+// MANAGE KIDS TAB
+// ─────────────────────────────────────────────────────────────
+let allKids = [];
+
+async function loadKidsData() {
+  const container = document.getElementById('kids-content');
+  try {
+    const { data: kids, error } = await sbClient
+      .from('kids')
+      .select('id, name, color, is_admin')
+      .eq('is_admin', false)
+      .order('name');
+    if (error) throw error;
+    allKids = kids || [];
+    renderKidsList(allKids);
+  } catch(e) {
+    container.innerHTML = `<div style="color:#dc2626;padding:20px 0;">Error: ${e.message}</div>`;
+  }
+}
+
+function renderKidsList(kids) {
+  const container = document.getElementById('kids-content');
+  if (kids.length === 0) {
+    container.innerHTML = '<div style="color:var(--text-secondary);padding:20px 0;">No kids found.</div>';
+    return;
+  }
+  const listHtml = kids.map(k => buildKidRow(k)).join('');
+  container.innerHTML = `<div class="kids-list">${listHtml}</div>`;
+
+  // Attach color swatch listeners
+  kids.forEach(k => {
+    const swatches = document.querySelectorAll(`[data-kid-id="${k.id}"] .color-swatch`);
+    swatches.forEach(sw => {
+      sw.addEventListener('click', () => {
+        swatches.forEach(s => s.classList.remove('selected'));
+        sw.classList.add('selected');
+        // Update the hidden input
+        const colorInput = document.querySelector(`[data-kid-id="${k.id}"] input[name="color"]`);
+        if (colorInput) colorInput.value = sw.dataset.color;
+      });
+    });
+  });
+}
+
+function buildKidRow(k) {
+  const color = k.color || '#9ca3af';
+  const initial = (k.name || '?')[0].toUpperCase();
+  const swatchesHtml = COLOR_PALETTE.map(c => `
+    <div class="color-swatch ${c === color ? 'selected' : ''}"
+         style="background:${c};"
+         data-color="${c}"
+         title="${c}"></div>
+  `).join('');
+
+  return `
+    <div class="kid-row" data-kid-id="${k.id}">
+      <div class="kid-row-header">
+        <div class="kid-dot" style="background:${color};">${initial}</div>
+        <span class="kid-name" id="display-name-${k.id}">${escHtml(k.name)}</span>
+        <button class="btn-edit" onclick="toggleEditForm('${k.id}')">Edit</button>
+      </div>
+      <div class="edit-form" id="edit-form-${k.id}">
+        <label>Display Name</label>
+        <input type="text" name="name" value="${escHtml(k.name)}" placeholder="Name" maxlength="40">
+        <label>Color</label>
+        <div class="color-picker-wrap">
+          ${swatchesHtml}
+          <input type="hidden" name="color" value="${color}">
+        </div>
+        <div class="edit-form-actions">
+          <button class="btn-save" onclick="saveKid('${k.id}')">Save</button>
+          <button class="btn-cancel" onclick="toggleEditForm('${k.id}')">Cancel</button>
+          <span class="save-status" id="save-status-${k.id}"></span>
+        </div>
+      </div>
+    </div>
+  `;
+}
+
+function toggleEditForm(kidId) {
+  const form = document.getElementById('edit-form-' + kidId);
+  if (!form) return;
+  form.classList.toggle('open');
+}
+
+async function saveKid(kidId) {
+  const row = document.querySelector(`[data-kid-id="${kidId}"]`);
+  if (!row) return;
+  const nameInput  = row.querySelector('input[name="name"]');
+  const colorInput = row.querySelector('input[name="color"]');
+  const btn        = row.querySelector('.btn-save');
+  const status     = document.getElementById('save-status-' + kidId);
+
+  const newName  = (nameInput.value || '').trim();
+  const newColor = colorInput.value || '#2563eb';
+
+  if (!newName) { showStatus(status, 'Name cannot be empty', 'err'); return; }
+
+  btn.disabled = true;
+  btn.textContent = 'Saving…';
+  status.className = 'save-status';
+  status.style.display = 'none';
+
+  try {
+    const { error } = await sbClient
+      .from('kids')
+      .update({ name: newName, color: newColor })
+      .eq('id', kidId);
+    if (error) throw error;
+
+    // Update local cache & display
+    const kid = allKids.find(k => k.id === kidId);
+    if (kid) { kid.name = newName; kid.color = newColor; }
+    const displayName = document.getElementById('display-name-' + kidId);
+    if (displayName) displayName.textContent = newName;
+    // Update dot color
+    const dot = row.querySelector('.kid-dot');
+    if (dot) { dot.style.background = newColor; dot.textContent = newName[0].toUpperCase(); }
+
+    showStatus(status, 'Saved!', 'ok');
+    setTimeout(() => {
+      toggleEditForm(kidId);
+      status.className = 'save-status';
+    }, 1200);
+  } catch(e) {
+    showStatus(status, 'Error: ' + e.message, 'err');
+  } finally {
+    btn.disabled = false;
+    btn.textContent = 'Save';
+  }
+}
+
+function showStatus(el, msg, type) {
+  el.textContent = msg;
+  el.className = 'save-status ' + type;
+}
+
+// ─────────────────────────────────────────────────────────────
+// UTILS
+// ─────────────────────────────────────────────────────────────
+function escHtml(s) {
+  return String(s || '')
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;');
+}
+
+// ─────────────────────────────────────────────────────────────
+// BOOT
+// ─────────────────────────────────────────────────────────────
+checkAdminAccess();
+</script>
+</body>
+</html>

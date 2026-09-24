@@ -898,8 +898,31 @@ body {
 <script>requireProfile(); injectProfileChip();</script>
 <script src="online_questions_data.js"></script>
 <script>
+// Apply badge to a single card given computed state
+function applyCardState(card, hasActivity, allCorrect) {
+  card.classList.remove('completed', 'in-progress');
+  card.querySelectorAll('.state-badge, .completed-msg').forEach(el => el.remove());
+  if (!hasActivity) return;
+  const badge = document.createElement('div');
+  badge.className = 'state-badge';
+  if (allCorrect) {
+    card.classList.add('completed');
+    badge.classList.add('completed');
+    badge.textContent = '✓ Completed';
+    const msg = document.createElement('div');
+    msg.className = 'completed-msg';
+    msg.textContent = '🏆 Amazing! You got a perfect score! Ready for another round? Hit Online Practice!';
+    card.appendChild(msg);
+  } else {
+    card.classList.add('in-progress');
+    badge.classList.add('in-progress');
+    badge.textContent = 'In Progress';
+  }
+  card.appendChild(badge);
+}
+
 function markModuleStates() {
-  // Clear previous state before re-evaluating
+  // Reset all cards
   document.querySelectorAll('.subcategory-card').forEach(card => {
     card.classList.remove('completed', 'in-progress');
     card.querySelectorAll('.state-badge, .completed-msg').forEach(el => el.remove());
@@ -907,6 +930,8 @@ function markModuleStates() {
 
   const profile = sessionStorage.getItem('mkp_profile');
   if (!profile) return;
+
+  // Step 1: Apply localStorage state immediately
   document.querySelectorAll('.subcategory-card').forEach(card => {
     const link = card.querySelector('a.btn-online');
     if (!link) return;
@@ -942,26 +967,61 @@ function markModuleStates() {
       }
     } catch(e) {}
 
-    if (!hasActivity) return;
-
-    const badge = document.createElement('div');
-    badge.className = 'state-badge';
-
-    if (allCorrect) {
-      card.classList.add('completed');
-      badge.classList.add('completed');
-      badge.textContent = '✓ Completed';
-      const msg = document.createElement('div');
-      msg.className = 'completed-msg';
-      msg.textContent = '🏆 Amazing! You got a perfect score! Ready for another round? Hit Online Practice!';
-      card.appendChild(msg);
-    } else {
-      card.classList.add('in-progress');
-      badge.classList.add('in-progress');
-      badge.textContent = 'In Progress';
-    }
-    card.appendChild(badge);
+    applyCardState(card, hasActivity, allCorrect);
   });
+
+  // Step 2: Fetch from Supabase and update if DB has different/additional state
+  const kidId = getActiveKidId();
+  if (!kidId) return;
+
+  Promise.all([
+    sbClient.from('attempts')
+      .select('grade, sub, correct_count, total_questions, answers')
+      .eq('kid_id', kidId),
+    sbClient.from('progress')
+      .select('grade, sub, answers')
+      .eq('kid_id', kidId),
+  ]).then(([attRes, progRes]) => {
+    if (attRes.error && progRes.error) return;
+
+    const dbAttempts = attRes.data || [];
+    const dbProgress = progRes.data || [];
+
+    document.querySelectorAll('.subcategory-card').forEach(card => {
+      const link = card.querySelector('a.btn-online');
+      if (!link) return;
+      const params = new URLSearchParams(link.href.split('?')[1]);
+      const grade = params.get('grade');
+      const sub   = params.get('sub');
+      if (!grade || !sub) return;
+
+      const correctAnswers = (questionsData[grade] && questionsData[grade][sub])
+        ? questionsData[grade][sub].questions.map(q => q.answer)
+        : null;
+
+      const cardAttempts = dbAttempts.filter(a => a.grade === grade && a.sub === sub);
+      const cardProg     = dbProgress.find(p => p.grade === grade && p.sub === sub);
+
+      let hasActivity = false;
+      let allCorrect  = false;
+
+      if (cardAttempts.length > 0) {
+        hasActivity = true;
+        if (correctAnswers) {
+          allCorrect = cardAttempts.some(a =>
+            Array.isArray(a.answers) &&
+            a.answers.length === correctAnswers.length &&
+            a.answers.every((ans, i) => ans === correctAnswers[i])
+          );
+        }
+      }
+      if (cardProg && Array.isArray(cardProg.answers) && cardProg.answers.some(a => a !== null)) {
+        hasActivity = true;
+      }
+
+      if (hasActivity) applyCardState(card, hasActivity, allCorrect);
+    });
+  }).catch(() => {});
 }
 
 markModuleStates();

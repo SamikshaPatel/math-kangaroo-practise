@@ -550,9 +550,9 @@ if (!setData || questions.length === 0) {
   initState();
 }
 
-function initState() {
-  // 1. Resume in-progress quiz
-  const saved = tryLoadProgress();
+async function initState() {
+  // 1. Resume in-progress quiz (localStorage first, then Supabase)
+  const saved = await tryLoadProgressAsync();
   if (saved) {
     answers      = saved.answers;
     checked      = saved.checked || answers.map(a => a !== null);
@@ -582,11 +582,44 @@ function initState() {
 // PROGRESS PERSISTENCE  (in-progress quiz only)
 // ─────────────────────────────────────────────────────────────
 function tryLoadProgress() {
+  // 1. Check localStorage first (fast, works offline)
   try {
     const s = JSON.parse(localStorage.getItem(PROGRESS_KEY()));
     if (s && Array.isArray(s.answers) && s.answers.length === questions.length) return s;
   } catch(e) {}
   return null;
+}
+
+// Async version: falls back to Supabase if localStorage is empty.
+// Callers that need cross-device resume should use this.
+async function tryLoadProgressAsync() {
+  // 1. Check localStorage
+  const local = tryLoadProgress();
+  if (local) return local;
+
+  // 2. Fall back to Supabase
+  try {
+    const kidId = getActiveKidId();
+    if (!kidId) return null;
+    const { data, error } = await sbClient
+      .from('progress')
+      .select('answers, checked, attempt_id')
+      .eq('kid_id', kidId)
+      .eq('grade', grade)
+      .eq('sub', sub)
+      .maybeSingle();
+    if (error || !data) return null;
+    if (!Array.isArray(data.answers) || data.answers.length !== questions.length) return null;
+
+    // Restore to localStorage so subsequent reads are instant
+    const restored = {
+      answers:    data.answers,
+      checked:    data.checked || data.answers.map(a => a !== null),
+      attempt_id: data.attempt_id || null,
+    };
+    try { localStorage.setItem(PROGRESS_KEY(), JSON.stringify(restored)); } catch(e) {}
+    return restored;
+  } catch(e) { return null; }
 }
 function saveProgress() {
   try { localStorage.setItem(PROGRESS_KEY(), JSON.stringify({ answers, checked, attempt_id: currentAttemptId })); } catch(e) {}
