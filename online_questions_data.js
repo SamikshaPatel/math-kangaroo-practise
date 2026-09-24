@@ -11957,252 +11957,302 @@ const questionsData = {
         {
           text: "A trapezium has parallel sides of 8 cm and 12 cm, and a height of 5 cm. What is its area?",
           choices: ["A. 40 cm²", "B. 45 cm²", "C. 50 cm²", "D. 55 cm²", "E. 60 cm²"],
-          answer: 2
+          answer: 2,
+          explain: "Area of a trapezium = ½ × (sum of parallel sides) × height.\n1. Sum of parallel sides: 8 + 12 = 20 cm\n2. Area = ½ × 20 × 5 = 50 cm²"
         },
         {
           text: "A regular hexagon has side 6 cm. What is its perimeter?",
           choices: ["A. 30 cm", "B. 32 cm", "C. 36 cm", "D. 40 cm", "E. 42 cm"],
-          answer: 2
+          answer: 2,
+          explain: "A regular hexagon has 6 equal sides.\n1. Perimeter = 6 × side length = 6 × 6 = 36 cm"
         },
         {
           text: "A circle has a circumference of 31.4 cm. Approximately what is its radius? (π ≈ 3.14)",
           choices: ["A. 3 cm", "B. 4 cm", "C. 5 cm", "D. 6 cm", "E. 7 cm"],
-          answer: 2
+          answer: 2,
+          explain: "Circumference = 2πr, so r = Circumference ÷ (2π).\n1. r = 31.4 ÷ (2 × 3.14) = 31.4 ÷ 6.28 = 5 cm"
         },
         {
           text: "Two rectangles, each 6 cm × 4 cm, overlap with a 2 cm × 2 cm square. What is the combined area?",
           choices: ["A. 40 cm²", "B. 44 cm²", "C. 48 cm²", "D. 50 cm²", "E. 52 cm²"],
-          answer: 1
+          answer: 1,
+          explain: "Add both rectangles then subtract the overlap (counted twice).\n1. Each rectangle: 6 × 4 = 24 cm²\n2. Total of two: 24 + 24 = 48 cm²\n3. Subtract overlap: 48 − 2 × 2 = 48 − 4 = 44 cm²"
         },
         {
           text: "The interior angles of a polygon sum to 540°. How many sides does it have?",
           choices: ["A. 4", "B. 5", "C. 6", "D. 7", "E. 8"],
-          answer: 1
+          answer: 1,
+          explain: "Interior angle sum of a polygon = (n − 2) × 180°.\n1. (n − 2) × 180 = 540\n2. n − 2 = 3, so n = 5\nA pentagon has 5 sides and interior angles summing to 540°."
         },
         {
           text: "A square has perimeter 36 cm. What is its area?",
           choices: ["A. 36 cm²", "B. 64 cm²", "C. 72 cm²", "D. 81 cm²", "E. 100 cm²"],
-          answer: 3
+          answer: 3,
+          explain: "1. Perimeter = 4 × side, so side = 36 ÷ 4 = 9 cm\n2. Area = side² = 9² = 81 cm²"
         },
         {
           text: "A rectangle has length 12 cm and width 7 cm. What is its perimeter?",
           choices: ["A. 19 cm", "B. 38 cm", "C. 84 cm", "D. 42 cm", "E. 24 cm"],
-          answer: 1
+          answer: 1,
+          explain: "Perimeter of a rectangle = 2 × (length + width).\n1. 2 × (12 + 7) = 2 × 19 = 38 cm"
         },
         {
           text: "A triangle has a base of 10 cm and a height of 6 cm. What is its area?",
           choices: ["A. 20 cm²", "B. 25 cm²", "C. 30 cm²", "D. 40 cm²", "E. 60 cm²"],
-          answer: 2
+          answer: 2,
+          explain: "Area of a triangle = ½ × base × height.\n1. ½ × 10 × 6 = 30 cm²"
         },
         {
           text: "A parallelogram has a base of 9 cm and a height of 4 cm. What is its area?",
           choices: ["A. 13 cm²", "B. 26 cm²", "C. 32 cm²", "D. 36 cm²", "E. 40 cm²"],
-          answer: 3
+          answer: 3,
+          explain: "Area of a parallelogram = base × height.\n1. 9 × 4 = 36 cm²"
         },
         {
           text: "A circle has radius 7 cm. What is its area? (π ≈ 3.14)",
           choices: ["A. 43.96 cm²", "B. 78.5 cm²", "C. 113.04 cm²", "D. 153.86 cm²", "E. 196 cm²"],
-          answer: 3
+          answer: 3,
+          explain: "Area of a circle = πr².\n1. π × 7² = 3.14 × 49 = 153.86 cm²"
         },
         {
           text: "How many diagonals does a hexagon have?",
           choices: ["A. 6", "B. 7", "C. 8", "D. 9", "E. 12"],
-          answer: 3
+          answer: 3,
+          explain: "Number of diagonals in an n-gon = n(n−3) ÷ 2.\n1. 6 × (6 − 3) ÷ 2 = 6 × 3 ÷ 2 = 9 diagonals"
         },
         {
           text: "A square has area 144 cm². What is its perimeter?",
           choices: ["A. 36 cm", "B. 40 cm", "C. 48 cm", "D. 52 cm", "E. 56 cm"],
-          answer: 2
+          answer: 2,
+          explain: "1. Side = √144 = 12 cm\n2. Perimeter = 4 × 12 = 48 cm"
         },
         {
           text: "What is the sum of interior angles of an octagon?",
           choices: ["A. 720°", "B. 900°", "C. 1080°", "D. 1260°", "E. 1440°"],
-          answer: 2
+          answer: 2,
+          explain: "Interior angle sum = (n − 2) × 180°.\n1. (8 − 2) × 180 = 6 × 180 = 1080°"
         },
         {
           text: "A rectangle has area 60 cm² and width 5 cm. What is its length?",
           choices: ["A. 8 cm", "B. 10 cm", "C. 12 cm", "D. 15 cm", "E. 20 cm"],
-          answer: 2
+          answer: 2,
+          explain: "Area = length × width, so length = Area ÷ width.\n1. Length = 60 ÷ 5 = 12 cm"
         },
         {
           text: "A circle has diameter 10 cm. What is its circumference? (π ≈ 3.14)",
           choices: ["A. 15.7 cm", "B. 31.4 cm", "C. 47.1 cm", "D. 62.8 cm", "E. 78.5 cm"],
-          answer: 1
+          answer: 1,
+          explain: "Circumference = π × diameter.\n1. 3.14 × 10 = 31.4 cm"
         },
         {
           text: "A right triangle has legs 6 cm and 8 cm. What is its area?",
           choices: ["A. 14 cm²", "B. 20 cm²", "C. 24 cm²", "D. 28 cm²", "E. 48 cm²"],
-          answer: 2
+          answer: 2,
+          explain: "For a right triangle, the two legs are the base and height.\n1. Area = ½ × 6 × 8 = 24 cm²"
         },
         {
           text: "A trapezoid has parallel sides 5 cm and 11 cm and height 4 cm. What is its area?",
           choices: ["A. 28 cm²", "B. 32 cm²", "C. 36 cm²", "D. 40 cm²", "E. 44 cm²"],
-          answer: 1
+          answer: 1,
+          explain: "Area of a trapezoid = ½ × (sum of parallel sides) × height.\n1. ½ × (5 + 11) × 4 = ½ × 16 × 4 = 32 cm²"
         },
         {
           text: "Each interior angle of a regular polygon is 120°. How many sides does it have?",
           choices: ["A. 4", "B. 5", "C. 6", "D. 7", "E. 8"],
-          answer: 2
+          answer: 2,
+          explain: "Each interior angle of a regular n-gon = (n − 2) × 180 ÷ n.\n1. (n − 2) × 180 ÷ n = 120\n2. 180n − 360 = 120n, so 60n = 360, n = 6\nA regular hexagon has interior angles of 120°."
         },
         {
           text: "A large rectangle is 10 cm × 8 cm. A square of side 2 cm is cut from one corner. What is the remaining area?",
           choices: ["A. 72 cm²", "B. 74 cm²", "C. 76 cm²", "D. 78 cm²", "E. 80 cm²"],
-          answer: 2
+          answer: 2,
+          explain: "1. Rectangle area: 10 × 8 = 80 cm²\n2. Square removed: 2 × 2 = 4 cm²\n3. Remaining: 80 − 4 = 76 cm²"
         },
         {
           text: "A circle has area 78.5 cm². What is its radius? (π ≈ 3.14)",
           choices: ["A. 3 cm", "B. 4 cm", "C. 5 cm", "D. 6 cm", "E. 7 cm"],
-          answer: 2
+          answer: 2,
+          explain: "Area = πr², so r² = Area ÷ π.\n1. r² = 78.5 ÷ 3.14 = 25\n2. r = √25 = 5 cm"
         },
         {
           text: "How many sides does a polygon have if its interior angles sum to 1080°?",
           choices: ["A. 6", "B. 7", "C. 8", "D. 9", "E. 10"],
-          answer: 2
+          answer: 2,
+          explain: "Interior angle sum = (n − 2) × 180°.\n1. (n − 2) × 180 = 1080\n2. n − 2 = 6, so n = 8\nAn octagon has 8 sides."
         },
         {
           text: "A rectangular garden is 15 m × 8 m. What length of fencing is needed to enclose it?",
           choices: ["A. 23 m", "B. 36 m", "C. 46 m", "D. 56 m", "E. 120 m"],
-          answer: 2
+          answer: 2,
+          explain: "Perimeter = 2 × (length + width).\n1. 2 × (15 + 8) = 2 × 23 = 46 m"
         },
         {
           text: "A square and a rectangle have the same perimeter of 28 cm. The rectangle is 8 cm × 6 cm. What is the area of the square?",
           choices: ["A. 36 cm²", "B. 42 cm²", "C. 48 cm²", "D. 49 cm²", "E. 56 cm²"],
-          answer: 3
+          answer: 3,
+          explain: "1. Perimeter of square = 28 cm, so side = 28 ÷ 4 = 7 cm\n2. Area = 7² = 49 cm²\nCheck: perimeter of 8×6 rectangle = 2(8+6) = 28 ✓"
         },
         {
           text: "A regular pentagon has side 8 cm. What is its perimeter?",
           choices: ["A. 32 cm", "B. 36 cm", "C. 40 cm", "D. 44 cm", "E. 48 cm"],
-          answer: 2
+          answer: 2,
+          explain: "A regular pentagon has 5 equal sides.\n1. Perimeter = 5 × 8 = 40 cm"
         },
         {
           text: "A circle has radius 3 cm. What is its circumference? (π ≈ 3.14)",
           choices: ["A. 9.42 cm", "B. 12.56 cm", "C. 18.84 cm", "D. 21.98 cm", "E. 28.26 cm"],
-          answer: 2
+          answer: 2,
+          explain: "Circumference = 2πr.\n1. 2 × 3.14 × 3 = 18.84 cm"
         },
         {
           text: "A L-shaped figure is made from two rectangles: 6×4 and 3×2. What is its total area?",
           choices: ["A. 24 cm²", "B. 28 cm²", "C. 30 cm²", "D. 32 cm²", "E. 36 cm²"],
-          answer: 2
+          answer: 2,
+          explain: "Add the areas of both rectangles.\n1. First rectangle: 6 × 4 = 24 cm²\n2. Second rectangle: 3 × 2 = 6 cm²\n3. Total: 24 + 6 = 30 cm²"
         },
         {
           text: "A triangle has base 14 cm and area 49 cm². What is its height?",
           choices: ["A. 5 cm", "B. 6 cm", "C. 7 cm", "D. 8 cm", "E. 9 cm"],
-          answer: 2
+          answer: 2,
+          explain: "Area = ½ × base × height, so height = 2 × Area ÷ base.\n1. height = 2 × 49 ÷ 14 = 98 ÷ 14 = 7 cm"
         },
         {
           text: "What is the area of the shaded region if a circle of radius 5 cm is inside a square of side 10 cm? (π ≈ 3.14)",
           choices: ["A. 21.5 cm²", "B. 22.5 cm²", "C. 21.4 cm²", "D. 20.5 cm²", "E. 21.0 cm²"],
-          answer: 0
+          answer: 0,
+          explain: "Shaded area = area of square − area of circle.\n1. Square: 10 × 10 = 100 cm²\n2. Circle: π × 5² = 3.14 × 25 = 78.5 cm²\n3. Shaded: 100 − 78.5 = 21.5 cm²"
         },
         {
           text: "A parallelogram has area 72 cm² and base 12 cm. What is its height?",
           choices: ["A. 4 cm", "B. 5 cm", "C. 6 cm", "D. 7 cm", "E. 8 cm"],
-          answer: 2
+          answer: 2,
+          explain: "Area = base × height, so height = Area ÷ base.\n1. height = 72 ÷ 12 = 6 cm"
         },
         {
           text: "Each interior angle of a regular hexagon measures:",
           choices: ["A. 90°", "B. 100°", "C. 108°", "D. 120°", "E. 135°"],
-          answer: 3
+          answer: 3,
+          explain: "Each interior angle = (n − 2) × 180 ÷ n.\n1. (6 − 2) × 180 ÷ 6 = 4 × 180 ÷ 6 = 720 ÷ 6 = 120°"
         },
         {
           text: "Two squares have sides 3 cm and 5 cm. What is the difference in their areas?",
           choices: ["A. 4 cm²", "B. 8 cm²", "C. 12 cm²", "D. 16 cm²", "E. 20 cm²"],
-          answer: 3
+          answer: 3,
+          explain: "1. Area of 5 cm square: 5² = 25 cm²\n2. Area of 3 cm square: 3² = 9 cm²\n3. Difference: 25 − 9 = 16 cm²"
         },
         {
           text: "A rectangle has perimeter 50 cm and length 15 cm. What is its width?",
           choices: ["A. 8 cm", "B. 9 cm", "C. 10 cm", "D. 11 cm", "E. 12 cm"],
-          answer: 2
+          answer: 2,
+          explain: "Perimeter = 2 × (length + width), so width = Perimeter ÷ 2 − length.\n1. Width = 50 ÷ 2 − 15 = 25 − 15 = 10 cm"
         },
         {
           text: "A regular octagon has each interior angle of:",
           choices: ["A. 108°", "B. 120°", "C. 135°", "D. 144°", "E. 150°"],
-          answer: 2
+          answer: 2,
+          explain: "Each interior angle = (n − 2) × 180 ÷ n.\n1. (8 − 2) × 180 ÷ 8 = 6 × 180 ÷ 8 = 1080 ÷ 8 = 135°"
         },
         {
           text: "A circle has circumference 62.8 cm. What is its area? (π ≈ 3.14)",
           choices: ["A. 100 cm²", "B. 200 cm²", "C. 314 cm²", "D. 400 cm²", "E. 628 cm²"],
-          answer: 2
+          answer: 2,
+          explain: "First find the radius from the circumference, then find the area.\n1. r = Circumference ÷ (2π) = 62.8 ÷ 6.28 = 10 cm\n2. Area = π × r² = 3.14 × 100 = 314 cm²"
         },
         {
           text: "A composite shape is formed by a rectangle 8×5 cm with a triangle of base 8 cm and height 3 cm on top. What is the total area?",
           choices: ["A. 48 cm²", "B. 50 cm²", "C. 52 cm²", "D. 54 cm²", "E. 56 cm²"],
-          answer: 2
+          answer: 2,
+          explain: "Add the two areas together.\n1. Rectangle: 8 × 5 = 40 cm²\n2. Triangle: ½ × 8 × 3 = 12 cm²\n3. Total: 40 + 12 = 52 cm²"
         },
         {
           text: "How many diagonals does a pentagon have?",
           choices: ["A. 3", "B. 4", "C. 5", "D. 6", "E. 7"],
-          answer: 2
+          answer: 2,
+          explain: "Number of diagonals = n(n − 3) ÷ 2.\n1. 5 × (5 − 3) ÷ 2 = 5 × 2 ÷ 2 = 5 diagonals"
         },
         {
           text: "A square tile has side 20 cm. How many tiles are needed to cover a floor 2 m × 1.6 m?",
           choices: ["A. 60", "B. 70", "C. 80", "D. 90", "E. 100"],
-          answer: 2
+          answer: 2,
+          explain: "Convert units and divide areas.\n1. Floor: 200 cm × 160 cm = 32,000 cm²\n2. One tile: 20 × 20 = 400 cm²\n3. Number of tiles: 32,000 ÷ 400 = 80"
         },
         {
           text: "A rectangle and a square have equal areas. The rectangle is 16 cm × 4 cm. What is the side of the square?",
           choices: ["A. 6 cm", "B. 7 cm", "C. 8 cm", "D. 9 cm", "E. 10 cm"],
-          answer: 2
+          answer: 2,
+          explain: "1. Rectangle area: 16 × 4 = 64 cm²\n2. Side of square = √64 = 8 cm"
         },
         {
           text: "A circle is cut into 6 equal sectors. What is the angle at the centre of each sector?",
           choices: ["A. 45°", "B. 54°", "C. 60°", "D. 72°", "E. 90°"],
-          answer: 2
+          answer: 2,
+          explain: "A full circle has 360°, divided equally among sectors.\n1. Each sector: 360 ÷ 6 = 60°"
         },
         {
           text: "A trapezoid has area 40 cm², parallel sides 6 cm and 10 cm. What is its height?",
           choices: ["A. 4 cm", "B. 5 cm", "C. 6 cm", "D. 7 cm", "E. 8 cm"],
-          answer: 1
+          answer: 1,
+          explain: "Area = ½ × (sum of parallel sides) × height, so height = 2 × Area ÷ (sum of sides).\n1. height = 2 × 40 ÷ (6 + 10) = 80 ÷ 16 = 5 cm"
         },
         {
           text: "Which of the following shapes has exactly 4 lines of symmetry?",
           choices: ["A. Rectangle", "B. Rhombus", "C. Square", "D. Parallelogram", "E. Trapezoid"],
-          answer: 2
+          answer: 2,
+          explain: "A square has 4 lines of symmetry: 2 through opposite sides and 2 through opposite corners.\n1. Rectangle: 2 lines (through midpoints of opposite sides)\n2. Rhombus: 2 lines (through opposite corners)\n3. Square: 4 lines ✓\n4. Parallelogram and trapezoid: 0 lines"
         },
         {
           text: "A circle has area 28.26 cm². What is its diameter? (π ≈ 3.14)",
           choices: ["A. 3 cm", "B. 4 cm", "C. 5 cm", "D. 6 cm", "E. 7 cm"],
-          answer: 3
+          answer: 3,
+          explain: "Area = πr², so r² = Area ÷ π.\n1. r² = 28.26 ÷ 3.14 = 9\n2. r = 3 cm\n3. Diameter = 2r = 6 cm"
         },
         {
           text: "A rectangle has length twice its width. If the perimeter is 48 cm, what is the area?",
           choices: ["A. 96 cm²", "B. 108 cm²", "C. 120 cm²", "D. 128 cm²", "E. 144 cm²"],
-          answer: 3
+          answer: 3,
+          explain: "Let width = w, then length = 2w.\n1. Perimeter: 2(w + 2w) = 6w = 48, so w = 8 cm and length = 16 cm\n2. Area = 16 × 8 = 128 cm²"
         },
         {
           text: "What is the sum of exterior angles of any convex polygon?",
           choices: ["A. 180°", "B. 270°", "C. 360°", "D. 540°", "E. It depends on the number of sides"],
-          answer: 2
+          answer: 2,
+          explain: "The sum of exterior angles of any convex polygon is always 360°.\n1. Imagine walking around the shape — you turn through one full circle (360°) in total."
         },
         {
           text: "A square has diagonal 10 cm. What is its area?",
           choices: ["A. 25 cm²", "B. 40 cm²", "C. 50 cm²", "D. 60 cm²", "E. 100 cm²"],
-          answer: 2
+          answer: 2,
+          explain: "Area of a square using diagonal d: Area = d² ÷ 2.\n1. Area = 10² ÷ 2 = 100 ÷ 2 = 50 cm²"
         },
         {
           text: "A regular polygon has interior angles summing to 900°. How many sides does it have?",
           choices: ["A. 5", "B. 6", "C. 7", "D. 8", "E. 9"],
-          answer: 2
+          answer: 2,
+          explain: "Interior angle sum = (n − 2) × 180°.\n1. (n − 2) × 180 = 900\n2. n − 2 = 5, so n = 7\nA heptagon (7 sides)."
         },
         {
           text: "A rectangle is 9 cm × 5 cm. A square of side 3 cm is removed from its centre. What is the remaining area?",
           choices: ["A. 30 cm²", "B. 33 cm²", "C. 36 cm²", "D. 39 cm²", "E. 42 cm²"],
-          answer: 2
+          answer: 2,
+          explain: "1. Rectangle area: 9 × 5 = 45 cm²\n2. Square removed: 3 × 3 = 9 cm²\n3. Remaining: 45 − 9 = 36 cm²"
         },
         {
           text: "A circle and a square have the same perimeter of 40 cm. Which has the larger area?",
           choices: ["A. Square", "B. Circle", "C. They are equal", "D. Cannot be determined", "E. Depends on units"],
-          answer: 1
+          answer: 1,
+          explain: "Compare the areas for the same perimeter of 40 cm.\n1. Circle: r = 40 ÷ (2π) ≈ 6.37 cm, area ≈ π × 6.37² ≈ 127.3 cm²\n2. Square: side = 40 ÷ 4 = 10 cm, area = 100 cm²\n3. The circle has the larger area — a circle always encloses the most area for a given perimeter."
         },
         {
           text: "Three identical squares each of side 4 cm are placed side by side to form a rectangle. What is the perimeter of that rectangle?",
           choices: ["A. 32 cm", "B. 36 cm", "C. 40 cm", "D. 44 cm", "E. 48 cm"],
-          answer: 0
+          answer: 0,
+          explain: "Three 4 cm squares side by side form a 12 cm × 4 cm rectangle.\n1. Length = 3 × 4 = 12 cm, width = 4 cm\n2. Perimeter = 2 × (12 + 4) = 2 × 16 = 32 cm"
         },
         {
           text: "A triangle has sides 5 cm, 12 cm, and 13 cm. What is its area?",
           choices: ["A. 20 cm²", "B. 25 cm²", "C. 30 cm²", "D. 35 cm²", "E. 40 cm²"],
-          answer: 2
+          answer: 2,
+          explain: "Check if it is a right triangle: 5² + 12² = 25 + 144 = 169 = 13², so it is a right triangle.\n1. The legs are 5 cm and 12 cm\n2. Area = ½ × 5 × 12 = 30 cm²"
         }
       ]
     },
