@@ -552,6 +552,9 @@ async function loadProgressData() {
   container.innerHTML = '<div style="color:var(--text-secondary);padding:20px 0;">Loading…</div>';
 
   try {
+    // Force a fresh token in case session was swapped between kid/admin logins
+    await sbClient.auth.refreshSession();
+
     // Fetch non-admin kids
     const { data: kids, error: kErr } = await sbClient
       .from('kids')
