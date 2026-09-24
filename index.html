@@ -38,7 +38,7 @@ body {
 
 /* ── Home page ── */
 #home-page {
-  display:none; /* shown after login */
+  display:none;
   align-items:center; justify-content:center;
   min-height:100vh; padding:24px;
 }
@@ -73,7 +73,7 @@ h1 { font-size:36px; font-weight:700; color:var(--primary); margin-bottom:12px; 
   flex-direction:column; padding:24px;
 }
 #profile-overlay.hidden { display:none; }
-.picker-logo { font-size:44px; margin-bottom:12px; }
+.picker-logo  { font-size:44px; margin-bottom:12px; }
 .picker-title { font-size:24px; font-weight:800; margin-bottom:6px; text-align:center; }
 .picker-sub   { font-size:14px; color:var(--text-secondary); margin-bottom:32px; text-align:center; }
 .profile-cards { display:flex; flex-direction:column; gap:12px; width:100%; max-width:340px; }
@@ -89,6 +89,12 @@ h1 { font-size:36px; font-weight:700; color:var(--primary); margin-bottom:12px; 
   font-size:19px; font-weight:800; display:flex; align-items:center;
   justify-content:center; flex-shrink:0;
 }
+.admin-link {
+  margin-top:24px; font-size:12px; color:var(--text-secondary);
+  background:none; border:none; cursor:pointer; font-family:inherit;
+  text-decoration:underline; padding:4px;
+}
+.admin-link:hover { color:var(--text-primary); }
 
 /* ── Passcode modal ── */
 #passcode-overlay {
@@ -100,11 +106,7 @@ h1 { font-size:36px; font-weight:700; color:var(--primary); margin-bottom:12px; 
   background:#fff; border-radius:20px; padding:32px 28px;
   width:100%; max-width:340px; box-shadow:0 8px 40px rgba(0,0,0,.2); text-align:center;
 }
-.pc-avatar {
-  width:60px; height:60px; border-radius:50%; margin:0 auto 14px;
-  font-size:26px; font-weight:800; color:#fff;
-  display:flex; align-items:center; justify-content:center;
-}
+.pc-avatar   { width:60px; height:60px; border-radius:50%; margin:0 auto 14px; font-size:26px; font-weight:800; color:#fff; display:flex; align-items:center; justify-content:center; }
 .pc-title    { font-size:18px; font-weight:800; margin-bottom:4px; }
 .pc-subtitle { font-size:13px; color:var(--text-secondary); margin-bottom:20px; }
 .pc-input {
@@ -117,7 +119,8 @@ h1 { font-size:36px; font-weight:700; color:var(--primary); margin-bottom:12px; 
 .pc-btns  { display:flex; gap:10px; }
 .pc-cancel { flex:1; padding:12px; background:var(--gray-light); border:1px solid var(--border); border-radius:10px; font-size:14px; font-weight:700; cursor:pointer; font-family:inherit; }
 .pc-unlock { flex:2; padding:12px; background:#1e3a8a; color:#fff; border:none; border-radius:10px; font-size:14px; font-weight:700; cursor:pointer; font-family:inherit; }
-.pc-unlock:hover { background:#1e40af; }
+.pc-unlock:hover:not(:disabled) { background:#1e40af; }
+.pc-unlock:disabled { opacity:.6; cursor:not-allowed; }
 </style>
 </head>
 <body>
@@ -127,7 +130,10 @@ h1 { font-size:36px; font-weight:700; color:var(--primary); margin-bottom:12px; 
   <div class="picker-logo">🦘</div>
   <div class="picker-title">Who's practicing?</div>
   <div class="picker-sub">Choose your name to get started.</div>
-  <div class="profile-cards" id="profile-cards"></div>
+  <div class="profile-cards" id="profile-cards">
+    <div style="color:#6b7280;font-size:14px;text-align:center">Loading profiles…</div>
+  </div>
+  <button class="admin-link" onclick="openAdminPasscode()">Admin access</button>
 </div>
 
 <!-- ══ PASSCODE MODAL ══ -->
@@ -135,13 +141,13 @@ h1 { font-size:36px; font-weight:700; color:var(--primary); margin-bottom:12px; 
   <div class="passcode-card">
     <div class="pc-avatar" id="pc-avatar"></div>
     <div class="pc-title" id="pc-title"></div>
-    <div class="pc-subtitle">Enter your passcode to continue</div>
-    <input type="password" id="pc-input" class="pc-input" maxlength="6"
-           placeholder="••••" onkeydown="if(event.key==='Enter') unlockProfile()">
+    <div class="pc-subtitle" id="pc-subtitle">Enter your passcode to continue</div>
+    <input type="password" id="pc-input" class="pc-input" maxlength="8"
+           placeholder="••••••" onkeydown="if(event.key==='Enter') unlockProfile()">
     <div class="pc-error" id="pc-error"></div>
     <div class="pc-btns">
       <button class="pc-cancel" onclick="closePasscode()">Cancel</button>
-      <button class="pc-unlock" onclick="unlockProfile()">Enter</button>
+      <button class="pc-unlock" id="pc-unlock" onclick="unlockProfile()">Enter</button>
     </div>
   </div>
 </div>
@@ -175,59 +181,161 @@ h1 { font-size:36px; font-weight:700; color:var(--primary); margin-bottom:12px; 
   </div>
 </div>
 
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
+<script src="supabase_client.js"></script>
 <script src="profile.js"></script>
 <script>
-let pendingProfile = null;
+let pendingKid  = null;
+let failCount   = 0;
+const MAX_FAILS  = 3;
+const LOCKOUT_MS = 5 * 60 * 1000;
 
-// Build profile cards
-const CARD_HOVER_COLOR = { Anishka: '#7c3aed', Nivaan: '#2563eb', Vivan: '#0891b2' };
-const cardsEl = document.getElementById('profile-cards');
-PROFILES.forEach(cfg => {
-  const btn = document.createElement('button');
-  btn.className = 'profile-card';
-  btn.innerHTML = `
-    <div class="profile-avatar" style="background:${cfg.color}">${cfg.name[0]}</div>
-    <span>${cfg.name}</span>
-  `;
-  btn.onmouseenter = () => { btn.style.borderColor = cfg.color; btn.style.background = cfg.color + '18'; };
-  btn.onmouseleave = () => { btn.style.borderColor = ''; btn.style.background = ''; };
-  btn.onclick = () => openPasscode(cfg);
-  cardsEl.appendChild(btn);
-});
+// ── Init ──────────────────────────────────────────────────────
+async function init() {
+  const { data: { session } } = await sbClient.auth.getSession();
+  if (session && getActiveProfile()) {
+    document.getElementById('profile-overlay').classList.add('hidden');
+    showHome();
+    return;
+  }
+  // Clear stale sessionStorage if no Supabase session
+  sessionStorage.removeItem('mkp_profile');
+  sessionStorage.removeItem('mkp_kid_id');
+  sessionStorage.removeItem('mkp_kid_color');
+  await loadKids();
+}
 
-function openPasscode(cfg) {
-  pendingProfile = cfg;
-  document.getElementById('pc-avatar').style.background = cfg.color;
-  document.getElementById('pc-avatar').textContent = cfg.name[0];
-  document.getElementById('pc-title').textContent = 'Hi, ' + cfg.name + '!';
+// ── Load kids from DB ─────────────────────────────────────────
+async function loadKids() {
+  const cardsEl = document.getElementById('profile-cards');
+  const { data: kids, error } = await sbClient
+    .from('kids')
+    .select('id, name, color, is_admin')
+    .eq('is_admin', false)
+    .order('name');
+
+  if (error || !kids) {
+    cardsEl.innerHTML = '<div style="color:#ef4444;text-align:center">Could not load profiles. Please refresh.</div>';
+    return;
+  }
+
+  cardsEl.innerHTML = '';
+  kids.forEach(kid => {
+    const btn = document.createElement('button');
+    btn.className = 'profile-card';
+    btn.innerHTML = `
+      <div class="profile-avatar" style="background:${kid.color}">${kid.name[0]}</div>
+      <span>${kid.name}</span>
+    `;
+    btn.onmouseenter = () => { btn.style.borderColor = kid.color; btn.style.background = kid.color + '18'; };
+    btn.onmouseleave = () => { btn.style.borderColor = ''; btn.style.background = ''; };
+    btn.onclick = () => openPasscode(kid);
+    cardsEl.appendChild(btn);
+  });
+}
+
+// ── Passcode modal ────────────────────────────────────────────
+function openPasscode(kid) {
+  const lockout = sessionStorage.getItem('mkp_lockout');
+  if (lockout && parseInt(lockout) > Date.now()) {
+    const mins = Math.ceil((parseInt(lockout) - Date.now()) / 60000);
+    showError(`Too many attempts. Try again in ${mins} minute${mins > 1 ? 's' : ''}.`);
+    document.getElementById('passcode-overlay').classList.add('open');
+    return;
+  } else if (lockout) {
+    sessionStorage.removeItem('mkp_lockout');
+    failCount = 0;
+  }
+
+  pendingKid = kid;
+  document.getElementById('pc-avatar').style.background = kid.color;
+  document.getElementById('pc-avatar').textContent = kid.name[0];
+  document.getElementById('pc-title').textContent = 'Hi, ' + kid.name + '!';
+  document.getElementById('pc-subtitle').textContent = 'Enter your passcode to continue';
   document.getElementById('pc-error').textContent = '';
   document.getElementById('pc-input').value = '';
+  document.getElementById('pc-unlock').textContent = 'Enter';
+  document.getElementById('pc-unlock').disabled = false;
+  document.getElementById('passcode-overlay').classList.add('open');
+  setTimeout(() => document.getElementById('pc-input').focus(), 100);
+}
+
+function openAdminPasscode() {
+  pendingKid = { name: 'Admin', color: '#374151', id: null, is_admin: true };
+  document.getElementById('pc-avatar').style.background = '#374151';
+  document.getElementById('pc-avatar').textContent = '🔐';
+  document.getElementById('pc-title').textContent = 'Admin Access';
+  document.getElementById('pc-subtitle').textContent = 'Enter admin password';
+  document.getElementById('pc-error').textContent = '';
+  document.getElementById('pc-input').value = '';
+  document.getElementById('pc-unlock').textContent = 'Enter';
+  document.getElementById('pc-unlock').disabled = false;
   document.getElementById('passcode-overlay').classList.add('open');
   setTimeout(() => document.getElementById('pc-input').focus(), 100);
 }
 
 function closePasscode() {
-  pendingProfile = null;
+  pendingKid = null;
   document.getElementById('passcode-overlay').classList.remove('open');
   document.getElementById('pc-input').value = '';
   document.getElementById('pc-error').textContent = '';
 }
 
-function unlockProfile() {
-  if (!pendingProfile) return;
-  const entered = document.getElementById('pc-input').value;
-  if (entered === pendingProfile.passcode) {
-    setActiveProfile(pendingProfile.name);
-    document.getElementById('passcode-overlay').classList.remove('open');
-    document.getElementById('profile-overlay').classList.add('hidden');
-    showHome();
-  } else {
-    const err = document.getElementById('pc-error');
-    err.textContent = 'Wrong passcode — try again.';
+function showError(msg) {
+  document.getElementById('pc-error').textContent = msg;
+}
+
+// ── Authenticate ──────────────────────────────────────────────
+async function unlockProfile() {
+  if (!pendingKid) return;
+  const entered = document.getElementById('pc-input').value.trim();
+  if (!entered) return;
+
+  const btn = document.getElementById('pc-unlock');
+  btn.textContent = 'Checking…';
+  btn.disabled = true;
+
+  const email = `${pendingKid.name.toLowerCase()}@mathkangaroo.app`;
+  const { data, error } = await sbClient.auth.signInWithPassword({ email, password: entered });
+
+  if (error || !data.session) {
+    btn.textContent = 'Enter';
+    btn.disabled = false;
+    failCount++;
+    if (failCount >= MAX_FAILS) {
+      sessionStorage.setItem('mkp_lockout', Date.now() + LOCKOUT_MS);
+      showError('Too many wrong attempts. Locked for 5 minutes.');
+    } else {
+      const left = MAX_FAILS - failCount;
+      showError(`Wrong passcode — ${left} attempt${left === 1 ? '' : 's'} remaining.`);
+    }
     document.getElementById('pc-input').value = '';
     document.getElementById('pc-input').focus();
-    err.style.animation = 'none';
-    requestAnimationFrame(() => err.style.animation = '');
+    return;
+  }
+
+  // Success — fetch kid record if not admin
+  failCount = 0;
+  let kidId    = pendingKid.id;
+  let kidColor = pendingKid.color;
+
+  if (!kidId) {
+    // Admin — fetch their kids row
+    const { data: kidRow } = await sbClient.from('kids').select('id, color').eq('name', pendingKid.name).single();
+    if (kidRow) { kidId = kidRow.id; kidColor = kidRow.color; }
+  }
+
+  setActiveProfile(pendingKid.name);
+  setActiveKidId(kidId);
+  setActiveKidColor(kidColor);
+
+  document.getElementById('passcode-overlay').classList.remove('open');
+  document.getElementById('profile-overlay').classList.add('hidden');
+
+  if (pendingKid.is_admin) {
+    window.location.href = 'admin.html';
+  } else {
+    showHome();
   }
 }
 
@@ -236,11 +344,7 @@ function showHome() {
   injectProfileChip();
 }
 
-// On load: if already logged in, skip picker
-if (getActiveProfile()) {
-  document.getElementById('profile-overlay').classList.add('hidden');
-  showHome();
-}
+init();
 </script>
 </body>
 </html>

@@ -454,6 +454,8 @@
   </div>
 </div>
 
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
+<script src="supabase_client.js"></script>
 <script src="profile.js"></script>
 <script>requireProfile(); injectProfileChip();</script>
 <script src="online_questions_data.js"></script>
@@ -588,9 +590,24 @@ function tryLoadProgress() {
 }
 function saveProgress() {
   try { localStorage.setItem(PROGRESS_KEY(), JSON.stringify({ answers, checked, attempt_id: currentAttemptId })); } catch(e) {}
+  // Sync to Supabase (fire and forget)
+  const kidId = getActiveKidId();
+  if (kidId) {
+    sbClient.from('progress').upsert({
+      kid_id: kidId, grade, sub,
+      answers: answers, checked: checked,
+      attempt_id: currentAttemptId || null,
+      last_updated: new Date().toISOString(),
+    }, { onConflict: 'kid_id,grade,sub' }).then(() => {});
+  }
 }
 function clearProgress() {
   try { localStorage.removeItem(PROGRESS_KEY()); } catch(e) {}
+  // Sync to Supabase (fire and forget)
+  const kidId = getActiveKidId();
+  if (kidId) {
+    sbClient.from('progress').delete().match({ kid_id: kidId, grade, sub }).then(() => {});
+  }
 }
 
 // ─────────────────────────────────────────────────────────────
@@ -610,6 +627,8 @@ function generateId() {
 function saveAttempt() {
   const history = loadAttemptHistory();
   const id      = generateId();
+  const correctAnswers = questionsData[grade]?.[sub]?.questions?.map(q => q.answer) || [];
+  const correctCount   = answers.filter((a, i) => a === correctAnswers[i]).length;
   const attempt = {
     id,
     attempt_num:  history.attempts.length + 1,
@@ -619,6 +638,21 @@ function saveAttempt() {
   };
   history.attempts.push(attempt);
   try { localStorage.setItem(ATTEMPT_KEY(), JSON.stringify(history)); } catch(e) {}
+  // Sync to Supabase (fire and forget)
+  const kidId = getActiveKidId();
+  if (kidId) {
+    sbClient.from('attempts').insert({
+      kid_id:          kidId,
+      grade,
+      sub,
+      attempt_num:     attempt.attempt_num,
+      answers:         answers,
+      correct_count:   correctCount,
+      total_questions: answers.length,
+      started_at:      attempt.date,
+      completed_at:    new Date().toISOString(),
+    }).then(() => {});
+  }
   return id;
 }
 

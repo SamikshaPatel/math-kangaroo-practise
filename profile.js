@@ -1,23 +1,15 @@
 // ─────────────────────────────────────────────────────────────
 // SHARED PROFILE SYSTEM
 // ─────────────────────────────────────────────────────────────
-const PROFILES = [
-  { name: 'Anishka', passcode: '5678', color: '#7c3aed' },
-  { name: 'Nivaan',  passcode: '1234', color: '#2563eb' },
-  { name: 'Vivan',   passcode: '9999', color: '#0891b2' },
-];
 
-function getActiveProfile() {
-  return sessionStorage.getItem('mkp_profile') || null;
-}
+function getActiveProfile()  { return sessionStorage.getItem('mkp_profile')   || null; }
+function setActiveProfile(n) { sessionStorage.setItem('mkp_profile', n); }
 
-function setActiveProfile(name) {
-  sessionStorage.setItem('mkp_profile', name);
-}
+function getActiveKidId()    { return sessionStorage.getItem('mkp_kid_id')    || null; }
+function setActiveKidId(id)  { sessionStorage.setItem('mkp_kid_id', id); }
 
-function getProfileConfig(name) {
-  return PROFILES.find(p => p.name === name) || null;
-}
+function getActiveKidColor()      { return sessionStorage.getItem('mkp_kid_color') || '#2563eb'; }
+function setActiveKidColor(color) { sessionStorage.setItem('mkp_kid_color', color); }
 
 // Prefix a localStorage key with the active profile name
 function profileKey(key) {
@@ -25,7 +17,7 @@ function profileKey(key) {
   return p ? `${p}_${key}` : key;
 }
 
-// Call on every protected page. Redirects to index.html if no profile active.
+// Redirect to index if no profile active
 function requireProfile() {
   if (!getActiveProfile()) {
     window.location.replace('index.html');
@@ -34,12 +26,11 @@ function requireProfile() {
   return true;
 }
 
-// Append a fixed profile chip to the page body
+// Inject fixed profile chip (top-right corner)
 function injectProfileChip() {
-  const name = getActiveProfile();
+  const name  = getActiveProfile();
   if (!name) return;
-  const cfg = getProfileConfig(name);
-  if (!cfg) return;
+  const color = getActiveKidColor();
 
   const existing = document.getElementById('profile-chip');
   if (existing) existing.remove();
@@ -55,17 +46,19 @@ function injectProfileChip() {
     'box-shadow:0 1px 4px rgba(0,0,0,.08)', 'font-family:inherit',
     'transition:border-color .15s',
   ].join(';');
-  chip.onmouseenter = () => chip.style.borderColor = cfg.color;
+  chip.onmouseenter = () => chip.style.borderColor = color;
   chip.onmouseleave = () => chip.style.borderColor = '#e5e7eb';
-
   chip.innerHTML = `
-    <div style="width:26px;height:26px;border-radius:50%;background:${cfg.color};
+    <div style="width:26px;height:26px;border-radius:50%;background:${color};
       color:#fff;font-size:12px;font-weight:800;display:flex;align-items:center;
       justify-content:center;flex-shrink:0;">${name[0]}</div>
     <span>${name}</span>
   `;
-  chip.onclick = () => {
+  chip.onclick = async () => {
     sessionStorage.removeItem('mkp_profile');
+    sessionStorage.removeItem('mkp_kid_id');
+    sessionStorage.removeItem('mkp_kid_color');
+    if (typeof sbClient !== 'undefined') await sbClient.auth.signOut();
     window.location.href = 'index.html';
   };
   document.body.appendChild(chip);
