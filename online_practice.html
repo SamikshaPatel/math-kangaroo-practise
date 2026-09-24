@@ -371,7 +371,7 @@
     <button class="btn-nav btn-next" id="btn-next" onclick="goNext()">Next →</button>
   </div>
   <div class="finish-link" id="finish-link">
-    Done answering? <button onclick="finishAndClose()">Finish &amp; see results →</button>
+    <button onclick="finishAndClose()">Submit answers &amp; see score →</button>
   </div>
 </div>
 
@@ -1074,7 +1074,9 @@ function startSkipped() {
 // NEW ATTEMPT  — only when skipped === 0
 // ─────────────────────────────────────────────────────────────
 function newAttempt() {
-  if (answers.filter(a => a === null).length > 0) return;
+  const allAnswered = answers.every(a => a !== null);
+  const allCorrect  = answers.every((a, i) => a === questions[i].answer);
+  if (!allAnswered || !allCorrect) return;
   answers = new Array(questions.length).fill(null);
   checked = new Array(questions.length).fill(false);
   questionTimes = {}; currentIndex = 0; currentAttemptId = null;
