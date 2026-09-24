@@ -340,6 +340,45 @@ td.cell-center { text-align: center; }
 }
 .manage-note strong { color: var(--text-primary); }
 
+/* Add Kid form */
+.btn-add-kid {
+  padding: 8px 18px;
+  background: var(--success);
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background .15s;
+}
+.btn-add-kid:hover { background: #047857; }
+.add-kid-card {
+  display: none;
+  border: 2px dashed var(--border);
+  border-radius: 8px;
+  padding: 16px;
+  max-width: 560px;
+  margin-bottom: 12px;
+  background: var(--gray-lighter);
+}
+.add-kid-card.open { display: block; }
+.add-kid-card h3 { font-size: 14px; font-weight: 700; margin-bottom: 12px; }
+
+/* Delete button */
+.btn-delete {
+  padding: 5px 12px;
+  border: 1.5px solid #fca5a5;
+  background: var(--bg-body);
+  border-radius: 6px;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  color: #dc2626;
+  transition: background .15s;
+}
+.btn-delete:hover { background: #fee2e2; }
+
 /* ── Refresh btn ── */
 .section-actions {
   display: flex;
@@ -402,15 +441,38 @@ td.cell-center { text-align: center; }
     <div id="tab-kids" class="tab-panel">
       <div class="section-actions">
         <h2>Kids</h2>
+        <button class="btn-add-kid" onclick="toggleAddKidForm()">+ Add Kid</button>
       </div>
+
+      <!-- Add Kid Form -->
+      <div class="add-kid-card" id="add-kid-card">
+        <h3>Add New Kid</h3>
+        <label class="edit-form" style="display:block;">
+          <span style="font-size:12px;font-weight:600;color:var(--text-secondary);">Name</span>
+          <input type="text" id="new-kid-name" placeholder="e.g. Arjun" maxlength="40"
+                 style="width:100%;padding:7px 10px;border:1.5px solid var(--border);border-radius:6px;font-size:14px;background:var(--bg-body);color:var(--text-primary);font-family:inherit;margin-top:4px;">
+        </label>
+        <div style="margin-top:10px;">
+          <div style="font-size:12px;font-weight:600;color:var(--text-secondary);margin-bottom:6px;">Color</div>
+          <div class="color-picker-wrap" id="new-kid-colors">
+            <!-- swatches injected by JS -->
+          </div>
+          <input type="hidden" id="new-kid-color" value="#2563eb">
+        </div>
+        <div style="margin-top:10px;">
+          <div style="font-size:12px;font-weight:600;color:var(--text-secondary);margin-bottom:4px;">Passcode (min 4 chars)</div>
+          <input type="password" id="new-kid-passcode" placeholder="••••••" maxlength="8"
+                 style="width:100%;padding:7px 10px;border:1.5px solid var(--border);border-radius:6px;font-size:20px;font-weight:700;letter-spacing:6px;background:var(--bg-body);color:var(--text-primary);font-family:inherit;">
+        </div>
+        <div class="edit-form-actions" style="margin-top:14px;">
+          <button class="btn-save" id="add-kid-btn" onclick="addKid()">Add Kid</button>
+          <button class="btn-cancel" onclick="toggleAddKidForm()">Cancel</button>
+          <span class="save-status" id="add-kid-status"></span>
+        </div>
+      </div>
+
       <div id="kids-content">
         <div style="color:var(--text-secondary);padding:20px 0;">Loading kids…</div>
-      </div>
-      <div class="manage-note">
-        <strong>Note:</strong> To add or remove kids, go to the
-        <a href="https://supabase.com/dashboard/project/dlwbedohwifrxuxvijrp/auth/users"
-           target="_blank" style="color:var(--primary);">Supabase Auth dashboard</a>.
-        This panel lets you edit display name, color, and change passcodes.
       </div>
     </div>
   </div>
@@ -705,6 +767,7 @@ function buildKidRow(k) {
         <span class="kid-name" id="display-name-${k.id}">${escHtml(k.name)}</span>
         <button class="btn-edit" onclick="toggleEditForm('${k.id}')">Edit</button>
         <button class="btn-edit" onclick="togglePasscodeForm('${k.id}')">🔑 Passcode</button>
+        <button class="btn-delete" onclick="deleteKid('${k.id}', '${escHtml(k.name)}')">Delete</button>
       </div>
       <div class="edit-form" id="edit-form-${k.id}">
         <label>Display Name</label>
@@ -857,6 +920,112 @@ function escHtml(s) {
     .replace(/</g, '&lt;')
     .replace(/>/g, '&gt;')
     .replace(/"/g, '&quot;');
+}
+
+// ─────────────────────────────────────────────────────────────
+// ADD KID
+// ─────────────────────────────────────────────────────────────
+function toggleAddKidForm() {
+  const card = document.getElementById('add-kid-card');
+  const isOpen = card.classList.toggle('open');
+  if (isOpen) {
+    // Populate color swatches
+    const wrap = document.getElementById('new-kid-colors');
+    const hiddenInput = document.getElementById('new-kid-color');
+    wrap.innerHTML = COLOR_PALETTE.map((c, i) => `
+      <div class="color-swatch ${i === 0 ? 'selected' : ''}"
+           style="background:${c};" data-color="${c}" title="${c}"></div>
+    `).join('');
+    hiddenInput.value = COLOR_PALETTE[0];
+    wrap.querySelectorAll('.color-swatch').forEach(sw => {
+      sw.addEventListener('click', () => {
+        wrap.querySelectorAll('.color-swatch').forEach(s => s.classList.remove('selected'));
+        sw.classList.add('selected');
+        hiddenInput.value = sw.dataset.color;
+      });
+    });
+    document.getElementById('new-kid-name').value = '';
+    document.getElementById('new-kid-passcode').value = '';
+    document.getElementById('add-kid-status').className = 'save-status';
+    setTimeout(() => document.getElementById('new-kid-name').focus(), 50);
+  }
+}
+
+async function addKid() {
+  const name     = (document.getElementById('new-kid-name').value || '').trim();
+  const color    = document.getElementById('new-kid-color').value;
+  const passcode = (document.getElementById('new-kid-passcode').value || '').trim();
+  const btn      = document.getElementById('add-kid-btn');
+  const status   = document.getElementById('add-kid-status');
+
+  if (!name)            { showStatus(status, 'Name is required', 'err'); return; }
+  if (passcode.length < 4) { showStatus(status, 'Passcode min 4 chars', 'err'); return; }
+
+  btn.disabled = true;
+  btn.textContent = 'Adding…';
+  status.className = 'save-status';
+
+  try {
+    const { data: { session } } = await sbClient.auth.getSession();
+    if (!session) throw new Error('Not authenticated');
+
+    const res = await fetch(
+      'https://dlwbedohwifrxuxvijrp.supabase.co/functions/v1/create-kid',
+      {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Authorization': `Bearer ${session.access_token}`,
+        },
+        body: JSON.stringify({ name, color, passcode }),
+      }
+    );
+    const json = await res.json();
+    if (!res.ok) throw new Error(json.error || 'Failed');
+
+    showStatus(status, '✓ Kid added!', 'ok');
+    setTimeout(() => {
+      toggleAddKidForm();
+      loadKidsData();
+      loadProgressData();
+    }, 1000);
+  } catch(e) {
+    showStatus(status, 'Error: ' + e.message, 'err');
+  } finally {
+    btn.disabled = false;
+    btn.textContent = 'Add Kid';
+  }
+}
+
+// ─────────────────────────────────────────────────────────────
+// DELETE KID
+// ─────────────────────────────────────────────────────────────
+async function deleteKid(kidId, kidName) {
+  if (!confirm(`Delete ${kidName}? This will permanently remove their account and all progress data.`)) return;
+
+  try {
+    const { data: { session } } = await sbClient.auth.getSession();
+    if (!session) throw new Error('Not authenticated');
+
+    const res = await fetch(
+      'https://dlwbedohwifrxuxvijrp.supabase.co/functions/v1/delete-kid',
+      {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Authorization': `Bearer ${session.access_token}`,
+        },
+        body: JSON.stringify({ kid_id: kidId }),
+      }
+    );
+    const json = await res.json();
+    if (!res.ok) throw new Error(json.error || 'Failed');
+
+    loadKidsData();
+    loadProgressData();
+  } catch(e) {
+    alert('Error deleting kid: ' + e.message);
+  }
 }
 
 // ─────────────────────────────────────────────────────────────
