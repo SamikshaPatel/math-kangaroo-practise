@@ -221,6 +221,7 @@ body {
   padding: 16px;
   background: var(--gray-lighter);
   transition: border-color 0.2s, box-shadow 0.2s;
+  position: relative;
 }
 
 .subcategory-card:hover {
@@ -251,41 +252,39 @@ body {
   line-height: 1.5;
 }
 
-.status-badge {
-  display: inline-block;
-  font-size: 11px;
-  font-weight: 600;
-  padding: 4px 8px;
-  border-radius: 4px;
-  margin-bottom: 12px;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-}
+.status-grid { display: none; }
+.status-badge { display: none; }
 
-.status-badge.ready {
-  background: var(--success-light);
+.subcategory-card.in-progress {
+  border: 2px solid #d97706;
+  background: linear-gradient(135deg, #fffbeb 0%, #ffffff 60%);
+}
+.subcategory-card.completed {
+  border: 2px solid #10b981;
+  background: linear-gradient(135deg, #f0fdf4 0%, #ffffff 60%);
+}
+.state-badge {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 11px;
+  font-weight: 700;
+  padding: 3px 10px;
+  border-radius: 99px;
+}
+.state-badge.in-progress {
+  background: #fef3c7;
+  color: #78350f;
+}
+.state-badge.completed {
+  background: #d1fae5;
   color: #065f46;
 }
-
-.status-badge.draft {
-  background: var(--warning-light);
-  color: #92400e;
-}
-
-.status-badge.coming {
-  background: var(--gray-light);
-  color: var(--gray-medium);
-}
-
-@media (prefers-color-scheme: dark) {
-  .status-badge.ready {
-    background: var(--success-light);
-    color: #d1fae5;
-  }
-  .status-badge.draft {
-    background: var(--warning-light);
-    color: #fef3c7;
-  }
+.completed-msg {
+  margin-top: 8px;
+  font-size: 12px;
+  color: #065f46;
+  font-style: italic;
 }
 
 .question-count {
@@ -347,15 +346,6 @@ body {
 .btn-online:hover { background: #7c3aed; transform: translateY(-1px); }
 .btn-online:active { transform: translateY(0); }
 
-.subcategory-card.completed {
-  border: 2px solid #10b981;
-  background: linear-gradient(135deg, #f0fdf4 0%, #ffffff 60%);
-}
-.subcategory-card.completed .subcategory-title::after {
-  content: ' ✓';
-  color: #10b981;
-  font-weight: 800;
-}
 
 .btn-secondary {
   background: var(--gray-light);
@@ -899,8 +889,9 @@ body {
 
 <script src="profile.js"></script>
 <script>requireProfile(); injectProfileChip();</script>
+<script src="online_questions_data.js"></script>
 <script>
-(function markCompletedModules() {
+(function markModuleStates() {
   const profile = sessionStorage.getItem('mkp_profile');
   if (!profile) return;
   document.querySelectorAll('.subcategory-card').forEach(card => {
@@ -910,13 +901,53 @@ body {
     const grade = params.get('grade');
     const sub   = params.get('sub');
     if (!grade || !sub) return;
-    const key = `${profile}_mkp_attempts_${grade}_${sub}`;
+
+    const correctAnswers = (questionsData[grade] && questionsData[grade][sub])
+      ? questionsData[grade][sub].questions.map(q => q.answer)
+      : null;
+
+    let hasActivity = false;
+    let allCorrect  = false;
+
     try {
-      const data = JSON.parse(localStorage.getItem(key));
-      if (data && Array.isArray(data.attempts) && data.attempts.length > 0) {
-        card.classList.add('completed');
+      const history = JSON.parse(localStorage.getItem(`${profile}_mkp_attempts_${grade}_${sub}`));
+      if (history && Array.isArray(history.attempts) && history.attempts.length > 0) {
+        hasActivity = true;
+        if (correctAnswers) {
+          allCorrect = history.attempts.some(a =>
+            a.answers.length === correctAnswers.length &&
+            a.answers.every((ans, i) => ans === correctAnswers[i])
+          );
+        }
       }
     } catch(e) {}
+
+    try {
+      const prog = JSON.parse(localStorage.getItem(`${profile}_mkp_progress_${grade}_${sub}`));
+      if (prog && Array.isArray(prog.answers) && prog.answers.some(a => a !== null)) {
+        hasActivity = true;
+      }
+    } catch(e) {}
+
+    if (!hasActivity) return;
+
+    const badge = document.createElement('div');
+    badge.className = 'state-badge';
+
+    if (allCorrect) {
+      card.classList.add('completed');
+      badge.classList.add('completed');
+      badge.textContent = '✓ Completed';
+      const msg = document.createElement('div');
+      msg.className = 'completed-msg';
+      msg.textContent = 'Perfect score! Want to practice again? Click Online Practice below.';
+      card.appendChild(msg);
+    } else {
+      card.classList.add('in-progress');
+      badge.classList.add('in-progress');
+      badge.textContent = 'In Progress';
+    }
+    card.appendChild(badge);
   });
 })();
 </script>
