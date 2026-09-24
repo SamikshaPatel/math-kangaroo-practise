@@ -1018,7 +1018,13 @@ body {
 <script src="grade34_data.js"></script>
 <script src="online_questions_data.js"></script>
 <script>
-(function markModuleStates() {
+function markModuleStates() {
+  // Clear previous state before re-evaluating
+  document.querySelectorAll('.subcategory-card').forEach(card => {
+    card.classList.remove('completed', 'in-progress');
+    card.querySelectorAll('.state-badge, .completed-msg').forEach(el => el.remove());
+  });
+
   const profile = sessionStorage.getItem('mkp_profile');
   if (!profile) return;
   document.querySelectorAll('.subcategory-card').forEach(card => {
@@ -1076,7 +1082,12 @@ body {
     }
     card.appendChild(badge);
   });
-})();
+}
+
+markModuleStates();
+window.addEventListener('pageshow', function(e) {
+  if (e.persisted) markModuleStates();
+});
 </script>
 <script>
 function downloadPDF(category, type) {
