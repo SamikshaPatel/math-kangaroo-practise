@@ -674,8 +674,7 @@ function generateId() {
 function saveAttempt() {
   const history = loadAttemptHistory();
   const id      = generateId();
-  const correctAnswers = questionsData[grade]?.[sub]?.questions?.map(q => q.answer) || [];
-  const correctCount   = answers.filter((a, i) => a === correctAnswers[i]).length;
+  const correctCount = answers.filter((a, i) => a !== null && a === questions[i].answer).length;
   const attempt = {
     id,
     attempt_num:  history.attempts.length + 1,
