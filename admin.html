@@ -407,10 +407,10 @@ td.cell-center { text-align: center; }
         <div style="color:var(--text-secondary);padding:20px 0;">Loading kids…</div>
       </div>
       <div class="manage-note">
-        <strong>Note:</strong> To add kids or change passcodes, go to the
+        <strong>Note:</strong> To add or remove kids, go to the
         <a href="https://supabase.com/dashboard/project/dlwbedohwifrxuxvijrp/auth/users"
            target="_blank" style="color:var(--primary);">Supabase Auth dashboard</a>.
-        This panel only lets you edit display name and color.
+        This panel lets you edit display name, color, and change passcodes.
       </div>
     </div>
   </div>
@@ -704,6 +704,7 @@ function buildKidRow(k) {
         <div class="kid-dot" style="background:${color};">${initial}</div>
         <span class="kid-name" id="display-name-${k.id}">${escHtml(k.name)}</span>
         <button class="btn-edit" onclick="toggleEditForm('${k.id}')">Edit</button>
+        <button class="btn-edit" onclick="togglePasscodeForm('${k.id}')">🔑 Passcode</button>
       </div>
       <div class="edit-form" id="edit-form-${k.id}">
         <label>Display Name</label>
@@ -719,6 +720,16 @@ function buildKidRow(k) {
           <span class="save-status" id="save-status-${k.id}"></span>
         </div>
       </div>
+      <div class="edit-form" id="passcode-form-${k.id}">
+        <label>New Passcode for ${escHtml(k.name)}</label>
+        <input type="password" name="new_passcode" placeholder="Min 4 characters" maxlength="8"
+               style="letter-spacing:6px;font-size:20px;font-weight:700;">
+        <div class="edit-form-actions">
+          <button class="btn-save" onclick="savePasscode('${k.id}', '${escHtml(k.name)}')">Update</button>
+          <button class="btn-cancel" onclick="togglePasscodeForm('${k.id}')">Cancel</button>
+          <span class="save-status" id="passcode-status-${k.id}"></span>
+        </div>
+      </div>
     </div>
   `;
 }
@@ -727,6 +738,62 @@ function toggleEditForm(kidId) {
   const form = document.getElementById('edit-form-' + kidId);
   if (!form) return;
   form.classList.toggle('open');
+}
+
+function togglePasscodeForm(kidId) {
+  const form = document.getElementById('passcode-form-' + kidId);
+  if (!form) return;
+  form.classList.toggle('open');
+  if (form.classList.contains('open')) {
+    const input = form.querySelector('input[name="new_passcode"]');
+    if (input) { input.value = ''; setTimeout(() => input.focus(), 50); }
+  }
+}
+
+async function savePasscode(kidId, kidName) {
+  const form   = document.getElementById('passcode-form-' + kidId);
+  const input  = form.querySelector('input[name="new_passcode"]');
+  const btn    = form.querySelector('.btn-save');
+  const status = document.getElementById('passcode-status-' + kidId);
+
+  const newPasscode = (input.value || '').trim();
+  if (newPasscode.length < 4) {
+    showStatus(status, 'Min 4 characters', 'err'); return;
+  }
+
+  btn.disabled = true;
+  btn.textContent = 'Updating…';
+
+  try {
+    const { data: { session } } = await sbClient.auth.getSession();
+    if (!session) throw new Error('Not authenticated');
+
+    const res = await fetch(
+      'https://dlwbedohwifrxuxvijrp.supabase.co/functions/v1/update-passcode',
+      {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Authorization': `Bearer ${session.access_token}`,
+        },
+        body: JSON.stringify({ kid_name: kidName, new_passcode: newPasscode }),
+      }
+    );
+    const json = await res.json();
+    if (!res.ok) throw new Error(json.error || 'Failed');
+
+    showStatus(status, '✓ Passcode updated!', 'ok');
+    input.value = '';
+    setTimeout(() => {
+      togglePasscodeForm(kidId);
+      status.className = 'save-status';
+    }, 1500);
+  } catch(e) {
+    showStatus(status, 'Error: ' + e.message, 'err');
+  } finally {
+    btn.disabled = false;
+    btn.textContent = 'Update';
+  }
 }
 
 async function saveKid(kidId) {
