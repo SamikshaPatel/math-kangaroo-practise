@@ -15,252 +15,302 @@ const questionsData = {
         {
           text: "What is 2 × 9 + 200 + 9?",
           choices: ["A. 214", "B. 218", "C. 227", "D. 237", "E. 240"],
-          answer: 2
+          answer: 2,
+          explain: "Remember PEMDAS — Parentheses, Exponents, Multiplication, Division, Addition, Subtraction. Always multiply before you add!\n• Step 1 (Multiply): 2 × 9 = 18\n• Step 2 (Add): 18 + 200 = 218\n• Step 3 (Add): 218 + 9 = 227 ✅"
         },
         {
           text: "What is 56 ÷ 8 + 35 − 20?",
           choices: ["A. 12", "B. 20", "C. 22", "D. 25", "E. 28"],
-          answer: 2
+          answer: 2,
+          explain: "PEMDAS says divide before you add or subtract!\n• Step 1 (Divide): 56 ÷ 8 = 7\n• Step 2 (Add): 7 + 35 = 42\n• Step 3 (Subtract): 42 − 20 = 22 ✅"
         },
         {
           text: "Ann has 3 packs of stickers, each with 12 stickers. She gives away 8. How many does she have left?",
           choices: ["A. 26", "B. 28", "C. 30", "D. 32", "E. 36"],
-          answer: 1
+          answer: 1,
+          explain: "Read carefully — two things are happening here: finding the total, then taking some away.\n• Step 1 (Multiply): 3 packs × 12 stickers = 36 stickers total\n• Step 2 (Subtract): 36 − 8 = 28 ✅"
         },
         {
           text: "What is 13 × 4 − 17 + 5?",
           choices: ["A. 30", "B. 34", "C. 40", "D. 42", "E. 44"],
-          answer: 2
+          answer: 2,
+          explain: "Use PEMDAS — multiply first, then handle addition and subtraction left to right!\n• Step 1 (Multiply): 13 × 4 = 52\n• Step 2 (Subtract): 52 − 17 = 35\n• Step 3 (Add): 35 + 5 = 40 ✅"
         },
         {
           text: "Which of the following equals 100?",
           choices: ["A. 9 × 11", "B. 25 × 4", "C. 8 × 13", "D. 6 × 18", "E. 7 × 14"],
-          answer: 1
+          answer: 1,
+          explain: "Let's check each option by multiplying!\n• A: 9 × 11 = 99 (not 100)\n• B: 25 × 4 = 100 ✓ — that's our answer!\n• No need to check the rest once we find it.\nTip: 25 × 4 = 100 is a great fact to remember — like four quarters make a dollar! ✅"
         },
         {
           text: "A farmer has 48 eggs. He packs them into boxes of 6. How many boxes does he fill?",
           choices: ["A. 6", "B. 7", "C. 8", "D. 9", "E. 10"],
-          answer: 2
+          answer: 2,
+          explain: "When we share or group things equally, we divide!\n• Step 1 (Divide): 48 ÷ 6 = 8\nThe farmer fills exactly 8 boxes. ✅"
         },
         {
           text: "What is 7 × 8 − 6 ÷ 3?",
           choices: ["A. 52", "B. 54", "C. 56", "D. 58", "E. 60"],
-          answer: 1
+          answer: 1,
+          explain: "PEMDAS — do multiplication AND division before subtraction!\n• Step 1 (Multiply): 7 × 8 = 56\n• Step 2 (Divide): 6 ÷ 3 = 2\n• Step 3 (Subtract): 56 − 2 = 54 ✅"
         },
         {
           text: "A baker makes 144 cookies and arranges them in rows of 12. How many rows are there?",
           choices: ["A. 10", "B. 11", "C. 12", "D. 13", "E. 14"],
-          answer: 2
+          answer: 2,
+          explain: "To find the number of equal rows, we divide the total by the row size!\n• Step 1 (Divide): 144 ÷ 12 = 12\nThere are 12 rows of cookies. ✅"
         },
         {
           text: "What is 345 − 178 + 63?",
           choices: ["A. 210", "B. 220", "C. 225", "D. 230", "E. 235"],
-          answer: 3
+          answer: 3,
+          explain: "No multiplication or division here — just work left to right!\n• Step 1 (Subtract): 345 − 178 = 167\n• Step 2 (Add): 167 + 63 = 230 ✅"
         },
         {
           text: "Tom has 5 bags of marbles with 9 marbles each, and 3 extra marbles. How many marbles does he have in total?",
           choices: ["A. 45", "B. 48", "C. 50", "D. 52", "E. 55"],
-          answer: 1
+          answer: 1,
+          explain: "First find how many are in the bags, then add the extras!\n• Step 1 (Multiply): 5 bags × 9 marbles = 45 marbles\n• Step 2 (Add): 45 + 3 extra = 48 marbles total ✅"
         },
         {
           text: "What is 6 × 7 + 8 × 3?",
           choices: ["A. 56", "B. 60", "C. 62", "D. 66", "E. 70"],
-          answer: 3
+          answer: 3,
+          explain: "PEMDAS — do both multiplications first, then add the results!\n• Step 1 (Multiply): 6 × 7 = 42\n• Step 2 (Multiply): 8 × 3 = 24\n• Step 3 (Add): 42 + 24 = 66 ✅"
         },
         {
           text: "A store has 240 oranges packed in bags of 8. How many bags are there?",
           choices: ["A. 25", "B. 28", "C. 30", "D. 32", "E. 35"],
-          answer: 2
+          answer: 2,
+          explain: "Packing into equal groups means we divide!\n• Step 1 (Divide): 240 ÷ 8 = 30\nThere are 30 bags of oranges. ✅"
         },
         {
           text: "What is 999 − 654 + 321?",
           choices: ["A. 636", "B. 644", "C. 666", "D. 680", "E. 700"],
-          answer: 2
+          answer: 2,
+          explain: "No multiplication or division — work left to right!\n• Step 1 (Subtract): 999 − 654 = 345\n• Step 2 (Add): 345 + 321 = 666 ✅"
         },
         {
           text: "What is 15 × 15?",
           choices: ["A. 175", "B. 200", "C. 210", "D. 225", "E. 250"],
-          answer: 3
+          answer: 3,
+          explain: "Let's multiply 15 by 15 step by step!\n• Step 1: 15 × 10 = 150\n• Step 2: 15 × 5 = 75\n• Step 3 (Add): 150 + 75 = 225\nTip: 15 × 15 = 225 is a great square number to memorize! ✅"
         },
         {
           text: "A book has 365 pages. Maria reads 45 pages each day. How many days does she need to finish the book?",
           choices: ["A. 7", "B. 8", "C. 9", "D. 10", "E. 11"],
-          answer: 2
+          answer: 2,
+          explain: "Divide total pages by pages per day, then round up if there's a remainder!\n• Step 1 (Divide): 365 ÷ 45 = 8 remainder 5\n• Step 2: Since there are 5 pages left over, Maria needs one more day.\n• 8 + 1 = 9 days total ✅"
         },
         {
           text: "What is 4 × 4 × 4?",
           choices: ["A. 48", "B. 56", "C. 64", "D. 72", "E. 80"],
-          answer: 2
+          answer: 2,
+          explain: "Multiply from left to right!\n• Step 1 (Multiply): 4 × 4 = 16\n• Step 2 (Multiply): 16 × 4 = 64\nThis is also written as 4³ (4 to the power of 3)! ✅"
         },
         {
           text: "What number must be added to 347 to get 500?",
           choices: ["A. 143", "B. 153", "C. 163", "D. 173", "E. 183"],
-          answer: 1
+          answer: 1,
+          explain: "We need the missing number: 347 + ? = 500. Subtract to find it!\n• Step 1 (Subtract): 500 − 347 = 153\nCheck: 347 + 153 = 500 ✅"
         },
         {
           text: "What is 36 ÷ 4 × 5?",
           choices: ["A. 35", "B. 40", "C. 45", "D. 50", "E. 55"],
-          answer: 2
+          answer: 2,
+          explain: "Division and multiplication have equal priority — work left to right!\n• Step 1 (Divide): 36 ÷ 4 = 9\n• Step 2 (Multiply): 9 × 5 = 45 ✅"
         },
         {
           text: "A class of 28 students splits into equal groups of 4. How many groups are formed?",
           choices: ["A. 5", "B. 6", "C. 7", "D. 8", "E. 9"],
-          answer: 2
+          answer: 2,
+          explain: "Equal groups means we divide the total by the group size!\n• Step 1 (Divide): 28 ÷ 4 = 7\nThere are 7 equal groups. ✅"
         },
         {
           text: "What is 789 − 456 + 123?",
           choices: ["A. 446", "B. 451", "C. 456", "D. 461", "E. 466"],
-          answer: 2
+          answer: 2,
+          explain: "Work left to right with subtraction and addition!\n• Step 1 (Subtract): 789 − 456 = 333\n• Step 2 (Add): 333 + 123 = 456 ✅"
         },
         {
           text: "A train has 8 carriages, each with 45 seats. How many seats are there in total?",
           choices: ["A. 320", "B. 340", "C. 360", "D. 380", "E. 400"],
-          answer: 2
+          answer: 2,
+          explain: "When each group has the same amount, multiply to find the total!\n• Step 1 (Multiply): 8 carriages × 45 seats = 360 seats\nThe train has 360 seats in total. ✅"
         },
         {
           text: "What is 1000 ÷ 25?",
           choices: ["A. 25", "B. 30", "C. 35", "D. 40", "E. 45"],
-          answer: 3
+          answer: 3,
+          explain: "Let's divide 1000 by 25. Think of it as: how many 25s fit into 1000?\n• Step 1: 25 × 4 = 100, so 25 × 40 = 1000\n• Therefore: 1000 ÷ 25 = 40 ✅"
         },
         {
           text: "What is 9 × 9 − 9 + 9?",
           choices: ["A. 81", "B. 82", "C. 84", "D. 90", "E. 72"],
-          answer: 0
+          answer: 0,
+          explain: "PEMDAS — multiply first, then add and subtract left to right!\n• Step 1 (Multiply): 9 × 9 = 81\n• Step 2 (Subtract): 81 − 9 = 72\n• Step 3 (Add): 72 + 9 = 81 ✅"
         },
         {
           text: "Emma has 500 g of flour. She uses 175 g, then buys another 250 g. How much does she have now?",
           choices: ["A. 525 g", "B. 550 g", "C. 575 g", "D. 600 g", "E. 625 g"],
-          answer: 2
+          answer: 2,
+          explain: "Follow the events in order — first she uses some, then buys more!\n• Step 1 (Subtract): 500 − 175 = 325 g (after using some)\n• Step 2 (Add): 325 + 250 = 575 g (after buying more) ✅"
         },
         {
           text: "What is 25 × 4 × 2?",
           choices: ["A. 150", "B. 175", "C. 200", "D. 225", "E. 250"],
-          answer: 2
+          answer: 2,
+          explain: "Multiply left to right — or notice 25 × 4 = 100 first!\n• Step 1 (Multiply): 25 × 4 = 100\n• Step 2 (Multiply): 100 × 2 = 200 ✅"
         },
         {
           text: "A bakery made 96 muffins and sold them in packs of 6 at €3 per pack. How much did they earn?",
           choices: ["A. €42", "B. €45", "C. €48", "D. €51", "E. €54"],
-          answer: 2
+          answer: 2,
+          explain: "Two steps: first find how many packs, then find the total earnings!\n• Step 1 (Divide): 96 ÷ 6 = 16 packs\n• Step 2 (Multiply): 16 × €3 = €48 ✅"
         },
         {
           text: "What is 7 + 77 + 777?",
           choices: ["A. 821", "B. 841", "C. 861", "D. 881", "E. 901"],
-          answer: 2
+          answer: 2,
+          explain: "Line up the digits carefully and add!\n• Step 1 (Add): 7 + 77 = 84\n• Step 2 (Add): 84 + 777 = 861 ✅"
         },
         {
           text: "A bag of 75 sweets is shared equally among 5 friends. How many does each friend get?",
           choices: ["A. 13", "B. 14", "C. 15", "D. 16", "E. 17"],
-          answer: 2
+          answer: 2,
+          explain: "Sharing equally means we divide!\n• Step 1 (Divide): 75 ÷ 5 = 15\nEach friend gets 15 sweets. ✅"
         },
         {
           text: "What is 17 × 6?",
           choices: ["A. 96", "B. 100", "C. 102", "D. 106", "E. 110"],
-          answer: 2
+          answer: 2,
+          explain: "Break it apart to make it easier!\n• Step 1: 10 × 6 = 60\n• Step 2: 7 × 6 = 42\n• Step 3 (Add): 60 + 42 = 102 ✅"
         },
         {
           text: "What is (8 + 12) × (15 − 8)?",
           choices: ["A. 120", "B. 130", "C. 140", "D. 150", "E. 160"],
-          answer: 2
+          answer: 2,
+          explain: "PEMDAS — Parentheses first! Solve each bracket, then multiply!\n• Step 1 (Parentheses): 8 + 12 = 20\n• Step 2 (Parentheses): 15 − 8 = 7\n• Step 3 (Multiply): 20 × 7 = 140 ✅"
         },
         {
           text: "A cyclist rides 12 km in one hour. How many km does he ride in 45 minutes?",
           choices: ["A. 8 km", "B. 9 km", "C. 10 km", "D. 11 km", "E. 12 km"],
-          answer: 1
+          answer: 1,
+          explain: "45 minutes is 45/60 = 3/4 of an hour. Find 3/4 of 12 km!\n• Step 1 (Divide): 12 ÷ 4 = 3 km per quarter-hour\n• Step 2 (Multiply): 3 × 3 = 9 km in 45 minutes ✅"
         },
         {
           text: "What is 888 ÷ 8?",
           choices: ["A. 101", "B. 108", "C. 111", "D. 114", "E. 121"],
-          answer: 2
+          answer: 2,
+          explain: "Divide each part of 888 by 8!\n• Step 1: 800 ÷ 8 = 100\n• Step 2: 80 ÷ 8 = 10\n• Step 3: 8 ÷ 8 = 1\n• Step 4 (Add): 100 + 10 + 1 = 111 ✅"
         },
         {
           text: "A jar contains 120 marbles. One-third are red, one-quarter are blue, and the rest are green. How many green marbles are there?",
           choices: ["A. 40", "B. 45", "C. 50", "D. 55", "E. 60"],
-          answer: 2
+          answer: 2,
+          explain: "Find red and blue first, then subtract from the total to get green!\n• Step 1 (Divide): Red = 120 ÷ 3 = 40\n• Step 2 (Divide): Blue = 120 ÷ 4 = 30\n• Step 3 (Add): Red + Blue = 40 + 30 = 70\n• Step 4 (Subtract): Green = 120 − 70 = 50 ✅"
         },
         {
           text: "What is 1 + 2 + 3 + 4 + 5 + 6 + 7 + 8 + 9 + 10?",
           choices: ["A. 45", "B. 50", "C. 55", "D. 60", "E. 65"],
-          answer: 2
+          answer: 2,
+          explain: "Pair up numbers that add to 11: (1+10), (2+9), (3+8), (4+7), (5+6)!\n• Step 1: 5 pairs, each summing to 11\n• Step 2 (Multiply): 5 × 11 = 55\nThis clever trick works for any sequence from 1 to n! ✅"
         },
         {
           text: "A school has 24 classes with 30 students each. How many students are there in total?",
           choices: ["A. 650", "B. 680", "C. 700", "D. 720", "E. 750"],
-          answer: 3
+          answer: 3,
+          explain: "Same amount in each class means we multiply!\n• Step 1 (Multiply): 24 × 30 = 720\nTip: 24 × 30 = 24 × 3 × 10 = 72 × 10 = 720 ✅"
         },
         {
           text: "What is the product of the two largest single-digit numbers?",
           choices: ["A. 63", "B. 72", "C. 81", "D. 64", "E. 56"],
-          answer: 1
+          answer: 1,
+          explain: "The two largest single-digit numbers are 9 and 8!\n• Step 1 (Multiply): 9 × 8 = 72\nProduct means multiply. ✅"
         },
         {
           text: "What is 54 ÷ 6 + 42 ÷ 7?",
           choices: ["A. 13", "B. 14", "C. 15", "D. 16", "E. 17"],
-          answer: 2
+          answer: 2,
+          explain: "PEMDAS — do both divisions first, then add!\n• Step 1 (Divide): 54 ÷ 6 = 9\n• Step 2 (Divide): 42 ÷ 7 = 6\n• Step 3 (Add): 9 + 6 = 15 ✅"
         },
         {
           text: "Sam has €20. He buys 4 pens at €1.50 each and 2 notebooks at €2.50 each. How much money does he have left?",
           choices: ["A. €6", "B. €7", "C. €9", "D. €11", "E. €13"],
-          answer: 2
+          answer: 2,
+          explain: "Find the cost of pens and notebooks, then subtract from €20!\n• Step 1 (Multiply): 4 pens × €1.50 = €6.00\n• Step 2 (Multiply): 2 notebooks × €2.50 = €5.00\n• Step 3 (Add): Total spent = €6 + €5 = €11\n• Step 4 (Subtract): €20 − €11 = €9 left ✅"
         },
         {
           text: "What is 3 × 3 + 3 × 3 + 3 × 3?",
           choices: ["A. 21", "B. 24", "C. 27", "D. 30", "E. 33"],
-          answer: 2
+          answer: 2,
+          explain: "PEMDAS — do all three multiplications first, then add!\n• Step 1 (Multiply): 3 × 3 = 9\n• Step 2 (Multiply): 3 × 3 = 9\n• Step 3 (Multiply): 3 × 3 = 9\n• Step 4 (Add): 9 + 9 + 9 = 27 ✅"
         },
         {
           text: "What is 8 × 125?",
           choices: ["A. 800", "B. 900", "C. 1000", "D. 1100", "E. 1200"],
-          answer: 2
+          answer: 2,
+          explain: "Think of 8 × 125 as 8 × 125. Remember: 8 × 125 = 1000 because 8 × 125 = 1000!\n• Tip: 8 × 125 = (8 ÷ 2) × (125 × 2) = 4 × 250 = 1000\n• Or: 125 × 8 = 125 × 4 × 2 = 500 × 2 = 1000 ✅"
         },
         {
           text: "A number multiplied by 7 gives 329. What is the number?",
           choices: ["A. 45", "B. 47", "C. 49", "D. 51", "E. 53"],
-          answer: 1
+          answer: 1,
+          explain: "We know: ? × 7 = 329. To find the missing number, divide!\n• Step 1 (Divide): 329 ÷ 7 = 47\nCheck: 47 × 7 = 329 ✅"
         },
         {
           text: "What is 12 × 12 − 12?",
           choices: ["A. 120", "B. 128", "C. 132", "D. 140", "E. 144"],
-          answer: 2
+          answer: 2,
+          explain: "PEMDAS — multiply before you subtract!\n• Step 1 (Multiply): 12 × 12 = 144\n• Step 2 (Subtract): 144 − 12 = 132 ✅"
         },
         {
           text: "A shopkeeper has 350 items. He sells 80 on Monday and 120 on Tuesday, then receives a delivery of 200 items. How many does he have now?",
           choices: ["A. 330", "B. 340", "C. 350", "D. 360", "E. 370"],
-          answer: 2
+          answer: 2,
+          explain: "Follow the events in order — selling reduces stock, delivery adds to it!\n• Step 1 (Subtract): 350 − 80 = 270 (after Monday)\n• Step 2 (Subtract): 270 − 120 = 150 (after Tuesday)\n• Step 3 (Add): 150 + 200 = 350 (after delivery) ✅"
         },
         {
           text: "What is 500 ÷ 4?",
           choices: ["A. 100", "B. 115", "C. 120", "D. 125", "E. 130"],
-          answer: 3
+          answer: 3,
+          explain: "Break 500 into parts that are easy to divide by 4!\n• Step 1: 400 ÷ 4 = 100\n• Step 2: 100 ÷ 4 = 25\n• Step 3 (Add): 100 + 25 = 125 ✅"
         },
         {
           text: "What is 9 × 8 + 7 × 6?",
           choices: ["A. 110", "B. 112", "C. 114", "D. 116", "E. 118"],
-          answer: 2
+          answer: 2,
+          explain: "PEMDAS — do both multiplications first, then add!\n• Step 1 (Multiply): 9 × 8 = 72\n• Step 2 (Multiply): 7 × 6 = 42\n• Step 3 (Add): 72 + 42 = 114 ✅"
         },
         {
           text: "A box holds 24 eggs. How many boxes are needed to pack 200 eggs?",
           choices: ["A. 7", "B. 8", "C. 9", "D. 10", "E. 11"],
-          answer: 2
+          answer: 2,
+          explain: "Divide total eggs by box size, then round up if there's a remainder!\n• Step 1 (Divide): 200 ÷ 24 = 8 remainder 8\n• Step 2: Since there are 8 eggs left over, we need one more box.\n• 8 + 1 = 9 boxes total ✅"
         },
         {
           text: "What is 67 × 3?",
           choices: ["A. 191", "B. 195", "C. 199", "D. 201", "E. 205"],
-          answer: 3
+          answer: 3,
+          explain: "Break 67 into 60 + 7 to make multiplying easier!\n• Step 1: 60 × 3 = 180\n• Step 2: 7 × 3 = 21\n• Step 3 (Add): 180 + 21 = 201 ✅"
         },
         {
           text: "What is 400 − 65 − 35?",
           choices: ["A. 280", "B. 290", "C. 300", "D. 310", "E. 320"],
-          answer: 2
+          answer: 2,
+          explain: "Notice 65 + 35 = 100 — subtract them together to make it easy!\n• Shortcut: 65 + 35 = 100\n• Step 1 (Subtract): 400 − 100 = 300 ✅"
         },
         {
           text: "A number is doubled and then 15 is added, giving 63. What is the number?",
           choices: ["A. 22", "B. 24", "C. 26", "D. 28", "E. 30"],
-          answer: 1
+          answer: 1,
+          explain: "Work backwards to undo each step!\n• Step 1 (Subtract): 63 − 15 = 48 (undo the adding 15)\n• Step 2 (Divide): 48 ÷ 2 = 24 (undo the doubling)\nCheck: 24 × 2 + 15 = 48 + 15 = 63 ✅"
         },
         {
           text: "Which of these numbers is divisible by both 5 and 8?",
           choices: ["A. 20", "B. 25", "C. 30", "D. 40", "E. 45"],
-          answer: 3
+          answer: 3,
+          explain: "A number divisible by both 5 and 8 must be divisible by their LCM = 40!\n• Check 40 ÷ 5 = 8 ✓\n• Check 40 ÷ 8 = 5 ✓\n• No other choice works for both (20 ÷ 8 = 2.5, not whole) ✅"
         }
       ]
     },
