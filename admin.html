@@ -437,24 +437,25 @@ async function checkAdminAccess() {
     const { data: { session } } = await sbClient.auth.getSession();
     if (!session) { redirectOut(); return; }
 
-    const { data: kid, error } = await sbClient
+    // Primary check: email — avoids RLS issues on initial load
+    const isAdminEmail = session.user.email === 'admin@mathkangaroo.app';
+    if (!isAdminEmail) { redirectOut(); return; }
+
+    // Fetch admin's kids row for display info (non-fatal if it fails)
+    const { data: kid } = await sbClient
       .from('kids')
       .select('id, name, color, is_admin')
       .eq('auth_id', session.user.id)
-      .single();
+      .maybeSingle();
 
-    if (error || !kid || !kid.is_admin) { redirectOut(); return; }
-
-    // Set session profile so the chip works
-    setActiveProfile(kid.name);
-    setActiveKidId(kid.id);
-    setActiveKidColor(kid.color || '#2563eb');
+    setActiveProfile((kid && kid.name) || 'Admin');
+    setActiveKidId(kid ? kid.id : null);
+    setActiveKidColor((kid && kid.color) || '#374151');
 
     document.getElementById('auth-loading').style.display = 'none';
     document.getElementById('main-content').style.display = 'block';
     injectProfileChip();
 
-    // Load initial data
     loadProgressData();
     loadKidsData();
   } catch(e) {
