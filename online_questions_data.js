@@ -11533,11 +11533,6 @@ const questionsData = {
           text: "4 people each make one statement. Al: 'Bo did it.' Bo: 'Al did it.' Co: 'I did not do it.' Do: 'Bo did it.' Exactly one person did it, and that person lied. Who did it?",
           choices: ["A. Al", "B. Bo", "C. Co", "D. Do", "E. Cannot be determined"],
           answer: 1
-        },
-        {
-          text: "From: 'No reptiles are warm-blooded. All birds are warm-blooded.' What must follow?",
-          choices: ["A. Some birds are reptiles", "B. No birds are reptiles", "C. All warm-blooded animals are birds", "D. Some reptiles are birds", "E. Reptiles and birds are the same"],
-          answer: 1
         }
       ]
     },
