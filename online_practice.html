@@ -871,21 +871,11 @@ function showFeedbackUI(isCorrect, showExplain) {
   if (isCorrect) {
     qFeedback.className = 'feedback correct-fb show';
     qFeedbackTitle.textContent = '✓ Correct!';
-    qFeedbackBody.innerHTML = showExplain && q.explain
-      ? `<div class="feedback-explain">${q.explain.replace(/\n/g, '<br>')}</div>`
-      : '';
+    qFeedbackBody.innerHTML = '';
   } else {
     qFeedback.className = 'feedback incorrect-fb show';
     qFeedbackTitle.textContent = '✗ Wrong answer.';
-    if (showExplain) {
-      const correctLabel = ['A','B','C','D','E'][q.answer];
-      const correctText  = q.choices[q.answer].replace(/^[A-E]\.\s*/, '');
-      let html = `<div style="font-weight:600;margin-bottom:6px;">Correct answer: ${correctLabel}. ${correctText}</div>`;
-      if (q.explain) html += `<div class="feedback-explain">${q.explain.replace(/\n/g, '<br>')}</div>`;
-      qFeedbackBody.innerHTML = html;
-    } else {
-      qFeedbackBody.innerHTML = '';
-    }
+    qFeedbackBody.innerHTML = '';
   }
 }
 
@@ -1134,8 +1124,8 @@ function showReview() {
         ${reviewUnlocked ? ` &nbsp;·&nbsp; <span class="correct-ans">Correct: ${corrLabel}</span>` : ''}`;
     }
 
-    const explanationHTML = (reviewUnlocked && q.explanation)
-      ? `<div style="margin-top:8px;font-size:13px;color:var(--text-secondary);line-height:1.5">${q.explanation}</div>`
+    const explanationHTML = (reviewUnlocked && q.explain)
+      ? `<div style="margin-top:8px;font-size:13px;color:var(--text-secondary);line-height:1.6;white-space:pre-line">${q.explain}</div>`
       : '';
 
     const lockedHint = (!reviewUnlocked && !isCorrect)
