@@ -65,6 +65,18 @@ h1 { font-size:36px; font-weight:700; color:var(--primary); margin-bottom:12px; 
 .badge { display:inline-block; margin-top:16px; padding:4px 12px; border-radius:20px; font-size:12px; font-weight:600; }
 .badge.ready { background:var(--success-light); color:var(--success); }
 .footer { margin-top:48px; color:var(--text-secondary); font-size:13px; }
+.home-features {
+  display:flex; gap:10px; flex-wrap:wrap; justify-content:center;
+  margin-bottom:40px;
+}
+.home-feature-pill {
+  display:flex; align-items:center; gap:7px;
+  background:var(--gray-light); border-radius:99px;
+  padding:7px 14px; font-size:13px; font-weight:600; color:var(--text-secondary);
+}
+.home-feature-pill span { font-size:15px; }
+.grade-desc { font-size:13px; color:var(--text-secondary); line-height:1.6; }
+.grade-stats { margin-top:12px; font-size:12px; font-weight:600; color:var(--text-secondary); }
 
 /* ── Profile picker overlay ── */
 #profile-overlay {
@@ -164,21 +176,28 @@ h1 { font-size:36px; font-weight:700; color:var(--primary); margin-bottom:12px; 
     <div class="logo">🦘</div>
     <h1>Math Kangaroo Practice</h1>
     <p class="subtitle">
-      Targeted practice sets organized by topic and difficulty.<br>
-      Choose your grade level to get started.
+      3,050 hand-curated competition-style questions organized by topic.<br>
+      Practice smarter, track every attempt, and build real confidence for Math Kangaroo.
     </p>
+    <div class="home-features">
+      <div class="home-feature-pill"><span>🎯</span> 3,050 questions</div>
+      <div class="home-feature-pill"><span>📂</span> 61 topic modules</div>
+      <div class="home-feature-pill"><span>📈</span> Progress per attempt</div>
+      <div class="home-feature-pill"><span>🔁</span> Retry wrong answers</div>
+      <div class="home-feature-pill"><span>🏆</span> Perfect score to advance</div>
+    </div>
     <div class="grade-grid">
       <a class="grade-card" href="grade34.html">
         <div class="grade-icon">📐</div>
-        <div class="grade-label">Grade Level</div>
+        <div class="grade-label">Écolier Level</div>
         <div class="grade-title">Grades 3–4</div>
-        <div class="grade-desc">Écolier level — arithmetic, geometry, logic &amp; word problems</div>
+        <div class="grade-desc">Arithmetic, geometry, logic &amp; word problems — 35 modules, 1,750 questions</div>
       </a>
       <a class="grade-card" href="grade5_kangaroo_practice.html">
         <div class="grade-icon">📊</div>
-        <div class="grade-label">Grade Level</div>
+        <div class="grade-label">Benjamin Level</div>
         <div class="grade-title">Grades 5–6</div>
-        <div class="grade-desc">Benjamin level — number theory, geometry, combinatorics &amp; algebra</div>
+        <div class="grade-desc">Number theory, geometry, combinatorics &amp; algebra — 26 modules, 1,300 questions</div>
       </a>
     </div>
     <div class="footer">Math Kangaroo practice sets • All problems hand-curated</div>
