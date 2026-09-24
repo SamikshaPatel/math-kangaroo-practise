@@ -297,6 +297,28 @@ td.cell-center { text-align: center; }
   gap: 8px;
   margin-top: 14px;
 }
+/* PDF access toggles */
+.pdf-access-row {
+  display: flex; gap: 16px; flex-wrap: wrap; margin-top: 10px;
+}
+.pdf-toggle-item {
+  display: flex; align-items: center; gap: 8px; font-size: 13px; font-weight: 600;
+}
+.toggle-switch {
+  position: relative; width: 40px; height: 22px; flex-shrink: 0;
+}
+.toggle-switch input { opacity: 0; width: 0; height: 0; }
+.toggle-track {
+  position: absolute; inset: 0; background: var(--border);
+  border-radius: 99px; cursor: pointer; transition: background .2s;
+}
+.toggle-switch input:checked + .toggle-track { background: var(--success); }
+.toggle-track::before {
+  content: ''; position: absolute; width: 16px; height: 16px;
+  left: 3px; top: 3px; background: #fff; border-radius: 50%;
+  transition: transform .2s;
+}
+.toggle-switch input:checked + .toggle-track::before { transform: translateX(18px); }
 .btn-save {
   padding: 7px 18px;
   background: var(--primary);
@@ -723,7 +745,7 @@ async function loadKidsData() {
   try {
     const { data: kids, error } = await sbClient
       .from('kids')
-      .select('id, name, color, is_admin')
+      .select('id, name, color, is_admin, pdf_access_34, pdf_access_56')
       .eq('is_admin', false)
       .order('name');
     if (error) throw error;
@@ -776,6 +798,27 @@ function buildKidRow(k) {
         <button class="btn-edit" onclick="toggleEditForm('${k.id}')">Edit</button>
         <button class="btn-edit" onclick="togglePasscodeForm('${k.id}')">🔑 Passcode</button>
         <button class="btn-delete" onclick="deleteKid('${k.id}', '${escHtml(k.name)}')">Delete</button>
+      </div>
+      <div style="margin-top:10px;">
+        <div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--text-secondary);margin-bottom:6px;">PDF Access</div>
+        <div class="pdf-access-row">
+          <div class="pdf-toggle-item">
+            <label class="toggle-switch">
+              <input type="checkbox" ${k.pdf_access_34 ? 'checked' : ''}
+                     onchange="savePdfAccess('${k.id}', '34', this.checked)">
+              <span class="toggle-track"></span>
+            </label>
+            Grades 3–4
+          </div>
+          <div class="pdf-toggle-item">
+            <label class="toggle-switch">
+              <input type="checkbox" ${k.pdf_access_56 ? 'checked' : ''}
+                     onchange="savePdfAccess('${k.id}', '56', this.checked)">
+              <span class="toggle-track"></span>
+            </label>
+            Grades 5–6
+          </div>
+        </div>
       </div>
       <div class="edit-form" id="edit-form-${k.id}">
         <label>Display Name</label>
@@ -1033,6 +1076,21 @@ async function deleteKid(kidId, kidName) {
     loadProgressData();
   } catch(e) {
     alert('Error deleting kid: ' + e.message);
+  }
+}
+
+// ─────────────────────────────────────────────────────────────
+// PDF ACCESS TOGGLE
+// ─────────────────────────────────────────────────────────────
+async function savePdfAccess(kidId, grade, enabled) {
+  const col = grade === '34' ? 'pdf_access_34' : 'pdf_access_56';
+  try {
+    const { error } = await sbClient.from('kids').update({ [col]: enabled }).eq('id', kidId);
+    if (error) throw error;
+    const kid = allKids.find(k => k.id === kidId);
+    if (kid) kid[col] = enabled;
+  } catch(e) {
+    alert('Error saving PDF access: ' + e.message);
   }
 }
 

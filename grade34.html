@@ -1039,7 +1039,16 @@ body {
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
 <script src="supabase_client.js"></script>
 <script src="profile.js"></script>
-<script>requireProfile(); injectProfileChip();</script>
+<script>
+requireProfile();
+injectProfileChip();
+// Hide PDF buttons if kid does not have grade 3-4 PDF access
+if (!getPdfAccess34()) {
+  document.querySelectorAll('.btn-primary, .btn-success').forEach(btn => {
+    if (btn.textContent.includes('PDF')) btn.style.display = 'none';
+  });
+}
+</script>
 <script src="grade34_data.js"></script>
 <script src="online_questions_data.js"></script>
 <script>

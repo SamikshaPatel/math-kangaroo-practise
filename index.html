@@ -237,6 +237,8 @@ async function init() {
   sessionStorage.removeItem('mkp_profile');
   sessionStorage.removeItem('mkp_kid_id');
   sessionStorage.removeItem('mkp_kid_color');
+  sessionStorage.removeItem('mkp_pdf_34');
+  sessionStorage.removeItem('mkp_pdf_56');
   await loadKids();
 }
 
@@ -245,7 +247,7 @@ async function loadKids() {
   const cardsEl = document.getElementById('profile-cards');
   const { data: kids, error } = await sbClient
     .from('kids')
-    .select('id, name, color, is_admin')
+    .select('id, name, color, is_admin, pdf_access_34, pdf_access_56')
     .eq('is_admin', false)
     .order('name');
 
@@ -363,6 +365,8 @@ async function unlockProfile() {
   setActiveProfile(pendingKid.name);
   setActiveKidId(kidId);
   setActiveKidColor(kidColor);
+  setPdfAccess34(pendingKid.pdf_access_34 || false);
+  setPdfAccess56(pendingKid.pdf_access_56 || false);
 
   document.getElementById('passcode-overlay').classList.remove('open');
   document.getElementById('profile-overlay').classList.add('hidden');

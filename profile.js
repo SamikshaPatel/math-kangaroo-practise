@@ -11,6 +11,11 @@ function setActiveKidId(id)  { sessionStorage.setItem('mkp_kid_id', id); }
 function getActiveKidColor()      { return sessionStorage.getItem('mkp_kid_color') || '#2563eb'; }
 function setActiveKidColor(color) { sessionStorage.setItem('mkp_kid_color', color); }
 
+function getPdfAccess34()       { return sessionStorage.getItem('mkp_pdf_34') === 'true'; }
+function setPdfAccess34(val)    { sessionStorage.setItem('mkp_pdf_34', val ? 'true' : 'false'); }
+function getPdfAccess56()       { return sessionStorage.getItem('mkp_pdf_56') === 'true'; }
+function setPdfAccess56(val)    { sessionStorage.setItem('mkp_pdf_56', val ? 'true' : 'false'); }
+
 // Prefix a localStorage key with the active profile name
 function profileKey(key) {
   const p = getActiveProfile();
