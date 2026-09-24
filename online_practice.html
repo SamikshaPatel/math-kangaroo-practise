@@ -103,6 +103,11 @@
     .feedback-body  { font-size: 13px; line-height: 1.5; }
     .feedback.correct-fb   { background: var(--success-light); color: #065f46; }
     .feedback.incorrect-fb { background: var(--danger-light);  color: #991b1b; }
+    .feedback-explain {
+      margin-top: 10px; padding-top: 10px;
+      border-top: 1px solid rgba(0,0,0,.08);
+      font-size: 13px; line-height: 1.7; white-space: pre-line;
+    }
 
     /* ── Nav rows ── */
     .nav-row-1 { display: flex; gap: 10px; margin-bottom: 10px; }
@@ -791,11 +796,11 @@ function renderQuestion() {
 
   // Feedback
   if (isChecked) {
-    showFeedbackUI(isCorrect);
+    showFeedbackUI(isCorrect, true);
   } else {
     qFeedback.className = 'feedback';
     qFeedbackTitle.textContent = '';
-    qFeedbackBody.textContent  = '';
+    qFeedbackBody.innerHTML  = '';
   }
 
   // Nav
@@ -849,7 +854,7 @@ function checkAnswer() {
     else if (!isCorrect && idx === i)   btn.classList.add('incorrect');
   });
 
-  showFeedbackUI(isCorrect);
+  showFeedbackUI(isCorrect, false);
   btnCheck.disabled = true; btnCheck.className = 'btn-nav btn-check checked-state'; btnCheck.textContent = 'Checked ✓';
   const isLast = mode !== 'quiz' ? modePos === modeQueue.length - 1 : currentIndex === questions.length - 1;
   btnNext.className = 'btn-nav btn-next active'; btnNext.textContent = isLast ? 'Finish ✓' : 'Next →';
@@ -861,16 +866,26 @@ function checkAnswer() {
 // ─────────────────────────────────────────────────────────────
 // FEEDBACK UI
 // ─────────────────────────────────────────────────────────────
-function showFeedbackUI(isCorrect) {
+function showFeedbackUI(isCorrect, showExplain) {
   const q = questions[currentIndex];
   if (isCorrect) {
     qFeedback.className = 'feedback correct-fb show';
     qFeedbackTitle.textContent = '✓ Correct!';
-    qFeedbackBody.textContent  = q.explanation || '';
+    qFeedbackBody.innerHTML = showExplain && q.explain
+      ? `<div class="feedback-explain">${q.explain.replace(/\n/g, '<br>')}</div>`
+      : '';
   } else {
     qFeedback.className = 'feedback incorrect-fb show';
     qFeedbackTitle.textContent = '✗ Wrong answer.';
-    qFeedbackBody.textContent  = '';
+    if (showExplain) {
+      const correctLabel = ['A','B','C','D','E'][q.answer];
+      const correctText  = q.choices[q.answer].replace(/^[A-E]\.\s*/, '');
+      let html = `<div style="font-weight:600;margin-bottom:6px;">Correct answer: ${correctLabel}. ${correctText}</div>`;
+      if (q.explain) html += `<div class="feedback-explain">${q.explain.replace(/\n/g, '<br>')}</div>`;
+      qFeedbackBody.innerHTML = html;
+    } else {
+      qFeedbackBody.innerHTML = '';
+    }
   }
 }
 
