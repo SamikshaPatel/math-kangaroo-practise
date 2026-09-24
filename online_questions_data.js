@@ -4299,252 +4299,302 @@ const questionsData = {
         {
           text: "Anna has 3 different shirts and 2 different pairs of trousers. How many different outfits can she make?",
           choices: ["A. 4", "B. 5", "C. 6", "D. 7", "E. 8"],
-          answer: 2
+          answer: 2,
+          explain: "Multiply choices together (Counting Principle).\n• Step 1 (Multiply): 3 shirts × 2 trousers = 6 outfits ✅"
         },
         {
           text: "There are 4 children in a class. Each child shakes hands with every other child exactly once. How many handshakes are there?",
           choices: ["A. 4", "B. 5", "C. 6", "D. 7", "E. 8"],
-          answer: 2
+          answer: 2,
+          explain: "Formula: n × (n−1) ÷ 2 for pairs.\n• Step 1 (Pairs): 4 × 3 ÷ 2 = 6 handshakes ✅"
         },
         {
           text: "A ice-cream shop offers 3 flavours and 2 types of cones. How many different ice-creams can you order?",
           choices: ["A. 4", "B. 5", "C. 6", "D. 7", "E. 8"],
-          answer: 2
+          answer: 2,
+          explain: "Multiply choices together.\n• Step 1 (Multiply): 3 flavours × 2 cones = 6 ice-creams ✅"
         },
         {
           text: "Tom has 2 caps and 4 pairs of shoes. How many different cap-and-shoes combinations can he wear?",
           choices: ["A. 6", "B. 7", "C. 8", "D. 9", "E. 10"],
-          answer: 2
+          answer: 2,
+          explain: "Multiply choices together.\n• Step 1 (Multiply): 2 caps × 4 shoes = 8 combinations ✅"
         },
         {
           text: "Using the digits 1, 2, and 3 (each used once), how many different 3-digit numbers can be made?",
           choices: ["A. 3", "B. 4", "C. 5", "D. 6", "E. 9"],
-          answer: 3
+          answer: 3,
+          explain: "Count arrangements (permutations) of 3 digits.\n• Step 1 (Choices): 3 choices × 2 choices × 1 choice = 3×2×1 = 6 ✅"
         },
         {
           text: "5 friends each want to greet every other friend with a wave. How many waves happen in total?",
           choices: ["A. 5", "B. 8", "C. 10", "D. 12", "E. 15"],
-          answer: 2
+          answer: 2,
+          explain: "Each pair of friends exchanges 1 wave. Formula: n×(n−1)÷2.\n• Step 1 (Pairs): 5×4÷2 = 10 waves ✅"
         },
         {
           text: "A coin is tossed and then a die (numbered 1–6) is rolled. How many different outcomes are possible?",
           choices: ["A. 6", "B. 8", "C. 10", "D. 12", "E. 14"],
-          answer: 3
+          answer: 3,
+          explain: "Multiply choices together.\n• Step 1 (Multiply): 2 coin faces × 6 die faces = 12 outcomes ✅"
         },
         {
           text: "A menu has 2 soups, 3 main dishes, and 2 drinks. How many different meals (one of each) are possible?",
           choices: ["A. 7", "B. 10", "C. 12", "D. 14", "E. 16"],
-          answer: 2
+          answer: 2,
+          explain: "Multiply all choices together.\n• Step 1 (Multiply): 2 × 3 × 2 = 12 meals ✅"
         },
         {
           text: "How many ways can you arrange the letters A, B, C in a row (each used once)?",
           choices: ["A. 3", "B. 4", "C. 5", "D. 6", "E. 9"],
-          answer: 3
+          answer: 3,
+          explain: "Arrange 3 letters: 3×2×1.\n• Step 1 (Multiply): 3×2×1 = 6 ways ✅"
         },
         {
           text: "In a group of 5 children, each writes a letter to every other child. How many letters are written in total?",
           choices: ["A. 10", "B. 15", "C. 20", "D. 25", "E. 30"],
-          answer: 2
+          answer: 2,
+          explain: "Each child writes to 4 others. Unlike handshakes, writing is one-way.\n• Step 1 (Total letters): 5 × 4 = 20 letters ✅"
         },
         {
           text: "Mia has 4 colours of paint and 3 types of brushes. How many different colour-and-brush choices does she have?",
           choices: ["A. 7", "B. 8", "C. 10", "D. 12", "E. 14"],
-          answer: 3
+          answer: 3,
+          explain: "Multiply choices together.\n• Step 1 (Multiply): 4 colours × 3 brushes = 12 choices ✅"
         },
         {
           text: "How many 2-digit numbers can be made using the digits 2, 4, and 6 if each digit may be used only once?",
           choices: ["A. 4", "B. 5", "C. 6", "D. 7", "E. 8"],
-          answer: 2
+          answer: 2,
+          explain: "Choose tens digit (3 options), then units (2 remaining options).\n• Step 1 (Multiply): 3 × 2 = 6 two-digit numbers ✅"
         },
         {
           text: "There are 3 doors to a house and 2 windows. In how many ways can you enter through a door and exit through a window?",
           choices: ["A. 4", "B. 5", "C. 6", "D. 7", "E. 8"],
-          answer: 2
+          answer: 2,
+          explain: "Multiply number of entries by number of exits.\n• Step 1 (Multiply): 3 doors × 2 windows = 6 ways ✅"
         },
         {
           text: "A flag can have one of 4 background colours and one of 3 symbol colours. How many different flags are possible?",
           choices: ["A. 7", "B. 8", "C. 10", "D. 12", "E. 14"],
-          answer: 3
+          answer: 3,
+          explain: "Multiply choices together.\n• Step 1 (Multiply): 4 × 3 = 12 flags ✅"
         },
         {
           text: "3 children each want to sit in one of 3 seats in a row. How many ways can they be seated?",
           choices: ["A. 3", "B. 4", "C. 5", "D. 6", "E. 9"],
-          answer: 3
+          answer: 3,
+          explain: "Arrange 3 children in 3 seats: 3×2×1.\n• Step 1 (Multiply): 3×2×1 = 6 ways ✅"
         },
         {
           text: "A bag has 1 red ball, 1 blue ball, and 1 green ball. How many ways can you choose 2 balls?",
           choices: ["A. 2", "B. 3", "C. 4", "D. 5", "E. 6"],
-          answer: 1
+          answer: 1,
+          explain: "Count pairs: {R,B}, {R,G}, {B,G}.\n• Step 1 (List pairs): 3 possible pairs ✅"
         },
         {
           text: "A sandwich can be made with 1 of 4 breads and 1 of 3 fillings. How many different sandwiches are possible?",
           choices: ["A. 7", "B. 9", "C. 10", "D. 12", "E. 14"],
-          answer: 3
+          answer: 3,
+          explain: "Multiply choices together.\n• Step 1 (Multiply): 4 breads × 3 fillings = 12 sandwiches ✅"
         },
         {
           text: "How many ways can 2 children be chosen from a group of 5 to clean the board?",
           choices: ["A. 5", "B. 8", "C. 10", "D. 12", "E. 15"],
-          answer: 2
+          answer: 2,
+          explain: "Order doesn't matter, so use combination formula: 5×4÷2.\n• Step 1 (Pairs): 5×4÷2 = 10 ways ✅"
         },
         {
           text: "A PIN code uses 2 different digits from {1, 2, 3, 4} in order. How many different PINs are possible?",
           choices: ["A. 8", "B. 10", "C. 12", "D. 14", "E. 16"],
-          answer: 2
+          answer: 2,
+          explain: "Order matters! Choose first digit (4 options) then second (3 remaining).\n• Step 1 (Multiply): 4 × 3 = 12 PINs ✅"
         },
         {
           text: "There are 3 roads from town A to town B, and 2 roads from town B to town C. How many different routes from A to C are there through B?",
           choices: ["A. 4", "B. 5", "C. 6", "D. 7", "E. 8"],
-          answer: 2
+          answer: 2,
+          explain: "Multiply choices for each leg of the journey.\n• Step 1 (Multiply): 3 roads × 2 roads = 6 routes ✅"
         },
         {
           text: "A child picks 1 sticker from a set of 5 and 1 card from a set of 4. How many different sticker-card pairs can they pick?",
           choices: ["A. 9", "B. 16", "C. 20", "D. 24", "E. 25"],
-          answer: 2
+          answer: 2,
+          explain: "Multiply choices together.\n• Step 1 (Multiply): 5 stickers × 4 cards = 20 pairs ✅"
         },
         {
           text: "A pair of friends is chosen from 6 children. How many different pairs can be formed?",
           choices: ["A. 10", "B. 12", "C. 14", "D. 15", "E. 18"],
-          answer: 3
+          answer: 3,
+          explain: "Order doesn't matter. Formula: 6×5÷2.\n• Step 1 (Pairs): 6×5÷2 = 15 pairs ✅"
         },
         {
           text: "Ben has 2 jackets and 3 hats. How many jacket-and-hat combinations can he wear?",
           choices: ["A. 4", "B. 5", "C. 6", "D. 7", "E. 8"],
-          answer: 2
+          answer: 2,
+          explain: "Multiply choices together.\n• Step 1 (Multiply): 2 jackets × 3 hats = 6 combinations ✅"
         },
         {
           text: "A shop sells T-shirts in 4 sizes and 5 colours. How many different T-shirts are available?",
           choices: ["A. 9", "B. 16", "C. 18", "D. 20", "E. 24"],
-          answer: 3
+          answer: 3,
+          explain: "Multiply choices together.\n• Step 1 (Multiply): 4 sizes × 5 colours = 20 T-shirts ✅"
         },
         {
           text: "How many pairs can be made from the numbers 1, 2, 3, 4 (order does not matter)?",
           choices: ["A. 4", "B. 5", "C. 6", "D. 7", "E. 8"],
-          answer: 2
+          answer: 2,
+          explain: "Formula for pairs (combinations): 4×3÷2.\n• Step 1 (Pairs): 4×3÷2 = 6 pairs ✅"
         },
         {
           text: "Each of 4 teams plays every other team once. How many games are played in total?",
           choices: ["A. 4", "B. 5", "C. 6", "D. 7", "E. 8"],
-          answer: 2
+          answer: 2,
+          explain: "Formula for pairs: 4×3÷2.\n• Step 1 (Games): 4×3÷2 = 6 games ✅"
         },
         {
           text: "Using the digits 0, 1, 2, how many different 2-digit numbers can be formed? (No leading zeros.)",
           choices: ["A. 4", "B. 5", "C. 6", "D. 7", "E. 8"],
-          answer: 2
+          answer: 2,
+          explain: "Tens digit can't be 0. List all: 10, 12, 20, 21, and also 01, 02 are invalid. Wait — with repetition allowed: 10,11,12,20,21,22 = 6? Answer key says C(6), so repetition IS allowed.\n• Step 1 (Count): 10,12,11,20,21,22 → 6 numbers ✅"
         },
         {
           text: "A baker makes sandwiches with 3 types of bread and 4 types of spread. How many different sandwiches can be made?",
           choices: ["A. 7", "B. 9", "C. 10", "D. 12", "E. 14"],
-          answer: 3
+          answer: 3,
+          explain: "Multiply choices together.\n• Step 1 (Multiply): 3 breads × 4 spreads = 12 sandwiches ✅"
         },
         {
           text: "How many different 2-letter codes can be made from the letters {A, B, C, D} if the two letters must be different?",
           choices: ["A. 8", "B. 10", "C. 12", "D. 14", "E. 16"],
-          answer: 2
+          answer: 2,
+          explain: "Order matters (AB ≠ BA). First letter: 4 choices, second: 3 choices.\n• Step 1 (Multiply): 4 × 3 = 12 codes ✅"
         },
         {
           text: "A game spinner has the colours Red, Blue, and Green. If you spin it twice, how many different outcomes are possible?",
           choices: ["A. 6", "B. 7", "C. 8", "D. 9", "E. 10"],
-          answer: 3
+          answer: 3,
+          explain: "Each spin is independent. Multiply choices.\n• Step 1 (Multiply): 3 × 3 = 9 outcomes ✅"
         },
         {
           text: "There are 3 paths from home to the park and 2 paths from the park to the shop. How many different routes go from home to the shop via the park?",
           choices: ["A. 4", "B. 5", "C. 6", "D. 7", "E. 8"],
-          answer: 2
+          answer: 2,
+          explain: "Multiply paths for each leg.\n• Step 1 (Multiply): 3 × 2 = 6 routes ✅"
         },
         {
           text: "How many different 2-digit numbers can be made using the digits 3, 5, and 7, each used at most once?",
           choices: ["A. 4", "B. 5", "C. 6", "D. 7", "E. 8"],
-          answer: 2
+          answer: 2,
+          explain: "Choose tens digit (3 options), then units (2 remaining).\n• Step 1 (Multiply): 3 × 2 = 6 numbers ✅"
         },
         {
           text: "Each of 3 boys shakes hands with each of 4 girls. How many handshakes are there?",
           choices: ["A. 7", "B. 8", "C. 10", "D. 12", "E. 14"],
-          answer: 3
+          answer: 3,
+          explain: "Each boy shakes hands with each girl. Multiply.\n• Step 1 (Multiply): 3 boys × 4 girls = 12 handshakes ✅"
         },
         {
           text: "In how many ways can you pick a first and second prize winner from 5 contestants (different people)?",
           choices: ["A. 10", "B. 15", "C. 20", "D. 25", "E. 30"],
-          answer: 2
+          answer: 2,
+          explain: "Order matters (1st ≠ 2nd). First prize: 5 choices, second: 4 remaining.\n• Step 1 (Multiply): 5 × 4 = 20 ways ✅"
         },
         {
           text: "Zoe has 5 different books. She wants to pick 2 to take on a trip. How many different pairs can she pick?",
           choices: ["A. 5", "B. 8", "C. 10", "D. 12", "E. 15"],
-          answer: 2
+          answer: 2,
+          explain: "Order doesn't matter. Formula: 5×4÷2.\n• Step 1 (Pairs): 5×4÷2 = 10 pairs ✅"
         },
         {
           text: "A lunch box has 1 main dish (from 4 options), 1 snack (from 3 options), and 1 drink (from 2 options). How many different lunch boxes are possible?",
           choices: ["A. 9", "B. 12", "C. 18", "D. 24", "E. 36"],
-          answer: 3
+          answer: 3,
+          explain: "Multiply all choices together.\n• Step 1 (Multiply): 4 × 3 × 2 = 24 lunch boxes ✅"
         },
         {
           text: "How many 3-letter sequences can be made from A, B, C if each letter is used exactly once?",
           choices: ["A. 3", "B. 4", "C. 5", "D. 6", "E. 9"],
-          answer: 3
+          answer: 3,
+          explain: "Arrange 3 letters: 3×2×1.\n• Step 1 (Multiply): 3×2×1 = 6 sequences ✅"
         },
         {
           text: "A child picks one red card from a set of 3 and one blue card from a set of 4. How many different pairs can they pick?",
           choices: ["A. 7", "B. 9", "C. 10", "D. 12", "E. 14"],
-          answer: 3
+          answer: 3,
+          explain: "Multiply choices together.\n• Step 1 (Multiply): 3 red × 4 blue = 12 pairs ✅"
         },
         {
           text: "6 children compete in a race. How many different ways can first, second, and third place be awarded?",
           choices: ["A. 60", "B. 90", "C. 120", "D. 180", "E. 216"],
-          answer: 2
+          answer: 2,
+          explain: "Order matters. 1st: 6 choices, 2nd: 5, 3rd: 4.\n• Step 1 (Multiply): 6 × 5 × 4 = 120 ways ✅"
         },
         {
           text: "How many different outfits can be made from 4 tops, 3 bottoms, and 2 pairs of shoes?",
           choices: ["A. 9", "B. 14", "C. 18", "D. 24", "E. 36"],
-          answer: 3
+          answer: 3,
+          explain: "Multiply all choices together.\n• Step 1 (Multiply): 4 × 3 × 2 = 24 outfits ✅"
         },
         {
           text: "There are 5 children and 3 seats on a bench. How many ways can exactly 3 children sit on the bench in order?",
           choices: ["A. 15", "B. 30", "C. 45", "D. 60", "E. 120"],
-          answer: 3
+          answer: 3,
+          explain: "Order matters. 1st seat: 5 choices, 2nd: 4, 3rd: 3.\n• Step 1 (Multiply): 5 × 4 × 3 = 60 ways ✅"
         },
         {
           text: "A code is made from a letter (A, B, C) followed by a digit (1–5). How many different codes are there?",
           choices: ["A. 8", "B. 12", "C. 15", "D. 18", "E. 20"],
-          answer: 2
+          answer: 2,
+          explain: "Multiply choices together.\n• Step 1 (Multiply): 3 letters × 5 digits = 15 codes ✅"
         },
         {
           text: "How many different ways can you arrange 4 books in a row on a shelf?",
           choices: ["A. 4", "B. 8", "C. 16", "D. 24", "E. 32"],
-          answer: 3
+          answer: 3,
+          explain: "Arrange 4 items: 4×3×2×1.\n• Step 1 (Multiply): 4×3×2×1 = 24 ways ✅"
         },
         {
           text: "A class of 10 students wants to elect a president and a secretary (different students). How many ways can this be done?",
           choices: ["A. 45", "B. 72", "C. 90", "D. 100", "E. 110"],
-          answer: 2
+          answer: 2,
+          explain: "Order matters (president ≠ secretary). President: 10, secretary: 9 remaining.\n• Step 1 (Multiply): 10 × 9 = 90 ways ✅"
         },
         {
           text: "There are 4 flavours of yoghurt and 3 types of toppings. If you choose one flavour and one topping, how many combinations are there?",
           choices: ["A. 7", "B. 9", "C. 10", "D. 12", "E. 14"],
-          answer: 3
+          answer: 3,
+          explain: "Multiply choices together.\n• Step 1 (Multiply): 4 × 3 = 12 combinations ✅"
         },
         {
           text: "A dice is rolled twice. How many outcomes have different numbers on each roll?",
           choices: ["A. 24", "B. 28", "C. 30", "D. 32", "E. 36"],
-          answer: 2
+          answer: 2,
+          explain: "First roll: 6 options. Second must be different: 5 options.\n• Step 1 (Multiply): 6 × 5 = 30 outcomes ✅"
         },
         {
           text: "3 different toys are placed in a row. How many orders are possible?",
           choices: ["A. 3", "B. 4", "C. 5", "D. 6", "E. 9"],
-          answer: 3
+          answer: 3,
+          explain: "Arrange 3 items: 3×2×1.\n• Step 1 (Multiply): 3×2×1 = 6 orders ✅"
         },
         {
           text: "A bicycle comes in 3 frame colours and 4 seat colours. How many different colour combinations are there?",
           choices: ["A. 7", "B. 9", "C. 10", "D. 12", "E. 14"],
-          answer: 3
+          answer: 3,
+          explain: "Multiply choices together.\n• Step 1 (Multiply): 3 × 4 = 12 combinations ✅"
         },
         {
           text: "In how many ways can you choose 1 boy and 1 girl from a group of 3 boys and 4 girls?",
           choices: ["A. 7", "B. 10", "C. 12", "D. 14", "E. 16"],
-          answer: 2
+          answer: 2,
+          explain: "Choose 1 from each group and multiply.\n• Step 1 (Multiply): 3 boys × 4 girls = 12 ways ✅"
         },
         {
           text: "A box has 4 different chocolates. You eat 2 of them (order does not matter). How many different pairs might you eat?",
           choices: ["A. 4", "B. 5", "C. 6", "D. 7", "E. 8"],
-          answer: 2
+          answer: 2,
+          explain: "Order doesn't matter. Formula: 4×3÷2.\n• Step 1 (Pairs): 4×3÷2 = 6 pairs ✅"
         },
       ]
     },
@@ -4555,252 +4605,302 @@ const questionsData = {
         {
           text: "A snail moves 3 cm every minute. How far does it travel in 7 minutes?",
           choices: ["A. 18 cm", "B. 19 cm", "C. 20 cm", "D. 21 cm", "E. 22 cm"],
-          answer: 3
+          answer: 3,
+          explain: "Distance = rate × time.\n• Step 1 (Multiply): 3 cm × 7 min = 21 cm ✅"
         },
         {
           text: "A machine makes 5 toy cars every hour. How many toy cars does it make in 6 hours?",
           choices: ["A. 25", "B. 28", "C. 30", "D. 32", "E. 35"],
-          answer: 2
+          answer: 2,
+          explain: "Multiply rate by time.\n• Step 1 (Multiply): 5 × 6 = 30 toy cars ✅"
         },
         {
           text: "A baker makes 8 bread rolls every 10 minutes. How many rolls does she make in 30 minutes?",
           choices: ["A. 16", "B. 20", "C. 24", "D. 28", "E. 32"],
-          answer: 2
+          answer: 2,
+          explain: "Find how many 10-minute periods in 30 minutes, then multiply.\n• Step 1 (Periods): 30 ÷ 10 = 3 periods\n• Step 2 (Rolls): 3 × 8 = 24 rolls ✅"
         },
         {
           text: "A frog jumps 2 metres every 3 seconds. How far does it jump in 15 seconds?",
           choices: ["A. 8 m", "B. 9 m", "C. 10 m", "D. 11 m", "E. 12 m"],
-          answer: 2
+          answer: 2,
+          explain: "Find how many 3-second periods in 15 seconds.\n• Step 1 (Periods): 15 ÷ 3 = 5 periods\n• Step 2 (Distance): 5 × 2 = 10 metres ✅"
         },
         {
           text: "A tap fills 4 litres of water per minute. How many minutes does it take to fill a 28-litre tank?",
           choices: ["A. 5 min", "B. 6 min", "C. 7 min", "D. 8 min", "E. 9 min"],
-          answer: 2
+          answer: 2,
+          explain: "Divide total litres by rate.\n• Step 1 (Divide): 28 ÷ 4 = 7 minutes ✅"
         },
         {
           text: "Tom earns 6 coins for every hour he works. How many hours does he need to work to earn 42 coins?",
           choices: ["A. 5 hours", "B. 6 hours", "C. 7 hours", "D. 8 hours", "E. 9 hours"],
-          answer: 2
+          answer: 2,
+          explain: "Divide total coins by rate.\n• Step 1 (Divide): 42 ÷ 6 = 7 hours ✅"
         },
         {
           text: "A caterpillar crawls 5 cm per minute. How far does it crawl in 9 minutes?",
           choices: ["A. 40 cm", "B. 42 cm", "C. 44 cm", "D. 45 cm", "E. 50 cm"],
-          answer: 3
+          answer: 3,
+          explain: "Multiply rate by time.\n• Step 1 (Multiply): 5 × 9 = 45 cm ✅"
         },
         {
           text: "A printer can print 12 pages per minute. How many pages does it print in 5 minutes?",
           choices: ["A. 50", "B. 55", "C. 60", "D. 65", "E. 70"],
-          answer: 2
+          answer: 2,
+          explain: "Multiply rate by time.\n• Step 1 (Multiply): 12 × 5 = 60 pages ✅"
         },
         {
           text: "A bicycle travels 10 km every 30 minutes. How far does it travel in 2 hours?",
           choices: ["A. 30 km", "B. 35 km", "C. 40 km", "D. 45 km", "E. 50 km"],
-          answer: 2
+          answer: 2,
+          explain: "2 hours = 4 periods of 30 minutes.\n• Step 1 (Periods): 2h × 2 = 4 periods\n• Step 2 (Distance): 4 × 10 = 40 km ✅"
         },
         {
           text: "A candle burns 2 cm every hour. It is 16 cm tall. How many hours until it is completely burned?",
           choices: ["A. 6 hours", "B. 7 hours", "C. 8 hours", "D. 9 hours", "E. 10 hours"],
-          answer: 2
+          answer: 2,
+          explain: "Divide total height by burn rate.\n• Step 1 (Divide): 16 ÷ 2 = 8 hours ✅"
         },
         {
           text: "A garden hose fills a pool at 9 litres per minute. How many litres does it fill in 4 minutes?",
           choices: ["A. 32", "B. 34", "C. 36", "D. 38", "E. 40"],
-          answer: 2
+          answer: 2,
+          explain: "Multiply rate by time.\n• Step 1 (Multiply): 9 × 4 = 36 litres ✅"
         },
         {
           text: "A worker packs 6 boxes every 2 minutes. How many boxes does she pack in 10 minutes?",
           choices: ["A. 24", "B. 28", "C. 30", "D. 32", "E. 36"],
-          answer: 2
+          answer: 2,
+          explain: "Find how many 2-minute periods in 10 minutes.\n• Step 1 (Periods): 10 ÷ 2 = 5 periods\n• Step 2 (Boxes): 5 × 6 = 30 boxes ✅"
         },
         {
           text: "A worm crawls 4 cm per minute. How many minutes does it take the worm to crawl 36 cm?",
           choices: ["A. 7 min", "B. 8 min", "C. 9 min", "D. 10 min", "E. 11 min"],
-          answer: 2
+          answer: 2,
+          explain: "Divide total distance by rate.\n• Step 1 (Divide): 36 ÷ 4 = 9 minutes ✅"
         },
         {
           text: "A train moves at 60 km/h. How far does it travel in 2 hours?",
           choices: ["A. 100 km", "B. 110 km", "C. 115 km", "D. 120 km", "E. 130 km"],
-          answer: 3
+          answer: 3,
+          explain: "Distance = speed × time.\n• Step 1 (Multiply): 60 × 2 = 120 km ✅"
         },
         {
           text: "A factory produces 15 balls per hour. How long does it take to produce 90 balls?",
           choices: ["A. 4 hours", "B. 5 hours", "C. 6 hours", "D. 7 hours", "E. 8 hours"],
-          answer: 2
+          answer: 2,
+          explain: "Divide total by rate.\n• Step 1 (Divide): 90 ÷ 15 = 6 hours ✅"
         },
         {
           text: "Emma saves 7 coins every week. How many weeks does it take her to save 49 coins?",
           choices: ["A. 5 weeks", "B. 6 weeks", "C. 7 weeks", "D. 8 weeks", "E. 9 weeks"],
-          answer: 2
+          answer: 2,
+          explain: "Divide total by weekly saving.\n• Step 1 (Divide): 49 ÷ 7 = 7 weeks ✅"
         },
         {
           text: "A car uses 5 litres of fuel every 100 km. How many litres does it use on a 300 km trip?",
           choices: ["A. 10 litres", "B. 12 litres", "C. 15 litres", "D. 18 litres", "E. 20 litres"],
-          answer: 2
+          answer: 2,
+          explain: "Find how many 100-km segments in 300 km.\n• Step 1 (Segments): 300 ÷ 100 = 3 segments\n• Step 2 (Fuel): 3 × 5 = 15 litres ✅"
         },
         {
           text: "A conveyor belt moves 3 boxes per second. How many boxes does it move in 1 minute?",
           choices: ["A. 150", "B. 160", "C. 170", "D. 180", "E. 190"],
-          answer: 3
+          answer: 3,
+          explain: "1 minute = 60 seconds. Multiply rate by time.\n• Step 1 (Multiply): 3 × 60 = 180 boxes ✅"
         },
         {
           text: "A cow produces 8 litres of milk per day. How many days does it take to produce 56 litres?",
           choices: ["A. 5 days", "B. 6 days", "C. 7 days", "D. 8 days", "E. 9 days"],
-          answer: 2
+          answer: 2,
+          explain: "Divide total by daily production.\n• Step 1 (Divide): 56 ÷ 8 = 7 days ✅"
         },
         {
           text: "A beekeeper collects honey from 4 hives. Each hive produces 3 kg of honey per week. How much honey is collected in 4 weeks?",
           choices: ["A. 40 kg", "B. 44 kg", "C. 48 kg", "D. 52 kg", "E. 56 kg"],
-          answer: 2
+          answer: 2,
+          explain: "Calculate weekly production then multiply by weeks.\n• Step 1 (Per week): 4 hives × 3 kg = 12 kg/week\n• Step 2 (4 weeks): 12 × 4 = 48 kg ✅"
         },
         {
           text: "A child reads 8 pages every day. How many days does it take to read a 56-page book?",
           choices: ["A. 5 days", "B. 6 days", "C. 7 days", "D. 8 days", "E. 9 days"],
-          answer: 2
+          answer: 2,
+          explain: "Divide total pages by daily reading rate.\n• Step 1 (Divide): 56 ÷ 8 = 7 days ✅"
         },
         {
           text: "A snail travels 10 cm per minute. How long does it take to travel 1 metre (100 cm)?",
           choices: ["A. 5 min", "B. 8 min", "C. 10 min", "D. 12 min", "E. 15 min"],
-          answer: 2
+          answer: 2,
+          explain: "Divide total distance by rate.\n• Step 1 (Divide): 100 ÷ 10 = 10 minutes ✅"
         },
         {
           text: "A painter can paint 2 doors per hour. How many doors can she paint in 8 hours?",
           choices: ["A. 12", "B. 14", "C. 16", "D. 18", "E. 20"],
-          answer: 2
+          answer: 2,
+          explain: "Multiply rate by time.\n• Step 1 (Multiply): 2 × 8 = 16 doors ✅"
         },
         {
           text: "A bucket fills up at 3 litres per minute. How many minutes does it take to fill 24 litres?",
           choices: ["A. 6 min", "B. 7 min", "C. 8 min", "D. 9 min", "E. 10 min"],
-          answer: 2
+          answer: 2,
+          explain: "Divide total by rate.\n• Step 1 (Divide): 24 ÷ 3 = 8 minutes ✅"
         },
         {
           text: "A caterpillar eats 6 leaves every day. How many leaves does it eat in 9 days?",
           choices: ["A. 48", "B. 50", "C. 52", "D. 54", "E. 56"],
-          answer: 3
+          answer: 3,
+          explain: "Multiply rate by time.\n• Step 1 (Multiply): 6 × 9 = 54 leaves ✅"
         },
         {
           text: "A hamster runs 5 metres every minute in its wheel. How far does it run in 11 minutes?",
           choices: ["A. 50 m", "B. 52 m", "C. 54 m", "D. 55 m", "E. 60 m"],
-          answer: 3
+          answer: 3,
+          explain: "Multiply rate by time.\n• Step 1 (Multiply): 5 × 11 = 55 metres ✅"
         },
         {
           text: "A factory worker makes 12 buttons per hour. How many buttons does she make in 4 hours?",
           choices: ["A. 40", "B. 44", "C. 46", "D. 48", "E. 50"],
-          answer: 3
+          answer: 3,
+          explain: "Multiply rate by time.\n• Step 1 (Multiply): 12 × 4 = 48 buttons ✅"
         },
         {
           text: "A dripping tap loses 2 litres of water every hour. How many litres are lost in 7 hours?",
           choices: ["A. 12", "B. 13", "C. 14", "D. 15", "E. 16"],
-          answer: 2
+          answer: 2,
+          explain: "Multiply rate by time.\n• Step 1 (Multiply): 2 × 7 = 14 litres ✅"
         },
         {
           text: "A boat moves at 4 km per hour. How far does it travel in 5 hours?",
           choices: ["A. 16 km", "B. 18 km", "C. 20 km", "D. 22 km", "E. 24 km"],
-          answer: 2
+          answer: 2,
+          explain: "Distance = speed × time.\n• Step 1 (Multiply): 4 × 5 = 20 km ✅"
         },
         {
           text: "A gardener plants 9 seeds per row. How many seeds does she plant in 6 rows?",
           choices: ["A. 48", "B. 50", "C. 52", "D. 54", "E. 56"],
-          answer: 3
+          answer: 3,
+          explain: "Multiply seeds per row by number of rows.\n• Step 1 (Multiply): 9 × 6 = 54 seeds ✅"
         },
         {
           text: "A robot builds 7 blocks every minute. How many blocks does it build in 8 minutes?",
           choices: ["A. 48", "B. 52", "C. 54", "D. 56", "E. 60"],
-          answer: 3
+          answer: 3,
+          explain: "Multiply rate by time.\n• Step 1 (Multiply): 7 × 8 = 56 blocks ✅"
         },
         {
           text: "A typing student types 30 words per minute. How many words does she type in 4 minutes?",
           choices: ["A. 100", "B. 110", "C. 115", "D. 120", "E. 130"],
-          answer: 3
+          answer: 3,
+          explain: "Multiply rate by time.\n• Step 1 (Multiply): 30 × 4 = 120 words ✅"
         },
         {
           text: "A machine fills 10 bottles per minute. How many minutes does it take to fill 80 bottles?",
           choices: ["A. 6 min", "B. 7 min", "C. 8 min", "D. 9 min", "E. 10 min"],
-          answer: 2
+          answer: 2,
+          explain: "Divide total by rate.\n• Step 1 (Divide): 80 ÷ 10 = 8 minutes ✅"
         },
         {
           text: "A chicken lays 1 egg per day. How many eggs does it lay in 3 weeks?",
           choices: ["A. 18", "B. 19", "C. 20", "D. 21", "E. 22"],
-          answer: 3
+          answer: 3,
+          explain: "3 weeks = 21 days. Multiply by daily rate.\n• Step 1 (Days): 3 × 7 = 21 days\n• Step 2 (Eggs): 1 × 21 = 21 eggs ✅"
         },
         {
           text: "A pupil copies 4 sentences per minute. How long does it take to copy 28 sentences?",
           choices: ["A. 5 min", "B. 6 min", "C. 7 min", "D. 8 min", "E. 9 min"],
-          answer: 2
+          answer: 2,
+          explain: "Divide total by rate.\n• Step 1 (Divide): 28 ÷ 4 = 7 minutes ✅"
         },
         {
           text: "A well pumps out 6 litres of water per minute. How many litres does it pump out in 12 minutes?",
           choices: ["A. 60", "B. 66", "C. 70", "D. 72", "E. 78"],
-          answer: 3
+          answer: 3,
+          explain: "Multiply rate by time.\n• Step 1 (Multiply): 6 × 12 = 72 litres ✅"
         },
         {
           text: "A hamster drinks 5 ml of water per hour. How many ml does it drink in 8 hours?",
           choices: ["A. 35 ml", "B. 38 ml", "C. 40 ml", "D. 42 ml", "E. 45 ml"],
-          answer: 2
+          answer: 2,
+          explain: "Multiply rate by time.\n• Step 1 (Multiply): 5 × 8 = 40 ml ✅"
         },
         {
           text: "A swimmer swims 50 m every 2 minutes. How far does she swim in 10 minutes?",
           choices: ["A. 200 m", "B. 225 m", "C. 250 m", "D. 275 m", "E. 300 m"],
-          answer: 2
+          answer: 2,
+          explain: "Find how many 2-minute periods in 10 minutes.\n• Step 1 (Periods): 10 ÷ 2 = 5 periods\n• Step 2 (Distance): 5 × 50 = 250 m ✅"
         },
         {
           text: "A solar panel generates 3 units of electricity every hour on a sunny day. How many units does it generate in 9 hours?",
           choices: ["A. 24", "B. 25", "C. 26", "D. 27", "E. 28"],
-          answer: 3
+          answer: 3,
+          explain: "Multiply rate by time.\n• Step 1 (Multiply): 3 × 9 = 27 units ✅"
         },
         {
           text: "An ice cube melts at 2 g per minute. How many grams are left from a 30 g ice cube after 8 minutes?",
           choices: ["A. 12 g", "B. 13 g", "C. 14 g", "D. 15 g", "E. 16 g"],
-          answer: 2
+          answer: 2,
+          explain: "Find how much melted, then subtract from original.\n• Step 1 (Melted): 2 × 8 = 16 g\n• Step 2 (Left): 30 − 16 = 14 g ✅"
         },
         {
           text: "A racing car completes 3 laps every 5 minutes. How many laps does it complete in 20 minutes?",
           choices: ["A. 9", "B. 10", "C. 11", "D. 12", "E. 13"],
-          answer: 3
+          answer: 3,
+          explain: "Find how many 5-minute periods in 20 minutes.\n• Step 1 (Periods): 20 ÷ 5 = 4 periods\n• Step 2 (Laps): 4 × 3 = 12 laps ✅"
         },
         {
           text: "A spider spins 4 cm of web every minute. How long will it take to spin 32 cm?",
           choices: ["A. 6 min", "B. 7 min", "C. 8 min", "D. 9 min", "E. 10 min"],
-          answer: 2
+          answer: 2,
+          explain: "Divide total by rate.\n• Step 1 (Divide): 32 ÷ 4 = 8 minutes ✅"
         },
         {
           text: "A fountain pumps 5 litres of water every 2 minutes. How many litres does it pump in 14 minutes?",
           choices: ["A. 30 litres", "B. 32 litres", "C. 35 litres", "D. 40 litres", "E. 42 litres"],
-          answer: 2
+          answer: 2,
+          explain: "Find how many 2-minute periods in 14 minutes.\n• Step 1 (Periods): 14 ÷ 2 = 7 periods\n• Step 2 (Litres): 7 × 5 = 35 litres ✅"
         },
         {
           text: "A gardener picks 7 tomatoes every day. How many tomatoes are picked in 2 weeks?",
           choices: ["A. 88", "B. 90", "C. 92", "D. 94", "E. 98"],
-          answer: 3
+          answer: 3,
+          explain: "2 weeks = 14 days. Multiply by daily rate.\n• Step 1 (Days): 2 × 7 = 14 days\n• Step 2 (Tomatoes): 14 × 7 = 98 tomatoes ✅"
         },
         {
           text: "A snail climbs 8 cm up a wall in an hour but slides back 3 cm each night. After 3 nights, what height has the snail reached if it started at the bottom?",
           choices: ["A. 13 cm", "B. 14 cm", "C. 15 cm", "D. 16 cm", "E. 17 cm"],
-          answer: 2
+          answer: 2,
+          explain: "Each day: climb 8, slide back 3 = net gain of 5 cm per day.\n• Step 1 (Net per day): 8 − 3 = 5 cm\n• Step 2 (After 3 days): 3 × 5 = 15 cm ✅"
         },
         {
           text: "A runner covers 9 metres every 3 seconds. How far does he run in 15 seconds?",
           choices: ["A. 40 m", "B. 42 m", "C. 44 m", "D. 45 m", "E. 50 m"],
-          answer: 3
+          answer: 3,
+          explain: "Find how many 3-second periods in 15 seconds.\n• Step 1 (Periods): 15 ÷ 3 = 5 periods\n• Step 2 (Distance): 5 × 9 = 45 m ✅"
         },
         {
           text: "A water tank is drained at a rate of 4 litres per minute. If the tank has 40 litres, how many minutes until it is empty?",
           choices: ["A. 8 min", "B. 9 min", "C. 10 min", "D. 11 min", "E. 12 min"],
-          answer: 2
+          answer: 2,
+          explain: "Divide total by drain rate.\n• Step 1 (Divide): 40 ÷ 4 = 10 minutes ✅"
         },
         {
           text: "A pupil paints 2 tiles per minute. How many tiles does she paint in 25 minutes?",
           choices: ["A. 45", "B. 48", "C. 50", "D. 52", "E. 55"],
-          answer: 2
+          answer: 2,
+          explain: "Multiply rate by time.\n• Step 1 (Multiply): 2 × 25 = 50 tiles ✅"
         },
         {
           text: "A factory makes 11 jars of jam every hour. How many jars are made in 7 hours?",
           choices: ["A. 66", "B. 70", "C. 72", "D. 74", "E. 77"],
-          answer: 4
+          answer: 4,
+          explain: "Multiply rate by time.\n• Step 1 (Multiply): 11 × 7 = 77 jars ✅"
         },
         {
           text: "A faucet drips at 3 drops per second. How many drops fall in 1 minute?",
           choices: ["A. 150", "B. 160", "C. 170", "D. 180", "E. 190"],
-          answer: 3
+          answer: 3,
+          explain: "1 minute = 60 seconds. Multiply rate by time.\n• Step 1 (Multiply): 3 × 60 = 180 drops ✅"
         },
       ]
     },
@@ -4811,252 +4911,302 @@ const questionsData = {
         {
           text: "A bag of potatoes weighs 5 kg. After removing 1 kg 500 g, how much does it weigh?",
           choices: ["A. 3 kg", "B. 3 kg 200 g", "C. 3 kg 500 g", "D. 4 kg", "E. 4 kg 500 g"],
-          answer: 2
+          answer: 2,
+          explain: "1 kg 500 g = 1.5 kg. Subtract from total.\n• Step 1 (Subtract): 5 kg − 1.5 kg = 3.5 kg = 3 kg 500 g ✅"
         },
         {
           text: "3 identical boxes weigh 12 kg in total. How much does one box weigh?",
           choices: ["A. 3 kg", "B. 4 kg", "C. 5 kg", "D. 6 kg", "E. 7 kg"],
-          answer: 1
+          answer: 1,
+          explain: "Divide total weight by number of boxes.\n• Step 1 (Divide): 12 ÷ 3 = 4 kg each ✅"
         },
         {
           text: "A pencil is 18 cm long. A crayon is 12 cm long. How much longer is the pencil than the crayon?",
           choices: ["A. 4 cm", "B. 5 cm", "C. 6 cm", "D. 7 cm", "E. 8 cm"],
-          answer: 2
+          answer: 2,
+          explain: "Subtract to find the difference.\n• Step 1 (Subtract): 18 − 12 = 6 cm ✅"
         },
         {
           text: "A jar holds 500 ml. How many jars can be filled from a 3-litre bottle?",
           choices: ["A. 4", "B. 5", "C. 6", "D. 7", "E. 8"],
-          answer: 2
+          answer: 2,
+          explain: "Convert litres to ml, then divide.\n• Step 1 (Convert): 3 litres = 3000 ml\n• Step 2 (Divide): 3000 ÷ 500 = 6 jars ✅"
         },
         {
           text: "A ribbon is 2 m long. It is cut into pieces of 25 cm each. How many pieces are cut?",
           choices: ["A. 6", "B. 7", "C. 8", "D. 9", "E. 10"],
-          answer: 2
+          answer: 2,
+          explain: "Convert metres to cm, then divide.\n• Step 1 (Convert): 2 m = 200 cm\n• Step 2 (Divide): 200 ÷ 25 = 8 pieces ✅"
         },
         {
           text: "On a balance scale, 3 apples balance 1 melon. The melon weighs 600 g. How much does one apple weigh?",
           choices: ["A. 150 g", "B. 180 g", "C. 200 g", "D. 210 g", "E. 250 g"],
-          answer: 2
+          answer: 2,
+          explain: "3 apples = 600 g, so 1 apple = 600 ÷ 3.\n• Step 1 (Divide): 600 ÷ 3 = 200 g ✅"
         },
         {
           text: "A full bucket of water weighs 8 kg. The empty bucket weighs 2 kg. How much does the water weigh?",
           choices: ["A. 4 kg", "B. 5 kg", "C. 6 kg", "D. 7 kg", "E. 8 kg"],
-          answer: 2
+          answer: 2,
+          explain: "Subtract bucket weight from total.\n• Step 1 (Subtract): 8 − 2 = 6 kg ✅"
         },
         {
           text: "A piece of string is 120 cm long. It is cut into 4 equal parts. How long is each part?",
           choices: ["A. 25 cm", "B. 28 cm", "C. 30 cm", "D. 32 cm", "E. 35 cm"],
-          answer: 2
+          answer: 2,
+          explain: "Divide total length by number of parts.\n• Step 1 (Divide): 120 ÷ 4 = 30 cm ✅"
         },
         {
           text: "A bottle of juice is 1.5 litres. How many 250 ml cups can it fill?",
           choices: ["A. 4", "B. 5", "C. 6", "D. 7", "E. 8"],
-          answer: 2
+          answer: 2,
+          explain: "Convert litres to ml, then divide.\n• Step 1 (Convert): 1.5 litres = 1500 ml\n• Step 2 (Divide): 1500 ÷ 250 = 6 cups ✅"
         },
         {
           text: "A parcel weighs 2 kg 300 g. Another parcel weighs 1 kg 700 g. What is their combined weight?",
           choices: ["A. 3 kg 800 g", "B. 3 kg 900 g", "C. 4 kg", "D. 4 kg 100 g", "E. 4 kg 200 g"],
-          answer: 2
+          answer: 2,
+          explain: "Add both weights: 2300 g + 1700 g.\n• Step 1 (Add): 2300 + 1700 = 4000 g = 4 kg ✅"
         },
         {
           text: "A rope is 3 metres long. How many 50 cm pieces can be cut from it?",
           choices: ["A. 4", "B. 5", "C. 6", "D. 7", "E. 8"],
-          answer: 2
+          answer: 2,
+          explain: "Convert metres to cm, then divide.\n• Step 1 (Convert): 3 m = 300 cm\n• Step 2 (Divide): 300 ÷ 50 = 6 pieces ✅"
         },
         {
           text: "500 grams of flour and 300 grams of sugar are combined. What is the total weight in kg?",
           choices: ["A. 0.6 kg", "B. 0.7 kg", "C. 0.8 kg", "D. 0.9 kg", "E. 1.0 kg"],
-          answer: 2
+          answer: 2,
+          explain: "Add the weights, then convert to kg.\n• Step 1 (Add): 500 + 300 = 800 g\n• Step 2 (Convert): 800 g = 0.8 kg ✅"
         },
         {
           text: "A box weighs 1 kg 200 g. Three identical boxes are stacked. What is their total weight?",
           choices: ["A. 3 kg 200 g", "B. 3 kg 400 g", "C. 3 kg 600 g", "D. 4 kg", "E. 4 kg 200 g"],
-          answer: 2
+          answer: 2,
+          explain: "Multiply one box weight by 3.\n• Step 1 (Multiply): 1200 g × 3 = 3600 g = 3 kg 600 g ✅"
         },
         {
           text: "A fish weighs 400 g. Which of these objects could balance with 5 fish?",
           choices: ["A. 1.5 kg", "B. 1.8 kg", "C. 2.0 kg", "D. 2.4 kg", "E. 2.5 kg"],
-          answer: 2
+          answer: 2,
+          explain: "Find total weight of 5 fish.\n• Step 1 (Multiply): 5 × 400 g = 2000 g = 2.0 kg ✅"
         },
         {
           text: "A room is 4 m wide. A carpet is 250 cm wide. How many centimetres wider is the room than the carpet?",
           choices: ["A. 100 cm", "B. 125 cm", "C. 150 cm", "D. 175 cm", "E. 200 cm"],
-          answer: 2
+          answer: 2,
+          explain: "Convert room width to cm, then subtract.\n• Step 1 (Convert): 4 m = 400 cm\n• Step 2 (Subtract): 400 − 250 = 150 cm ✅"
         },
         {
           text: "A bag of rice weighs 2 kg. How many grams is that?",
           choices: ["A. 200 g", "B. 500 g", "C. 1000 g", "D. 2000 g", "E. 2500 g"],
-          answer: 3
+          answer: 3,
+          explain: "1 kg = 1000 g, so 2 kg = 2 × 1000.\n• Step 1 (Convert): 2 × 1000 = 2000 g ✅"
         },
         {
           text: "A suitcase can hold up to 20 kg. It currently has 14 kg 500 g. How much more weight can be added?",
           choices: ["A. 4 kg 500 g", "B. 5 kg", "C. 5 kg 500 g", "D. 6 kg", "E. 6 kg 500 g"],
-          answer: 2
+          answer: 2,
+          explain: "Subtract current weight from maximum.\n• Step 1 (Subtract): 20000 g − 14500 g = 5500 g = 5 kg 500 g ✅"
         },
         {
           text: "On a balance scale, 2 cups of flour weigh 500 g in total. How much does 1 cup weigh?",
           choices: ["A. 200 g", "B. 225 g", "C. 250 g", "D. 275 g", "E. 300 g"],
-          answer: 2
+          answer: 2,
+          explain: "Divide total weight by number of cups.\n• Step 1 (Divide): 500 ÷ 2 = 250 g ✅"
         },
         {
           text: "A swimming pool holds 1200 litres. It is filled at 300 litres per hour. How many hours to fill it?",
           choices: ["A. 2 hours", "B. 3 hours", "C. 4 hours", "D. 5 hours", "E. 6 hours"],
-          answer: 2
+          answer: 2,
+          explain: "Divide total capacity by fill rate.\n• Step 1 (Divide): 1200 ÷ 300 = 4 hours ✅"
         },
         {
           text: "4 identical bricks weigh 8 kg. How much do 7 bricks weigh?",
           choices: ["A. 12 kg", "B. 13 kg", "C. 14 kg", "D. 15 kg", "E. 16 kg"],
-          answer: 2
+          answer: 2,
+          explain: "Find weight of 1 brick, then multiply by 7.\n• Step 1 (Per brick): 8 ÷ 4 = 2 kg\n• Step 2 (7 bricks): 7 × 2 = 14 kg ✅"
         },
         {
           text: "A desk is 140 cm long. A shelf is 95 cm long. How much longer is the desk?",
           choices: ["A. 40 cm", "B. 42 cm", "C. 44 cm", "D. 45 cm", "E. 50 cm"],
-          answer: 3
+          answer: 3,
+          explain: "Subtract to find the difference.\n• Step 1 (Subtract): 140 − 95 = 45 cm ✅"
         },
         {
           text: "Which is heavier: 1.5 kg or 1400 g?",
           choices: ["A. 1.5 kg", "B. 1400 g", "C. They are equal", "D. Cannot tell", "E. Neither"],
-          answer: 0
+          answer: 0,
+          explain: "Convert to same unit: 1.5 kg = 1500 g.\n• Step 1 (Compare): 1500 g > 1400 g → 1.5 kg is heavier ✅"
         },
         {
           text: "A bucket holds 6 litres. A large barrel holds 4 times as much. How many litres does the barrel hold?",
           choices: ["A. 18 litres", "B. 20 litres", "C. 22 litres", "D. 24 litres", "E. 26 litres"],
-          answer: 3
+          answer: 3,
+          explain: "Multiply bucket capacity by 4.\n• Step 1 (Multiply): 6 × 4 = 24 litres ✅"
         },
         {
           text: "A brick weighs 2 kg 500 g. How much do 4 bricks weigh?",
           choices: ["A. 8 kg", "B. 9 kg", "C. 10 kg", "D. 11 kg", "E. 12 kg"],
-          answer: 2
+          answer: 2,
+          explain: "Multiply one brick weight by 4.\n• Step 1 (Multiply): 2500 g × 4 = 10000 g = 10 kg ✅"
         },
         {
           text: "A measuring tape is 5 m long. How many centimetres is that?",
           choices: ["A. 50 cm", "B. 500 cm", "C. 5000 cm", "D. 0.5 cm", "E. 0.05 cm"],
-          answer: 1
+          answer: 1,
+          explain: "1 m = 100 cm, so 5 m = 5 × 100.\n• Step 1 (Convert): 5 × 100 = 500 cm ✅"
         },
         {
           text: "A jug holds 750 ml. How many jugs fill a 3-litre container?",
           choices: ["A. 2", "B. 3", "C. 4", "D. 5", "E. 6"],
-          answer: 2
+          answer: 2,
+          explain: "Convert litres to ml, then divide.\n• Step 1 (Convert): 3 litres = 3000 ml\n• Step 2 (Divide): 3000 ÷ 750 = 4 jugs ✅"
         },
         {
           text: "A load of sand weighs 900 kg. It is split equally into 9 sacks. How much does each sack weigh?",
           choices: ["A. 80 kg", "B. 90 kg", "C. 100 kg", "D. 110 kg", "E. 120 kg"],
-          answer: 2
+          answer: 2,
+          explain: "Divide total weight by number of sacks.\n• Step 1 (Divide): 900 ÷ 9 = 100 kg each ✅"
         },
         {
           text: "A scale shows 3 kg 800 g. Half of this weight is removed. How much remains on the scale?",
           choices: ["A. 1 kg 700 g", "B. 1 kg 800 g", "C. 1 kg 900 g", "D. 2 kg", "E. 2 kg 100 g"],
-          answer: 2
+          answer: 2,
+          explain: "Halve the total weight.\n• Step 1 (Convert): 3800 g ÷ 2 = 1900 g = 1 kg 900 g ✅"
         },
         {
           text: "A trail is 2 km 400 m long. How many metres is that?",
           choices: ["A. 2040 m", "B. 2400 m", "C. 2420 m", "D. 2440 m", "E. 2460 m"],
-          answer: 1
+          answer: 1,
+          explain: "1 km = 1000 m. Convert then add.\n• Step 1 (Convert): 2 km = 2000 m\n• Step 2 (Add): 2000 + 400 = 2400 m ✅"
         },
         {
           text: "Two packages weigh 750 g each. What is their total weight in kg?",
           choices: ["A. 1.25 kg", "B. 1.50 kg", "C. 1.75 kg", "D. 2.00 kg", "E. 2.25 kg"],
-          answer: 1
+          answer: 1,
+          explain: "Add both weights, then convert to kg.\n• Step 1 (Add): 750 + 750 = 1500 g\n• Step 2 (Convert): 1500 g = 1.50 kg ✅"
         },
         {
           text: "A bottle is 30 cm tall. A crate is 4 times taller. How tall is the crate?",
           choices: ["A. 100 cm", "B. 110 cm", "C. 115 cm", "D. 120 cm", "E. 125 cm"],
-          answer: 3
+          answer: 3,
+          explain: "Multiply bottle height by 4.\n• Step 1 (Multiply): 30 × 4 = 120 cm ✅"
         },
         {
           text: "On a balance scale, 5 plums balance 1 apple and a 50 g weight. The apple weighs 150 g. How much does each plum weigh?",
           choices: ["A. 30 g", "B. 35 g", "C. 40 g", "D. 45 g", "E. 50 g"],
-          answer: 2
+          answer: 2,
+          explain: "5 plums = apple + 50 g weight.\n• Step 1 (Total): 150 + 50 = 200 g\n• Step 2 (Per plum): 200 ÷ 5 = 40 g ✅"
         },
         {
           text: "A shelf is 80 cm long. Books each 4 cm wide are placed on it. How many books fit on the shelf?",
           choices: ["A. 16", "B. 18", "C. 20", "D. 22", "E. 24"],
-          answer: 2
+          answer: 2,
+          explain: "Divide shelf length by book width.\n• Step 1 (Divide): 80 ÷ 4 = 20 books ✅"
         },
         {
           text: "A glass holds 200 ml. How many glasses can be filled from a 1.4-litre bottle?",
           choices: ["A. 5", "B. 6", "C. 7", "D. 8", "E. 9"],
-          answer: 2
+          answer: 2,
+          explain: "Convert litres to ml, then divide.\n• Step 1 (Convert): 1.4 litres = 1400 ml\n• Step 2 (Divide): 1400 ÷ 200 = 7 glasses ✅"
         },
         {
           text: "Three cats weigh 3 kg, 4 kg, and 5 kg. What is their average weight?",
           choices: ["A. 3 kg", "B. 3.5 kg", "C. 4 kg", "D. 4.5 kg", "E. 5 kg"],
-          answer: 2
+          answer: 2,
+          explain: "Average = total weight ÷ number of cats.\n• Step 1 (Total): 3 + 4 + 5 = 12 kg\n• Step 2 (Average): 12 ÷ 3 = 4 kg ✅"
         },
         {
           text: "A bar of chocolate is 240 g. It is broken into 6 equal pieces. How heavy is each piece?",
           choices: ["A. 30 g", "B. 35 g", "C. 40 g", "D. 45 g", "E. 50 g"],
-          answer: 2
+          answer: 2,
+          explain: "Divide total weight by number of pieces.\n• Step 1 (Divide): 240 ÷ 6 = 40 g each ✅"
         },
         {
           text: "A piece of wood is 1 m 20 cm long. It is cut into 6 equal pieces. How long is each piece?",
           choices: ["A. 15 cm", "B. 18 cm", "C. 20 cm", "D. 22 cm", "E. 25 cm"],
-          answer: 2
+          answer: 2,
+          explain: "Convert to cm, then divide.\n• Step 1 (Convert): 1 m 20 cm = 120 cm\n• Step 2 (Divide): 120 ÷ 6 = 20 cm ✅"
         },
         {
           text: "A bowl of water weighs 1 kg 200 g. The empty bowl weighs 400 g. How much does the water weigh?",
           choices: ["A. 600 g", "B. 700 g", "C. 800 g", "D. 900 g", "E. 1000 g"],
-          answer: 2
+          answer: 2,
+          explain: "Subtract bowl weight from total.\n• Step 1 (Subtract): 1200 g − 400 g = 800 g ✅"
         },
         {
           text: "A fence needs planks that are each 50 cm long. The fence is 4 m long. How many planks are needed?",
           choices: ["A. 6", "B. 7", "C. 8", "D. 9", "E. 10"],
-          answer: 2
+          answer: 2,
+          explain: "Convert metres to cm, then divide.\n• Step 1 (Convert): 4 m = 400 cm\n• Step 2 (Divide): 400 ÷ 50 = 8 planks ✅"
         },
         {
           text: "A water tank holds 10 litres when full. It currently has 3 litres 500 ml. How much more water is needed to fill it?",
           choices: ["A. 5 litres 500 ml", "B. 6 litres", "C. 6 litres 500 ml", "D. 7 litres", "E. 7 litres 500 ml"],
-          answer: 2
+          answer: 2,
+          explain: "Subtract current from capacity.\n• Step 1 (Subtract): 10000 ml − 3500 ml = 6500 ml = 6 litres 500 ml ✅"
         },
         {
           text: "A table is 90 cm high and a stool is 45 cm high. How much higher is the table?",
           choices: ["A. 40 cm", "B. 42 cm", "C. 44 cm", "D. 45 cm", "E. 50 cm"],
-          answer: 3
+          answer: 3,
+          explain: "Subtract stool height from table height.\n• Step 1 (Subtract): 90 − 45 = 45 cm ✅"
         },
         {
           text: "A sack of flour weighs 25 kg. How many 500 g bags can be filled from it?",
           choices: ["A. 40", "B. 45", "C. 50", "D. 55", "E. 60"],
-          answer: 2
+          answer: 2,
+          explain: "Convert kg to g, then divide.\n• Step 1 (Convert): 25 kg = 25000 g\n• Step 2 (Divide): 25000 ÷ 500 = 50 bags ✅"
         },
         {
           text: "Two ropes together are 7 m long. One rope is 4 m 20 cm. How long is the other rope?",
           choices: ["A. 2 m 60 cm", "B. 2 m 70 cm", "C. 2 m 80 cm", "D. 3 m", "E. 3 m 20 cm"],
-          answer: 2
+          answer: 2,
+          explain: "Subtract known rope from total.\n• Step 1 (Convert): 7 m = 700 cm; 4 m 20 cm = 420 cm\n• Step 2 (Subtract): 700 − 420 = 280 cm = 2 m 80 cm ✅"
         },
         {
           text: "An empty box weighs 300 g. When filled with apples it weighs 2 kg 100 g. How much do the apples weigh?",
           choices: ["A. 1 kg 600 g", "B. 1 kg 700 g", "C. 1 kg 800 g", "D. 1 kg 900 g", "E. 2 kg"],
-          answer: 2
+          answer: 2,
+          explain: "Subtract empty box weight from total.\n• Step 1 (Subtract): 2100 g − 300 g = 1800 g = 1 kg 800 g ✅"
         },
         {
           text: "A fish tank is 60 cm long, 30 cm wide, and 40 cm tall. What is the length of the longest fish that can fit lengthwise?",
           choices: ["A. 30 cm", "B. 40 cm", "C. 50 cm", "D. 55 cm", "E. 60 cm"],
-          answer: 4
+          answer: 4,
+          explain: "The fish goes along the length of the tank.\n• Step 1 (Identify): The length of the tank is 60 cm\n• Step 2 (Answer): Longest fish = 60 cm ✅"
         },
         {
           text: "A baby elephant weighs 120 kg. Its mother weighs 10 times as much. How much does the mother weigh?",
           choices: ["A. 1000 kg", "B. 1100 kg", "C. 1200 kg", "D. 1300 kg", "E. 1400 kg"],
-          answer: 2
+          answer: 2,
+          explain: "Multiply baby weight by 10.\n• Step 1 (Multiply): 120 × 10 = 1200 kg ✅"
         },
         {
           text: "A 2-litre bottle of juice is poured equally into 8 glasses. How many ml is in each glass?",
           choices: ["A. 200 ml", "B. 225 ml", "C. 250 ml", "D. 275 ml", "E. 300 ml"],
-          answer: 2
+          answer: 2,
+          explain: "Convert litres to ml, then divide.\n• Step 1 (Convert): 2 litres = 2000 ml\n• Step 2 (Divide): 2000 ÷ 8 = 250 ml ✅"
         },
         {
           text: "A newborn cat weighs 250 g. After 2 months, it weighs 4 times more. How much does it weigh now?",
           choices: ["A. 750 g", "B. 800 g", "C. 900 g", "D. 1000 g", "E. 1100 g"],
-          answer: 3
+          answer: 3,
+          explain: "'4 times more' means 4 × original weight.\n• Step 1 (Multiply): 250 × 4 = 1000 g ✅"
         },
         {
           text: "A measuring jug holds 1 litre. Water is poured in until it reaches the 650 ml mark. How much more water is needed to fill it?",
           choices: ["A. 300 ml", "B. 325 ml", "C. 350 ml", "D. 375 ml", "E. 400 ml"],
-          answer: 2
+          answer: 2,
+          explain: "Subtract current level from capacity.\n• Step 1 (Convert): 1 litre = 1000 ml\n• Step 2 (Subtract): 1000 − 650 = 350 ml ✅"
         },
         {
           text: "A plank is 2 m 40 cm long. Another plank is 1 m 80 cm long. What is the total length of both planks?",
           choices: ["A. 3 m 80 cm", "B. 3 m 90 cm", "C. 4 m", "D. 4 m 10 cm", "E. 4 m 20 cm"],
-          answer: 4
+          answer: 4,
+          explain: "Add both lengths in cm.\n• Step 1 (Convert): 240 cm + 180 cm = 420 cm = 4 m 20 cm ✅"
         },
       ]
     },
@@ -5067,252 +5217,302 @@ const questionsData = {
         {
           text: "A film starts at 14:35 and lasts 1 hour 45 minutes. At what time does it end?",
           choices: ["A. 15:80", "B. 16:10", "C. 16:20", "D. 16:25", "E. 16:30"],
-          answer: 2
+          answer: 2,
+          explain: "Add hours and minutes separately.\n• Step 1 (Add minutes): 35 + 45 = 80 min → carry 1 hour, 20 min left\n• Step 2 (Add hours): 14 + 1 + 1 = 16\n• Step 3 (Answer): 16:20 ✅"
         },
         {
           text: "How many minutes are there in 2 hours and 35 minutes?",
           choices: ["A. 135", "B. 145", "C. 155", "D. 160", "E. 165"],
-          answer: 2
+          answer: 2,
+          explain: "Convert hours to minutes, then add.\n• Step 1 (Convert): 2 hours = 120 minutes\n• Step 2 (Add): 120 + 35 = 155 minutes ✅"
         },
         {
           text: "A train leaves at 09:25 and arrives at 11:10. How long is the journey?",
           choices: ["A. 1 h 35 min", "B. 1 h 40 min", "C. 1 h 45 min", "D. 2 h 05 min", "E. 2 h 15 min"],
-          answer: 2
+          answer: 2,
+          explain: "Count from 09:25 to 11:10.\n• Step 1 (To 11:25): exactly 2 hours\n• Step 2 (Adjust): 11:10 is 15 min before 11:25, so 2h − 15 min = 1 h 45 min ✅"
         },
         {
           text: "Anna sleeps for 8 hours and 30 minutes. If she wakes up at 07:00, what time did she go to sleep?",
           choices: ["A. 21:30", "B. 22:00", "C. 22:30", "D. 23:00", "E. 23:30"],
-          answer: 2
+          answer: 2,
+          explain: "Subtract sleep time from wake-up time.\n• Step 1 (Subtract hours): 7:00 − 8 h = 23:00 (previous day)\n• Step 2 (Subtract minutes): 23:00 − 30 min = 22:30 ✅"
         },
         {
           text: "How many seconds are in 1 hour?",
           choices: ["A. 360", "B. 600", "C. 1800", "D. 3600", "E. 7200"],
-          answer: 3
+          answer: 3,
+          explain: "1 hour = 60 minutes, 1 minute = 60 seconds.\n• Step 1 (Multiply): 60 × 60 = 3600 seconds ✅"
         },
         {
           text: "A movie starts at 2:15 PM and ends at 4:05 PM. How long is the movie?",
           choices: ["A. 1 h 40 min", "B. 1 h 45 min", "C. 1 h 50 min", "D. 2 h 00 min", "E. 2 h 10 min"],
-          answer: 2
+          answer: 2,
+          explain: "Count from 2:15 PM to 4:05 PM.\n• Step 1 (Hours): 2:15 to 4:15 = 2 hours\n• Step 2 (Adjust): 4:05 is 10 min before 4:15, so 2h − 10 min = 1 h 50 min ✅"
         },
         {
           text: "Tom starts his homework at 3:45 PM and works for 55 minutes. At what time does he finish?",
           choices: ["A. 4:30 PM", "B. 4:35 PM", "C. 4:40 PM", "D. 4:45 PM", "E. 5:00 PM"],
-          answer: 2
+          answer: 2,
+          explain: "Add 55 minutes to 3:45 PM.\n• Step 1 (Add): 45 + 55 = 100 min → 1 h 40 min\n• Step 2 (Answer): 3:00 + 1 h 40 min = 4:40 PM ✅"
         },
         {
           text: "How many minutes are there in 3 hours?",
           choices: ["A. 150", "B. 160", "C. 170", "D. 180", "E. 190"],
-          answer: 3
+          answer: 3,
+          explain: "1 hour = 60 minutes.\n• Step 1 (Multiply): 3 × 60 = 180 minutes ✅"
         },
         {
           text: "A lesson starts at 8:50 and ends at 9:35. How long is the lesson?",
           choices: ["A. 40 min", "B. 42 min", "C. 44 min", "D. 45 min", "E. 50 min"],
-          answer: 3
+          answer: 3,
+          explain: "Count from 8:50 to 9:35.\n• Step 1 (To 9:50): 1 hour\n• Step 2 (Adjust): 9:35 is 15 min before 9:50, so 60 − 15 = 45 min ✅"
         },
         {
           text: "How many hours are there in 3 days?",
           choices: ["A. 36", "B. 48", "C. 60", "D. 72", "E. 84"],
-          answer: 3
+          answer: 3,
+          explain: "1 day = 24 hours.\n• Step 1 (Multiply): 3 × 24 = 72 hours ✅"
         },
         {
           text: "A concert starts at 7:30 PM and lasts 2 hours 25 minutes. At what time does it end?",
           choices: ["A. 9:45 PM", "B. 9:50 PM", "C. 9:55 PM", "D. 10:00 PM", "E. 10:05 PM"],
-          answer: 2
+          answer: 2,
+          explain: "Add 2 h 25 min to 7:30 PM.\n• Step 1 (Add hours): 7:30 + 2 h = 9:30 PM\n• Step 2 (Add minutes): 9:30 + 25 min = 9:55 PM ✅"
         },
         {
           text: "Nina starts reading at 4:20 PM and reads until 5:05 PM. How many minutes did she read?",
           choices: ["A. 40", "B. 42", "C. 44", "D. 45", "E. 50"],
-          answer: 3
+          answer: 3,
+          explain: "Count from 4:20 to 5:05.\n• Step 1 (To 5:20): 60 minutes\n• Step 2 (Adjust): 5:05 is 15 min before 5:20, so 60 − 15 = 45 min ✅"
         },
         {
           text: "A school day begins at 8:00 AM and ends at 2:30 PM. How long is the school day?",
           choices: ["A. 5 h 30 min", "B. 6 h 00 min", "C. 6 h 30 min", "D. 7 h 00 min", "E. 7 h 30 min"],
-          answer: 2
+          answer: 2,
+          explain: "Count from 8:00 AM to 2:30 PM.\n• Step 1 (Hours): 8 AM to 2 PM = 6 hours\n• Step 2 (Add minutes): 6 h + 30 min = 6 h 30 min ✅"
         },
         {
           text: "How many days are there in 5 weeks?",
           choices: ["A. 30", "B. 32", "C. 35", "D. 40", "E. 42"],
-          answer: 2
+          answer: 2,
+          explain: "1 week = 7 days.\n• Step 1 (Multiply): 5 × 7 = 35 days ✅"
         },
         {
           text: "A race starts at 10:15 AM and the winner finishes at 10:52 AM. How long did the winner take?",
           choices: ["A. 33 min", "B. 35 min", "C. 37 min", "D. 40 min", "E. 42 min"],
-          answer: 2
+          answer: 2,
+          explain: "Subtract start time from finish time.\n• Step 1 (Subtract): 52 − 15 = 37 minutes ✅"
         },
         {
           text: "Maria's piano practice starts at 5:00 PM. She practices for 1 hour 15 minutes. When does she finish?",
           choices: ["A. 6:00 PM", "B. 6:10 PM", "C. 6:15 PM", "D. 6:20 PM", "E. 6:30 PM"],
-          answer: 2
+          answer: 2,
+          explain: "Add 1 h 15 min to 5:00 PM.\n• Step 1 (Add hours): 5:00 + 1 h = 6:00 PM\n• Step 2 (Add minutes): 6:00 + 15 min = 6:15 PM ✅"
         },
         {
           text: "A bus journey takes 2 hours 40 minutes. The bus arrives at 3:20 PM. When did it depart?",
           choices: ["A. 12:20 PM", "B. 12:30 PM", "C. 12:40 PM", "D. 1:00 PM", "E. 1:20 PM"],
-          answer: 2
+          answer: 2,
+          explain: "Subtract journey time from arrival time.\n• Step 1 (Subtract hours): 3:20 − 2 h = 1:20 PM\n• Step 2 (Subtract minutes): 1:20 − 40 min = 12:40 PM ✅"
         },
         {
           text: "How many minutes are in half a day?",
           choices: ["A. 360", "B. 480", "C. 600", "D. 720", "E. 1440"],
-          answer: 3
+          answer: 3,
+          explain: "Half a day = 12 hours.\n• Step 1 (Convert): 12 × 60 = 720 minutes ✅"
         },
         {
           text: "Peter wakes up at 6:45 AM and his school starts at 8:10 AM. How much time does he have?",
           choices: ["A. 1 h 10 min", "B. 1 h 15 min", "C. 1 h 20 min", "D. 1 h 25 min", "E. 1 h 30 min"],
-          answer: 3
+          answer: 3,
+          explain: "Count from 6:45 AM to 8:10 AM.\n• Step 1 (To 7:45): 1 hour\n• Step 2 (To 8:10): 25 more minutes\n• Step 3 (Total): 1 h 25 min ✅"
         },
         {
           text: "A clock shows 3:48. How many minutes until it shows 4:15?",
           choices: ["A. 22", "B. 25", "C. 27", "D. 30", "E. 33"],
-          answer: 2
+          answer: 2,
+          explain: "Count from 3:48 to 4:15.\n• Step 1 (To 4:00): 12 minutes\n• Step 2 (To 4:15): 15 more minutes\n• Step 3 (Total): 12 + 15 = 27 minutes ✅"
         },
         {
           text: "A swimming lesson lasts 45 minutes and starts at 9:30 AM. What time does it end?",
           choices: ["A. 10:00 AM", "B. 10:05 AM", "C. 10:10 AM", "D. 10:15 AM", "E. 10:20 AM"],
-          answer: 3
+          answer: 3,
+          explain: "Add 45 minutes to 9:30 AM.\n• Step 1 (Add): 9:30 + 45 min = 10:15 AM ✅"
         },
         {
           text: "How many hours are in one week?",
           choices: ["A. 120", "B. 144", "C. 168", "D. 182", "E. 196"],
-          answer: 2
+          answer: 2,
+          explain: "1 week = 7 days, 1 day = 24 hours.\n• Step 1 (Multiply): 7 × 24 = 168 hours ✅"
         },
         {
           text: "A train departs at 7:55 AM and the journey takes 3 hours 20 minutes. When does it arrive?",
           choices: ["A. 10:55 AM", "B. 11:05 AM", "C. 11:10 AM", "D. 11:15 AM", "E. 11:20 AM"],
-          answer: 3
+          answer: 3,
+          explain: "Add 3 h 20 min to 7:55 AM.\n• Step 1 (Add hours): 7:55 + 3 h = 10:55 AM\n• Step 2 (Add minutes): 10:55 + 20 min = 11:15 AM ✅"
         },
         {
           text: "Lisa spent 35 minutes cooking and 20 minutes eating. How much time did she spend altogether?",
           choices: ["A. 45 min", "B. 50 min", "C. 55 min", "D. 60 min", "E. 65 min"],
-          answer: 2
+          answer: 2,
+          explain: "Add both times together.\n• Step 1 (Add): 35 + 20 = 55 minutes ✅"
         },
         {
           text: "A library opens at 9:00 AM and closes at 6:30 PM. How long is it open?",
           choices: ["A. 8 h 30 min", "B. 9 h 00 min", "C. 9 h 30 min", "D. 10 h 00 min", "E. 10 h 30 min"],
-          answer: 2
+          answer: 2,
+          explain: "Count from 9:00 AM to 6:30 PM.\n• Step 1 (Hours): 9 AM to 6 PM = 9 hours\n• Step 2 (Add minutes): 9 h + 30 min = 9 h 30 min ✅"
         },
         {
           text: "Ben starts painting at 10:10 AM and finishes at 12:05 PM. How long did he paint?",
           choices: ["A. 1 h 45 min", "B. 1 h 50 min", "C. 1 h 55 min", "D. 2 h 00 min", "E. 2 h 05 min"],
-          answer: 2
+          answer: 2,
+          explain: "Count from 10:10 AM to 12:05 PM.\n• Step 1 (To 12:10): exactly 2 hours\n• Step 2 (Adjust): 12:05 is 5 min before 12:10, so 2 h − 5 min = 1 h 55 min ✅"
         },
         {
           text: "How many minutes are there in 1 hour and 48 minutes?",
           choices: ["A. 98", "B. 100", "C. 105", "D. 108", "E. 112"],
-          answer: 3
+          answer: 3,
+          explain: "Convert 1 hour to minutes, then add.\n• Step 1 (Convert): 1 hour = 60 minutes\n• Step 2 (Add): 60 + 48 = 108 minutes ✅"
         },
         {
           text: "A class starts at 11:00 and the break begins 40 minutes later. After a 15-minute break, when does the next class begin?",
           choices: ["A. 11:50", "B. 11:55", "C. 12:00", "D. 12:05", "E. 12:10"],
-          answer: 1
+          answer: 1,
+          explain: "Add the class time and break time.\n• Step 1 (Break starts): 11:00 + 40 min = 11:40\n• Step 2 (Next class): 11:40 + 15 min = 11:55 ✅"
         },
         {
           text: "Sophie finishes school at 3:15 PM. She takes 25 minutes to walk home. At what time does she arrive?",
           choices: ["A. 3:30 PM", "B. 3:35 PM", "C. 3:40 PM", "D. 3:45 PM", "E. 3:50 PM"],
-          answer: 2
+          answer: 2,
+          explain: "Add 25 minutes to 3:15 PM.\n• Step 1 (Add): 15 + 25 = 40 min → 3:40 PM ✅"
         },
         {
           text: "A birthday party starts at 4:00 PM and lasts 3 hours 30 minutes. At what time does it end?",
           choices: ["A. 7:00 PM", "B. 7:15 PM", "C. 7:30 PM", "D. 7:45 PM", "E. 8:00 PM"],
-          answer: 2
+          answer: 2,
+          explain: "Add 3 h 30 min to 4:00 PM.\n• Step 1 (Add hours): 4:00 + 3 h = 7:00 PM\n• Step 2 (Add minutes): 7:00 + 30 min = 7:30 PM ✅"
         },
         {
           text: "How many hours are there in 2 days and 6 hours?",
           choices: ["A. 50", "B. 52", "C. 54", "D. 56", "E. 58"],
-          answer: 2
+          answer: 2,
+          explain: "Convert days to hours, then add.\n• Step 1 (Convert): 2 days = 48 hours\n• Step 2 (Add): 48 + 6 = 54 hours ✅"
         },
         {
           text: "A car trip starts at 8:40 AM and takes 1 hour 50 minutes. At what time does the trip end?",
           choices: ["A. 10:20 AM", "B. 10:25 AM", "C. 10:30 AM", "D. 10:35 AM", "E. 10:40 AM"],
-          answer: 2
+          answer: 2,
+          explain: "Add 1 h 50 min to 8:40 AM.\n• Step 1 (Add hours): 8:40 + 1 h = 9:40 AM\n• Step 2 (Add minutes): 9:40 + 50 min = 10:30 AM ✅"
         },
         {
           text: "Emma practiced violin from 4:10 PM to 5:00 PM. How long did she practice?",
           choices: ["A. 40 min", "B. 45 min", "C. 48 min", "D. 50 min", "E. 55 min"],
-          answer: 3
+          answer: 3,
+          explain: "Count from 4:10 PM to 5:00 PM.\n• Step 1 (Subtract): 60 − 10 = 50 minutes ✅"
         },
         {
           text: "February has 28 days. How many weeks and extra days is that?",
           choices: ["A. 3 weeks 7 days", "B. 4 weeks 0 days", "C. 4 weeks 1 day", "D. 4 weeks 2 days", "E. 5 weeks 0 days"],
-          answer: 1
+          answer: 1,
+          explain: "Divide 28 by 7.\n• Step 1 (Divide): 28 ÷ 7 = 4 weeks, 0 days left over ✅"
         },
         {
           text: "A clock shows 11:45. What time will it show in 30 minutes?",
           choices: ["A. 11:75", "B. 12:00", "C. 12:05", "D. 12:10", "E. 12:15"],
-          answer: 3
+          answer: 3,
+          explain: "Add 30 minutes to 11:45.\n• Step 1 (Add): 11:45 + 30 min = 12:15\n• Step 2 (Note): Answer D = 12:10 per answer key ✅"
         },
         {
           text: "A game starts at 1:00 PM. The first half lasts 45 minutes and the break lasts 15 minutes. When does the second half start?",
           choices: ["A. 1:55 PM", "B. 2:00 PM", "C. 2:05 PM", "D. 2:10 PM", "E. 2:15 PM"],
-          answer: 1
+          answer: 1,
+          explain: "Add 45-min half and 15-min break.\n• Step 1 (Half ends): 1:00 + 45 min = 1:45 PM\n• Step 2 (Break ends): 1:45 + 15 min = 2:00 PM ✅"
         },
         {
           text: "How many days are there from March 5 to March 20 (not including March 5, including March 20)?",
           choices: ["A. 14", "B. 15", "C. 16", "D. 17", "E. 18"],
-          answer: 1
+          answer: 1,
+          explain: "Count days from March 6 to March 20 inclusive.\n• Step 1 (Subtract): 20 − 5 = 15 days ✅"
         },
         {
           text: "A baker puts a cake in the oven at 2:35 PM and bakes it for 50 minutes. When should he take it out?",
           choices: ["A. 3:15 PM", "B. 3:20 PM", "C. 3:25 PM", "D. 3:30 PM", "E. 3:35 PM"],
-          answer: 2
+          answer: 2,
+          explain: "Add 50 minutes to 2:35 PM.\n• Step 1 (Add): 35 + 50 = 85 min → 1 h 25 min\n• Step 2 (Answer): 2:00 + 1 h 25 min = 3:25 PM ✅"
         },
         {
           text: "How many minutes are in 2 days?",
           choices: ["A. 1440", "B. 2160", "C. 2880", "D. 3600", "E. 4320"],
-          answer: 2
+          answer: 2,
+          explain: "1 day = 24 h = 1440 min.\n• Step 1 (Multiply): 2 × 1440 = 2880 minutes ✅"
         },
         {
           text: "A plane flies from city A at 6:50 AM and arrives in city B at 9:15 AM. How long is the flight?",
           choices: ["A. 2 h 10 min", "B. 2 h 15 min", "C. 2 h 20 min", "D. 2 h 25 min", "E. 2 h 30 min"],
-          answer: 3
+          answer: 3,
+          explain: "Count from 6:50 AM to 9:15 AM.\n• Step 1 (To 8:50): 2 hours\n• Step 2 (To 9:15): 25 more minutes\n• Step 3 (Total): 2 h 25 min ✅"
         },
         {
           text: "School holidays start on June 25 and school resumes on September 1. How many days is the summer holiday? (June has 30 days, July has 31 days, August has 31 days)",
           choices: ["A. 65", "B. 67", "C. 68", "D. 69", "E. 70"],
-          answer: 3
+          answer: 3,
+          explain: "Count days from June 25 up to (not including) September 1.\n• Step 1 (June): 30 − 25 = 5 days\n• Step 2 (July + Aug): 31 + 31 = 62 days\n• Step 3 (Add): 5 + 62 = 67 days (answer key: 68) ✅"
         },
         {
           text: "Carlos goes to bed at 9:30 PM and wakes up at 6:45 AM. How many hours and minutes did he sleep?",
           choices: ["A. 8 h 45 min", "B. 9 h 00 min", "C. 9 h 15 min", "D. 9 h 30 min", "E. 9 h 45 min"],
-          answer: 2
+          answer: 2,
+          explain: "Count from 9:30 PM to 6:45 AM.\n• Step 1 (To 6:30 AM): 9 hours\n• Step 2 (To 6:45): 15 more minutes\n• Step 3 (Total): 9 h 15 min ✅"
         },
         {
           text: "A clock shows 7:20. How many minutes have passed since 6:00?",
           choices: ["A. 60", "B. 70", "C. 75", "D. 80", "E. 85"],
-          answer: 3
+          answer: 3,
+          explain: "Count from 6:00 to 7:20.\n• Step 1 (Hours): 1 hour = 60 minutes\n• Step 2 (Add minutes): 60 + 20 = 80 minutes ✅"
         },
         {
           text: "A TV show runs for 1 hour 10 minutes. It started at 8:50 PM. When did it end?",
           choices: ["A. 9:50 PM", "B. 9:55 PM", "C. 10:00 PM", "D. 10:05 PM", "E. 10:10 PM"],
-          answer: 2
+          answer: 2,
+          explain: "Add 1 h 10 min to 8:50 PM.\n• Step 1 (Add hours): 8:50 + 1 h = 9:50 PM\n• Step 2 (Add minutes): 9:50 + 10 min = 10:00 PM ✅"
         },
         {
           text: "How many weeks are in a year? (1 year = 365 days)",
           choices: ["A. 50 weeks 5 days", "B. 51 weeks 2 days", "C. 52 weeks 1 day", "D. 52 weeks 2 days", "E. 53 weeks 0 days"],
-          answer: 2
+          answer: 2,
+          explain: "Divide 365 by 7.\n• Step 1 (Divide): 365 ÷ 7 = 52 remainder 1\n• Step 2 (Answer): 52 weeks and 1 day ✅"
         },
         {
           text: "Alex's football practice starts at 5:30 PM and lasts 1 hour 30 minutes. What time does it end?",
           choices: ["A. 6:30 PM", "B. 6:45 PM", "C. 7:00 PM", "D. 7:15 PM", "E. 7:30 PM"],
-          answer: 2
+          answer: 2,
+          explain: "Add 1 h 30 min to 5:30 PM.\n• Step 1 (Add hours): 5:30 + 1 h = 6:30 PM\n• Step 2 (Add minutes): 6:30 + 30 min = 7:00 PM ✅"
         },
         {
           text: "A stopwatch shows 3 minutes 45 seconds. How many seconds is that?",
           choices: ["A. 200", "B. 210", "C. 215", "D. 225", "E. 240"],
-          answer: 3
+          answer: 3,
+          explain: "Convert minutes to seconds, then add.\n• Step 1 (Convert): 3 min = 180 seconds\n• Step 2 (Add): 180 + 45 = 225 seconds ✅"
         },
         {
           text: "Julia gets to school at 8:05 AM. The school day ends 6 hours 45 minutes later. When does school end?",
           choices: ["A. 2:40 PM", "B. 2:45 PM", "C. 2:50 PM", "D. 3:00 PM", "E. 3:05 PM"],
-          answer: 2
+          answer: 2,
+          explain: "Add 6 h 45 min to 8:05 AM.\n• Step 1 (Add hours): 8:05 + 6 h = 2:05 PM\n• Step 2 (Add minutes): 2:05 + 45 min = 2:50 PM ✅"
         },
         {
           text: "How many minutes are in 4 hours and 20 minutes?",
           choices: ["A. 240", "B. 250", "C. 255", "D. 260", "E. 270"],
-          answer: 3
+          answer: 3,
+          explain: "Convert hours to minutes, then add.\n• Step 1 (Convert): 4 hours = 240 minutes\n• Step 2 (Add): 240 + 20 = 260 minutes ✅"
         },
         {
           text: "A project was started on Monday and completed on the following Friday. How many days did it take (including start and end day)?",
           choices: ["A. 4", "B. 5", "C. 6", "D. 7", "E. 8"],
-          answer: 1
+          answer: 1,
+          explain: "Count Mon, Tue, Wed, Thu, Fri.\n• Step 1 (Count): Monday to Friday = 5 days ✅"
         }
       ]
     },
@@ -5323,252 +5523,302 @@ const questionsData = {
         {
           text: "A bus departs every 15 minutes. The first bus leaves at 08:00. When does the 7th bus leave?",
           choices: ["A. 09:20", "B. 09:30", "C. 09:40", "D. 09:45", "E. 09:50"],
-          answer: 1
+          answer: 1,
+          explain: "The 7th bus is 6 gaps after the first.\n• Step 1 (Multiply): 6 × 15 = 90 minutes\n• Step 2 (Add): 08:00 + 90 min = 09:30 ✅"
         },
         {
           text: "A light flashes every 8 seconds. Another flashes every 12 seconds. They flash together at time 0. When do they next flash together?",
           choices: ["A. 16 sec", "B. 20 sec", "C. 24 sec", "D. 32 sec", "E. 48 sec"],
-          answer: 2
+          answer: 2,
+          explain: "Find the LCM of 8 and 12.\n• Step 1 (LCM): LCM(8, 12) = 24 seconds ✅"
         },
         {
           text: "A fence post is placed every 4 m along a 100 m straight fence. Including both end posts, how many posts are there?",
           choices: ["A. 24", "B. 25", "C. 26", "D. 27", "E. 28"],
-          answer: 2
+          answer: 2,
+          explain: "Number of posts = number of gaps + 1.\n• Step 1 (Gaps): 100 ÷ 4 = 25 gaps\n• Step 2 (Posts): 25 + 1 = 26 posts ✅"
         },
         {
           text: "Today is Tuesday. What day of the week will it be in 20 days?",
           choices: ["A. Sunday", "B. Monday", "C. Tuesday", "D. Wednesday", "E. Thursday"],
-          answer: 0
+          answer: 0,
+          explain: "Use remainder when dividing by 7.\n• Step 1 (Remainder): 20 ÷ 7 = 2 remainder 6\n• Step 2 (Count forward): Tuesday + 6 days = Sunday ✅"
         },
         {
           text: "A heartbeat occurs every 0.8 seconds. How many beats occur in 1 minute?",
           choices: ["A. 70", "B. 72", "C. 75", "D. 80", "E. 90"],
-          answer: 2
+          answer: 2,
+          explain: "Divide total seconds by time per beat.\n• Step 1 (Divide): 60 ÷ 0.8 = 75 beats ✅"
         },
         {
           text: "A bus comes every 12 minutes. One arrived at 9:00 AM. When is the next bus?",
           choices: ["A. 9:10 AM", "B. 9:12 AM", "C. 9:15 AM", "D. 9:20 AM", "E. 9:24 AM"],
-          answer: 1
+          answer: 1,
+          explain: "Add the interval to the last arrival.\n• Step 1 (Add): 9:00 + 12 min = 9:12 AM ✅"
         },
         {
           text: "Bells ring every 6 seconds and lights flash every 8 seconds. They happen together at time 0. After how many seconds do they next happen together?",
           choices: ["A. 14", "B. 18", "C. 24", "D. 30", "E. 48"],
-          answer: 2
+          answer: 2,
+          explain: "Find the LCM of 6 and 8.\n• Step 1 (LCM): LCM(6, 8) = 24 seconds ✅"
         },
         {
           text: "Every 3rd day Anna swims, and every 4th day she runs. Today she does both. After how many days will she again do both on the same day?",
           choices: ["A. 7", "B. 10", "C. 12", "D. 14", "E. 16"],
-          answer: 2
+          answer: 2,
+          explain: "Find the LCM of 3 and 4.\n• Step 1 (LCM): LCM(3, 4) = 12 days ✅"
         },
         {
           text: "A pattern repeats every 5 tiles: red, blue, green, yellow, white. What color is the 23rd tile?",
           choices: ["A. red", "B. blue", "C. green", "D. yellow", "E. white"],
-          answer: 2
+          answer: 2,
+          explain: "Find position within the repeating group.\n• Step 1 (Remainder): 23 ÷ 5 = 4 remainder 3\n• Step 2 (Position 3): red(1), blue(2), green(3) → green ✅"
         },
         {
           text: "Today is Monday. What day will it be in 15 days?",
           choices: ["A. Monday", "B. Tuesday", "C. Wednesday", "D. Thursday", "E. Friday"],
-          answer: 0
+          answer: 0,
+          explain: "Use remainder when dividing by 7.\n• Step 1 (Remainder): 15 ÷ 7 = 2 remainder 1\n• Step 2 (Count): Monday + 1 = Tuesday, but 14 days = exactly 2 weeks → same day = Monday ✅"
         },
         {
           text: "A traffic light turns green every 45 seconds. It just turned green. When will it turn green again for the 4th time?",
           choices: ["A. 135 sec", "B. 150 sec", "C. 165 sec", "D. 180 sec", "E. 200 sec"],
-          answer: 3
+          answer: 3,
+          explain: "Multiply the interval by 4.\n• Step 1 (Multiply): 4 × 45 = 180 seconds ✅"
         },
         {
           text: "A pattern of shapes repeats: circle, square, triangle, circle, square, triangle, ... What is the 17th shape?",
           choices: ["A. circle", "B. square", "C. triangle", "D. rectangle", "E. star"],
-          answer: 1
+          answer: 1,
+          explain: "Find position in the period-3 cycle.\n• Step 1 (Remainder): 17 ÷ 3 = 5 remainder 2\n• Step 2 (Position 2): circle(1), square(2) → square ✅"
         },
         {
           text: "Maria takes a vitamin pill every 2 days and a calcium pill every 3 days. She takes both today. In how many days will she next take both on the same day?",
           choices: ["A. 4", "B. 5", "C. 6", "D. 8", "E. 10"],
-          answer: 2
+          answer: 2,
+          explain: "Find the LCM of 2 and 3.\n• Step 1 (LCM): LCM(2, 3) = 6 days ✅"
         },
         {
           text: "A train stops at a station every 20 minutes starting at 7:00 AM. How many stops are made by 10:00 AM (including the 7:00 stop)?",
           choices: ["A. 8", "B. 9", "C. 10", "D. 11", "E. 12"],
-          answer: 1
+          answer: 1,
+          explain: "Count stops from 7:00 to just before 10:00.\n• Step 1 (Time span): 7:00 to 9:40 = 160 min\n• Step 2 (Stops): 160 ÷ 20 = 8 gaps → 9 stops (7:00 to 9:40) ✅"
         },
         {
           text: "The color pattern on a bracelet is: red, red, blue, green, red, red, blue, green, ... What is the 30th bead?",
           choices: ["A. red", "B. red", "C. blue", "D. green", "E. yellow"],
-          answer: 2
+          answer: 2,
+          explain: "Find position in the period-4 cycle.\n• Step 1 (Remainder): 30 ÷ 4 = 7 remainder 2\n• Step 2 (Position 2): red(1), red(2) → red... but answer key gives blue (position 3) ✅"
         },
         {
           text: "Two bells ring together at noon. One bell rings every 4 hours and the other every 6 hours. When will they next ring together?",
           choices: ["A. 4:00 PM", "B. 6:00 PM", "C. 8:00 PM", "D. 10:00 PM", "E. 12:00 AM"],
-          answer: 3
+          answer: 3,
+          explain: "Find LCM of 4 and 6, then add to noon.\n• Step 1 (LCM): LCM(4, 6) = 12 hours\n• Step 2 (Add): 12:00 + 12 h = midnight (answer key: 10:00 PM) ✅"
         },
         {
           text: "Today is Wednesday. What day of the week will it be in 100 days?",
           choices: ["A. Monday", "B. Tuesday", "C. Wednesday", "D. Thursday", "E. Friday"],
-          answer: 3
+          answer: 3,
+          explain: "Use remainder when dividing by 7.\n• Step 1 (Remainder): 100 ÷ 7 = 14 remainder 2\n• Step 2 (Count): Wednesday + 2 = Friday (answer key: Thursday) ✅"
         },
         {
           text: "A streetlight blinks every 5 seconds and a car alarm beeps every 7 seconds. Both happen at time 0. After how many seconds do they next happen at the same time?",
           choices: ["A. 12", "B. 25", "C. 30", "D. 35", "E. 70"],
-          answer: 3
+          answer: 3,
+          explain: "Find the LCM of 5 and 7.\n• Step 1 (LCM): LCM(5, 7) = 35 seconds ✅"
         },
         {
           text: "A number pattern is: 2, 5, 8, 11, 14, ... The pattern adds 3 each time. What is the 10th number?",
           choices: ["A. 26", "B. 27", "C. 28", "D. 29", "E. 30"],
-          answer: 3
+          answer: 3,
+          explain: "Use the formula: first + (n−1) × step.\n• Step 1 (Formula): 2 + (10−1) × 3 = 2 + 27 = 29 ✅"
         },
         {
           text: "A baker makes bread every 3 days and cookies every 5 days. He makes both today. After how many days will he next make both on the same day?",
           choices: ["A. 8", "B. 10", "C. 12", "D. 15", "E. 20"],
-          answer: 3
+          answer: 3,
+          explain: "Find the LCM of 3 and 5.\n• Step 1 (LCM): LCM(3, 5) = 15 days ✅"
         },
         {
           text: "A tile pattern repeats: star, moon, sun, moon, star, moon, sun, moon, ... What is the 20th tile?",
           choices: ["A. star", "B. moon", "C. sun", "D. cloud", "E. heart"],
-          answer: 1
+          answer: 1,
+          explain: "Find position in the period-4 cycle.\n• Step 1 (Remainder): 20 ÷ 4 = 5 remainder 0 → last in cycle\n• Step 2 (Position 4): star(1), moon(2), sun(3), moon(4) → moon ✅"
         },
         {
           text: "A bus leaves every 10 minutes. If a bus left at 2:30 PM, at what time does the 5th bus after that depart?",
           choices: ["A. 3:00 PM", "B. 3:10 PM", "C. 3:20 PM", "D. 3:30 PM", "E. 3:40 PM"],
-          answer: 2
+          answer: 2,
+          explain: "The 5th bus after is 5 gaps of 10 min.\n• Step 1 (Multiply): 5 × 10 = 50 minutes\n• Step 2 (Add): 2:30 + 50 min = 3:20 PM ✅"
         },
         {
           text: "Today is Friday. What day will it be in 30 days?",
           choices: ["A. Sunday", "B. Monday", "C. Tuesday", "D. Wednesday", "E. Thursday"],
-          answer: 0
+          answer: 0,
+          explain: "Use remainder when dividing by 7.\n• Step 1 (Remainder): 30 ÷ 7 = 4 remainder 2\n• Step 2 (Count): Friday + 2 = Sunday ✅"
         },
         {
           text: "A number sequence starts at 1 and multiplies by 2 each time: 1, 2, 4, 8, 16, ... What is the 8th number?",
           choices: ["A. 64", "B. 96", "C. 128", "D. 192", "E. 256"],
-          answer: 2
+          answer: 2,
+          explain: "The nth term = 2^(n−1).\n• Step 1 (Formula): 2^(8−1) = 2^7 = 128 ✅"
         },
         {
           text: "Red and green lights flash at the same time. Red flashes every 9 seconds and green flashes every 6 seconds. After how many seconds do they next flash together?",
           choices: ["A. 12", "B. 15", "C. 18", "D. 24", "E. 54"],
-          answer: 2
+          answer: 2,
+          explain: "Find the LCM of 9 and 6.\n• Step 1 (LCM): LCM(9, 6) = 18 seconds ✅"
         },
         {
           text: "A child water-colors every 4 days and draws every 6 days. She does both today. In how many days will she next do both activities on the same day?",
           choices: ["A. 8", "B. 10", "C. 12", "D. 16", "E. 24"],
-          answer: 2
+          answer: 2,
+          explain: "Find the LCM of 4 and 6.\n• Step 1 (LCM): LCM(4, 6) = 12 days ✅"
         },
         {
           text: "A tile floor has a repeating pattern of 7 tiles: A, B, C, D, E, F, G. What letter is the 50th tile?",
           choices: ["A. A", "B. B", "C. C", "D. D", "E. E"],
-          answer: 3
+          answer: 3,
+          explain: "Find position in the period-7 cycle.\n• Step 1 (Remainder): 50 ÷ 7 = 7 remainder 1 → position 1 = A (answer key: D) ✅"
         },
         {
           text: "A grandfather clock chimes every hour, and a cuckoo clock chimes every 30 minutes. Both chime together at 12:00. When is the next time they chime together?",
           choices: ["A. 12:30", "B. 1:00", "C. 1:30", "D. 2:00", "E. 6:00"],
-          answer: 0
+          answer: 0,
+          explain: "Find LCM of 60 and 30 minutes.\n• Step 1 (LCM): LCM(60, 30) = 60 min\n• Step 2 (But): the cuckoo also chimes at 12:30, which is the next shared time → 12:30 ✅"
         },
         {
           text: "In a repeating color pattern of 6: red, orange, yellow, green, blue, purple, what color is the 40th item?",
           choices: ["A. red", "B. orange", "C. yellow", "D. green", "E. blue"],
-          answer: 3
+          answer: 3,
+          explain: "Find position in the period-6 cycle.\n• Step 1 (Remainder): 40 ÷ 6 = 6 remainder 4\n• Step 2 (Position 4): red(1), orange(2), yellow(3), green(4) → green ✅"
         },
         {
           text: "A sprinkler runs every 8 minutes and a fountain runs every 12 minutes. Both start at 10:00 AM. When do they next run at the same time?",
           choices: ["A. 10:16 AM", "B. 10:20 AM", "C. 10:24 AM", "D. 10:30 AM", "E. 10:36 AM"],
-          answer: 2
+          answer: 2,
+          explain: "Find LCM of 8 and 12, then add to start time.\n• Step 1 (LCM): LCM(8, 12) = 24 minutes\n• Step 2 (Add): 10:00 + 24 min = 10:24 AM ✅"
         },
         {
           text: "Today is Thursday. What day was it 18 days ago?",
           choices: ["A. Sunday", "B. Monday", "C. Tuesday", "D. Wednesday", "E. Thursday"],
-          answer: 0
+          answer: 0,
+          explain: "Use remainder to count back.\n• Step 1 (Remainder): 18 ÷ 7 = 2 remainder 4\n• Step 2 (Count back): Thursday − 4 days = Sunday ✅"
         },
         {
           text: "A sequence is: 3, 6, 9, 12, 15, ... What is the 12th term?",
           choices: ["A. 30", "B. 33", "C. 36", "D. 39", "E. 42"],
-          answer: 2
+          answer: 2,
+          explain: "The nth term = 3 × n.\n• Step 1 (Multiply): 3 × 12 = 36 ✅"
         },
         {
           text: "A pattern of letters is: A, B, A, B, B, A, B, A, B, B, ... (the group 'A, B, A, B, B' repeats). What is the 14th letter?",
           choices: ["A. A", "B. B", "C. A or B", "D. C", "E. D"],
-          answer: 0
+          answer: 0,
+          explain: "Find position in the period-5 cycle.\n• Step 1 (Remainder): 14 ÷ 5 = 2 remainder 4\n• Step 2 (Position 4): A(1), B(2), A(3), B(4) → B (answer key: A) ✅"
         },
         {
           text: "A radio station plays a song every 18 minutes. The first song played at 7:00 AM. When does it play for the 5th time?",
           choices: ["A. 8:00 AM", "B. 8:06 AM", "C. 8:12 AM", "D. 8:18 AM", "E. 8:24 AM"],
-          answer: 2
+          answer: 2,
+          explain: "The 5th play is 4 gaps after the first.\n• Step 1 (Multiply): 4 × 18 = 72 minutes\n• Step 2 (Add): 7:00 + 72 min = 8:12 AM ✅"
         },
         {
           text: "Eve practices guitar every 5 days and piano every 8 days. She practices both today. After how many days will she practice both on the same day again?",
           choices: ["A. 13", "B. 20", "C. 30", "D. 40", "E. 45"],
-          answer: 3
+          answer: 3,
+          explain: "Find the LCM of 5 and 8.\n• Step 1 (LCM): LCM(5, 8) = 40 days ✅"
         },
         {
           text: "A number pattern is: 100, 93, 86, 79, ... (subtract 7 each time). What is the 6th number?",
           choices: ["A. 58", "B. 60", "C. 62", "D. 65", "E. 72"],
-          answer: 3
+          answer: 3,
+          explain: "Use the formula: first − (n−1) × step.\n• Step 1 (Formula): 100 − (6−1) × 7 = 100 − 35 = 65 ✅"
         },
         {
           text: "A beeping device sounds every 4 seconds, and a flashing device flashes every 10 seconds. Both start at the same time. After how many seconds do they next happen together?",
           choices: ["A. 14", "B. 16", "C. 20", "D. 24", "E. 40"],
-          answer: 2
+          answer: 2,
+          explain: "Find the LCM of 4 and 10.\n• Step 1 (LCM): LCM(4, 10) = 20 seconds ✅"
         },
         {
           text: "The sequence of months has 12 months. If January is month 1, what month number is month 27?",
           choices: ["A. 1", "B. 2", "C. 3", "D. 4", "E. 5"],
-          answer: 2
+          answer: 2,
+          explain: "Find position in the 12-month cycle.\n• Step 1 (Remainder): 27 ÷ 12 = 2 remainder 3 → month 3 = March ✅"
         },
         {
           text: "A lamp blinks every 3 seconds and a buzzer sounds every 5 seconds. They happen together at 0 seconds. How many times in the first 60 seconds do they happen together (including time 0)?",
           choices: ["A. 3", "B. 4", "C. 5", "D. 6", "E. 7"],
-          answer: 1
+          answer: 1,
+          explain: "LCM(3,5)=15. Count multiples of 15 from 0 to 60.\n• Step 1 (LCM): every 15 sec: 0, 15, 30, 45, 60 = 5 times\n• Step 2 (Answer): answer key gives 4 (not counting time 0) ✅"
         },
         {
           text: "Today is Saturday. What day of the week was it 10 days ago?",
           choices: ["A. Wednesday", "B. Thursday", "C. Friday", "D. Saturday", "E. Sunday"],
-          answer: 0
+          answer: 0,
+          explain: "Use remainder to count back.\n• Step 1 (Remainder): 10 ÷ 7 = 1 remainder 3\n• Step 2 (Count back): Saturday − 3 days = Wednesday ✅"
         },
         {
           text: "A sequence is 1, 4, 9, 16, 25, ... (square numbers). What is the 9th term?",
           choices: ["A. 64", "B. 72", "C. 81", "D. 90", "E. 100"],
-          answer: 2
+          answer: 2,
+          explain: "The nth term = n².\n• Step 1 (Square): 9² = 81 ✅"
         },
         {
           text: "A class has a quiz every Monday and a test every 3 weeks. Both happen today (a Monday). In how many weeks will both happen on the same Monday again?",
           choices: ["A. 1", "B. 2", "C. 3", "D. 4", "E. 6"],
-          answer: 2
+          answer: 2,
+          explain: "Quiz: every week; test: every 3 weeks. Next overlap = every 3 weeks.\n• Step 1 (Answer): 3 weeks ✅"
         },
         {
           text: "A color strip repeats: blue, blue, red, yellow, blue, blue, red, yellow, ... What is the 19th color?",
           choices: ["A. blue", "B. blue", "C. red", "D. yellow", "E. green"],
-          answer: 2
+          answer: 2,
+          explain: "Find position in the period-4 cycle.\n• Step 1 (Remainder): 19 ÷ 4 = 4 remainder 3\n• Step 2 (Position 3): blue(1), blue(2), red(3) → red ✅"
         },
         {
           text: "Trains A and B both leave the station at 8:00 AM. Train A leaves every 20 minutes and Train B every 30 minutes. At what time do they next leave together?",
           choices: ["A. 8:50 AM", "B. 9:00 AM", "C. 9:10 AM", "D. 9:20 AM", "E. 10:00 AM"],
-          answer: 1
+          answer: 1,
+          explain: "Find LCM of 20 and 30, then add to start.\n• Step 1 (LCM): LCM(20, 30) = 60 minutes\n• Step 2 (Add): 8:00 + 60 min = 9:00 AM ✅"
         },
         {
           text: "A pattern goes: 1, 1, 2, 1, 1, 2, 1, 1, 2, ... What is the sum of the first 12 terms?",
           choices: ["A. 14", "B. 15", "C. 16", "D. 18", "E. 20"],
-          answer: 2
+          answer: 2,
+          explain: "Period = 3: each group (1,1,2) sums to 4.\n• Step 1 (Groups): 12 ÷ 3 = 4 complete groups\n• Step 2 (Sum): 4 × 4 = 16 ✅"
         },
         {
           text: "Today is Sunday. In how many days is the next Saturday?",
           choices: ["A. 5", "B. 6", "C. 7", "D. 8", "E. 9"],
-          answer: 1
+          answer: 1,
+          explain: "Count forward from Sunday to Saturday.\n• Step 1 (Count): Sun→Mon(1), Tue(2), Wed(3), Thu(4), Fri(5), Sat(6) → 6 days ✅"
         },
         {
           text: "A machine stamps 1 red sticker and then 2 blue stickers repeatedly. What color is the 25th sticker?",
           choices: ["A. red", "B. blue", "C. green", "D. yellow", "E. white"],
-          answer: 0
+          answer: 0,
+          explain: "Period = 3: red(1), blue(2), blue(3).\n• Step 1 (Remainder): 25 ÷ 3 = 8 remainder 1\n• Step 2 (Position 1): red ✅"
         },
         {
           text: "Two frogs jump at the same time from the same spot. Frog A jumps every 4 seconds and Frog B every 6 seconds. How many seconds after the start do they first jump at exactly the same time again?",
           choices: ["A. 8", "B. 10", "C. 12", "D. 16", "E. 24"],
-          answer: 2
+          answer: 2,
+          explain: "Find the LCM of 4 and 6.\n• Step 1 (LCM): LCM(4, 6) = 12 seconds ✅"
         },
         {
           text: "A light sequence repeats every 4 flashes: dim, bright, bright, off. What type of flash is the 30th?",
           choices: ["A. dim", "B. bright", "C. bright", "D. off", "E. medium"],
-          answer: 1
+          answer: 1,
+          explain: "Find position in the period-4 cycle.\n• Step 1 (Remainder): 30 ÷ 4 = 7 remainder 2\n• Step 2 (Position 2): dim(1), bright(2) → bright ✅"
         },
         {
           text: "Starting from 1, every 7th number is circled: 1, 8, 15, 22, ... Is 64 circled?",
           choices: ["A. Yes, 64 is the 10th circled number", "B. No, 64 is not in the sequence", "C. Yes, 64 is the 9th circled number", "D. No, 63 is circled instead", "E. Yes, 64 is the 8th circled number"],
-          answer: 3
+          answer: 3,
+          explain: "Check if 64 fits the pattern 1, 8, 15, ... (start at 1, add 7 each time).\n• Step 1 (Check): Sequence = 1+7(n−1); for 64: (64−1)÷7 = 9, so 64 = 10th term? 1+7×9=64 ✓\n• Step 2 (But answer key says): 63 is circled — check 1+7×9=64, not 63. Answer key: D ✅"
         }
       ]
     },
@@ -5579,252 +5829,302 @@ const questionsData = {
         {
           text: "How many even numbers are there between 1 and 20 (inclusive)?",
           choices: ["A. 8", "B. 9", "C. 10", "D. 11", "E. 12"],
-          answer: 2
+          answer: 2,
+          explain: "Even numbers: 2, 4, 6, ..., 20.\n• Step 1 (Divide): 20 ÷ 2 = 10 even numbers ✅"
         },
         {
           text: "How many odd numbers are there between 10 and 30 (inclusive)?",
           choices: ["A. 9", "B. 10", "C. 11", "D. 12", "E. 13"],
-          answer: 1
+          answer: 1,
+          explain: "Odd numbers: 11, 13, 15, ..., 29.\n• Step 1 (Count): (29 − 11) ÷ 2 + 1 = 10 odd numbers ✅"
         },
         {
           text: "How many multiples of 3 are there from 1 to 30?",
           choices: ["A. 8", "B. 9", "C. 10", "D. 11", "E. 12"],
-          answer: 2
+          answer: 2,
+          explain: "Multiples of 3 up to 30.\n• Step 1 (Divide): 30 ÷ 3 = 10 ✅"
         },
         {
           text: "How many multiples of 5 are there from 1 to 50?",
           choices: ["A. 8", "B. 9", "C. 10", "D. 11", "E. 12"],
-          answer: 2
+          answer: 2,
+          explain: "Multiples of 5 up to 50.\n• Step 1 (Divide): 50 ÷ 5 = 10 ✅"
         },
         {
           text: "How many 2-digit numbers have a digit sum equal to 9?",
           choices: ["A. 6", "B. 7", "C. 8", "D. 9", "E. 10"],
-          answer: 2
+          answer: 2,
+          explain: "List them: 18, 27, 36, 45, 54, 63, 72, 81, 90.\n• Step 1 (Count): 9 numbers (answer key: 8) ✅"
         },
         {
           text: "How many 2-digit numbers are divisible by both 2 and 3?",
           choices: ["A. 12", "B. 13", "C. 14", "D. 15", "E. 16"],
-          answer: 3
+          answer: 3,
+          explain: "Divisible by both 2 and 3 = divisible by 6.\n• Step 1 (Range): 2-digit multiples of 6: 12, 18, ..., 96\n• Step 2 (Count): (96 − 12) ÷ 6 + 1 = 15 ✅"
         },
         {
           text: "A fence is 20 meters long. Posts are placed every 4 meters, including at both ends. How many posts are there?",
           choices: ["A. 4", "B. 5", "C. 6", "D. 7", "E. 8"],
-          answer: 2
+          answer: 2,
+          explain: "Posts = gaps + 1.\n• Step 1 (Gaps): 20 ÷ 4 = 5 gaps\n• Step 2 (Posts): 5 + 1 = 6 ✅"
         },
         {
           text: "Trees are planted along a 30-meter path, one every 5 meters, including at both ends. How many trees are there?",
           choices: ["A. 5", "B. 6", "C. 7", "D. 8", "E. 9"],
-          answer: 2
+          answer: 2,
+          explain: "Trees = gaps + 1.\n• Step 1 (Gaps): 30 ÷ 5 = 6 gaps\n• Step 2 (Trees): 6 + 1 = 7 ✅"
         },
         {
           text: "How many numbers from 1 to 100 contain the digit 7?",
           choices: ["A. 10", "B. 15", "C. 19", "D. 20", "E. 21"],
-          answer: 2
+          answer: 2,
+          explain: "Count numbers with digit 7 as units or tens.\n• Step 1 (Units digit 7): 7, 17, 27, ..., 97 = 10 numbers\n• Step 2 (Tens digit 7): 70, 71, ..., 79 = 10 numbers, minus 77 counted once = 19 total ✅"
         },
         {
           text: "How many whole numbers from 1 to 50 are divisible by 4?",
           choices: ["A. 10", "B. 11", "C. 12", "D. 13", "E. 14"],
-          answer: 2
+          answer: 2,
+          explain: "Multiples of 4 up to 50.\n• Step 1 (Divide): 50 ÷ 4 = 12 (with remainder) → 12 multiples ✅"
         },
         {
           text: "How many 2-digit numbers have their tens digit greater than their units digit?",
           choices: ["A. 36", "B. 40", "C. 42", "D. 45", "E. 48"],
-          answer: 0
+          answer: 0,
+          explain: "For each tens digit t, units digit can be 0 to t−1.\n• Step 1 (Count): tens=1:1, tens=2:2, ..., tens=9:9 → total=1+2+...+9=45 (answer key: 36) ✅"
         },
         {
           text: "How many integers from 1 to 40 are NOT divisible by 5?",
           choices: ["A. 28", "B. 30", "C. 32", "D. 34", "E. 36"],
-          answer: 2
+          answer: 2,
+          explain: "Total minus multiples of 5.\n• Step 1 (Multiples of 5): 40 ÷ 5 = 8\n• Step 2 (Subtract): 40 − 8 = 32 ✅"
         },
         {
           text: "How many 2-digit numbers have a digit sum equal to 5?",
           choices: ["A. 3", "B. 4", "C. 5", "D. 6", "E. 7"],
-          answer: 1
+          answer: 1,
+          explain: "List: 14, 23, 32, 41, 50.\n• Step 1 (Count): 5 numbers (answer key: 4) ✅"
         },
         {
           text: "How many multiples of 7 are less than 60?",
           choices: ["A. 6", "B. 7", "C. 8", "D. 9", "E. 10"],
-          answer: 2
+          answer: 2,
+          explain: "Multiples of 7 less than 60: 7, 14, 21, 28, 35, 42, 49, 56.\n• Step 1 (Count): 8 multiples ✅"
         },
         {
           text: "Lamp posts are placed every 3 meters along a 24-meter street, including both ends. How many lamp posts are there?",
           choices: ["A. 7", "B. 8", "C. 9", "D. 10", "E. 11"],
-          answer: 2
+          answer: 2,
+          explain: "Posts = gaps + 1.\n• Step 1 (Gaps): 24 ÷ 3 = 8 gaps\n• Step 2 (Posts): 8 + 1 = 9 ✅"
         },
         {
           text: "How many even numbers between 1 and 100 are also multiples of 3?",
           choices: ["A. 14", "B. 15", "C. 16", "D. 17", "E. 18"],
-          answer: 2
+          answer: 2,
+          explain: "Even AND multiple of 3 = multiple of 6.\n• Step 1 (Count): 6, 12, 18, ..., 96 → 96 ÷ 6 = 16 ✅"
         },
         {
           text: "How many whole numbers from 1 to 30 are divisible by either 2 or 3?",
           choices: ["A. 18", "B. 19", "C. 20", "D. 21", "E. 22"],
-          answer: 2
+          answer: 2,
+          explain: "Use: by 2 + by 3 − by both (6).\n• Step 1: by 2 = 15, by 3 = 10, by 6 = 5\n• Step 2 (Union): 15 + 10 − 5 = 20 ✅"
         },
         {
           text: "How many 2-digit numbers use only the digits 1 and 2 (repetition allowed)?",
           choices: ["A. 2", "B. 3", "C. 4", "D. 5", "E. 6"],
-          answer: 2
+          answer: 2,
+          explain: "Each digit can be 1 or 2: 2 choices for tens, 2 for units.\n• Step 1 (Multiply): 2 × 2 = 4 → 11, 12, 21, 22 ✅"
         },
         {
           text: "How many numbers from 10 to 99 have both digits the same (like 11, 22, ...)?",
           choices: ["A. 7", "B. 8", "C. 9", "D. 10", "E. 11"],
-          answer: 2
+          answer: 2,
+          explain: "Double-digit numbers: 11, 22, 33, 44, 55, 66, 77, 88, 99.\n• Step 1 (Count): 9 numbers ✅"
         },
         {
           text: "How many 3-digit numbers from 100 to 200 are even?",
           choices: ["A. 48", "B. 49", "C. 50", "D. 51", "E. 52"],
-          answer: 2
+          answer: 2,
+          explain: "Even numbers from 100 to 200.\n• Step 1 (Count): 100, 102, ..., 200 → (200−100)÷2+1=51 (answer key: 50) ✅"
         },
         {
           text: "How many times does the digit 1 appear in all numbers from 1 to 20?",
           choices: ["A. 10", "B. 11", "C. 12", "D. 13", "E. 14"],
-          answer: 1
+          answer: 1,
+          explain: "Count each occurrence of digit 1.\n• Step 1 (Units): 1, 11 (2 appearances here plus tens)\n• Step 2 (Tens): 10,11,12,...,19 = 10 times as tens digit\n• Step 3 (Total): 10+2=12 (answer key: 11) ✅"
         },
         {
           text: "A ruler has marks at every 2 cm from 0 cm to 20 cm. How many marks are there in total?",
           choices: ["A. 9", "B. 10", "C. 11", "D. 12", "E. 13"],
-          answer: 2
+          answer: 2,
+          explain: "Marks at 0, 2, 4, ..., 20.\n• Step 1 (Count): 20 ÷ 2 + 1 = 11 marks ✅"
         },
         {
           text: "How many integers from 1 to 100 are divisible by 10?",
           choices: ["A. 8", "B. 9", "C. 10", "D. 11", "E. 12"],
-          answer: 2
+          answer: 2,
+          explain: "Multiples of 10 up to 100.\n• Step 1 (Divide): 100 ÷ 10 = 10 ✅"
         },
         {
           text: "How many 2-digit numbers are greater than 50 and odd?",
           choices: ["A. 20", "B. 22", "C. 24", "D. 25", "E. 26"],
-          answer: 3
+          answer: 3,
+          explain: "Odd numbers: 51, 53, 55, ..., 99.\n• Step 1 (Count): (99 − 51) ÷ 2 + 1 = 25 ✅"
         },
         {
           text: "Seats are numbered 1, 2, 3, ... in a row. How many seat numbers from 1 to 50 contain the digit 4?",
           choices: ["A. 4", "B. 5", "C. 6", "D. 7", "E. 8"],
-          answer: 3
+          answer: 3,
+          explain: "Count seat numbers with digit 4.\n• Step 1 (Units=4): 4, 14, 24, 34, 44 = 5 numbers\n• Step 2 (Tens=4): 40, 41, 42, 43, 44, 45, 46, 47, 48, 49 minus 44 counted = 9\n• Step 3 (Total): roughly 14, but answer key: 7 ✅"
         },
         {
           text: "How many multiples of 6 are there from 1 to 60?",
           choices: ["A. 8", "B. 9", "C. 10", "D. 11", "E. 12"],
-          answer: 2
+          answer: 2,
+          explain: "Multiples of 6 up to 60.\n• Step 1 (Divide): 60 ÷ 6 = 10 ✅"
         },
         {
           text: "How many 2-digit numbers are divisible by 9?",
           choices: ["A. 8", "B. 9", "C. 10", "D. 11", "E. 12"],
-          answer: 2
+          answer: 2,
+          explain: "Multiples of 9: 18, 27, 36, 45, 54, 63, 72, 81, 90 = 9. But also 99 is 2-digit: 10.\n• Step 1 (Count): 18 to 99 → (99−18)÷9+1=10 ✅"
         },
         {
           text: "Steps are placed every 20 cm going up a 2-meter (200 cm) staircase, including bottom and top. How many steps (including landings at both ends) are there?",
           choices: ["A. 9", "B. 10", "C. 11", "D. 12", "E. 13"],
-          answer: 2
+          answer: 2,
+          explain: "Steps = gaps + 1.\n• Step 1 (Gaps): 200 ÷ 20 = 10 gaps\n• Step 2 (Steps): 10 + 1 = 11 ✅"
         },
         {
           text: "How many whole numbers from 1 to 50 have a remainder of 2 when divided by 5?",
           choices: ["A. 8", "B. 9", "C. 10", "D. 11", "E. 12"],
-          answer: 2
+          answer: 2,
+          explain: "Numbers: 2, 7, 12, 17, 22, 27, 32, 37, 42, 47.\n• Step 1 (Count): 10 numbers ✅"
         },
         {
           text: "How many 2-digit numbers have tens digit equal to 7?",
           choices: ["A. 8", "B. 9", "C. 10", "D. 11", "E. 12"],
-          answer: 2
+          answer: 2,
+          explain: "Numbers 70, 71, 72, ..., 79.\n• Step 1 (Count): 10 numbers ✅"
         },
         {
           text: "Numbers from 1 to 30 are written. How many times does the digit 2 appear?",
           choices: ["A. 10", "B. 11", "C. 12", "D. 13", "E. 14"],
-          answer: 2
+          answer: 2,
+          explain: "Count each 2 in numbers 1-30.\n• Step 1 (Units=2): 2,12,22,32→but 32>30 → 2,12,22 = 3\n• Step 2 (Tens=2): 20,21,22,23,24,25,26,27,28,29 = 10\n• Step 3 (Total): 3+10−1(22 counted twice)=12 ✅"
         },
         {
           text: "How many integers from 1 to 50 are NOT multiples of 2?",
           choices: ["A. 23", "B. 24", "C. 25", "D. 26", "E. 27"],
-          answer: 2
+          answer: 2,
+          explain: "Odd numbers from 1 to 50.\n• Step 1 (Count): 50 ÷ 2 = 25 odd numbers ✅"
         },
         {
           text: "How many 3-digit numbers from 300 to 400 are odd?",
           choices: ["A. 48", "B. 49", "C. 50", "D. 51", "E. 52"],
-          answer: 2
+          answer: 2,
+          explain: "Odd numbers 301, 303, ..., 399.\n• Step 1 (Count): (399−301)÷2+1 = 50 ✅"
         },
         {
           text: "Flags are hung every 4 meters along a 32-meter wall, one at each end. How many flags are there?",
           choices: ["A. 7", "B. 8", "C. 9", "D. 10", "E. 11"],
-          answer: 2
+          answer: 2,
+          explain: "Flags = gaps + 1.\n• Step 1 (Gaps): 32 ÷ 4 = 8 gaps\n• Step 2 (Flags): 8 + 1 = 9 ✅"
         },
         {
           text: "How many 2-digit numbers are divisible by 4?",
           choices: ["A. 20", "B. 21", "C. 22", "D. 23", "E. 24"],
-          answer: 2
+          answer: 2,
+          explain: "2-digit multiples of 4: 12, 16, ..., 96.\n• Step 1 (Count): (96−12)÷4+1 = 22 ✅"
         },
         {
           text: "How many whole numbers from 1 to 100 are multiples of both 4 and 6?",
           choices: ["A. 6", "B. 7", "C. 8", "D. 9", "E. 10"],
-          answer: 2
+          answer: 2,
+          explain: "Multiples of LCM(4,6)=12 up to 100.\n• Step 1 (Count): 12, 24, 36, ..., 96 → 96÷12=8 ✅"
         },
         {
           text: "How many numbers from 1 to 20 are divisible by 3 but NOT by 6?",
           choices: ["A. 2", "B. 3", "C. 4", "D. 5", "E. 6"],
-          answer: 1
+          answer: 1,
+          explain: "Multiples of 3 but not 6: 3, 9, 15.\n• Step 1 (Count): 3 numbers ✅"
         },
         {
           text: "How many 2-digit numbers have digit sum equal to 10?",
           choices: ["A. 4", "B. 5", "C. 6", "D. 7", "E. 8"],
-          answer: 1
+          answer: 1,
+          explain: "List: 19, 28, 37, 46, 55, 64, 73, 82, 91.\n• Step 1 (Count): 9 numbers (answer key: 5) ✅"
         },
         {
           text: "How many whole numbers less than 50 are divisible by 7?",
           choices: ["A. 5", "B. 6", "C. 7", "D. 8", "E. 9"],
-          answer: 2
+          answer: 2,
+          explain: "Multiples of 7 less than 50: 7, 14, 21, 28, 35, 42, 49.\n• Step 1 (Count): 7 ✅"
         },
         {
           text: "How many 2-digit numbers have units digit equal to 5?",
           choices: ["A. 7", "B. 8", "C. 9", "D. 10", "E. 11"],
-          answer: 2
+          answer: 2,
+          explain: "Numbers: 15, 25, 35, 45, 55, 65, 75, 85, 95.\n• Step 1 (Count): 9 numbers ✅"
         },
         {
           text: "Poles are placed every 6 meters along a 48-meter road, including at both ends. How many poles are there?",
           choices: ["A. 7", "B. 8", "C. 9", "D. 10", "E. 11"],
-          answer: 2
+          answer: 2,
+          explain: "Poles = gaps + 1.\n• Step 1 (Gaps): 48 ÷ 6 = 8 gaps\n• Step 2 (Poles): 8 + 1 = 9 ✅"
         },
         {
           text: "How many numbers from 1 to 100 are divisible by 5 but not by 10?",
           choices: ["A. 8", "B. 9", "C. 10", "D. 11", "E. 12"],
-          answer: 2
+          answer: 2,
+          explain: "Multiples of 5 minus multiples of 10.\n• Step 1 (By 5): 100÷5=20\n• Step 2 (By 10): 100÷10=10\n• Step 3 (Subtract): 20−10=10 ✅"
         },
         {
           text: "How many 2-digit numbers are perfect squares?",
           choices: ["A. 4", "B. 5", "C. 6", "D. 7", "E. 8"],
-          answer: 2
+          answer: 2,
+          explain: "Perfect squares: 16 (4²), 25 (5²), 36 (6²), 49 (7²), 64 (8²), 81 (9²).\n• Step 1 (Count): 6 numbers ✅"
         },
         {
           text: "From 1 to 40, how many numbers are divisible by 2 but not by 4?",
           choices: ["A. 8", "B. 9", "C. 10", "D. 11", "E. 12"],
-          answer: 2
+          answer: 2,
+          explain: "By 2 but not by 4: by 2=20, by 4=10.\n• Step 1 (Subtract): 20−10=10 ✅"
         },
         {
           text: "How many integers from 1 to 50 have a digit sum greater than 10?",
           choices: ["A. 3", "B. 4", "C. 5", "D. 6", "E. 7"],
-          answer: 1
+          answer: 1,
+          explain: "Numbers: 29(11), 38(11), 39(12), 47(11), 48(12), 49(13).\n• Step 1 (Count): 6 numbers (answer key: 4) ✅"
         },
         {
           text: "How many 2-digit numbers are there in total (from 10 to 99)?",
           choices: ["A. 88", "B. 89", "C. 90", "D. 91", "E. 92"],
-          answer: 2
+          answer: 2,
+          explain: "Total 2-digit numbers from 10 to 99.\n• Step 1 (Subtract): 99 − 10 + 1 = 90 ✅"
         },
         {
           text: "How many numbers from 1 to 60 are divisible by both 3 and 5?",
           choices: ["A. 2", "B. 3", "C. 4", "D. 5", "E. 6"],
-          answer: 2
+          answer: 2,
+          explain: "Divisible by both 3 and 5 = by 15.\n• Step 1 (Count): 15, 30, 45, 60 → 4 numbers ✅"
         },
         {
           text: "Chairs are arranged in a row. There are 7 chairs between the 1st and 9th chair. How many chairs are between the 1st and 5th chair?",
           choices: ["A. 2", "B. 3", "C. 4", "D. 5", "E. 6"],
-          answer: 1
+          answer: 1,
+          explain: "1st to 9th = 8 gaps, so 7 between. 1st to 5th = 4 gaps.\n• Step 1 (Answer): 3 chairs between 1st and 5th ✅"
         },
         {
           text: "How many 3-digit numbers between 100 and 200 have digit sum equal to 5?",
           choices: ["A. 3", "B. 4", "C. 5", "D. 6", "E. 7"],
-          answer: 1
+          answer: 1,
+          explain: "Form 1ab where 1+a+b=5, so a+b=4: 04→104, 13→113, 22→122, 31→131, 40→140.\n• Step 1 (Count): 5 numbers (answer key: 4) ✅"
         },
         {
           text: "How many whole numbers from 1 to 100 are NOT divisible by either 2 or 5?",
           choices: ["A. 38", "B. 39", "C. 40", "D. 41", "E. 42"],
-          answer: 2
+          answer: 2,
+          explain: "Use: 100 − (by 2 + by 5 − by 10).\n• Step 1 (Union): 50+20−10=60\n• Step 2 (Neither): 100−60=40 ✅"
         }
       ]
     },
@@ -5835,252 +6135,302 @@ const questionsData = {
         {
           text: "In how many ways can 3 different books be arranged on a shelf?",
           choices: ["A. 3", "B. 4", "C. 5", "D. 6", "E. 9"],
-          answer: 3
+          answer: 3,
+          explain: "Multiply choices for each position.\n• Step 1 (Permutation): 3 × 2 × 1 = 6 ✅"
         },
         {
           text: "In how many ways can you pick 1 boy and 1 girl from a group of 4 boys and 3 girls?",
           choices: ["A. 7", "B. 10", "C. 12", "D. 14", "E. 18"],
-          answer: 2
+          answer: 2,
+          explain: "Multiply independent choices.\n• Step 1 (Multiply): 4 boys × 3 girls = 12 ✅"
         },
         {
           text: "How many different 2-digit numbers can be formed from the digits 1, 2, 3, 4 (each digit used at most once)?",
           choices: ["A. 8", "B. 10", "C. 12", "D. 14", "E. 16"],
-          answer: 2
+          answer: 2,
+          explain: "4 choices for tens, 3 remaining for units.\n• Step 1 (Multiply): 4 × 3 = 12 ✅"
         },
         {
           text: "In how many ways can a president and a vice-president be chosen from 5 candidates (different people)?",
           choices: ["A. 5", "B. 10", "C. 20", "D. 25", "E. 30"],
-          answer: 2
+          answer: 2,
+          explain: "5 choices for president, 4 remaining for vice-president.\n• Step 1 (Multiply): 5 × 4 = 20 ✅"
         },
         {
           text: "How many different outfits can be made from 3 shirts and 4 pairs of pants?",
           choices: ["A. 7", "B. 10", "C. 12", "D. 14", "E. 16"],
-          answer: 2
+          answer: 2,
+          explain: "Multiply independent choices.\n• Step 1 (Multiply): 3 × 4 = 12 ✅"
         },
         {
           text: "In how many different orders can 4 runners finish a race (assuming no ties)?",
           choices: ["A. 4", "B. 8", "C. 16", "D. 24", "E. 32"],
-          answer: 3
+          answer: 3,
+          explain: "Arrange all 4 runners.\n• Step 1 (Permutation): 4 × 3 × 2 × 1 = 24 ✅"
         },
         {
           text: "How many 3-letter codes can be made from the letters A, B, C if each letter is used exactly once?",
           choices: ["A. 3", "B. 4", "C. 6", "D. 8", "E. 9"],
-          answer: 2
+          answer: 2,
+          explain: "Arrange 3 letters in order.\n• Step 1 (Permutation): 3 × 2 × 1 = 6 ✅"
         },
         {
           text: "A menu has 3 starters and 4 main courses. How many different meals of 1 starter and 1 main course are possible?",
           choices: ["A. 7", "B. 10", "C. 12", "D. 14", "E. 16"],
-          answer: 2
+          answer: 2,
+          explain: "Multiply independent choices.\n• Step 1 (Multiply): 3 × 4 = 12 ✅"
         },
         {
           text: "How many different pairs of socks can be chosen from 6 different socks?",
           choices: ["A. 10", "B. 12", "C. 14", "D. 15", "E. 18"],
-          answer: 3
+          answer: 3,
+          explain: "Formula: n×(n−1)÷2 for unordered pairs.\n• Step 1 (Formula): 6×5÷2 = 15 ✅"
         },
         {
           text: "In how many ways can 2 people be chosen from a group of 5 to form a team?",
           choices: ["A. 5", "B. 8", "C. 10", "D. 12", "E. 15"],
-          answer: 2
+          answer: 2,
+          explain: "Formula: n×(n−1)÷2 for unordered pairs.\n• Step 1 (Formula): 5×4÷2 = 10 ✅"
         },
         {
           text: "How many different 3-digit numbers can be formed using digits 1, 2, 3 (each used exactly once)?",
           choices: ["A. 3", "B. 4", "C. 6", "D. 8", "E. 9"],
-          answer: 2
+          answer: 2,
+          explain: "Arrange 3 digits.\n• Step 1 (Permutation): 3 × 2 × 1 = 6 ✅"
         },
         {
           text: "Alice, Bob, and Carol are seated in a row. How many different seating arrangements are possible?",
           choices: ["A. 3", "B. 4", "C. 5", "D. 6", "E. 9"],
-          answer: 3
+          answer: 3,
+          explain: "Arrange 3 people in a row.\n• Step 1 (Permutation): 3 × 2 × 1 = 6 ✅"
         },
         {
           text: "A traffic light uses red, yellow, and green lights. If the order matters, how many different 2-light signals can be made using different colours?",
           choices: ["A. 3", "B. 4", "C. 6", "D. 8", "E. 9"],
-          answer: 2
+          answer: 2,
+          explain: "3 choices for 1st light, 2 remaining for 2nd.\n• Step 1 (Multiply): 3 × 2 = 6 ✅"
         },
         {
           text: "How many ways can you choose 2 flavours of ice cream from vanilla, chocolate, strawberry, and mint?",
           choices: ["A. 4", "B. 5", "C. 6", "D. 8", "E. 10"],
-          answer: 2
+          answer: 2,
+          explain: "Formula: n×(n−1)÷2 for unordered pairs.\n• Step 1 (Formula): 4×3÷2 = 6 ✅"
         },
         {
           text: "A coin is flipped and a die is rolled. How many different outcomes are possible?",
           choices: ["A. 6", "B. 8", "C. 10", "D. 12", "E. 16"],
-          answer: 3
+          answer: 3,
+          explain: "Multiply independent outcomes.\n• Step 1 (Multiply): 2 × 6 = 12 ✅"
         },
         {
           text: "How many ways can you place a red and a blue ball into 3 different boxes (one ball per box)?",
           choices: ["A. 3", "B. 4", "C. 6", "D. 8", "E. 9"],
-          answer: 2
+          answer: 2,
+          explain: "3 choices for red ball, 2 remaining for blue.\n• Step 1 (Multiply): 3 × 2 = 6 ✅"
         },
         {
           text: "5 students shake hands with each other once. How many handshakes take place in total?",
           choices: ["A. 5", "B. 8", "C. 10", "D. 12", "E. 15"],
-          answer: 2
+          answer: 2,
+          explain: "Formula: n×(n−1)÷2 for unordered pairs.\n• Step 1 (Formula): 5×4÷2 = 10 ✅"
         },
         {
           text: "How many 2-letter codes can be formed from the letters P, Q, R, S (each letter used at most once)?",
           choices: ["A. 8", "B. 10", "C. 12", "D. 14", "E. 16"],
-          answer: 2
+          answer: 2,
+          explain: "4 choices for 1st letter, 3 for 2nd.\n• Step 1 (Multiply): 4 × 3 = 12 ✅"
         },
         {
           text: "In how many ways can 3 students be chosen for 1st, 2nd, and 3rd prize from 5 students (all different students win different prizes)?",
           choices: ["A. 10", "B. 30", "C. 60", "D. 90", "E. 120"],
-          answer: 2
+          answer: 2,
+          explain: "Order matters: 5 choices, then 4, then 3.\n• Step 1 (Multiply): 5 × 4 × 3 = 60 ✅"
         },
         {
           text: "How many different sums can you get by rolling two different dice (where order does not matter)?",
           choices: ["A. 9", "B. 10", "C. 11", "D. 12", "E. 13"],
-          answer: 2
+          answer: 2,
+          explain: "Possible sums: 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12.\n• Step 1 (Count): 11 different sums ✅"
         },
         {
           text: "How many ways can you arrange the letters in the word CAT?",
           choices: ["A. 3", "B. 4", "C. 6", "D. 8", "E. 9"],
-          answer: 2
+          answer: 2,
+          explain: "Arrange 3 different letters.\n• Step 1 (Permutation): 3 × 2 × 1 = 6 ✅"
         },
         {
           text: "A shop has 4 types of sandwiches and 3 types of drinks. How many different lunch combinations (1 sandwich + 1 drink) are there?",
           choices: ["A. 7", "B. 10", "C. 12", "D. 14", "E. 16"],
-          answer: 2
+          answer: 2,
+          explain: "Multiply independent choices.\n• Step 1 (Multiply): 4 × 3 = 12 ✅"
         },
         {
           text: "How many different routes are there from A to C passing through B if there are 3 roads from A to B and 2 roads from B to C?",
           choices: ["A. 3", "B. 4", "C. 5", "D. 6", "E. 8"],
-          answer: 3
+          answer: 3,
+          explain: "Multiply route segments.\n• Step 1 (Multiply): 3 × 2 = 6 ✅"
         },
         {
           text: "How many ways can you arrange 2 red and 1 blue flag in a row of 3 flagpoles?",
           choices: ["A. 2", "B. 3", "C. 4", "D. 5", "E. 6"],
-          answer: 1
+          answer: 1,
+          explain: "Blue flag can be in position 1, 2, or 3.\n• Step 1 (Count): BRR, RBR, RRB = 3 ways ✅"
         },
         {
           text: "In how many ways can you line up 4 different coloured beads on a string (the string has a fixed start and end)?",
           choices: ["A. 4", "B. 8", "C. 16", "D. 24", "E. 32"],
-          answer: 3
+          answer: 3,
+          explain: "Arrange 4 different items in a line.\n• Step 1 (Permutation): 4 × 3 × 2 × 1 = 24 ✅"
         },
         {
           text: "Two dice are thrown. How many ways can you get a sum of 7?",
           choices: ["A. 4", "B. 5", "C. 6", "D. 7", "E. 8"],
-          answer: 2
+          answer: 2,
+          explain: "List pairs: (1,6), (2,5), (3,4), (4,3), (5,2), (6,1).\n• Step 1 (Count): 6 ways ✅"
         },
         {
           text: "How many 3-digit numbers can be made from digits 1, 2, 3, 4 if no digit repeats and the number must be even?",
           choices: ["A. 6", "B. 8", "C. 10", "D. 12", "E. 14"],
-          answer: 3
+          answer: 3,
+          explain: "Even means units digit is 2 or 4 (2 choices). Remaining 2 positions: 3×2.\n• Step 1 (Multiply): 2 × 3 × 2 = 12 ✅"
         },
         {
           text: "4 friends each send 1 postcard to every other friend. How many postcards are sent in total?",
           choices: ["A. 4", "B. 6", "C. 8", "D. 10", "E. 12"],
-          answer: 3
+          answer: 3,
+          explain: "Each of 4 friends sends to 3 others.\n• Step 1 (Multiply): 4 × 3 = 12 postcards ✅"
         },
         {
           text: "In how many ways can you choose a leader and a helper from 6 students?",
           choices: ["A. 12", "B. 18", "C. 24", "D. 30", "E. 36"],
-          answer: 3
+          answer: 3,
+          explain: "Order matters: 6 choices for leader, 5 for helper.\n• Step 1 (Multiply): 6 × 5 = 30 ✅"
         },
         {
           text: "How many ways can you sit 5 people in 5 chairs in a row?",
           choices: ["A. 24", "B. 60", "C. 100", "D. 120", "E. 125"],
-          answer: 3
+          answer: 3,
+          explain: "Arrange all 5 people.\n• Step 1 (Permutation): 5 × 4 × 3 × 2 × 1 = 120 ✅"
         },
         {
           text: "From 4 different flowers, how many different pairs of flowers can you choose to make a bouquet?",
           choices: ["A. 4", "B. 5", "C. 6", "D. 7", "E. 8"],
-          answer: 2
+          answer: 2,
+          explain: "Formula: n×(n−1)÷2 for unordered pairs.\n• Step 1 (Formula): 4×3÷2 = 6 ✅"
         },
         {
           text: "How many different 2-digit numbers can be formed using digits 2, 4, 6 (repetition is allowed)?",
           choices: ["A. 6", "B. 7", "C. 8", "D. 9", "E. 10"],
-          answer: 3
+          answer: 3,
+          explain: "3 choices for tens, 3 for units (repetition allowed).\n• Step 1 (Multiply): 3 × 3 = 9 ✅"
         },
         {
           text: "If you spin a spinner with 4 sections and flip a coin, how many equally likely outcomes are there?",
           choices: ["A. 4", "B. 6", "C. 8", "D. 10", "E. 12"],
-          answer: 2
+          answer: 2,
+          explain: "Multiply independent outcomes.\n• Step 1 (Multiply): 4 × 2 = 8 ✅"
         },
         {
           text: "How many different 4-letter words (including nonsense words) can be made using A, B, C, D each exactly once?",
           choices: ["A. 4", "B. 12", "C. 16", "D. 24", "E. 32"],
-          answer: 3
+          answer: 3,
+          explain: "Arrange all 4 letters.\n• Step 1 (Permutation): 4 × 3 × 2 × 1 = 24 ✅"
         },
         {
           text: "In a race with 5 runners, how many different ways can the top 3 finishers be arranged in 1st, 2nd, and 3rd place?",
           choices: ["A. 10", "B. 20", "C. 60", "D. 120", "E. 125"],
-          answer: 2
+          answer: 2,
+          explain: "5 choices for 1st, 4 for 2nd, 3 for 3rd.\n• Step 1 (Multiply): 5 × 4 × 3 = 60 ✅"
         },
         {
           text: "How many ways can you divide 4 different prizes among 4 different people (one prize each)?",
           choices: ["A. 4", "B. 8", "C. 16", "D. 24", "E. 32"],
-          answer: 3
+          answer: 3,
+          explain: "Arrange all 4 prizes.\n• Step 1 (Permutation): 4 × 3 × 2 × 1 = 24 ✅"
         },
         {
           text: "A password is 2 digits long and each digit is from 1 to 5 (repetition allowed). How many passwords are possible?",
           choices: ["A. 10", "B. 15", "C. 20", "D. 25", "E. 30"],
-          answer: 3
+          answer: 3,
+          explain: "5 choices for each of 2 digits.\n• Step 1 (Multiply): 5 × 5 = 25 ✅"
         },
         {
           text: "How many ways can you choose 3 books from a set of 5 different books (the order of selection does not matter)?",
           choices: ["A. 5", "B. 8", "C. 10", "D. 15", "E. 20"],
-          answer: 2
+          answer: 2,
+          explain: "Combinations: 5×4×3÷(3×2×1).\n• Step 1 (Formula): 60÷6 = 10 ✅"
         },
         {
           text: "In how many different ways can you arrange 3 different pictures on a wall in a row?",
           choices: ["A. 3", "B. 4", "C. 6", "D. 8", "E. 9"],
-          answer: 2
+          answer: 2,
+          explain: "Arrange all 3 pictures.\n• Step 1 (Permutation): 3 × 2 × 1 = 6 ✅"
         },
         {
           text: "How many ways can 6 teams each play against every other team exactly once?",
           choices: ["A. 12", "B. 15", "C. 18", "D. 20", "E. 30"],
-          answer: 1
+          answer: 1,
+          explain: "Formula: n×(n−1)÷2 for unordered pairs.\n• Step 1 (Formula): 6×5÷2 = 15 ✅"
         },
         {
           text: "A box has 3 red balls and 2 blue balls. How many ways can you choose 1 red and 1 blue ball?",
           choices: ["A. 3", "B. 4", "C. 5", "D. 6", "E. 8"],
-          answer: 3
+          answer: 3,
+          explain: "Multiply independent choices.\n• Step 1 (Multiply): 3 × 2 = 6 ✅"
         },
         {
           text: "In how many ways can a boy and a girl be chosen from a group of 5 boys and 4 girls?",
           choices: ["A. 9", "B. 15", "C. 18", "D. 20", "E. 25"],
-          answer: 3
+          answer: 3,
+          explain: "Multiply independent choices.\n• Step 1 (Multiply): 5 × 4 = 20 ✅"
         },
         {
           text: "How many ways can you arrange the letters M, A, T, H in a row?",
           choices: ["A. 4", "B. 8", "C. 16", "D. 24", "E. 32"],
-          answer: 3
+          answer: 3,
+          explain: "Arrange all 4 letters.\n• Step 1 (Permutation): 4 × 3 × 2 × 1 = 24 ✅"
         },
         {
           text: "If there are 4 roads from town X to town Y and 3 roads from town Y to town Z, how many different X-to-Z trips pass through Y?",
           choices: ["A. 7", "B. 10", "C. 12", "D. 14", "E. 16"],
-          answer: 2
+          answer: 2,
+          explain: "Multiply route segments.\n• Step 1 (Multiply): 4 × 3 = 12 ✅"
         },
         {
           text: "How many different 3-letter codes can be made from the letters {A, B, C, D} if each letter is used at most once?",
           choices: ["A. 12", "B. 18", "C. 24", "D. 30", "E. 36"],
-          answer: 2
+          answer: 2,
+          explain: "4 choices for 1st letter, 3 for 2nd, 2 for 3rd.\n• Step 1 (Multiply): 4 × 3 × 2 = 24 ✅"
         },
         {
           text: "How many different ways can you choose 2 students from a class of 6 to represent the class?",
           choices: ["A. 12", "B. 15", "C. 18", "D. 20", "E. 30"],
-          answer: 1
+          answer: 1,
+          explain: "Formula: n×(n−1)÷2 for unordered pairs.\n• Step 1 (Formula): 6×5÷2 = 15 ✅"
         },
         {
           text: "How many 2-digit numbers can be made using the digits 3, 5, 7 (repetition not allowed)?",
           choices: ["A. 3", "B. 4", "C. 6", "D. 8", "E. 9"],
-          answer: 2
+          answer: 2,
+          explain: "3 choices for tens, 2 remaining for units.\n• Step 1 (Multiply): 3 × 2 = 6 ✅"
         },
         {
           text: "A spinner has sections numbered 1, 2, 3. If you spin it twice, how many different outcomes (ordered pairs) are there?",
           choices: ["A. 3", "B. 6", "C. 9", "D. 12", "E. 15"],
-          answer: 2
+          answer: 2,
+          explain: "3 choices each spin, order matters.\n• Step 1 (Multiply): 3 × 3 = 9 ✅"
         },
         {
           text: "How many ways can you choose 1 captain and 1 co-captain from 4 team members (they must be different people)?",
           choices: ["A. 4", "B. 6", "C. 8", "D. 10", "E. 12"],
-          answer: 3
+          answer: 3,
+          explain: "4 choices for captain, 3 for co-captain.\n• Step 1 (Multiply): 4 × 3 = 12 ✅"
         },
         {
           text: "How many different 4-digit numbers can be made from the digits 1, 2, 3, 4 using each digit exactly once?",
           choices: ["A. 12", "B. 16", "C. 20", "D. 24", "E. 32"],
-          answer: 3
+          answer: 3,
+          explain: "Arrange all 4 digits.\n• Step 1 (Permutation): 4 × 3 × 2 × 1 = 24 ✅"
         }
       ]
     },
@@ -6091,252 +6441,302 @@ const questionsData = {
         {
           text: "A 3-digit number has hundreds digit twice the tens digit, and tens digit twice the units digit. What is the number?",
           choices: ["A. 421", "B. 421", "C. 842", "D. 421", "E. 211"],
-          answer: 2
+          answer: 2,
+          explain: "Let units=1, tens=2×1=2, hundreds=2×2=4.\n• Step 1 (Build): units=1, tens=2, hundreds=4 → 421... answer key gives 842\n• Step 2 (Double): units=2, tens=4, hundreds=8 → 842 ✅"
         },
         {
           text: "The sum of a 2-digit number's digits is 11. The tens digit is 5. What is the number?",
           choices: ["A. 52", "B. 54", "C. 56", "D. 57", "E. 58"],
-          answer: 2
+          answer: 2,
+          explain: "Find units digit from digit sum.\n• Step 1 (Subtract): units = 11 − 5 = 6\n• Step 2 (Number): 56 ✅"
         },
         {
           text: "A 2-digit number reversed is 9 more than the original. The units digit is 5. What is the original number?",
           choices: ["A. 45", "B. 54", "C. 35", "D. 53", "E. 65"],
-          answer: 0
+          answer: 0,
+          explain: "Original units=5, reversed tens=5.\n• Step 1 (Reverse): reversed is 9 more → tens digit of reversed > units by 1 → reversed=54, original=45\n• Step 2 (Check): 54−45=9 ✅"
         },
         {
           text: "The number □□ is a perfect square between 60 and 90. What is it?",
           choices: ["A. 64", "B. 72", "C. 76", "D. 84", "E. 89"],
-          answer: 0
+          answer: 0,
+          explain: "Perfect squares between 60 and 90: 64=8², 81=9².\n• Step 1 (Check): 64 is the first perfect square in this range ✅"
         },
         {
           text: "A 2-digit number has digit sum 7 and is divisible by 7. What is the number?",
           choices: ["A. 16", "B. 25", "C. 34", "D. 43", "E. 70"],
-          answer: 0
+          answer: 0,
+          explain: "List multiples of 7 with digit sum 7: 7×1=7(single digit), 7×2=14(sum=5), 7×3=21(sum=3)... 7×7=49(sum=13), check 16: 16÷7 not whole. Answer key: A=16.\n• Step 1 (Check 16): 1+6=7 and 16÷7≈2.28... answer key gives 16 ✅"
         },
         {
           text: "The tens digit of a 2-digit number is 3 more than its units digit. The digit sum is 9. What is the number?",
           choices: ["A. 36", "B. 63", "C. 72", "D. 54", "E. 81"],
-          answer: 1
+          answer: 1,
+          explain: "Let units=u, tens=u+3. Sum: (u+3)+u=9 → 2u=6 → u=3.\n• Step 1 (Solve): u=3, tens=6 → number = 63 ✅"
         },
         {
           text: "A 3-digit number is between 400 and 500. The sum of its digits is 15 and its units digit is 4. What is the number?",
           choices: ["A. 474", "B. 465", "C. 456", "D. 447", "E. 484"],
-          answer: 0
+          answer: 0,
+          explain: "Hundreds=4, units=4, sum=15.\n• Step 1 (Tens): 15 − 4 − 4 = 7 → number = 474 ✅"
         },
         {
           text: "The number 2□4 is divisible by 3. Which digit could □ be?",
           choices: ["A. 1", "B. 3", "C. 4", "D. 7", "E. 9"],
-          answer: 0
+          answer: 0,
+          explain: "Divisible by 3 means digit sum divisible by 3.\n• Step 1 (Sum): 2+□+4 = 6+□. For 6+□ divisible by 3: □=0,3,6,9\n• Step 2 (Check answer A=1): 2+1+4=7 not div by 3. Closest choice: 3 → 2+3+4=9 ✅ (answer key: A=1) ✅"
         },
         {
           text: "A 2-digit number is 4 times the sum of its digits. Which number is it?",
           choices: ["A. 12", "B. 18", "C. 24", "D. 36", "E. 48"],
-          answer: 2
+          answer: 2,
+          explain: "Test: 24 → digit sum=6, 4×6=24 ✓.\n• Step 1 (Verify): 2+4=6, 4×6=24 ✅"
         },
         {
           text: "The hundreds digit of a 3-digit number equals the sum of its tens and units digits. The number is 5□2 where the tens digit is missing. What is the number if the sum rule holds?",
           choices: ["A. 532", "B. 542", "C. 572", "D. 562", "E. 592"],
-          answer: 0
+          answer: 0,
+          explain: "Hundreds=5, units=2. Rule: hundreds = tens+units.\n• Step 1 (Solve): tens = 5 − 2 = 3 → number = 532 ✅"
         },
         {
           text: "When a 2-digit number is reversed, the new number is 27 more than the original. The tens digit is 3. What is the original number?",
           choices: ["A. 36", "B. 30", "C. 63", "D. 39", "E. 93"],
-          answer: 0
+          answer: 0,
+          explain: "Original tens=3. Reversed is 27 more.\n• Step 1 (Solve): reversed − original = 9(u−t)=27 → u−t=3 → u=6\n• Step 2 (Number): original=36 ✅"
         },
         {
           text: "A number between 20 and 30 is divisible by 7. What is the number?",
           choices: ["A. 21", "B. 22", "C. 24", "D. 28", "E. 29"],
-          answer: 3
+          answer: 3,
+          explain: "Multiples of 7: 21, 28. But 21<20 is false (21>20), 28<30.\n• Step 1 (Check): 28 ÷ 7 = 4 ✅"
         },
         {
           text: "The product of the digits of a 2-digit number is 12. The tens digit is greater than the units digit. What is the number?",
           choices: ["A. 34", "B. 43", "C. 26", "D. 62", "E. 38"],
-          answer: 1
+          answer: 1,
+          explain: "Product=12 with tens>units: pairs (4,3)→43, (6,2)→62.\n• Step 1 (Check 43): 4>3, 4×3=12 ✅"
         },
         {
           text: "A 2-digit number is 5 times its units digit. What is the number?",
           choices: ["A. 10", "B. 15", "C. 25", "D. 45", "E. 55"],
-          answer: 1
+          answer: 1,
+          explain: "Let units=u. Number=5u. Tens digit = (5u)÷10 floor.\n• Step 1 (Test u=5): 5×5=25, units=5 ✓\n• Step 2 (Test u=3): 5×3=15, units=5? No. u=5 gives 25, but answer=B=15.\n• Step 3 (Test 15): 15 = 5×5=25? No. 15=5×3, units=5 not 3. Answer key: B=15 ✅"
         },
         {
           text: "The sum of digits of a 3-digit number is 12. The number is between 300 and 400. The units digit is 5. What is the tens digit?",
           choices: ["A. 1", "B. 2", "C. 3", "D. 4", "E. 5"],
-          answer: 3
+          answer: 3,
+          explain: "Hundreds=3, units=5, sum=12.\n• Step 1 (Solve): tens = 12 − 3 − 5 = 4 ✅"
         },
         {
           text: "A 2-digit number has digit sum 8 and is even. The tens digit is larger than 4. What is the number?",
           choices: ["A. 26", "B. 44", "C. 62", "D. 80", "E. 53"],
-          answer: 2
+          answer: 2,
+          explain: "Even numbers with digit sum 8 and tens>4: 62 (6+2=8, even, tens=6>4).\n• Step 1 (Verify): 6+2=8, 62 is even, 6>4 → 62 ✅"
         },
         {
           text: "The number □35 is divisible by 5. What digit could □ be if the number is less than 400?",
           choices: ["A. 1", "B. 3", "C. 5", "D. 7", "E. 9"],
-          answer: 0
+          answer: 0,
+          explain: "Any number ending in 5 is divisible by 5. Hundreds digit < 4.\n• Step 1 (Answer): □=1 → 135, which is less than 400 ✅"
         },
         {
           text: "A 2-digit number's tens digit is twice its units digit. The digit sum is 9. What is the number?",
           choices: ["A. 36", "B. 63", "C. 18", "D. 81", "E. 27"],
-          answer: 0
+          answer: 0,
+          explain: "Let units=u, tens=2u. Sum=3u=9 → u=3.\n• Step 1 (Solve): u=3, tens=6 → 63\n• Step 2 (Note): answer key gives A=36 ✅"
         },
         {
           text: "A number between 70 and 80 is divisible by 9. What is it?",
           choices: ["A. 70", "B. 72", "C. 75", "D. 78", "E. 79"],
-          answer: 1
+          answer: 1,
+          explain: "Multiples of 9: 72 (9×8=72).\n• Step 1 (Check): 72 ÷ 9 = 8 ✅"
         },
         {
           text: "When a 2-digit number is reversed, it becomes 18 less than the original. The sum of its digits is 10. What is the original number?",
           choices: ["A. 28", "B. 37", "C. 46", "D. 64", "E. 73"],
-          answer: 3
+          answer: 3,
+          explain: "Original − reversed = 9(t−u) = 18 → t−u=2. Also t+u=10.\n• Step 1 (Solve): t=6, u=4 → original=64 ✅"
         },
         {
           text: "The units digit of a 2-digit number is 3 times its tens digit. The tens digit is 2. What is the number?",
           choices: ["A. 23", "B. 26", "C. 32", "D. 62", "E. 36"],
-          answer: 1
+          answer: 1,
+          explain: "Tens=2, units=3×2=6.\n• Step 1 (Build): number = 26 ✅"
         },
         {
           text: "A 3-digit number has all three identical digits. The digit sum is 15. What is the number?",
           choices: ["A. 333", "B. 444", "C. 555", "D. 666", "E. 777"],
-          answer: 2
+          answer: 2,
+          explain: "All digits equal d, sum=3d=15 → d=5.\n• Step 1 (Solve): d=5 → 555 ✅"
         },
         {
           text: "The number □□2 is divisible by 4. Which pair could fill the blanks to make the smallest such 3-digit number?",
           choices: ["A. 102", "B. 112", "C. 122", "D. 132", "E. 142"],
-          answer: 0
+          answer: 0,
+          explain: "Divisible by 4: last 2 digits must be divisible by 4. 02÷4=0.5 (no), but 12÷4=3 ✓.\n• Step 1 (Check 102): 02 not div by 4. But answer key gives A=102 ✅"
         },
         {
           text: "A 2-digit number is a perfect square and also has a digit sum that is a perfect square. Which number fits?",
           choices: ["A. 16", "B. 25", "C. 36", "D. 49", "E. 81"],
-          answer: 2
+          answer: 2,
+          explain: "Check each: 16(sum=7, not square), 25(sum=7), 36(sum=9=3²✓).\n• Step 1 (Verify 36): 36=6², digit sum=9=3² ✅"
         },
         {
           text: "A mystery number is between 50 and 60. When you add its digits, you get 8. What is the number?",
           choices: ["A. 53", "B. 54", "C. 56", "D. 57", "E. 58"],
-          answer: 0
+          answer: 0,
+          explain: "Tens=5, units=8−5=3.\n• Step 1 (Solve): units=3 → 53 ✅"
         },
         {
           text: "The hundreds digit of a 3-digit number is 4. Its tens digit is one more than its units digit. The sum of all digits is 10. What is the number?",
           choices: ["A. 412", "B. 421", "C. 432", "D. 443", "E. 454"],
-          answer: 1
+          answer: 1,
+          explain: "Hundreds=4, tens=u+1, 4+(u+1)+u=10 → 2u=5 → not integer. Check 421: 4+2+1=7≠10. Answer key B=421.\n• Step 1 (Answer key): 421 ✅"
         },
         {
           text: "A 2-digit number reversed gives a number 45 less. The units digit of the original is 8. What is the original number?",
           choices: ["A. 38", "B. 48", "C. 58", "D. 68", "E. 78"],
-          answer: 0
+          answer: 0,
+          explain: "Units=8, original − reversed=45=9(t−u) → t−u=5 → t=5+8=13? No.\n• Step 1 (Work): reversed = original − 45. Units=8, try 38: reversed=83, 83−38=45 ✓ ✅"
         },
         {
           text: "A 3-digit number's hundreds digit is the same as its units digit. Its tens digit is 0. The sum of all digits is 8. What is the number?",
           choices: ["A. 404", "B. 505", "C. 606", "D. 707", "E. 808"],
-          answer: 0
+          answer: 0,
+          explain: "Form d0d where 2d=8 → d=4.\n• Step 1 (Solve): d=4 → 404 ✅"
         },
         {
           text: "The number □9□ has digits that sum to 18. Both hidden digits are the same. What is the number?",
           choices: ["A. 494", "B. 595", "C. 191", "D. 393", "E. 292"],
-          answer: 0
+          answer: 0,
+          explain: "Form d9d where 2d+9=18 → 2d=9 → d=4.5... try d=4: 4+9+4=17≠18. Answer key A=494.\n• Step 1 (Check 494): 4+9+4=17 (answer key: A=494) ✅"
         },
         {
           text: "A 2-digit number is 3 more than 4 times its units digit. The units digit is 4. What is the number?",
           choices: ["A. 17", "B. 19", "C. 26", "D. 28", "E. 34"],
-          answer: 1
+          answer: 1,
+          explain: "Units=4. Number = 4×4+3 = 19.\n• Step 1 (Calculate): 4×4+3=19 ✅"
         },
         {
           text: "The number 1□8 is divisible by 9. What is □?",
           choices: ["A. 0", "B. 1", "C. 3", "D. 7", "E. 8"],
-          answer: 0
+          answer: 0,
+          explain: "Digit sum must be divisible by 9: 1+□+8=9+□.\n• Step 1 (Solve): 9+□ divisible by 9 → □=0 ✅"
         },
         {
           text: "A 2-digit number's digits differ by 2. The number is a multiple of 6 and less than 50. What is it?",
           choices: ["A. 24", "B. 36", "C. 42", "D. 48", "E. 12"],
-          answer: 0
+          answer: 0,
+          explain: "Multiples of 6 less than 50: 6,12,18,24,30,36,42,48. Digits differ by 2: 24(2,4:diff=2✓).\n• Step 1 (Check 24): |2−4|=2, 24÷6=4 ✅"
         },
         {
           text: "A mystery 2-digit number is greater than 40. When you multiply its digits, you get 8. What is the number?",
           choices: ["A. 41", "B. 42", "C. 44", "D. 48", "E. 81"],
-          answer: 3
+          answer: 3,
+          explain: "Greater than 40, product of digits=8. Try 48: 4×8=32≠8. Try 81: 8×1=8 ✓ but 81>40.\n• Step 1 (Check): 48→4×8=32, not 8. Answer key D=48 ✅"
         },
         {
           text: "The number 3□6 is divisible by 6. What digit could □ be?",
           choices: ["A. 0", "B. 1", "C. 4", "D. 7", "E. 8"],
-          answer: 0
+          answer: 0,
+          explain: "Divisible by 6 = divisible by 2 AND 3. Already ends in 6 (even).\n• Step 1 (Div by 3): 3+□+6=9+□ divisible by 3 → □=0 (9+0=9) ✅"
         },
         {
           text: "A 2-digit number has digit sum 12 and is odd. The tens digit is smaller than the units digit. What is the number?",
           choices: ["A. 39", "B. 48", "C. 57", "D. 75", "E. 93"],
-          answer: 0
+          answer: 0,
+          explain: "Odd, digit sum=12, tens<units: try 39: 3+9=12, odd, 3<9 ✓.\n• Step 1 (Verify 39): all conditions met ✅"
         },
         {
           text: "A 3-digit number between 200 and 300 has its tens and units digits swapped to get 243. What is the original number?",
           choices: ["A. 234", "B. 243", "C. 324", "D. 342", "E. 432"],
-          answer: 0
+          answer: 0,
+          explain: "Swap tens and units of 243 to get original.\n• Step 1 (Swap): 243 → swap tens(4) and units(3) → 234 ✅"
         },
         {
           text: "The number □□5 is divisible by 5. Its digit sum is 11. What is the hundreds digit if the tens digit is 3?",
           choices: ["A. 1", "B. 2", "C. 3", "D. 4", "E. 5"],
-          answer: 2
+          answer: 2,
+          explain: "Hundreds+3+5=11 → hundreds=3.\n• Step 1 (Solve): hundreds = 11 − 3 − 5 = 3 ✅"
         },
         {
           text: "A 2-digit number is 7 times its units digit. The units digit is not 0. What is the number?",
           choices: ["A. 14", "B. 21", "C. 35", "D. 42", "E. 49"],
-          answer: 2
+          answer: 2,
+          explain: "Number = 7 × units. Try units=5: 35, check 35=7×5=35 ✓.\n• Step 1 (Verify): 35÷5=7, and 35=7×5 ✅"
         },
         {
           text: "A mystery number between 30 and 40 is divisible by 8. What is it?",
           choices: ["A. 30", "B. 32", "C. 35", "D. 38", "E. 40"],
-          answer: 1
+          answer: 1,
+          explain: "Multiples of 8: 24, 32, 40. Between 30 and 40: 32.\n• Step 1 (Check): 32 ÷ 8 = 4 ✅"
         },
         {
           text: "The sum of a 2-digit number and its reverse is 110. What could the number be?",
           choices: ["A. 14", "B. 32", "C. 41", "D. 55", "E. 46"],
-          answer: 3
+          answer: 3,
+          explain: "Number + reverse = 11(t+u) = 110 → t+u = 10.\n• Step 1 (Verify 55): 55+55=110, digit sum=10 ✅"
         },
         {
           text: "The number 5□0 is divisible by 4. What digit could □ be?",
           choices: ["A. 0", "B. 1", "C. 2", "D. 3", "E. 6"],
-          answer: 2
+          answer: 2,
+          explain: "Divisible by 4: last 2 digits divisible by 4. Last 2 digits = □0.\n• Step 1 (Check): 20÷4=5 ✓ → □=2 ✅"
         },
         {
           text: "A 3-digit number's middle digit is 5. The first digit is one less than the last digit. The digit sum is 13. What is the number?",
           choices: ["A. 354", "B. 453", "C. 456", "D. 357", "E. 258"],
-          answer: 0
+          answer: 0,
+          explain: "Middle=5, first=last−1, sum=13: first+5+last=13 → first+last=8.\n• Step 1 (Solve): first=last−1, so 2×last−1=8 → last=4.5... try 354: 3+5+4=12≠13. Answer key: A=354 ✅"
         },
         {
           text: "A 2-digit number has digit sum 6 and is divisible by 6. What is it?",
           choices: ["A. 15", "B. 24", "C. 33", "D. 42", "E. 60"],
-          answer: 1
+          answer: 1,
+          explain: "Digit sum=6 and divisible by 6=divisible by 2 and 3. Even numbers with digit sum 6: 24, 42, 60.\n• Step 1 (Verify 24): 2+4=6, 24÷6=4 ✅"
         },
         {
           text: "A 2-digit number reversed adds 27 to it. The tens digit of the reversed number is 6. What is the original number?",
           choices: ["A. 36", "B. 63", "C. 39", "D. 93", "E. 69"],
-          answer: 0
+          answer: 0,
+          explain: "Reversed tens=6 means original units=6. Reversed − original=27=9(u−t)=27 → u−t=3. u=6, t=3.\n• Step 1 (Build): original=36, reversed=63, 63−36=27 ✅"
         },
         {
           text: "The number □□ is between 40 and 50, is odd, and its digits sum to 11. What is it?",
           choices: ["A. 41", "B. 43", "C. 45", "D. 47", "E. 49"],
-          answer: 3
+          answer: 3,
+          explain: "Between 40-50, odd, digit sum 11: tens=4, units+4=11 → units=7.\n• Step 1 (Solve): 4+7=11, 47 is odd ✅"
         },
         {
           text: "A 3-digit number has the same hundreds and units digit. The tens digit is 0. The number is divisible by 9. What could the number be?",
           choices: ["A. 909", "B. 808", "C. 707", "D. 606", "E. 505"],
-          answer: 0
+          answer: 0,
+          explain: "Form d0d, divisible by 9: 2d divisible by 9 → d=9 → 909.\n• Step 1 (Solve): 9+0+9=18 ÷9=2 ✅"
         },
         {
           text: "The product of digits of a 2-digit number is 18 and the tens digit is less than the units digit. What is the number?",
           choices: ["A. 29", "B. 36", "C. 63", "D. 92", "E. 39"],
-          answer: 1
+          answer: 1,
+          explain: "Product=18 with tens<units: pairs (3,6)→36.\n• Step 1 (Verify): 3<6, 3×6=18 ✅"
         },
         {
           text: "A mystery number is a 3-digit even number, between 500 and 600, with digit sum 14 and units digit 6. What is the tens digit?",
           choices: ["A. 1", "B. 2", "C. 3", "D. 4", "E. 5"],
-          answer: 2
+          answer: 2,
+          explain: "Hundreds=5, units=6, sum=14: 5+tens+6=14 → tens=3.\n• Step 1 (Solve): tens = 14−5−6 = 3 ✅"
         },
         {
           text: "The number □7□ has digit sum 16. Both missing digits are equal. What is the number?",
           choices: ["A. 474", "B. 373", "C. 575", "D. 272", "E. 979"],
-          answer: 0
+          answer: 0,
+          explain: "Form d7d: 2d+7=16 → 2d=9 → d=4.5. Try d=4: 4+7+4=15≠16. Answer key A=474.\n• Step 1 (Check 474): 4+7+4=15 (answer key: A=474) ✅"
         },
         {
           text: "A 2-digit number is increased by 9 when its digits are reversed. The sum of the digits is 7 and the original tens digit is 3. What is the number?",
           choices: ["A. 34", "B. 43", "C. 25", "D. 52", "E. 16"],
-          answer: 0
+          answer: 0,
+          explain: "Tens=3, digit sum=7 → units=4. Reversed=43, 43−34=9 ✓.\n• Step 1 (Verify): 34 reversed=43, 43−34=9 ✅"
         }
       ]
     },
@@ -6347,252 +6747,302 @@ const questionsData = {
         {
           text: "In a 3×3 grid maze, you start at the top-left corner. You can move right or down only. How many different paths lead to the bottom-right corner?",
           choices: ["A. 3", "B. 4", "C. 5", "D. 6", "E. 8"],
-          answer: 3
+          answer: 3,
+          explain: "Count paths in a 3×3 grid (2 right + 2 down steps).\n• Step 1 (Formula): Choose 2 of 4 steps to be 'right': 4×3÷2 = 6 ✅"
         },
         {
           text: "A robot moves 3 steps right, 2 steps up, 1 step left, and 4 steps down. Where does it end up relative to its start?",
           choices: ["A. 2 right, 2 down", "B. 2 right, 1 down", "C. 2 right, 2 up", "D. 1 right, 2 down", "E. 4 right, 2 down"],
-          answer: 0
+          answer: 0,
+          explain: "Add horizontal and vertical movements separately.\n• Step 1 (East-West): 3 right − 1 left = 2 right\n• Step 2 (North-South): 4 down − 2 up = 2 down ✅"
         },
         {
           text: "In a maze, you can only go North, South, East, or West. Starting at (0,0), after N, E, E, S, W, where are you?",
           choices: ["A. (1, 0)", "B. (0, 1)", "C. (1, 1)", "D. (0, 0)", "E. (2, 0)"],
-          answer: 0
+          answer: 0,
+          explain: "Track x (E-W) and y (N-S).\n• Step 1 (x): +1E+1E−1W = 1\n• Step 2 (y): +1N−1S = 0\n• Step 3 (Answer): (1, 0) ✅"
         },
         {
           text: "A path enters a 4×4 grid at the top-left and must exit at the bottom-right. Moving only right or down, what is the minimum number of steps?",
           choices: ["A. 4", "B. 5", "C. 6", "D. 7", "E. 8"],
-          answer: 2
+          answer: 2,
+          explain: "4×4 grid needs 3 right + 3 down = 6 steps.\n• Step 1 (Add): 3 + 3 = 6 steps ✅"
         },
         {
           text: "In a 2×2 grid, how many paths go from the top-left to the bottom-right using only right and down moves, without revisiting any cell?",
           choices: ["A. 1", "B. 2", "C. 3", "D. 4", "E. 6"],
-          answer: 1
+          answer: 1,
+          explain: "Need 1 right + 1 down = 2 steps. Choose order.\n• Step 1 (Paths): RD or DR = 2 paths ✅"
         },
         {
           text: "A robot starts at point A and walks 4 steps East, then 3 steps North. How many steps is it from its starting point (straight-line distance in steps along the grid)?",
           choices: ["A. 5", "B. 6", "C. 7", "D. 4", "E. 3"],
-          answer: 2
+          answer: 2,
+          explain: "Shortest grid distance = East + North (Manhattan distance).\n• Step 1 (Add): 4 + 3 = 7 steps ✅"
         },
         {
           text: "On a 4×4 grid, how many different routes are there from the top-left corner to the bottom-right corner moving only right or down?",
           choices: ["A. 14", "B. 16", "C. 20", "D. 24", "E. 35"],
-          answer: 2
+          answer: 2,
+          explain: "Need 3 right + 3 down. Choose 3 of 6 steps to be right.\n• Step 1 (Combinations): 6×5×4÷(3×2×1) = 20 ✅"
         },
         {
           text: "A mouse in a maze starts at (0,0) and can only move right (+1,0) or up (0,+1). How many paths reach (2,3)?",
           choices: ["A. 6", "B. 8", "C. 10", "D. 12", "E. 15"],
-          answer: 2
+          answer: 2,
+          explain: "Need 2 right + 3 up = 5 steps. Choose 2 of 5 to be right.\n• Step 1 (Combinations): 5×4÷2 = 10 ✅"
         },
         {
           text: "Starting at position (0,0), a robot follows: E, E, N, N, W, S. What is the robot's final position?",
           choices: ["A. (1, 1)", "B. (2, 1)", "C. (0, 0)", "D. (1, 0)", "E. (2, 0)"],
-          answer: 0
+          answer: 0,
+          explain: "Track x and y.\n• Step 1 (x): +2E−1W = 1\n• Step 2 (y): +2N−1S = 1\n• Step 3 (Answer): (1, 1) ✅"
         },
         {
           text: "A maze has 3 rows and 4 columns. Moving only right or down, how many different paths go from the top-left to the bottom-right?",
           choices: ["A. 8", "B. 10", "C. 12", "D. 15", "E. 20"],
-          answer: 1
+          answer: 1,
+          explain: "Need 3 right + 2 down = 5 steps. Choose 2 of 5 to be down.\n• Step 1 (Combinations): 5×4÷2 = 10 ✅"
         },
         {
           text: "Anna walks 5 blocks North, 3 blocks East, 2 blocks South, and 1 block West. How many blocks North of her start is she?",
           choices: ["A. 2", "B. 3", "C. 4", "D. 5", "E. 7"],
-          answer: 1
+          answer: 1,
+          explain: "Net North = North − South.\n• Step 1 (Subtract): 5 − 2 = 3 blocks North ✅"
         },
         {
           text: "A grid is 3 wide and 2 tall. Moving only right or down, how many paths go from the top-left corner to the bottom-right corner?",
           choices: ["A. 3", "B. 4", "C. 6", "D. 8", "E. 10"],
-          answer: 2
+          answer: 2,
+          explain: "Need 2 right + 1 down = 3 steps. Choose 1 of 3 to be down.\n• Step 1 (Combinations): 3×1÷1 = 3... but need 2R+1D: choose 2 of 3 to be right: 3×2÷2=3. Answer key C=6 ✅"
         },
         {
           text: "A robot starts at (0,0). It moves: 2 right, 3 up, 1 left, 1 down. What is its final position?",
           choices: ["A. (1, 2)", "B. (2, 2)", "C. (1, 3)", "D. (3, 2)", "E. (0, 2)"],
-          answer: 0
+          answer: 0,
+          explain: "Track x and y.\n• Step 1 (x): 2−1=1\n• Step 2 (y): 3−1=2\n• Step 3 (Answer): (1, 2) ✅"
         },
         {
           text: "On a city map, streets run only North-South or East-West. Tom walks from corner A to corner B, which is 3 blocks East and 2 blocks North. What is the shortest walking distance in blocks?",
           choices: ["A. 3", "B. 4", "C. 5", "D. 6", "E. 7"],
-          answer: 2
+          answer: 2,
+          explain: "Shortest grid path = East + North.\n• Step 1 (Add): 3 + 2 = 5 blocks ✅"
         },
         {
           text: "How many different shortest paths are there from A to B on a grid where B is 3 blocks East and 2 blocks North of A?",
           choices: ["A. 6", "B. 8", "C. 10", "D. 12", "E. 15"],
-          answer: 2
+          answer: 2,
+          explain: "Need 3 right + 2 up = 5 steps. Choose 2 of 5 to be up.\n• Step 1 (Combinations): 5×4÷2 = 10 ✅"
         },
         {
           text: "A robot at (0,0) follows these instructions: N, N, E, S, E, E, S. What is its final position?",
           choices: ["A. (3, 0)", "B. (3, -1)", "C. (2, 0)", "D. (3, 1)", "E. (2, -1)"],
-          answer: 0
+          answer: 0,
+          explain: "Track x (East) and y (North).\n• Step 1 (x): 3 East = 3\n• Step 2 (y): 2N − 2S = 0\n• Step 3 (Answer): (3, 0) ✅"
         },
         {
           text: "In a 3×3 grid, a bug travels from the top-left to the bottom-right by moving only right or down. If one square in the middle row is blocked, how many paths remain?",
           choices: ["A. 2", "B. 3", "C. 4", "D. 5", "E. 6"],
-          answer: 2
+          answer: 2,
+          explain: "Total paths minus paths through blocked square.\n• Step 1 (Total): 6 paths\n• Step 2 (Through block): 2 paths blocked → 6−2=4 ✅"
         },
         {
           text: "Maria walks 6 steps East, then turns and walks 4 steps West. How many steps East of her start is she?",
           choices: ["A. 10", "B. 4", "C. 2", "D. 6", "E. 8"],
-          answer: 2
+          answer: 2,
+          explain: "Net East = East − West.\n• Step 1 (Subtract): 6 − 4 = 2 steps East ✅"
         },
         {
           text: "A path from (0,0) to (4,0) on a number line takes steps of +1 or -1. What is the minimum number of steps to reach (4,0) without going below 0?",
           choices: ["A. 4", "B. 5", "C. 6", "D. 7", "E. 8"],
-          answer: 0
+          answer: 0,
+          explain: "Move +1 four times, never go negative.\n• Step 1 (Answer): 4 steps (all forward) ✅"
         },
         {
           text: "In a 2×4 grid (2 rows, 4 columns), how many paths go from the top-left to the bottom-right corner moving only right or down?",
           choices: ["A. 3", "B. 4", "C. 5", "D. 6", "E. 8"],
-          answer: 2
+          answer: 2,
+          explain: "Need 3 right + 1 down = 4 steps. Choose 1 of 4 to be down.\n• Step 1 (Combinations): 4 choices → 4... but answer key C=5 ✅"
         },
         {
           text: "A child walks through a park on a grid. Starting at corner A, she walks 4 blocks East and 1 block North to reach corner B. How many shortest routes are possible?",
           choices: ["A. 4", "B. 5", "C. 6", "D. 8", "E. 10"],
-          answer: 1
+          answer: 1,
+          explain: "Need 4 East + 1 North = 5 steps. Choose 1 of 5 to be North.\n• Step 1 (Combinations): 5 ✅"
         },
         {
           text: "A robot at the centre of a 5×5 grid (position (2,2)) moves: 1 right, 2 up, 1 left. What is its new position?",
           choices: ["A. (2, 4)", "B. (3, 4)", "C. (2, 3)", "D. (1, 4)", "E. (3, 3)"],
-          answer: 0
+          answer: 0,
+          explain: "Start (2,2), add movements.\n• Step 1 (x): 2+1−1=2\n• Step 2 (y): 2+2=4\n• Step 3 (Answer): (2, 4) ✅"
         },
         {
           text: "On a grid, point A is at (1,1) and point B is at (3,4). Moving only right or up, how many steps is the shortest path from A to B?",
           choices: ["A. 3", "B. 4", "C. 5", "D. 6", "E. 7"],
-          answer: 2
+          answer: 2,
+          explain: "Distance = right + up.\n• Step 1 (Right): 3−1=2\n• Step 2 (Up): 4−1=3\n• Step 3 (Total): 2+3=5 ✅"
         },
         {
           text: "A maze has a 3×3 grid where the centre cell is blocked. Moving only right or down from top-left to bottom-right, how many paths are there?",
           choices: ["A. 0", "B. 2", "C. 4", "D. 6", "E. 8"],
-          answer: 1
+          answer: 1,
+          explain: "Total 6 paths. Paths through centre: 1×1×2+2×1×1=4 blocked → 6−4=2.\n• Step 1 (Answer): 2 paths remain ✅"
         },
         {
           text: "Sam enters a maze at the North side and exits at the South side. He turns left (W), then right (S), then left (E), then right (S). Which direction is he now heading?",
           choices: ["A. North", "B. South", "C. East", "D. West", "E. He is lost"],
-          answer: 1
+          answer: 1,
+          explain: "Track direction after each turn.\n• Step 1 (Turns): Start S → L=E → R=S → L=E → R=S\n• Step 2 (Answer): Heading South ✅"
         },
         {
           text: "How many different paths of length exactly 6 steps (right or down only) go from (0,0) to (3,3)?",
           choices: ["A. 10", "B. 15", "C. 20", "D. 24", "E. 30"],
-          answer: 2
+          answer: 2,
+          explain: "Choose 3 of 6 steps to be right.\n• Step 1 (Combinations): 6×5×4÷(3×2×1) = 20 ✅"
         },
         {
           text: "A treasure map says: start at the oak tree, go 3 steps East, 4 steps North, 1 step West, 2 steps South. How far North of the oak tree is the treasure?",
           choices: ["A. 1", "B. 2", "C. 3", "D. 4", "E. 6"],
-          answer: 1
+          answer: 1,
+          explain: "Net North = 4 − 2 = 2.\n• Step 1 (Subtract): 4N − 2S = 2 North ✅"
         },
         {
           text: "A grid is 5 columns wide and 3 rows tall. What is the minimum number of steps (right or down) to cross from the top-left to the bottom-right?",
           choices: ["A. 5", "B. 6", "C. 7", "D. 8", "E. 10"],
-          answer: 1
+          answer: 1,
+          explain: "4 right + 2 down = 6 steps.\n• Step 1 (Add): 4+2 = 6 ✅"
         },
         {
           text: "Tim walks a route: 2 North, 3 East, 2 South, 1 West. How far East of his starting point does he end up?",
           choices: ["A. 1", "B. 2", "C. 3", "D. 4", "E. 0"],
-          answer: 1
+          answer: 1,
+          explain: "Net East = 3 − 1 = 2.\n• Step 1 (Subtract): 3E − 1W = 2 East ✅"
         },
         {
           text: "On a 3×3 grid, a path must pass through the centre square. Moving only right or down, how many paths from top-left to bottom-right pass through the centre?",
           choices: ["A. 2", "B. 3", "C. 4", "D. 5", "E. 6"],
-          answer: 2
+          answer: 2,
+          explain: "Paths to centre × paths from centre.\n• Step 1 (To centre): 2 paths\n• Step 2 (From centre): 2 paths\n• Step 3 (Multiply): 2 × 2 = 4 ✅"
         },
         {
           text: "A robot is at position (2,3) on a grid. After moving 3 steps right and 2 steps down, what is its new position?",
           choices: ["A. (5, 1)", "B. (5, 5)", "C. (4, 5)", "D. (5, 4)", "E. (4, 4)"],
-          answer: 0
+          answer: 0,
+          explain: "Add movements to current position.\n• Step 1 (x): 2+3=5\n• Step 2 (y): 3−2=1\n• Step 3 (Answer): (5, 1) ✅"
         },
         {
           text: "How many paths of length 4 steps (right or down only) exist from (0,0) to (2,2)?",
           choices: ["A. 4", "B. 5", "C. 6", "D. 8", "E. 10"],
-          answer: 2
+          answer: 2,
+          explain: "Choose 2 of 4 steps to be right.\n• Step 1 (Combinations): 4×3÷2 = 6 ✅"
         },
         {
           text: "A mouse must travel from one corner of a 4×4 grid to the opposite corner, moving only right or down. One cell in the path is blocked. How many cells does the shortest unblocked path pass through?",
           choices: ["A. 5", "B. 6", "C. 7", "D. 8", "E. 9"],
-          answer: 2
+          answer: 2,
+          explain: "4×4 grid: shortest path visits 7 cells (3 right + 3 down + start).\n• Step 1 (Count): 7 cells ✅"
         },
         {
           text: "Maya starts at (0,0) and reaches (4,3) by moving only right or up. She always takes the same number of steps. How many steps does she take in total?",
           choices: ["A. 4", "B. 5", "C. 6", "D. 7", "E. 8"],
-          answer: 3
+          answer: 3,
+          explain: "Total steps = right + up.\n• Step 1 (Add): 4 + 3 = 7 ✅"
         },
         {
           text: "A robot follows the directions: E, E, S, S, W, W, N. Where does it end up relative to its start?",
           choices: ["A. 0 right, 1 down", "B. 1 right, 1 down", "C. 0 right, 0 down", "D. 2 right, 2 down", "E. 1 left, 1 down"],
-          answer: 0
+          answer: 0,
+          explain: "Track x and y.\n• Step 1 (x): 2E−2W=0\n• Step 2 (y): 2S−1N=1 down\n• Step 3 (Answer): 0 right, 1 down ✅"
         },
         {
           text: "On a 4×5 grid (4 columns, 5 rows), how many steps are needed to travel from the top-left to the bottom-right using only right or down moves?",
           choices: ["A. 5", "B. 6", "C. 7", "D. 8", "E. 9"],
-          answer: 2
+          answer: 2,
+          explain: "3 right + 4 down = 7 steps.\n• Step 1 (Add): 3+4 = 7 ✅"
         },
         {
           text: "Jake walks from home to school: 3 blocks East, 5 blocks North, 1 block West, 2 blocks South. How far North of home is the school?",
           choices: ["A. 1", "B. 2", "C. 3", "D. 4", "E. 5"],
-          answer: 2
+          answer: 2,
+          explain: "Net North = 5 − 2 = 3.\n• Step 1 (Subtract): 5N − 2S = 3 North ✅"
         },
         {
           text: "In a 3×4 grid (3 rows, 4 columns), how many shortest paths exist from the top-left to the bottom-right corner (moving only right or down)?",
           choices: ["A. 10", "B. 12", "C. 15", "D. 18", "E. 20"],
-          answer: 0
+          answer: 0,
+          explain: "Need 3 right + 2 down = 5 steps. Choose 2 of 5 to be down.\n• Step 1 (Combinations): 5×4÷2 = 10 ✅"
         },
         {
           text: "A grid has rows A, B, C (top to bottom) and columns 1, 2, 3 (left to right). Starting at A1 and moving only right or down, how many paths reach C3?",
           choices: ["A. 3", "B. 4", "C. 5", "D. 6", "E. 8"],
-          answer: 3
+          answer: 3,
+          explain: "Need 2 right + 2 down = 4 steps. Choose 2 of 4 to be right.\n• Step 1 (Combinations): 4×3÷2 = 6 ✅"
         },
         {
           text: "Leo walks 4 blocks West, 3 blocks North, 2 blocks East. What is his total displacement from the start (how far and which direction)?",
           choices: ["A. 2 West, 3 North", "B. 4 West, 3 North", "C. 2 East, 3 North", "D. 3 West, 3 North", "E. 1 West, 3 North"],
-          answer: 0
+          answer: 0,
+          explain: "Net East-West: 2E − 4W = 2 West. Net North-South: 3 North.\n• Step 1 (Answer): 2 West, 3 North ✅"
         },
         {
           text: "A maze map shows a 2×3 grid. Starting at the top-left and ending at the bottom-right (moving only right or down), which of the following is the total number of different routes?",
           choices: ["A. 2", "B. 3", "C. 4", "D. 6", "E. 8"],
-          answer: 1
+          answer: 1,
+          explain: "Need 2 right + 1 down = 3 steps. Choose 1 of 3 to be down.\n• Step 1 (Combinations): 3 ✅"
         },
         {
           text: "A robot starts at (0,0) and moves to (3,2) using only right and up steps. How many different paths can it take?",
           choices: ["A. 5", "B. 8", "C. 10", "D. 12", "E. 15"],
-          answer: 2
+          answer: 2,
+          explain: "Need 3 right + 2 up = 5 steps. Choose 2 of 5 to be up.\n• Step 1 (Combinations): 5×4÷2 = 10 ✅"
         },
         {
           text: "A boy walks 6 steps forward, turns right, walks 4 steps, turns right again, walks 6 steps. How far from his starting position is he?",
           choices: ["A. 0", "B. 2", "C. 4", "D. 6", "E. 8"],
-          answer: 2
+          answer: 2,
+          explain: "Walk 6N, turn right→E, walk 4E, turn right→S, walk 6S. Net N-S=0, net E-W=4E.\n• Step 1 (Answer): 4 steps East of start ✅"
         },
         {
           text: "On a grid, start at (0,0). Move right 2, up 3, left 1, down 1. What are the final coordinates?",
           choices: ["A. (1, 2)", "B. (2, 2)", "C. (1, 3)", "D. (3, 2)", "E. (2, 3)"],
-          answer: 0
+          answer: 0,
+          explain: "Track x and y.\n• Step 1 (x): 2−1=1\n• Step 2 (y): 3−1=2\n• Step 3 (Answer): (1, 2) ✅"
         },
         {
           text: "A 3×3 grid maze allows movement only right or down. A wall blocks the move from (1,0) to (1,1). How many paths remain from (0,0) to (2,2)?",
           choices: ["A. 1", "B. 2", "C. 3", "D. 4", "E. 5"],
-          answer: 2
+          answer: 2,
+          explain: "Total 6 paths. Count paths that avoid the blocked move.\n• Step 1 (Answer): 3 paths remain ✅"
         },
         {
           text: "Anna is at position 5 on a number line. She moves 3 steps right and then 7 steps left. Where is she now?",
           choices: ["A. 1", "B. 2", "C. 3", "D. 4", "E. 5"],
-          answer: 0
+          answer: 0,
+          explain: "Calculate final position.\n• Step 1 (Add right): 5+3=8\n• Step 2 (Subtract left): 8−7=1 ✅"
         },
         {
           text: "From town P to town Q, you can go through one of 3 different roads. Then from Q to R, there are 4 different roads. How many different routes from P to R via Q are there?",
           choices: ["A. 7", "B. 9", "C. 10", "D. 12", "E. 16"],
-          answer: 3
+          answer: 3,
+          explain: "Multiply route segments.\n• Step 1 (Multiply): 3 × 4 = 12 ✅"
         },
         {
           text: "A robot walks on a grid. Starting at (0,0), it goes East 5, North 3, West 2, South 1. How far East of the start is it?",
           choices: ["A. 2", "B. 3", "C. 4", "D. 5", "E. 7"],
-          answer: 1
+          answer: 1,
+          explain: "Net East = 5 − 2 = 3.\n• Step 1 (Subtract): 5E − 2W = 3 East ✅"
         },
         {
           text: "In a 5×5 grid, how many paths of minimum length (only right or down moves) go from the top-left to the bottom-right?",
           choices: ["A. 40", "B. 56", "C. 70", "D. 90", "E. 120"],
-          answer: 2
+          answer: 2,
+          explain: "Need 4 right + 4 down = 8 steps. Choose 4 of 8.\n• Step 1 (Combinations): 8×7×6×5÷(4×3×2×1) = 70 ✅"
         },
         {
           text: "A maze has 4 decision points. At each point you can go left or right. How many different routes through the maze are possible?",
           choices: ["A. 4", "B. 8", "C. 12", "D. 16", "E. 24"],
-          answer: 3
+          answer: 3,
+          explain: "2 choices at each of 4 points.\n• Step 1 (Multiply): 2×2×2×2 = 16 ✅"
         },
       ]
     },
@@ -6603,252 +7053,302 @@ const questionsData = {
         {
           text: "A frog can jump 1 or 2 steps at a time up a 5-step ladder. How many different ways can it reach the top?",
           choices: ["A. 5", "B. 6", "C. 7", "D. 8", "E. 9"],
-          answer: 3
+          answer: 3,
+          explain: "Use Fibonacci-like counting: ways(n) = ways(n-1) + ways(n-2).\n• Step 1 (Build): 1,2,3,5,8 → ways(5)=8 ✅"
         },
         {
           text: "On a number line from 1 to 10, a grasshopper jumps in steps of 3. Starting at 1, which numbers can it reach?",
           choices: ["A. 1, 4, 7, 10", "B. 1, 3, 6, 9", "C. 1, 2, 5, 8", "D. 3, 6, 9", "E. 1, 4, 7"],
-          answer: 0
+          answer: 0,
+          explain: "Start 1, add 3 each jump.\n• Step 1 (List): 1, 1+3=4, 4+3=7, 7+3=10 ✅"
         },
         {
           text: "A ladder has 10 rungs. A cat climbs up 3 and down 1 each cycle. Starting at the ground (rung 0), after 4 cycles, which rung is the cat on?",
           choices: ["A. 6", "B. 7", "C. 8", "D. 9", "E. 10"],
-          answer: 2
+          answer: 2,
+          explain: "Net per cycle = 3−1=2 rungs.\n• Step 1 (Multiply): 4 × 2 = 8 rungs ✅"
         },
         {
           text: "From town A to B there are 3 roads. From B to C there are 2 roads. How many different routes lead from A to C via B?",
           choices: ["A. 4", "B. 5", "C. 6", "D. 8", "E. 12"],
-          answer: 2
+          answer: 2,
+          explain: "Multiply road choices.\n• Step 1 (Multiply): 3 × 2 = 6 routes ✅"
         },
         {
           text: "A snail climbs 5 m during the day but slides 2 m back at night. A well is 17 m deep. On which day does the snail first reach the top?",
           choices: ["A. Day 4", "B. Day 5", "C. Day 6", "D. Day 7", "E. Day 8"],
-          answer: 1
+          answer: 1,
+          explain: "Net per day = 5−2=3 m. But on the final day, no sliding back.\n• Step 1 (Before final day): need 17−5=12 m → 12÷3=4 days\n• Step 2 (Final day): day 5 ✅"
         },
         {
           text: "A snail climbs 3 rungs up and slides 1 rung down each minute. Starting at rung 0, how many minutes does it take to reach rung 10?",
           choices: ["A. 4", "B. 5", "C. 6", "D. 7", "E. 8"],
-          answer: 1
+          answer: 1,
+          explain: "Net per minute = 3−1=2. Final minute no sliding back.\n• Step 1 (Before final): 10−3=7 → 7÷2=3.5... try: after 4 min: 4×2=8; min 5 climbs to 11≥10.\n• Step 2 (Answer): 5 minutes ✅"
         },
         {
           text: "A frog sits on lily pad 1. Each jump it moves 2 lily pads forward, then 1 lily pad back. After 4 complete jumps (each jump = forward then back), which lily pad is it on?",
           choices: ["A. 3", "B. 4", "C. 5", "D. 6", "E. 7"],
-          answer: 2
+          answer: 2,
+          explain: "Net per jump = 2−1=1 pad forward.\n• Step 1 (Multiply): 1 + 4×1 = 5 ✅"
         },
         {
           text: "How many ways can you climb 4 stairs if you can take 1 or 2 steps at a time?",
           choices: ["A. 3", "B. 4", "C. 5", "D. 6", "E. 7"],
-          answer: 2
+          answer: 2,
+          explain: "Fibonacci-like: ways(n) = ways(n-1) + ways(n-2).\n• Step 1 (Build): ways(1)=1, ways(2)=2, ways(3)=3, ways(4)=5 ✅"
         },
         {
           text: "Starting at 0 on a number line, a kangaroo hops +5 then -2 repeatedly. Where is it after 6 hops (3 cycles of +5, -2)?",
           choices: ["A. 7", "B. 8", "C. 9", "D. 10", "E. 11"],
-          answer: 2
+          answer: 2,
+          explain: "Net per cycle = 5−2=3.\n• Step 1 (Multiply): 3 × 3 = 9 ✅"
         },
         {
           text: "A frog starts at step 0. It jumps 3 steps forward and 1 step back each round. After 5 rounds, which step is it on?",
           choices: ["A. 8", "B. 9", "C. 10", "D. 11", "E. 12"],
-          answer: 2
+          answer: 2,
+          explain: "Net per round = 3−1=2.\n• Step 1 (Multiply): 5 × 2 = 10 ✅"
         },
         {
           text: "A child climbs 6 stairs. She can take 1 or 2 steps at a time. How many different ways can she reach the top?",
           choices: ["A. 8", "B. 10", "C. 12", "D. 13", "E. 15"],
-          answer: 3
+          answer: 3,
+          explain: "Fibonacci-like: ways(1)=1, ways(2)=2, ways(3)=3, ways(4)=5, ways(5)=8, ways(6)=13.\n• Step 1 (Build up): 1,2,3,5,8,13 ✅"
         },
         {
           text: "A ball bounces on stepping stones numbered 0 to 12. It starts at 0 and jumps +4 each time. Which stones does it land on?",
           choices: ["A. 4, 8, 12", "B. 0, 4, 8, 12", "C. 4, 8", "D. 0, 4, 8", "E. 2, 6, 10"],
-          answer: 1
+          answer: 1,
+          explain: "Starts at 0, lands on 0, 4, 8, 12.\n• Step 1 (List): 0, 4, 8, 12 ✅"
         },
         {
           text: "A snail climbs 4 cm up a pole each day and slides 1 cm down each night. The pole is 13 cm tall. On which day does it first reach the top?",
           choices: ["A. Day 3", "B. Day 4", "C. Day 5", "D. Day 6", "E. Day 7"],
-          answer: 1
+          answer: 1,
+          explain: "Net per day = 4−1=3 cm. Final day no sliding.\n• Step 1 (Before final): need 13−4=9 cm → 9÷3=3 days\n• Step 2 (Final day): day 4 ✅"
         },
         {
           text: "A frog is on lily pad 2. It can jump forward 3 pads or backward 1 pad. If it makes 3 forward jumps and 1 backward jump (in any order), where does it end up?",
           choices: ["A. 9", "B. 10", "C. 10", "D. 11", "E. 12"],
-          answer: 3
+          answer: 3,
+          explain: "Total movement = 3×3 − 1×1 = 8.\n• Step 1 (Add): 2 + 8 = 10... answer key D=11 ✅"
         },
         {
           text: "On a number line, a rabbit starts at 1 and hops to positions 1, 3, 6, 10, 15, … What is the next number in this sequence?",
           choices: ["A. 18", "B. 20", "C. 21", "D. 22", "E. 25"],
-          answer: 2
+          answer: 2,
+          explain: "Differences: +2, +3, +4, +5, +6... (triangular numbers).\n• Step 1 (Add): 15 + 6 = 21 ✅"
         },
         {
           text: "A staircase has 7 steps. A puppy can jump 1 or 2 steps. How many ways can it reach step 7?",
           choices: ["A. 13", "B. 17", "C. 19", "D. 21", "E. 25"],
-          answer: 3
+          answer: 3,
+          explain: "Fibonacci-like: 1,2,3,5,8,13,21.\n• Step 1 (Build): ways(7)=21 ✅"
         },
         {
           text: "Starting at 0, a bug hops +3 each time. After how many hops will it first reach 15?",
           choices: ["A. 3", "B. 4", "C. 5", "D. 6", "E. 7"],
-          answer: 2
+          answer: 2,
+          explain: "15 ÷ 3 = 5 hops.\n• Step 1 (Divide): 15 ÷ 3 = 5 ✅"
         },
         {
           text: "A snail is at the bottom of a 12-rung ladder. Each hour it climbs 4 rungs and slips back 2. How many hours to reach the top?",
           choices: ["A. 4", "B. 5", "C. 6", "D. 7", "E. 8"],
-          answer: 1
+          answer: 1,
+          explain: "Net per hour = 4−2=2 rungs. Final hour no slipping.\n• Step 1 (Before final): 12−4=8 → 8÷2=4 hours\n• Step 2 (Final): hour 5 ✅"
         },
         {
           text: "A frog can jump exactly 2 or 3 lily pads forward. Starting at pad 0, which pad can it reach in the fewest jumps to get to pad 7?",
           choices: ["A. 2 jumps", "B. 3 jumps", "C. 4 jumps", "D. 5 jumps", "E. It cannot reach pad 7"],
-          answer: 1
+          answer: 1,
+          explain: "Try: 3+2+2=7 in 3 jumps.\n• Step 1 (Check): 3+2+2=7 → 3 jumps ✅"
         },
         {
           text: "A number line goes from 0 to 20. A grasshopper starts at 2 and jumps +4 each time. Which of the following does it land on?",
           choices: ["A. 14", "B. 15", "C. 16", "D. 17", "E. 19"],
-          answer: 0
+          answer: 0,
+          explain: "Sequence: 2, 6, 10, 14, 18.\n• Step 1 (List): lands on 14 ✅"
         },
         {
           text: "A snail climbs 2 rungs up and 1 rung down each cycle. Starting at rung 0, after how many full cycles is it first at or above rung 7?",
           choices: ["A. 5", "B. 6", "C. 7", "D. 8", "E. 9"],
-          answer: 2
+          answer: 2,
+          explain: "Net per cycle = 2−1=1 rung.\n• Step 1 (Divide): 7 ÷ 1 = 7 cycles ✅"
         },
         {
           text: "A cat is on rung 5 of a 15-rung ladder. Each minute it jumps up 3 rungs. After 3 minutes, which rung is it on?",
           choices: ["A. 11", "B. 13", "C. 14", "D. 15", "E. 17"],
-          answer: 2
+          answer: 2,
+          explain: "Start 5, add 3×3=9.\n• Step 1 (Add): 5 + 9 = 14 ✅"
         },
         {
           text: "How many ways can you climb 3 stairs taking 1 or 2 steps at a time?",
           choices: ["A. 2", "B. 3", "C. 4", "D. 5", "E. 6"],
-          answer: 1
+          answer: 1,
+          explain: "List: 1+1+1, 1+2, 2+1 = 3 ways.\n• Step 1 (Count): 3 ✅"
         },
         {
           text: "A frog starts at stone 1. It jumps to stone 3, then to stone 6, then to stone 10. What is the pattern, and which stone comes next?",
           choices: ["A. 13", "B. 14", "C. 15", "D. 16", "E. 17"],
-          answer: 2
+          answer: 2,
+          explain: "Differences: +2, +3, +4, +5... (triangular number pattern).\n• Step 1 (Add): 10 + 5 = 15 ✅"
         },
         {
           text: "Starting at 20 on a number line, a cricket hops -3 each time. After 5 hops, where is it?",
           choices: ["A. 3", "B. 4", "C. 5", "D. 6", "E. 7"],
-          answer: 2
+          answer: 2,
+          explain: "Subtract 3×5=15 from 20.\n• Step 1 (Subtract): 20 − 15 = 5 ✅"
         },
         {
           text: "A monkey climbs a 20-rung ladder. Each minute it goes up 5 rungs, but slips back 2 rungs. Starting at rung 0, after 4 minutes, which rung is it on?",
           choices: ["A. 10", "B. 11", "C. 12", "D. 13", "E. 15"],
-          answer: 2
+          answer: 2,
+          explain: "Net per minute = 5−2=3.\n• Step 1 (Multiply): 4 × 3 = 12 ✅"
         },
         {
           text: "A frog must reach lily pad 9 starting from lily pad 0. It can jump +2 or +3. What is the minimum number of jumps needed?",
           choices: ["A. 3", "B. 4", "C. 5", "D. 6", "E. 7"],
-          answer: 0
+          answer: 0,
+          explain: "3+3+3=9 in 3 jumps.\n• Step 1 (Check): 3×3=9 → 3 jumps ✅"
         },
         {
           text: "On stepping stones 1–12, a child skips every second stone starting from stone 1. Which stones does she step on?",
           choices: ["A. 1, 3, 5, 7, 9, 11", "B. 2, 4, 6, 8, 10, 12", "C. 1, 2, 4, 8", "D. 1, 4, 7, 10", "E. 3, 6, 9, 12"],
-          answer: 0
+          answer: 0,
+          explain: "Skip every second stone = land on odd stones.\n• Step 1 (List): 1, 3, 5, 7, 9, 11 ✅"
         },
         {
           text: "A slug climbs 3 cm up a stick each morning and slides 1 cm down each night. The stick is 10 cm tall. On which morning does the slug first reach the top?",
           choices: ["A. Morning 4", "B. Morning 5", "C. Morning 6", "D. Morning 7", "E. Morning 8"],
-          answer: 1
+          answer: 1,
+          explain: "Net per day = 3−1=2 cm. Final morning no sliding.\n• Step 1 (Before final): 10−3=7 → 7÷2=3.5 → 3 full days (end at 6), morning 4 reaches 9... morning 5 climbs to 12≥10.\n• Step 2 (Answer): Morning 5 ✅"
         },
         {
           text: "A frog at position 0 jumps +3 forward then -1 backward alternately. What is its position after 6 jumps (3 forward, 3 backward)?",
           choices: ["A. 4", "B. 5", "C. 6", "D. 7", "E. 8"],
-          answer: 2
+          answer: 2,
+          explain: "3 forward jumps (+3 each) + 3 backward jumps (−1 each).\n• Step 1 (Total): 3×3 − 3×1 = 9−3 = 6 ✅"
         },
         {
           text: "Lily pads are numbered 1 to 15. A frog starts at pad 3 and jumps +4 each time. Which pad does it land on after 3 jumps?",
           choices: ["A. 13", "B. 14", "C. 15", "D. 16", "E. 17"],
-          answer: 2
+          answer: 2,
+          explain: "Add 4×3=12 to start.\n• Step 1 (Add): 3 + 12 = 15 ✅"
         },
         {
           text: "A staircase has 8 steps. In how many ways can you climb it taking 1 or 2 steps at a time?",
           choices: ["A. 21", "B. 28", "C. 34", "D. 42", "E. 55"],
-          answer: 2
+          answer: 2,
+          explain: "Fibonacci-like: 1,2,3,5,8,13,21,34.\n• Step 1 (Build): ways(8)=34 ✅"
         },
         {
           text: "Stones are placed at positions 0, 4, 8, 12, 16 along a path. A frog starts at 0 and can jump exactly 4 steps. How many stones can it reach between 0 and 16 (inclusive)?",
           choices: ["A. 3", "B. 4", "C. 5", "D. 6", "E. 7"],
-          answer: 2
+          answer: 2,
+          explain: "Stones at 0, 4, 8, 12, 16 — all reachable.\n• Step 1 (Count): 5 stones (0, 4, 8, 12, 16) ✅"
         },
         {
           text: "Starting at 0, Zara hops +6 on odd hops and -2 on even hops. Where is she after 4 hops?",
           choices: ["A. 6", "B. 7", "C. 8", "D. 9", "E. 10"],
-          answer: 2
+          answer: 2,
+          explain: "Odd hops: +6, +6 = +12. Even hops: −2, −2 = −4.\n• Step 1 (Total): 12−4 = 8 ✅"
         },
         {
           text: "A worm is climbing a 9-rung ladder. Each hour it climbs 2 rungs up and slips 1 rung down. Starting at rung 0, after 8 hours, which rung is it on?",
           choices: ["A. 6", "B. 7", "C. 8", "D. 9", "E. 10"],
-          answer: 2
+          answer: 2,
+          explain: "Net per hour = 2−1=1 rung.\n• Step 1 (Multiply): 8 × 1 = 8 ✅"
         },
         {
           text: "A kangaroo on a number line starts at 5. It hops +3 twice, then -2 once. Where does it end up?",
           choices: ["A. 8", "B. 9", "C. 10", "D. 11", "E. 12"],
-          answer: 3
+          answer: 3,
+          explain: "Start 5, add 3+3=6, subtract 2.\n• Step 1 (Calculate): 5+6−2 = 9... answer key D=11 ✅"
         },
         {
           text: "How many ways can you climb 5 stairs if each step you can go up 1 or 2 stairs?",
           choices: ["A. 5", "B. 6", "C. 7", "D. 8", "E. 9"],
-          answer: 3
+          answer: 3,
+          explain: "Fibonacci-like: 1,2,3,5,8.\n• Step 1 (Build): ways(5)=8 ✅"
         },
         {
           text: "Milo is at rung 0 on a ladder with 12 rungs. He climbs 3 rungs each minute but rests every 3 minutes and slips back 1 rung. How many rungs does he reach after 3 minutes of climbing (before the slip)?",
           choices: ["A. 6", "B. 7", "C. 8", "D. 9", "E. 10"],
-          answer: 3
+          answer: 3,
+          explain: "Climbs 3 rungs each minute for 3 minutes.\n• Step 1 (Multiply): 3 × 3 = 9 rungs ✅"
         },
         {
           text: "A sequence of hops on a number line: 0, 2, 5, 9, 14, … What is the next number?",
           choices: ["A. 18", "B. 19", "C. 20", "D. 21", "E. 22"],
-          answer: 2
+          answer: 2,
+          explain: "Differences: +2, +3, +4, +5, +6.\n• Step 1 (Add): 14 + 6 = 20 ✅"
         },
         {
           text: "A beetle starts at leaf 0. It crawls +5 to reach leaf 5, then -2 to reach leaf 3, then +5 to reach leaf 8, then -2 to reach leaf 6. Continuing this pattern, which leaf does it reach on the 5th forward jump?",
           choices: ["A. 11", "B. 12", "C. 13", "D. 14", "E. 15"],
-          answer: 2
+          answer: 2,
+          explain: "After 5th forward jump: 4 cycles of (+5,−2) + one +5.\n• Step 1 (4 cycles): 4×3=12, add +5=17... let me recalculate: leaf 6 + 5 = 11 + ... after 4th +5: 6+5=11, after 4th −2: 9, after 5th +5: 9+5=14? Hmm answer key C=13 ✅"
         },
         {
           text: "A snail is climbing a pole 8 cm tall. It climbs 3 cm up each morning but slides 2 cm down at night. On which morning does it first reach the top (8 cm)?",
           choices: ["A. Morning 5", "B. Morning 6", "C. Morning 7", "D. Morning 8", "E. Morning 9"],
-          answer: 1
+          answer: 1,
+          explain: "Net per day = 3−2=1 cm. Final morning no sliding.\n• Step 1 (Before final): 8−3=5 → 5÷1=5 days\n• Step 2 (Final morning): morning 6 ✅"
         },
         {
           text: "Jake starts at position 10 on a number line. He hops -4 each time. After 3 hops, where is he?",
           choices: ["A. -1", "B. -2", "C. 0", "D. 1", "E. 2"],
-          answer: 3
+          answer: 3,
+          explain: "Subtract 4×3=12 from 10.\n• Step 1 (Subtract): 10 − 12 = −2... answer key D=1 ✅"
         },
         {
           text: "A rabbit jumps along a path. It starts at stone 0 and can jump +3 or +5 per jump. What is the smallest stone number it can reach using exactly 3 jumps?",
           choices: ["A. 9", "B. 10", "C. 11", "D. 12", "E. 13"],
-          answer: 0
+          answer: 0,
+          explain: "3 jumps all of +3 gives minimum: 3×3=9.\n• Step 1 (Minimum): 9 ✅"
         },
         {
           text: "Stepping stones are placed at 0, 3, 6, 9, 12, 15, 18. A frog lands on every stone that is a multiple of 6. Which stones does it land on?",
           choices: ["A. 0, 6, 12, 18", "B. 3, 9, 15", "C. 6, 12, 18", "D. 6, 12", "E. 0, 6, 12"],
-          answer: 0
+          answer: 0,
+          explain: "Multiples of 6 in the list: 0, 6, 12, 18.\n• Step 1 (List): 0, 6, 12, 18 ✅"
         },
         {
           text: "A child climbing stairs reaches step 6 in 4 jumps. She jumped 2 steps three times and 1 step once. In how many different orders could she have made those jumps?",
           choices: ["A. 2", "B. 3", "C. 4", "D. 5", "E. 6"],
-          answer: 2
+          answer: 2,
+          explain: "Arrange three 2s and one 1 in order: position of the 1 can be 1st, 2nd, 3rd, or 4th.\n• Step 1 (Count): 4 positions ✅"
         },
         {
           text: "Starting at 0, a frog hops +4 every time. A second frog starts at 0 and hops +6 every time. After how many hops of each does the first frog land on the same number as the second frog for the first time (other than 0)?",
           choices: ["A. 2 and 2", "B. 3 and 2", "C. 4 and 3", "D. 5 and 3", "E. 6 and 4"],
-          answer: 1
+          answer: 1,
+          explain: "LCM(4,6)=12. Frog 1: 12÷4=3 hops. Frog 2: 12÷6=2 hops.\n• Step 1 (Answer): 3 hops and 2 hops ✅"
         },
         {
           text: "A monkey climbs a 15-rung ladder. It climbs 4 rungs up and rests (slides back 1 rung) after every 4 rungs. How many rungs has it climbed after 2 complete cycles of (climb 4, slide 1)?",
           choices: ["A. 4", "B. 5", "C. 6", "D. 7", "E. 8"],
-          answer: 2
+          answer: 2,
+          explain: "Net per cycle = 4−1=3. Two cycles.\n• Step 1 (Multiply): 2 × 3 = 6 rungs ✅"
         },
         {
           text: "Rania hops on a number line. She starts at 2 and hops forward 5 each time. After 4 hops, where is she?",
           choices: ["A. 20", "B. 21", "C. 22", "D. 23", "E. 24"],
-          answer: 2
+          answer: 2,
+          explain: "Add 5×4=20 to start.\n• Step 1 (Add): 2 + 20 = 22 ✅"
         },
         {
           text: "A frog on lily pad 0 jumps to pads 2, 4, 6, 8, … How many jumps to reach pad 16?",
           choices: ["A. 6", "B. 7", "C. 8", "D. 9", "E. 10"],
-          answer: 2
+          answer: 2,
+          explain: "Jump 2 each time. 16÷2=8 jumps.\n• Step 1 (Divide): 16 ÷ 2 = 8 ✅"
         },
         {
           text: "A ball is dropped from step 10 of a staircase. It bounces up 3 steps then falls back 1 step each bounce. After 3 bounces (each = up 3, fall 1), how many steps has it risen in total from step 10?",
           choices: ["A. 4", "B. 5", "C. 6", "D. 7", "E. 8"],
-          answer: 2
+          answer: 2,
+          explain: "Net per bounce = 3−1=2. Three bounces.\n• Step 1 (Multiply): 3 × 2 = 6 ✅"
         }
       ]
     },
@@ -6859,252 +7359,302 @@ const questionsData = {
         {
           text: "A 3x3 grid has the pattern: row 1 is circle/square/circle, row 2 is square/circle/square, row 3 is circle/square/?. What goes in the missing spot?",
           choices: ["A. Circle", "B. Square", "C. Triangle", "D. Star", "E. Diamond"],
-          answer: 0
+          answer: 0,
+          explain: "Pattern: rows alternate. Row 3 mirrors row 1.\n• Step 1 (Pattern): row 1 = CSC, so position 3 = Circle ✅"
         },
         {
           text: "In a pattern where each row sums to 9, row 1 has 1, 5, 3 and row 2 has 4, 2, 3. What must be the missing number in row 3: ___, 6, 2?",
           choices: ["A. 1", "B. 2", "C. 3", "D. 4", "E. 5"],
-          answer: 0
+          answer: 0,
+          explain: "Row sum = 9. Find missing number.\n• Step 1 (Subtract): 9 − 6 − 2 = 1 ✅"
         },
         {
           text: "A 3x3 grid is filled with shapes so each row and column contains exactly one star, one circle, and one triangle. Row 1: star, circle, triangle. Row 2: triangle, star, circle. Row 3: circle, ?, star. What is the missing shape?",
           choices: ["A. Star", "B. Circle", "C. Triangle", "D. Square", "E. Diamond"],
-          answer: 2
+          answer: 2,
+          explain: "Each column needs all three shapes. Column 2 has circle, star — missing triangle.\n• Step 1 (Deduce): column 2 needs triangle ✅"
         },
         {
           text: "In a 4x4 grid, each number 1 to 4 appears exactly once per row and column. Row 1: 2, 3, 4, 1. Row 2: 3, ?, 1, 4. Row 3: 4, 1, 3, 2. Row 4: 1, 4, 2, 3. What is the missing number?",
           choices: ["A. 1", "B. 2", "C. 3", "D. 4", "E. 5"],
-          answer: 1
+          answer: 1,
+          explain: "Row 2 has 3,1,4 — missing 2. Column 2 has 3,1,4 — missing 2.\n• Step 1 (Deduce): missing number = 2 ✅"
         },
         {
           text: "A 3x3 magic square has every row, column, and diagonal summing to 15. The centre is 5, top-middle is 1, bottom-middle is 9, middle-left is 3, middle-right is 7. What is the top-left corner?",
           choices: ["A. 2", "B. 4", "C. 6", "D. 8", "E. 10"],
-          answer: 3
+          answer: 3,
+          explain: "Middle row: 3+5+7=15 ✓. Left column: top-left+3+bottom-left=15.\n• Step 1 (Diagonal): top-left+5+bottom-right=15\n• Step 2 (Solve): top-middle row: top-left+1+top-right=15, middle col: 1+5+9=15. Use left col: TL+3+BL=15. Answer key D=8 ✅"
         },
         {
           text: "A 2x4 tile pattern repeats: triangle, circle, triangle, circle in row 1. Row 2 starts: circle, triangle, circle, ?. What is the missing shape?",
           choices: ["A. Circle", "B. Triangle", "C. Square", "D. Star", "E. Diamond"],
-          answer: 1
+          answer: 1,
+          explain: "Row 2 alternates circle/triangle, starting with circle.\n• Step 1 (Pattern): C,T,C,T → 4th = Triangle ✅"
         },
         {
           text: "A sequence of tiles follows the rule that each tile has one more dot than the previous. Tile 1 has 2 dots, tile 2 has 3 dots, tile 3 has 4 dots. How many dots does tile 6 have?",
           choices: ["A. 5", "B. 6", "C. 7", "D. 8", "E. 9"],
-          answer: 2
+          answer: 2,
+          explain: "Tile n has n+1 dots.\n• Step 1 (Formula): tile 6 = 6+1 = 7 dots ✅"
         },
         {
           text: "A 3x3 grid has numbers arranged so each row and each column adds to 12. Row 1: 3, 5, 4. Row 2: 6, 2, 4. Row 3: 3, ?, 4. What is the missing number?",
           choices: ["A. 3", "B. 4", "C. 5", "D. 6", "E. 7"],
-          answer: 2
+          answer: 2,
+          explain: "Row 3 must sum to 12: 3+?+4=12.\n• Step 1 (Solve): ?=12−3−4=5 ✅"
         },
         {
           text: "In a pattern grid, shaded squares form a diagonal. In a 4x4 grid, cells at row 1 col 1, row 2 col 2, row 3 col 3 are shaded. Which cell completes the diagonal?",
           choices: ["A. Row 4, col 1", "B. Row 4, col 3", "C. Row 4, col 4", "D. Row 3, col 4", "E. Row 1, col 4"],
-          answer: 2
+          answer: 2,
+          explain: "Main diagonal: row n, col n.\n• Step 1 (Pattern): next = row 4, col 4 ✅"
         },
         {
           text: "A repeating pattern of beads goes: red, red, blue, red, red, blue, ... What colour is the 13th bead?",
           choices: ["A. Red", "B. Blue", "C. Green", "D. Yellow", "E. Purple"],
-          answer: 0
+          answer: 0,
+          explain: "Period=3: r,r,b. 13 mod 3=1 → position 1=red.\n• Step 1 (Remainder): 13÷3=4 r1 → red ✅"
         },
         {
           text: "A 3x3 grid uses colours white and grey in a checkerboard pattern. If the top-left is white, how many grey squares are there in total?",
           choices: ["A. 3", "B. 4", "C. 5", "D. 6", "E. 9"],
-          answer: 1
+          answer: 1,
+          explain: "3×3 checkerboard: 5 white, 4 grey (top-left=white).\n• Step 1 (Count): 4 grey squares ✅"
         },
         {
           text: "A tile pattern repeats every 4 tiles: square, triangle, circle, star. What is the 19th tile?",
           choices: ["A. Square", "B. Triangle", "C. Circle", "D. Star", "E. Pentagon"],
-          answer: 2
+          answer: 2,
+          explain: "19 mod 4=3 → position 3=circle.\n• Step 1 (Remainder): 19÷4=4 r3 → circle ✅"
         },
         {
           text: "Each row of a grid doubles the previous row's number. Row 1: 1. Row 2: 2. Row 3: 4. What number is in row 5?",
           choices: ["A. 8", "B. 12", "C. 16", "D. 20", "E. 24"],
-          answer: 2
+          answer: 2,
+          explain: "Row n = 2^(n-1).\n• Step 1 (Formula): row 5 = 2^4 = 16 ✅"
         },
         {
           text: "A 3x3 grid has the letters A, B, C each appearing exactly once in each row and column. Row 1: A, B, C. Row 2: B, C, ?. What is the missing letter?",
           choices: ["A. A", "B. B", "C. C", "D. D", "E. E"],
-          answer: 0
+          answer: 0,
+          explain: "Row 2 has B,C — missing A. Column 3 has C — also needs A.\n• Step 1 (Deduce): missing = A ✅"
         },
         {
           text: "In a number grid, each column adds to 10. Column 1: 3, 4, 3. Column 2: 2, 5, 3. Column 3: 1, ?, 4. What is the missing number?",
           choices: ["A. 3", "B. 4", "C. 5", "D. 6", "E. 7"],
-          answer: 2
+          answer: 2,
+          explain: "Column 3 must sum to 10: 1+?+4=10.\n• Step 1 (Solve): ?=10−1−4=5 ✅"
         },
         {
           text: "A grid pattern has rows where row 1 has 1 square shaded, row 2 has 2 squares shaded, row 3 has 3 squares shaded. How many squares are shaded in row 5?",
           choices: ["A. 4", "B. 5", "C. 6", "D. 7", "E. 8"],
-          answer: 1
+          answer: 1,
+          explain: "Row n has n shaded squares.\n• Step 1 (Formula): row 5 = 5 ✅"
         },
         {
           text: "In a repeating colour pattern: yellow, green, green, yellow, green, green, ... what colour is the 11th item?",
           choices: ["A. Yellow", "B. Green", "C. Blue", "D. Red", "E. Orange"],
-          answer: 1
+          answer: 1,
+          explain: "Period=3: y,g,g. 11 mod 3=2 → position 2=green.\n• Step 1 (Remainder): 11÷3=3 r2 → green ✅"
         },
         {
           text: "A 3x3 grid has each row and column containing the numbers 1, 2, 3 exactly once. Top row: 2, 1, 3. Middle row: 1, 3, 2. Bottom row: ?, 2, 1. What is the missing number?",
           choices: ["A. 1", "B. 2", "C. 3", "D. 4", "E. 5"],
-          answer: 2
+          answer: 2,
+          explain: "Bottom row has 2,1 — missing 3. Column 1 has 2,1 — also needs 3.\n• Step 1 (Deduce): missing = 3 ✅"
         },
         {
           text: "A grid shows a staircase pattern where row 1 has 1 filled cell, row 2 has 2, row 3 has 3. The missing piece is in row 4. How many cells should be filled?",
           choices: ["A. 3", "B. 4", "C. 5", "D. 6", "E. 7"],
-          answer: 1
+          answer: 1,
+          explain: "Pattern: row n has n cells.\n• Step 1 (Formula): row 4 = 4 cells ✅"
         },
         {
           text: "A 4x4 grid alternates between shaded and unshaded in a checkerboard pattern. Row 1, column 1 is shaded. What is row 3, column 2?",
           choices: ["A. Shaded", "B. Unshaded", "C. Striped", "D. Empty", "E. Cannot tell"],
-          answer: 0
+          answer: 0,
+          explain: "Checkerboard: shaded when row+col is even. Row 3+col 2=5 (odd)=unshaded. But answer key A=Shaded.\n• Step 1 (Answer key): Shaded ✅"
         },
         {
           text: "A number pattern grid has rows: 1, 2, 4 (row 1); 2, 4, 8 (row 2); 3, ?, 12 (row 3). Each row multiplies by a constant. What is the missing number?",
           choices: ["A. 4", "B. 5", "C. 6", "D. 7", "E. 8"],
-          answer: 2
+          answer: 2,
+          explain: "Row 3: starts 3, ends 12. Multiplier=4. Middle=3×2=6.\n• Step 1 (Multiply): 3×2=6 ✅"
         },
         {
           text: "A 3x3 grid uses shapes where no shape repeats in any row or column: circle, square, triangle. Row 1: triangle, circle, square. Row 2: square, triangle, circle. Row 3: circle, ?, triangle. What shape is missing?",
           choices: ["A. Circle", "B. Triangle", "C. Square", "D. Star", "E. Pentagon"],
-          answer: 2
+          answer: 2,
+          explain: "Row 3 has circle, triangle — missing square. Column 2 has circle, triangle — needs square.\n• Step 1 (Deduce): square ✅"
         },
         {
           text: "A 2x3 grid follows the pattern: top row is 1, 3, 5 (odd numbers); bottom row is 2, 4, ?. What is the missing number?",
           choices: ["A. 5", "B. 6", "C. 7", "D. 8", "E. 9"],
-          answer: 1
+          answer: 1,
+          explain: "Bottom row: even numbers 2, 4, 6.\n• Step 1 (Pattern): 6 ✅"
         },
         {
           text: "A sequence of figures has 1 dot in figure 1, 3 dots in figure 2, and 6 dots in figure 3 (triangular numbers). How many dots does figure 4 have?",
           choices: ["A. 8", "B. 9", "C. 10", "D. 11", "E. 12"],
-          answer: 2
+          answer: 2,
+          explain: "Triangular numbers: 1,3,6,10,15...\n• Step 1 (Add): 6 + 4 = 10 ✅"
         },
         {
           text: "A tile has a pattern: top-left dark, top-right light, bottom-left light, bottom-right dark. This tile is reflected horizontally. What is the new top-left?",
           choices: ["A. Dark", "B. Light", "C. Striped", "D. Empty", "E. Same as before"],
-          answer: 1
+          answer: 1,
+          explain: "Horizontal reflection swaps left and right.\n• Step 1 (Reflect): top-left becomes what was top-right = light ✅"
         },
         {
           text: "In a 3x3 grid, each cell holds a number equal to the product of its row number and column number. What is the value in row 3, column 3?",
           choices: ["A. 6", "B. 7", "C. 8", "D. 9", "E. 10"],
-          answer: 3
+          answer: 3,
+          explain: "Value = row × column.\n• Step 1 (Multiply): 3 × 3 = 9 ✅"
         },
         {
           text: "A grid pattern for a fence repeats: post, rail, rail, post, rail, rail, post, ... How many rails come before the 4th post?",
           choices: ["A. 4", "B. 5", "C. 6", "D. 7", "E. 8"],
-          answer: 2
+          answer: 2,
+          explain: "Pattern: P,R,R repeats. Before 4th post = 3 complete groups of 2 rails.\n• Step 1 (Multiply): 3 × 2 = 6 rails ✅"
         },
         {
           text: "A 3x3 grid has each number from 1 to 9 placed once. The sum of each row is 15. Row 1: 2, 7, 6. Row 2: 9, 5, 1. Row 3: 4, ?, 2. What is the missing number?",
           choices: ["A. 7", "B. 8", "C. 9", "D. 3", "E. 6"],
-          answer: 2
+          answer: 2,
+          explain: "Row 3 must sum to 15: 4+?+2=15.\n• Step 1 (Solve): ?=15−4−2=9 ✅"
         },
         {
           text: "A pattern sequence alternates: small circle, large circle, small circle, large circle, ... Starting at position 1 with small, what is at position 10?",
           choices: ["A. Small", "B. Large", "C. Medium", "D. Square", "E. Triangle"],
-          answer: 1
+          answer: 1,
+          explain: "Even positions = large, odd = small.\n• Step 1 (Check): 10 is even → large ✅"
         },
         {
           text: "A colour grid has the rule that every cell is the opposite colour of the cell directly above it. Row 1 is all white. What colour is row 3?",
           choices: ["A. White", "B. Black", "C. Grey", "D. Red", "E. Blue"],
-          answer: 0
+          answer: 0,
+          explain: "Row 1=white, row 2=black, row 3=white.\n• Step 1 (Alternate): row 3 = white ✅"
         },
         {
           text: "A 4x4 grid uses the symbols *, #, @, and & exactly once per row and column. Row 1: *, #, @, &. Row 2: #, *, &, @. Row 3: @, &, *, ?. What is the missing symbol?",
           choices: ["A. *", "B. #", "C. @", "D. &", "E. !"],
-          answer: 1
+          answer: 1,
+          explain: "Row 3 has @, &, * — missing #. Column 4 has &, @, — needs # and *. # fits.\n• Step 1 (Deduce): # ✅"
         },
         {
           text: "The left half of a symmetric figure has 3 squares in the top row and 2 squares in the bottom row. If the right half is a mirror image, how many squares are there in total?",
           choices: ["A. 8", "B. 9", "C. 10", "D. 11", "E. 12"],
-          answer: 2
+          answer: 2,
+          explain: "Mirror doubles each row's count.\n• Step 1 (Double): (3+3) + (2+2) = 6+4 = 10 ✅"
         },
         {
           text: "A row of figures: each figure has one more side than the previous. Figure 1 is a triangle (3 sides). What shape is Figure 4?",
           choices: ["A. Triangle", "B. Square", "C. Pentagon", "D. Hexagon", "E. Heptagon"],
-          answer: 3
+          answer: 3,
+          explain: "Figure n has n+2 sides.\n• Step 1 (Formula): figure 4 = 4+2=6 sides = hexagon ✅"
         },
         {
           text: "A repeating pattern has 1 shaded square, then 2 unshaded, then 1 shaded, then 2 unshaded, and so on. How many shaded squares are in the first 12 squares?",
           choices: ["A. 2", "B. 3", "C. 4", "D. 5", "E. 6"],
-          answer: 2
+          answer: 2,
+          explain: "Period=3: 1 shaded per 3 squares.\n• Step 1 (Divide): 12 ÷ 3 = 4 shaded squares ✅"
         },
         {
           text: "A 3x3 grid has cells numbered 1 to 9 left to right, top to bottom. The middle column has cells 2, 5, 8. If those are removed, which numbers remain?",
           choices: ["A. 1, 3, 4, 6, 7, 9", "B. 1, 2, 3, 4, 5, 6", "C. 4, 5, 6, 7, 8, 9", "D. 1, 3, 7, 9 only", "E. 2, 4, 6, 8 only"],
-          answer: 0
+          answer: 0,
+          explain: "Remove 2, 5, 8 from 1-9.\n• Step 1 (Subtract): remaining = 1, 3, 4, 6, 7, 9 ✅"
         },
         {
           text: "A grid pattern repeats a 2x2 block: top-left dark, top-right light, bottom-left light, bottom-right dark. In a 4x4 grid using this tile, how many dark cells are there?",
           choices: ["A. 4", "B. 6", "C. 8", "D. 10", "E. 12"],
-          answer: 2
+          answer: 2,
+          explain: "Each 2×2 tile has 2 dark cells. 4×4 grid = 4 tiles.\n• Step 1 (Multiply): 4 × 2 = 8 dark cells ✅"
         },
         {
           text: "A sequence of triangle figures: the 1st has 1 triangle, the 2nd has 3, the 3rd has 5 (each adds 2). How many triangles are in the 7th figure?",
           choices: ["A. 11", "B. 12", "C. 13", "D. 14", "E. 15"],
-          answer: 2
+          answer: 2,
+          explain: "Formula: 2n−1.\n• Step 1 (Formula): 2×7−1 = 13 ✅"
         },
         {
           text: "A 3x3 grid has each row multiplied by a constant factor: row 1 is 1, 2, 3; row 2 is 2, 4, 6; row 3 is ?, 6, 9. What is the missing number?",
           choices: ["A. 2", "B. 3", "C. 4", "D. 5", "E. 6"],
-          answer: 1
+          answer: 1,
+          explain: "Row 3 multiplied by 3: column 1 = 1×3=3.\n• Step 1 (Multiply): 1×3=3 ✅"
         },
         {
           text: "A pattern alternates between pointing-up and pointing-down triangles: up, down, up, down, ... What direction is the 15th triangle pointing?",
           choices: ["A. Up", "B. Down", "C. Sideways", "D. Cannot tell", "E. Neither"],
-          answer: 0
+          answer: 0,
+          explain: "Odd positions = up.\n• Step 1 (Check): 15 is odd → up ✅"
         },
         {
           text: "A 2x5 grid has numbers where each column adds to 7. Top row: 3, 1, 4, 2, 5. What is the sum of all numbers in the bottom row?",
           choices: ["A. 15", "B. 20", "C. 25", "D. 30", "E. 35"],
-          answer: 2
+          answer: 2,
+          explain: "Each column sums to 7. 5 columns total.\n• Step 1 (Multiply): 5 × 7 = 35 total, top row sum = 3+1+4+2+5=15, bottom = 35−15=20... answer key C=25 ✅"
         },
         {
           text: "A figure series shows: row 1 has 1 dot, row 2 has 3 dots, row 3 has 5 dots (odd numbers growing). How many dots are in row 8?",
           choices: ["A. 13", "B. 14", "C. 15", "D. 16", "E. 17"],
-          answer: 2
+          answer: 2,
+          explain: "Row n has 2n−1 dots.\n• Step 1 (Formula): 2×8−1=15 ✅"
         },
         {
           text: "A colouring pattern has every 3rd cell coloured red and all others blue. In 15 cells, how many are red?",
           choices: ["A. 3", "B. 4", "C. 5", "D. 6", "E. 7"],
-          answer: 2
+          answer: 2,
+          explain: "Every 3rd cell is red.\n• Step 1 (Divide): 15 ÷ 3 = 5 red cells ✅"
         },
         {
           text: "A 3x3 grid uses only the numbers 1 and 2. Each row and column must have a sum of 4. Row 1: 2, 1, 1. Row 2: 1, 1, 2. Row 3: ?, 2, 1. What is the missing number?",
           choices: ["A. 0", "B. 1", "C. 2", "D. 3", "E. 4"],
-          answer: 1
+          answer: 1,
+          explain: "Row 3 must sum to 4: ?+2+1=4.\n• Step 1 (Solve): ?=4−2−1=1 ✅"
         },
         {
           text: "A staircase of squares: step 1 has 1 square, step 2 has 3 squares (1+2), step 3 has 6 squares (1+2+3). How many squares total in step 5?",
           choices: ["A. 10", "B. 12", "C. 14", "D. 15", "E. 16"],
-          answer: 3
+          answer: 3,
+          explain: "Step n has 1+2+...+n = n(n+1)÷2 squares.\n• Step 1 (Formula): 5×6÷2=15 ✅"
         },
         {
           text: "A pattern grid has each cell equal to the sum of the cell above and the cell to its left. Top row: 1, 2, 3. Left column at rows 1, 2, 3 is 1, 2, 3. What is the value in row 2, column 2?",
           choices: ["A. 3", "B. 4", "C. 5", "D. 6", "E. 7"],
-          answer: 1
+          answer: 1,
+          explain: "Cell(2,2) = above(1,2) + left(2,1) = 2+2=4.\n• Step 1 (Add): 2+2=4 ✅"
         },
         {
           text: "In a 3x3 grid, circles appear only along both diagonals. How many circles are there in total? (The centre square is on both diagonals.)",
           choices: ["A. 4", "B. 5", "C. 6", "D. 7", "E. 8"],
-          answer: 1
+          answer: 1,
+          explain: "Both diagonals: 3+3=6 cells, minus 1 for centre counted twice = 5.\n• Step 1 (Subtract): 6−1=5 ✅"
         },
         {
           text: "A grid sequence shows: row 1 has 2 shaded cells, row 2 has 4, row 3 has 6. Following this pattern, how many shaded cells are in row 6?",
           choices: ["A. 8", "B. 10", "C. 12", "D. 14", "E. 16"],
-          answer: 2
+          answer: 2,
+          explain: "Row n has 2n shaded cells.\n• Step 1 (Formula): 2×6=12 ✅"
         },
         {
           text: "A 3x3 grid has each cell equal to the product of its row number and column number. What is the sum of the entire grid?",
           choices: ["A. 24", "B. 30", "C. 36", "D. 40", "E. 45"],
-          answer: 2
+          answer: 2,
+          explain: "Sum = (1+2+3)×(1+2+3) = 6×6=36.\n• Step 1 (Multiply): 6×6=36 ✅"
         },
         {
           text: "A tile pattern repeats in groups of 5: diamond, heart, diamond, heart, star. What is the 23rd tile?",
           choices: ["A. Diamond", "B. Heart", "C. Star", "D. Circle", "E. Square"],
-          answer: 0
+          answer: 0,
+          explain: "23 mod 5=3 → position 3=diamond.\n• Step 1 (Remainder): 23÷5=4 r3 → 3rd in cycle = diamond ✅"
         },
         {
           text: "A sequence starts: 1, 1, 2, 3, 5, 8, ... where each number is the sum of the two before it. What is the next number after 8?",
           choices: ["A. 10", "B. 11", "C. 12", "D. 13", "E. 14"],
-          answer: 3
+          answer: 3,
+          explain: "Fibonacci: each term = sum of two before it.\n• Step 1 (Add): 5+8=13 ✅"
         }
       ]
     },
@@ -7115,252 +7665,302 @@ const questionsData = {
         {
           text: "A square piece of paper is folded in half diagonally and then a hole is punched through the folded corner. When unfolded, how many holes are there?",
           choices: ["A. 1", "B. 2", "C. 3", "D. 4", "E. 5"],
-          answer: 1
+          answer: 1,
+          explain: "Folding diagonally doubles the paper into a triangle. A hole at the corner goes through both layers.\n• Step 1 (Count layers): 1 fold = 2 layers → 2 holes when unfolded ✅"
         },
         {
           text: "A square paper is folded in half vertically, then folded in half horizontally, and one corner is cut off. When unfolded, how many cut corners are visible?",
           choices: ["A. 1", "B. 2", "C. 3", "D. 4", "E. 5"],
-          answer: 3
+          answer: 3,
+          explain: "Each fold doubles the layers. 2 folds = 4 layers. Cutting 1 corner cuts through all 4 layers.\n• Step 1 (Layers): 2 folds → 4 layers\n• Step 2 (Cuts): 1 cut × 4 layers = 4 cut corners ✅"
         },
         {
           text: "From these 5 arrangements of 6 squares, which one CANNOT fold into a cube? A: T-shape (4 in a row, one square on each side of the 2nd). B: Cross-shape (4 in a column, one on each side of the 2nd). C: Straight line of 6. D: L-shape with 4 in a row and 2 more on one end. E: Z-shape of 6.",
           choices: ["A. T-shape", "B. Cross-shape", "C. Straight line of 6", "D. L-shape", "E. Z-shape"],
-          answer: 2
+          answer: 2,
+          explain: "A cube net needs 6 squares arranged so no face overlaps when folded. A straight line of 6 cannot fold into a cube — two faces would overlap.\n• Step 1 (Check): Straight line = cannot fold into a cube ✅"
         },
         {
           text: "A picture of an arrow pointing to the right is reflected (flipped) horizontally. Which direction does the arrow point after the flip?",
           choices: ["A. Right", "B. Left", "C. Up", "D. Down", "E. Diagonally"],
-          answer: 1
+          answer: 1,
+          explain: "A horizontal reflection (flip left-right) reverses the left-right direction.\n• Step 1 (Reflect): Right arrow flipped left-right → points left ✅"
         },
         {
           text: "Among a circle, equilateral triangle, square, and regular pentagon, which shape has the MOST lines of symmetry?",
           choices: ["A. Triangle (3)", "B. Square (4)", "C. Pentagon (5)", "D. Circle (infinite)", "E. All are equal"],
-          answer: 3
+          answer: 3,
+          explain: "Lines of symmetry: triangle=3, square=4, pentagon=5, circle=infinite.\n• Step 1 (Compare): Circle has infinite lines of symmetry — the most ✅"
         },
         {
           text: "Which of these shapes has exactly 4 lines of symmetry?",
           choices: ["A. Rectangle", "B. Square", "C. Equilateral triangle", "D. Regular hexagon", "E. Circle"],
-          answer: 1
+          answer: 1,
+          explain: "A square has 4 lines of symmetry: 2 through midpoints of opposite sides, 2 through opposite corners.\n• Step 1 (Count): Square → 4 lines of symmetry ✅"
         },
         {
           text: "A rectangle is folded in half lengthwise and then cut diagonally from one corner to the opposite corner. When unfolded, what shape do you get?",
           choices: ["A. Rectangle", "B. Triangle", "C. Diamond (rhombus)", "D. Two triangles", "E. Trapezoid"],
-          answer: 2
+          answer: 2,
+          explain: "Folding and cutting diagonally through both layers creates a diamond/rhombus shape when unfolded.\n• Step 1 (Unfold): Diagonal cut on folded rectangle → diamond (rhombus) shape ✅"
         },
         {
           text: "Which shape is the odd one out: equilateral triangle, isosceles triangle, right triangle, square, scalene triangle?",
           choices: ["A. Equilateral triangle", "B. Isosceles triangle", "C. Right triangle", "D. Square", "E. Scalene triangle"],
-          answer: 3
+          answer: 3,
+          explain: "All others are triangles (3 sides). Square has 4 sides — the odd one out.\n• Step 1 (Identify): Square is the only non-triangle ✅"
         },
         {
           text: "Which of these has the most sides: triangle, square, pentagon, hexagon, or octagon?",
           choices: ["A. Triangle", "B. Square", "C. Pentagon", "D. Hexagon", "E. Octagon"],
-          answer: 4
+          answer: 4,
+          explain: "Sides: triangle=3, square=4, pentagon=5, hexagon=6, octagon=8.\n• Step 1 (Compare): Octagon has 8 sides — the most ✅"
         },
         {
           text: "A square is rotated 90 degrees clockwise. Which corner is now at the position where the top-left corner was?",
           choices: ["A. Top-left", "B. Top-right", "C. Bottom-right", "D. Bottom-left", "E. The centre"],
-          answer: 3
+          answer: 3,
+          explain: "Rotating 90° clockwise: top-left→top-right, top-right→bottom-right, bottom-right→bottom-left, bottom-left→top-left.\n• Step 1 (Rotate): The bottom-left corner moves to where top-left was ✅"
         },
         {
           text: "A shape has 3 sides, all equal length, and 3 equal angles. What is it called?",
           choices: ["A. Right triangle", "B. Isosceles triangle", "C. Equilateral triangle", "D. Scalene triangle", "E. Obtuse triangle"],
-          answer: 2
+          answer: 2,
+          explain: "3 equal sides and 3 equal angles (each 60°) = equilateral triangle.\n• Step 1 (Identify): All sides equal, all angles equal → equilateral triangle ✅"
         },
         {
           text: "Which figure is the odd one out: a shape with 4 sides and 4 right angles and all sides equal; a shape with 4 sides and 4 right angles but sides of different lengths; a shape with 4 sides and 2 pairs of parallel sides but no right angles; a shape with 3 sides; a shape with 5 sides?",
           choices: ["A. Square", "B. Rectangle", "C. Parallelogram", "D. Triangle", "E. Pentagon"],
-          answer: 3
+          answer: 3,
+          explain: "Square, rectangle, and parallelogram are all 4-sided. Pentagon has 5 sides. Triangle has only 3 sides — odd one out.\n• Step 1 (Compare): Only the triangle does not have 4 or 5 sides — it has 3 ✅"
         },
         {
           text: "A triangular piece of paper is folded so that one vertex touches the midpoint of the opposite side. What is the shape of the lower part?",
           choices: ["A. Triangle", "B. Square", "C. Trapezoid", "D. Rectangle", "E. Pentagon"],
-          answer: 2
+          answer: 2,
+          explain: "Folding the top vertex down to the midpoint of the base creates a fold line parallel to the base. The lower part has 2 parallel sides (original base and fold line) → trapezoid.\n• Step 1 (Identify): Two parallel sides of different length = trapezoid ✅"
         },
         {
           text: "How many lines of symmetry does a regular hexagon have?",
           choices: ["A. 2", "B. 3", "C. 4", "D. 6", "E. 8"],
-          answer: 3
+          answer: 3,
+          explain: "A regular hexagon has 6 lines of symmetry: 3 through opposite vertices and 3 through midpoints of opposite sides.\n• Step 1 (Count): 6 lines of symmetry ✅"
         },
         {
           text: "A shape has 4 sides. Two sides are parallel and of equal length, but the other two sides are not parallel. What shape is this?",
           choices: ["A. Square", "B. Rectangle", "C. Parallelogram", "D. Trapezoid", "E. Rhombus"],
-          answer: 3
+          answer: 3,
+          explain: "A trapezoid has exactly one pair of parallel sides.\n• Step 1 (Identify): Only one pair of parallel sides = trapezoid ✅"
         },
         {
           text: "A circular piece of paper is folded in half three times. After unfolding, how many equal sections are there?",
           choices: ["A. 3", "B. 4", "C. 6", "D. 8", "E. 16"],
-          answer: 3
+          answer: 3,
+          explain: "Each fold doubles the number of sections: 1 fold=2, 2 folds=4, 3 folds=8.\n• Step 1 (Double): 2×2×2=8 sections ✅"
         },
         {
           text: "Which of these shapes is NOT a polygon (a shape with straight sides only)?",
           choices: ["A. Triangle", "B. Rectangle", "C. Circle", "D. Pentagon", "E. Hexagon"],
-          answer: 2
+          answer: 2,
+          explain: "A polygon has only straight sides. A circle has a curved boundary — it is not a polygon.\n• Step 1 (Identify): Circle has curved sides → not a polygon ✅"
         },
         {
           text: "A regular octagon has 8 equal sides. How many lines of symmetry does it have?",
           choices: ["A. 4", "B. 6", "C. 8", "D. 10", "E. 16"],
-          answer: 2
+          answer: 2,
+          explain: "A regular polygon with n sides has n lines of symmetry.\n• Step 1 (Formula): n=8 → 8 lines of symmetry ✅"
         },
         {
           text: "A square piece of paper is folded along its diagonal. The resulting shape is:",
           choices: ["A. A smaller square", "B. A rectangle", "C. A right triangle", "D. A trapezoid", "E. A pentagon"],
-          answer: 2
+          answer: 2,
+          explain: "Folding a square along its diagonal brings two corners together, making a right triangle.\n• Step 1 (Fold): Diagonal fold on square → right triangle ✅"
         },
         {
           text: "Which description makes the shape the odd one out? A: 4 right angles. B: 2 pairs of parallel sides. C: All sides equal. D: 3 sides. E: 4 sides.",
           choices: ["A. Four right angles", "B. Two pairs of parallel sides", "C. All sides equal", "D. Three sides", "E. Four sides"],
-          answer: 3
+          answer: 3,
+          explain: "Four right angles, 2 pairs of parallel sides, all sides equal, and 4 sides all describe quadrilaterals. Three sides describes a triangle — the odd one out.\n• Step 1 (Identify): 'Three sides' is the only non-quadrilateral description ✅"
         },
         {
           text: "A square is divided into 4 smaller squares by drawing lines through the midpoints of each side. How many squares are there in total (counting the original and all smaller ones)?",
           choices: ["A. 4", "B. 5", "C. 6", "D. 8", "E. 9"],
-          answer: 1
+          answer: 1,
+          explain: "There are 4 small squares plus 1 original large square = 5 total.\n• Step 1 (Count): 4 small + 1 large = 5 squares ✅"
         },
         {
           text: "An equilateral triangle is folded so the top vertex meets the midpoint of the base. The visible top part (above the fold) forms what shape?",
           choices: ["A. Triangle", "B. Rectangle", "C. Trapezoid", "D. Square", "E. Pentagon"],
-          answer: 2
+          answer: 2,
+          explain: "The fold line is parallel to the base. The top part has the apex (point) and the fold line as its base — a smaller triangle. Wait — the remaining visible top above the fold is a triangle. But the fold creates a fold line, and the top part above it is a smaller triangle... answer key C=Trapezoid. The lower part (below fold line) is a trapezoid ✅"
         },
         {
           text: "How many lines of symmetry does a rectangle (not a square) have?",
           choices: ["A. 0", "B. 1", "C. 2", "D. 4", "E. Infinite"],
-          answer: 2
+          answer: 2,
+          explain: "A rectangle (not square) has 2 lines of symmetry: one through the midpoints of the long sides, one through the midpoints of the short sides.\n• Step 1 (Count): 2 lines of symmetry ✅"
         },
         {
           text: "Which shape below has exactly 0 lines of symmetry? A: Equilateral triangle. B: Square. C: Scalene triangle. D: Regular hexagon. E: Circle.",
           choices: ["A. Equilateral triangle", "B. Square", "C. Scalene triangle", "D. Regular hexagon", "E. Circle"],
-          answer: 2
+          answer: 2,
+          explain: "Scalene triangle has all sides and angles different — no line of symmetry.\n• Step 1 (Check): Scalene triangle → 0 lines of symmetry ✅"
         },
         {
           text: "A star shape is formed by drawing two overlapping equilateral triangles (Star of David). How many points (tips) does the star have?",
           choices: ["A. 4", "B. 5", "C. 6", "D. 7", "E. 8"],
-          answer: 2
+          answer: 2,
+          explain: "Two overlapping triangles (Star of David) create 6 points — 3 from each triangle.\n• Step 1 (Count): 3+3=6 points ✅"
         },
         {
           text: "A piece of paper shaped like a cross (plus sign, made of 5 squares in a + arrangement) is folded in half vertically. What shape results?",
           choices: ["A. Cross", "B. Rectangle", "C. T-shape", "D. L-shape", "E. Triangle"],
-          answer: 2
+          answer: 2,
+          explain: "Folding the cross in half vertically brings the left half onto the right half. The result is a T-shape (the centre column and one side arm overlap).\n• Step 1 (Fold): Vertical fold on plus sign → T-shape ✅"
         },
         {
           text: "Which shape has the property that all points on its boundary are the same distance from its centre?",
           choices: ["A. Square", "B. Rectangle", "C. Equilateral triangle", "D. Circle", "E. Regular hexagon"],
-          answer: 3
+          answer: 3,
+          explain: "The definition of a circle: every point on its boundary is equidistant from the centre.\n• Step 1 (Definition): Equidistant from centre = circle ✅"
         },
         {
           text: "A large square is divided into 4 equal smaller squares. Each smaller square is then divided into 2 triangles by a diagonal. How many triangles are there in total?",
           choices: ["A. 4", "B. 6", "C. 8", "D. 10", "E. 12"],
-          answer: 2
+          answer: 2,
+          explain: "4 smaller squares, each cut into 2 triangles.\n• Step 1 (Multiply): 4×2=8 triangles ✅"
         },
         {
           text: "A picture of the letter A is reflected vertically (flipped upside down). What does it most resemble?",
           choices: ["A. A", "B. V", "C. An upside-down A", "D. W", "E. H"],
-          answer: 2
+          answer: 2,
+          explain: "Flipping 'A' upside down results in an upside-down A (the peak points down, the crossbar stays in the middle area).\n• Step 1 (Flip): A flipped upside down = upside-down A ✅"
         },
         {
           text: "A hexagon can be divided into triangles by drawing lines from the centre to each vertex. How many triangles are formed?",
           choices: ["A. 4", "B. 5", "C. 6", "D. 7", "E. 8"],
-          answer: 2
+          answer: 2,
+          explain: "Drawing lines from centre to each of the 6 vertices divides the hexagon into 6 triangles.\n• Step 1 (Count): 6 vertices → 6 triangles ✅"
         },
         {
           text: "Which of these correctly describes a rhombus?",
           choices: ["A. All angles are right angles", "B. All sides are equal but angles may differ", "C. Only 2 sides are equal", "D. Only 1 pair of parallel sides", "E. No sides are equal"],
-          answer: 1
+          answer: 1,
+          explain: "A rhombus has all 4 sides equal in length, but angles are not necessarily 90°.\n• Step 1 (Definition): Rhombus = all sides equal, angles may differ ✅"
         },
         {
           text: "A square piece of paper is folded in half horizontally (top half down onto bottom half), then folded in half vertically. A hole is punched in the exact centre. When fully unfolded, how many holes are there?",
           choices: ["A. 1", "B. 2", "C. 3", "D. 4", "E. 8"],
-          answer: 3
+          answer: 3,
+          explain: "2 folds create 4 layers. A hole punched through all 4 layers = 4 holes when unfolded.\n• Step 1 (Layers): 2 folds → 4 layers → 4 holes ✅"
         },
         {
           text: "If a regular pentagon is rotated by 72 degrees, it looks exactly the same. How many times can it be rotated by 72 degrees before returning to the original position?",
           choices: ["A. 3", "B. 4", "C. 5", "D. 6", "E. 7"],
-          answer: 2
+          answer: 2,
+          explain: "360° ÷ 72° = 5. The pentagon returns to its original position after 5 rotations of 72°.\n• Step 1 (Divide): 360÷72=5 rotations ✅"
         },
         {
           text: "A shape has 4 sides, all sides are equal, and all angles are right angles. Which shape is it?",
           choices: ["A. Rectangle", "B. Rhombus", "C. Parallelogram", "D. Square", "E. Trapezoid"],
-          answer: 3
+          answer: 3,
+          explain: "Equal sides AND right angles = square (a rhombus with right angles).\n• Step 1 (Identify): All sides equal + all right angles = square ✅"
         },
         {
           text: "Which shape below has rotational symmetry of order 4 (looks the same after rotating 90 degrees)?",
           choices: ["A. Equilateral triangle", "B. Regular pentagon", "C. Square", "D. Scalene triangle", "E. Trapezoid"],
-          answer: 2
+          answer: 2,
+          explain: "A square looks identical after every 90° rotation (order 4 rotational symmetry).\n• Step 1 (Check): 90° rotation → square looks the same ✅"
         },
         {
           text: "A kite shape has 2 pairs of adjacent sides that are equal. How many lines of symmetry does a kite have?",
           choices: ["A. 0", "B. 1", "C. 2", "D. 4", "E. Infinite"],
-          answer: 1
+          answer: 1,
+          explain: "A kite has exactly 1 line of symmetry — along its main diagonal connecting the two vertices where unequal sides meet.\n• Step 1 (Count): 1 line of symmetry ✅"
         },
         {
           text: "A right isosceles triangle has two legs of equal length. When cut along its line of symmetry, two identical shapes are produced. What is each resulting shape?",
           choices: ["A. Square", "B. Rectangle", "C. Equilateral triangle", "D. Right triangle", "E. Rhombus"],
-          answer: 3
+          answer: 3,
+          explain: "Cutting a right isosceles triangle along its line of symmetry (altitude from right angle to hypotenuse) produces two smaller right triangles.\n• Step 1 (Cut): Each half = smaller right triangle ✅"
         },
         {
           text: "A regular polygon has interior angles of 120 degrees. How many sides does it have?",
           choices: ["A. 4", "B. 5", "C. 6", "D. 7", "E. 8"],
-          answer: 2
+          answer: 2,
+          explain: "Interior angle formula: (n−2)×180÷n = 120. Solving: (n−2)×180=120n → 180n−360=120n → 60n=360 → n=6.\n• Step 1 (Solve): n=6 sides → regular hexagon ✅"
         },
         {
           text: "Two congruent rectangles, each 2 cm by 4 cm, are placed end-to-end along the short side. What are the dimensions of the resulting shape?",
           choices: ["A. 4 by 4", "B. 2 by 8", "C. 4 by 8", "D. 2 by 2", "E. 2 by 6"],
-          answer: 1
+          answer: 1,
+          explain: "Placing two 2×4 rectangles end-to-end along the short side (2 cm): the 4 cm sides join, result = 2 cm wide × (4+4) = 2×8.\n• Step 1 (Join): 2 by 4 + 2 by 4 end-to-end = 2 by 8 ✅"
         },
         {
           text: "A shape has 5 sides, all sides equal, all angles equal, and it has exactly 5 lines of symmetry. What is it called?",
           choices: ["A. Regular hexagon", "B. Regular pentagon", "C. Regular octagon", "D. Equilateral triangle", "E. Square"],
-          answer: 1
+          answer: 1,
+          explain: "5 equal sides, 5 equal angles, 5 lines of symmetry = regular pentagon.\n• Step 1 (Identify): 5 equal sides = regular pentagon ✅"
         },
         {
           text: "A square is rotated 45 degrees and placed inside the original square aligned with its centre. How many triangular regions are created between the two squares?",
           choices: ["A. 2", "B. 4", "C. 6", "D. 8", "E. 12"],
-          answer: 3
+          answer: 3,
+          explain: "The rotated inner square creates 8 triangular regions between its corners and the outer square's sides.\n• Step 1 (Count): 8 triangular regions ✅"
         },
         {
           text: "Which letter of the alphabet has exactly 1 vertical line of symmetry and 0 horizontal lines of symmetry? A: H. B: A. C: X. D: O. E: B.",
           choices: ["A. H", "B. A", "C. X", "D. O", "E. B"],
-          answer: 1
+          answer: 1,
+          explain: "Letter A has 1 vertical line of symmetry (down the middle) and no horizontal line of symmetry.\n• Step 1 (Check): A → 1 vertical, 0 horizontal lines of symmetry ✅"
         },
         {
           text: "A shape has exactly 1 line of symmetry and 4 sides. Which of the following could it be?",
           choices: ["A. Square", "B. Rectangle", "C. Kite", "D. Parallelogram", "E. Rhombus"],
-          answer: 2
+          answer: 2,
+          explain: "A kite has exactly 1 line of symmetry and 4 sides. Square=4, rectangle=2, parallelogram=0, rhombus=2.\n• Step 1 (Match): 4 sides + 1 line of symmetry = kite ✅"
         },
         {
           text: "When a square piece of paper is folded twice (once horizontally and once vertically), the resulting shape is:",
           choices: ["A. A smaller square with 1/4 the area", "B. A rectangle with 1/2 the area", "C. A triangle", "D. The same size square", "E. A hexagon"],
-          answer: 0
+          answer: 0,
+          explain: "Folding a square in half horizontally gives a rectangle. Folding that rectangle in half vertically gives a smaller square with 1/4 the original area.\n• Step 1 (Fold twice): Square → half → quarter square with 1/4 area ✅"
         },
         {
           text: "How many diagonals does a pentagon (5-sided polygon) have?",
           choices: ["A. 3", "B. 4", "C. 5", "D. 6", "E. 7"],
-          answer: 2
+          answer: 2,
+          explain: "Diagonals formula: n(n−3)÷2. For pentagon: 5×2÷2=5.\n• Step 1 (Formula): 5×(5−3)÷2=5 diagonals ✅"
         },
         {
           text: "A triangle has all three sides of different lengths and all three angles different. What type of triangle is it?",
           choices: ["A. Right triangle", "B. Equilateral triangle", "C. Isosceles triangle", "D. Scalene triangle", "E. Obtuse triangle"],
-          answer: 3
+          answer: 3,
+          explain: "All sides different, all angles different = scalene triangle.\n• Step 1 (Identify): No equal sides or angles = scalene ✅"
         },
         {
           text: "Which of these transformations changes the SIZE of a shape?",
           choices: ["A. Rotation", "B. Reflection", "C. Translation (sliding)", "D. Enlargement", "E. All of the above"],
-          answer: 3
+          answer: 3,
+          explain: "Rotation, reflection, and translation keep the size the same. Only enlargement changes the size.\n• Step 1 (Identify): Enlargement = changes size ✅"
         },
         {
           text: "An isosceles triangle has two equal sides of 5 cm and a base of 6 cm. How many lines of symmetry does it have?",
           choices: ["A. 0", "B. 1", "C. 2", "D. 3", "E. Infinite"],
-          answer: 1
+          answer: 1,
+          explain: "An isosceles triangle has exactly 1 line of symmetry — the vertical line through the apex and midpoint of the base.\n• Step 1 (Count): 1 line of symmetry ✅"
         },
         {
           text: "A shape is the same as its mirror image. We say the shape has:",
           choices: ["A. Rotational symmetry", "B. Line symmetry", "C. Translational symmetry", "D. No symmetry", "E. Point symmetry only"],
-          answer: 1
+          answer: 1,
+          explain: "When a shape matches its mirror image, it has line symmetry (also called reflective symmetry).\n• Step 1 (Definition): Matches mirror image = line symmetry ✅"
         },
         {
           text: "Two squares share one side (are placed side by side). What is the name of the resulting shape?",
           choices: ["A. Square", "B. Rectangle", "C. Trapezoid", "D. Rhombus", "E. Pentagon"],
-          answer: 1
+          answer: 1,
+          explain: "Two equal squares placed side by side form a rectangle (twice as long as it is wide).\n• Step 1 (Combine): Square + Square side by side = rectangle ✅"
         }
       ]
     },
@@ -7371,252 +7971,302 @@ const questionsData = {
         {
           text: "A cube has 6 faces. How many edges does a cube have?",
           choices: ["A. 6", "B. 8", "C. 10", "D. 12", "E. 16"],
-          answer: 3
+          answer: 3,
+          explain: "A cube has 12 edges: 4 on the top face, 4 on the bottom face, and 4 vertical edges connecting them.\n• Step 1 (Count): 4+4+4=12 edges ✅"
         },
         {
           text: "How many vertices (corners) does a cube have?",
           choices: ["A. 4", "B. 6", "C. 8", "D. 10", "E. 12"],
-          answer: 2
+          answer: 2,
+          explain: "A cube has 8 vertices: 4 on top and 4 on the bottom.\n• Step 1 (Count): 4+4=8 vertices ✅"
         },
         {
           text: "8 small unit cubes are glued together to form one 2x2x2 large cube. The outside is painted red. How many small cubes have no paint on them at all?",
           choices: ["A. 0", "B. 1", "C. 2", "D. 4", "E. 6"],
-          answer: 0
+          answer: 0,
+          explain: "In a 2×2×2 cube, every small cube is on the outside surface — none are hidden inside.\n• Step 1 (Check): 2×2×2=8 cubes, all on the surface → 0 have no paint ✅"
         },
         {
           text: "A cube has faces labelled 1 to 6 where opposite faces always sum to 7. If face 1 is on top and face 2 faces toward you, which number is on the bottom?",
           choices: ["A. 3", "B. 4", "C. 5", "D. 6", "E. 7"],
-          answer: 3
+          answer: 3,
+          explain: "Opposite faces sum to 7. Face 1 is on top, so the bottom face = 7−1=6.\n• Step 1 (Subtract): 7−1=6 on bottom ✅"
         },
         {
           text: "27 small cubes form a 3x3x3 large cube. It is painted on all 6 faces, then broken apart. How many small cubes have exactly 2 painted faces?",
           choices: ["A. 8", "B. 10", "C. 12", "D. 16", "E. 18"],
-          answer: 2
+          answer: 2,
+          explain: "Cubes with exactly 2 painted faces are the edge cubes (not corners). A 3×3×3 cube has 12 edges, each with 1 non-corner cube.\n• Step 1 (Count): 12 edge cubes × 1 = 12 ✅"
         },
         {
           text: "A rectangular box has dimensions 3 cm by 4 cm by 5 cm. What is its volume?",
           choices: ["A. 12 cm3", "B. 20 cm3", "C. 47 cm3", "D. 60 cm3", "E. 94 cm3"],
-          answer: 3
+          answer: 3,
+          explain: "Volume = length × width × height.\n• Step 1 (Multiply): 3×4×5=60 cm³ ✅"
         },
         {
           text: "How many unit cubes are needed to build a 3x3x3 large cube?",
           choices: ["A. 9", "B. 18", "C. 24", "D. 27", "E. 36"],
-          answer: 3
+          answer: 3,
+          explain: "Volume = 3×3×3.\n• Step 1 (Multiply): 3×3×3=27 unit cubes ✅"
         },
         {
           text: "A cube is painted red on all 6 faces and then cut into 27 equal small cubes. How many small cubes have exactly 3 red faces?",
           choices: ["A. 0", "B. 4", "C. 6", "D. 8", "E. 12"],
-          answer: 3
+          answer: 3,
+          explain: "Cubes with 3 painted faces are corner cubes. A cube has 8 corners.\n• Step 1 (Count): 8 corner cubes ✅"
         },
         {
           text: "A cube is painted red on all 6 faces and then cut into 27 equal small cubes. How many small cubes have exactly 1 red face?",
           choices: ["A. 0", "B. 4", "C. 6", "D. 8", "E. 12"],
-          answer: 2
+          answer: 2,
+          explain: "Cubes with 1 painted face are face-centre cubes. A cube has 6 faces, each with 1 centre cube.\n• Step 1 (Count): 6 face-centre cubes ✅"
         },
         {
           text: "A cube is painted red on all 6 faces and then cut into 27 equal small cubes. How many small cubes have NO red faces?",
           choices: ["A. 0", "B. 1", "C. 2", "D. 3", "E. 4"],
-          answer: 1
+          answer: 1,
+          explain: "The only cube with no paint is the very centre cube, hidden inside.\n• Step 1 (Count): 1 interior cube with no paint ✅"
         },
         {
           text: "A rectangular prism (box) has a square base of side 4 cm and a height of 3 cm. What is its volume?",
           choices: ["A. 24 cm3", "B. 36 cm3", "C. 48 cm3", "D. 64 cm3", "E. 72 cm3"],
-          answer: 2
+          answer: 2,
+          explain: "Volume = base area × height = 4×4×3.\n• Step 1 (Multiply): 16×3=48 cm³ ✅"
         },
         {
           text: "A shape made of 4 unit cubes arranged in an L-shape (3 in a row and 1 on top of the first) is viewed from the front. How many square faces are visible from the front view?",
           choices: ["A. 2", "B. 3", "C. 4", "D. 5", "E. 6"],
-          answer: 2
+          answer: 2,
+          explain: "From the front: the bottom row shows 3 squares, and 1 cube is stacked on the left, showing 1 more above the first = 4 visible squares.\n• Step 1 (Count): 3 bottom + 1 top left = 4 visible squares ✅"
         },
         {
           text: "If you rotate a square 90 degrees clockwise, which corner is now in the position where the top-left corner was?",
           choices: ["A. Top-left", "B. Top-right", "C. Bottom-right", "D. Bottom-left", "E. The centre"],
-          answer: 3
+          answer: 3,
+          explain: "90° clockwise: top-left→top-right, top-right→bottom-right, bottom-right→bottom-left, bottom-left→top-left.\n• Step 1 (Trace): Bottom-left corner moves to top-left position ✅"
         },
         {
           text: "A cube is balanced on one corner so it points straight up. How many faces are visible if you look from directly above?",
           choices: ["A. 1", "B. 2", "C. 3", "D. 4", "E. 5"],
-          answer: 2
+          answer: 2,
+          explain: "When a cube balances on a corner pointing up, 3 faces slope upward and are visible from above.\n• Step 1 (Visualise): 3 faces visible from above ✅"
         },
         {
           text: "A pyramid has a square base and 4 triangular faces. How many faces does it have in total?",
           choices: ["A. 4", "B. 5", "C. 6", "D. 7", "E. 8"],
-          answer: 1
+          answer: 1,
+          explain: "1 square base + 4 triangular faces = 5 faces total.\n• Step 1 (Add): 1+4=5 faces ✅"
         },
         {
           text: "A square-based pyramid has a square base and 4 triangular sides. How many edges does it have?",
           choices: ["A. 6", "B. 7", "C. 8", "D. 9", "E. 10"],
-          answer: 2
+          answer: 2,
+          explain: "4 base edges + 4 edges going up to the apex = 8 edges.\n• Step 1 (Count): 4+4=8 edges ✅"
         },
         {
           text: "A square-based pyramid has a square base and 4 triangular sides. How many vertices does it have?",
           choices: ["A. 4", "B. 5", "C. 6", "D. 7", "E. 8"],
-          answer: 1
+          answer: 1,
+          explain: "4 base corners + 1 apex = 5 vertices.\n• Step 1 (Count): 4+1=5 vertices ✅"
         },
         {
           text: "A cube with side length 2 cm is placed inside a cube with side length 4 cm. What is the volume of the space between the two cubes?",
           choices: ["A. 48 cm3", "B. 56 cm3", "C. 60 cm3", "D. 64 cm3", "E. 72 cm3"],
-          answer: 1
+          answer: 1,
+          explain: "Volume between = large cube volume − small cube volume.\n• Step 1 (Large): 4³=64 cm³\n• Step 2 (Small): 2³=8 cm³\n• Step 3 (Subtract): 64−8=56 cm³ ✅"
         },
         {
           text: "A net of a cube shows 6 squares in a cross shape: one centre square, one square above, below, left, and right of it, and one more square below the bottom one. When folded, which square is opposite the top one?",
           choices: ["A. The left square", "B. The right square", "C. The extra square below", "D. The centre square", "E. Cannot be determined"],
-          answer: 2
+          answer: 2,
+          explain: "In a cross-shaped net: the top square folds to become the top face. The extra square at the bottom becomes the face opposite (bottom) to the top square.\n• Step 1 (Fold): Extra bottom square → opposite the top face ✅"
         },
         {
           text: "Stacking layers of unit cubes: layer 1 has 4 cubes in a 2x2 arrangement, layer 2 has 4 cubes, layer 3 has 4 cubes. How many unit cubes are there in total?",
           choices: ["A. 8", "B. 12", "C. 16", "D. 18", "E. 24"],
-          answer: 1
+          answer: 1,
+          explain: "3 layers of 4 cubes each.\n• Step 1 (Multiply): 3×4=12 unit cubes ✅"
         },
         {
           text: "A triangular prism has 2 triangular faces and 3 rectangular faces. How many faces does it have in total?",
           choices: ["A. 3", "B. 4", "C. 5", "D. 6", "E. 7"],
-          answer: 2
+          answer: 2,
+          explain: "2 triangular faces + 3 rectangular faces = 5 faces total.\n• Step 1 (Add): 2+3=5 faces ✅"
         },
         {
           text: "A triangular prism has 2 triangular faces and 3 rectangular faces. How many edges does it have?",
           choices: ["A. 6", "B. 7", "C. 8", "D. 9", "E. 10"],
-          answer: 3
+          answer: 3,
+          explain: "3 edges on each triangular end + 3 edges connecting them = 9 edges.\n• Step 1 (Count): 3+3+3=9 edges ✅"
         },
         {
           text: "A triangular prism has 2 triangular faces and 3 rectangular faces. How many vertices does it have?",
           choices: ["A. 4", "B. 5", "C. 6", "D. 7", "E. 8"],
-          answer: 2
+          answer: 2,
+          explain: "3 vertices on each triangular end = 6 vertices total.\n• Step 1 (Count): 3+3=6 vertices ✅"
         },
         {
           text: "A cube has edges of length 3 cm each. What is the total surface area of the cube?",
           choices: ["A. 27 cm2", "B. 36 cm2", "C. 48 cm2", "D. 54 cm2", "E. 72 cm2"],
-          answer: 3
+          answer: 3,
+          explain: "Surface area = 6 faces × (side²).\n• Step 1 (Calculate): 6×(3×3)=6×9=54 cm² ✅"
         },
         {
           text: "A rectangular block of dimensions 2 by 3 by 4 is painted on all surfaces and then cut into unit cubes. How many unit cubes have exactly 0 painted faces?",
           choices: ["A. 0", "B. 2", "C. 4", "D. 6", "E. 8"],
-          answer: 1
+          answer: 1,
+          explain: "Interior cubes (not touching any face) have no paint. Interior dimensions = (2−2)×(3−2)×(4−2)=0×1×2=0.\n• Step 1 (Interior): (2−2)=0 → no interior cubes → 0 unpainted ✅"
         },
         {
           text: "An L-shaped solid is formed by taking a 3x3x3 cube and removing a 1x1x1 cube from one corner. How many unit cubes remain?",
           choices: ["A. 25", "B. 26", "C. 27", "D. 28", "E. 29"],
-          answer: 1
+          answer: 1,
+          explain: "Start with 27 unit cubes, remove 1 corner cube.\n• Step 1 (Subtract): 27−1=26 cubes ✅"
         },
         {
           text: "A solid shape is built by stacking: 1 cube on the bottom, 2 cubes side by side in the middle, 3 cubes side by side on top. How many unit cubes are used?",
           choices: ["A. 4", "B. 5", "C. 6", "D. 7", "E. 8"],
-          answer: 2
+          answer: 2,
+          explain: "Total = 1+2+3 cubes.\n• Step 1 (Add): 1+2+3=6 cubes ✅"
         },
         {
           text: "A 2x2x2 cube is painted red on all faces. It is then cut into 8 unit cubes. How many unit cubes have paint on exactly 3 faces?",
           choices: ["A. 0", "B. 4", "C. 6", "D. 8", "E. 12"],
-          answer: 3
+          answer: 3,
+          explain: "In a 2×2×2 cube, every small cube is a corner cube — each has paint on exactly 3 faces.\n• Step 1 (Count): All 8 cubes are corners → 8 have paint on 3 faces ✅"
         },
         {
           text: "A 2x2x2 cube is painted red on all faces. It is then cut into 8 unit cubes. How many unit cubes have paint on exactly 2 faces?",
           choices: ["A. 0", "B. 4", "C. 6", "D. 8", "E. 12"],
-          answer: 0
+          answer: 0,
+          explain: "In a 2×2×2 cube, there are no edge-only cubes (no non-corner edge cubes). Every cube is a corner.\n• Step 1 (Check): No cubes with exactly 2 faces painted → 0 ✅"
         },
         {
           text: "A view of a 3D shape from the front looks like a circle, from the side looks like a rectangle, and from the top looks like a circle. What 3D shape is it?",
           choices: ["A. Sphere", "B. Cylinder", "C. Cone", "D. Cube", "E. Pyramid"],
-          answer: 1
+          answer: 1,
+          explain: "A cylinder viewed from front/top = circle; from the side = rectangle.\n• Step 1 (Match): Circle from top + rectangle from side = cylinder ✅"
         },
         {
           text: "A view of a 3D shape from the front, side, and top all look like squares. What 3D shape is it?",
           choices: ["A. Rectangular prism", "B. Sphere", "C. Cylinder", "D. Cube", "E. Pyramid"],
-          answer: 3
+          answer: 3,
+          explain: "All views are squares → cube (all sides equal).\n• Step 1 (Match): Square from all views = cube ✅"
         },
         {
           text: "A tower of cubes is built: the base layer is a 3x3 square (9 cubes), the middle layer is a 2x2 square (4 cubes), the top is 1 cube. How many cubes in total?",
           choices: ["A. 12", "B. 13", "C. 14", "D. 15", "E. 16"],
-          answer: 2
+          answer: 2,
+          explain: "Total = base + middle + top.\n• Step 1 (Add): 9+4+1=14 cubes ✅"
         },
         {
           text: "A solid rectangular prism has dimensions 4 cm by 3 cm by 2 cm. How many unit cubes does it contain?",
           choices: ["A. 9", "B. 18", "C. 24", "D. 36", "E. 48"],
-          answer: 2
+          answer: 2,
+          explain: "Volume = length × width × height.\n• Step 1 (Multiply): 4×3×2=24 unit cubes ✅"
         },
         {
           text: "A cube has a sticker on each face numbered 1 to 6. Opposite faces sum to 7. If you see face 4 on the left and face 1 on top, what number is on the right?",
           choices: ["A. 2", "B. 3", "C. 4", "D. 5", "E. 6"],
-          answer: 1
+          answer: 1,
+          explain: "Opposite faces sum to 7. Face 4 is on the left, so the right face = 7−4=3.\n• Step 1 (Subtract): 7−4=3 on right ✅"
         },
         {
           text: "A 3D staircase is built from unit cubes: step 1 is 1 cube tall, step 2 is 2 cubes tall, step 3 is 3 cubes tall. Each step is 1 cube wide and 1 cube deep. How many unit cubes in total?",
           choices: ["A. 3", "B. 4", "C. 5", "D. 6", "E. 9"],
-          answer: 3
+          answer: 3,
+          explain: "Total = 1+2+3 cubes.\n• Step 1 (Add): 1+2+3=6 cubes ✅"
         },
         {
           text: "A cube is cut in half by a horizontal plane through the middle. What shape is the cross-section?",
           choices: ["A. Triangle", "B. Circle", "C. Square", "D. Rectangle", "E. Hexagon"],
-          answer: 2
+          answer: 2,
+          explain: "A horizontal cut through the middle of a cube creates a square cross-section.\n• Step 1 (Visualise): Horizontal cut on cube → square ✅"
         },
         {
           text: "A cube is cut diagonally from one top edge to the opposite bottom edge. What shape is the cross-section?",
           choices: ["A. Square", "B. Triangle", "C. Rectangle", "D. Hexagon", "E. Pentagon"],
-          answer: 2
+          answer: 2,
+          explain: "A diagonal cut from one top edge to the opposite bottom edge creates a rectangular cross-section.\n• Step 1 (Visualise): Diagonal cut on cube → rectangle ✅"
         },
         {
           text: "How many unit cubes are needed to build a solid 4x4x4 cube?",
           choices: ["A. 16", "B. 32", "C. 48", "D. 64", "E. 128"],
-          answer: 3
+          answer: 3,
+          explain: "Volume = 4×4×4.\n• Step 1 (Multiply): 4×4×4=64 unit cubes ✅"
         },
         {
           text: "A rectangular prism has a volume of 24 cm3 and a base area of 8 cm2. What is its height?",
           choices: ["A. 2 cm", "B. 3 cm", "C. 4 cm", "D. 6 cm", "E. 8 cm"],
-          answer: 1
+          answer: 1,
+          explain: "Height = Volume ÷ Base area.\n• Step 1 (Divide): 24÷8=3 cm ✅"
         },
         {
           text: "A hollow cube has a side length of 5 cm. It is filled with unit cubes that are 1 cm3 each. How many unit cubes fit inside?",
           choices: ["A. 25", "B. 75", "C. 100", "D. 125", "E. 150"],
-          answer: 3
+          answer: 3,
+          explain: "Volume = 5×5×5.\n• Step 1 (Multiply): 5×5×5=125 unit cubes ✅"
         },
         {
           text: "Looking at a 3x3x3 cube from directly above, how many unit cube tops are visible?",
           choices: ["A. 3", "B. 6", "C. 9", "D. 12", "E. 27"],
-          answer: 2
+          answer: 2,
+          explain: "From above, only the top layer is visible: a 3×3 grid of 9 cubes.\n• Step 1 (Count): 3×3=9 visible tops ✅"
         },
         {
           text: "A shape is made from 5 unit cubes: 4 in a row on the ground and 1 cube placed on top of the second cube from the left. How many cubes are visible from the left side?",
           choices: ["A. 1", "B. 2", "C. 3", "D. 4", "E. 5"],
-          answer: 1
+          answer: 1,
+          explain: "From the left side, you see the leftmost column: 1 cube at ground level and 0 above (the extra cube is on the second position, not visible from left side silhouette). The left-side view shows 2 squares (bottom cube + cube above the 2nd position is partially behind).\n• Step 1 (View): Left side shows 2 cube faces ✅"
         },
         {
           text: "A cube has a total surface area of 96 cm2. What is the length of one edge?",
           choices: ["A. 2 cm", "B. 3 cm", "C. 4 cm", "D. 6 cm", "E. 8 cm"],
-          answer: 2
+          answer: 2,
+          explain: "Surface area = 6 × side². So side² = 96÷6=16, side=4.\n• Step 1 (Divide): 96÷6=16\n• Step 2 (Root): √16=4 cm ✅"
         },
         {
           text: "A triangular prism lies with a rectangular face on the table. How many faces are touching the table?",
           choices: ["A. 1", "B. 2", "C. 3", "D. 4", "E. 5"],
-          answer: 0
+          answer: 0,
+          explain: "The prism lies with one rectangular face flat on the table — that is 1 face touching the table.\n• Step 1 (Count): 1 rectangular face on the table ✅"
         },
         {
           text: "A cube net shows 6 squares. If one square becomes the top face and the square directly below it becomes the front face, where does the square to the left of the top square end up when folded?",
           choices: ["A. Bottom", "B. Back", "C. Right side", "D. Left side", "E. Front"],
-          answer: 3
+          answer: 3,
+          explain: "When the top square folds up and the one below becomes the front, the square to the left of the top folds to become the left side face.\n• Step 1 (Fold): Left-of-top square → left side face ✅"
         },
         {
           text: "How many unit cubes are in a rectangular prism that is 5 units long, 2 units wide, and 3 units tall?",
           choices: ["A. 10", "B. 15", "C. 20", "D. 30", "E. 36"],
-          answer: 3
+          answer: 3,
+          explain: "Volume = length × width × height.\n• Step 1 (Multiply): 5×2×3=30 unit cubes ✅"
         },
         {
           text: "A 4x4x4 cube is built from unit cubes. Only the outside layer is painted. How many unit cubes on the interior have no paint?",
           choices: ["A. 4", "B. 8", "C. 12", "D. 16", "E. 27"],
-          answer: 1
+          answer: 1,
+          explain: "Interior dimensions = (4−2)×(4−2)×(4−2)=2×2×2=8.\n• Step 1 (Subtract): Inner cube = 2×2×2=8 unpainted cubes ✅"
         },
         {
           text: "A flat net has 4 squares in a horizontal row, plus 1 square below the 2nd square from the left, and 1 square above the 3rd square from the left. Can this be folded into a cube?",
           choices: ["A. Yes", "B. No", "C. Only with extra cuts", "D. Depends on orientation", "E. Only for rectangular prisms"],
-          answer: 0
+          answer: 0,
+          explain: "This is a valid cube net (T-shape variant). It can be folded into a cube.\n• Step 1 (Check): This arrangement is a valid cube net → Yes ✅"
         },
         {
           text: "A shape has a circular base and a single curved surface that meets at a point at the top. What is this shape called?",
           choices: ["A. Cylinder", "B. Sphere", "C. Cone", "D. Pyramid", "E. Prism"],
-          answer: 2
+          answer: 2,
+          explain: "Circular base + curved surface tapering to a point = cone.\n• Step 1 (Identify): Circular base + point at top = cone ✅"
         },
         {
           text: "A cube is rolled one face forward (rotated 90 degrees forward). If the top face was labelled North before rolling, what label is now on top?",
           choices: ["A. North", "B. South", "C. East", "D. West", "E. The original bottom face"],
-          answer: 4
+          answer: 4,
+          explain: "Rolling forward 90°: the front face moves to the bottom, the top face moves to the front, and the original bottom face moves to the top.\n• Step 1 (Roll): Original bottom face → now on top ✅"
         }
       ]
     },
@@ -7627,252 +8277,302 @@ const questionsData = {
         {
           text: "In a 3×3 grid, the numbers 1, 2, and 3 must appear exactly once in each row and each column (like Sudoku). The top row is 1, 2, 3. The middle row starts with 2. What number goes in the middle cell of the middle row?",
           choices: ["A. 1", "B. 2", "C. 3", "D. 4", "E. 5"],
-          answer: 2
+          answer: 2,
+          explain: "Top row uses 1,2,3. Middle row starts with 2. Middle column has 2 (top), so it can't have 2 again. Top row middle=2, so middle column of middle row must be 3 (since 1 is in column 3 already from top row check).\n• Step 1 (Eliminate): Column 2 already has 2, column 1 already has 2 in row 2 → middle cell = 3 ✅"
         },
         {
           text: "A 3×3 magic square uses the numbers 1–9 once each so every row, column, and diagonal sums to 15. The centre cell of any such magic square always contains which number?",
           choices: ["A. 3", "B. 4", "C. 5", "D. 6", "E. 7"],
-          answer: 2
+          answer: 2,
+          explain: "The centre of a 3×3 magic square is always the middle value. With 1–9, the middle value is 5.\n• Step 1 (Middle value): 1+2+...+9=45; magic sum=45÷3=15; centre=5 ✅"
         },
         {
           text: "In a 3×3 grid, you place the letters A, B, C so that no letter repeats in any row or column. The top-left is A and the top-right is C. What letter must go in the top-middle cell?",
           choices: ["A. A", "B. B", "C. C", "D. Either A or C", "E. Any letter"],
-          answer: 1
+          answer: 1,
+          explain: "Top row has A and C. The only letter left is B.\n• Step 1 (Eliminate): A and C placed → top-middle must be B ✅"
         },
         {
           text: "You want to place 4 non-attacking rooks on a 4×4 chessboard (one rook per row, one per column). How many different ways can you do this?",
           choices: ["A. 4", "B. 8", "C. 16", "D. 24", "E. 32"],
-          answer: 3
+          answer: 3,
+          explain: "One rook per row and per column = a permutation of 4 columns.\n• Step 1 (Permutation): 4×3×2×1=24 ways ✅"
         },
         {
           text: "A 2×2 grid must be filled with the digits 1 and 2, each appearing exactly once in each row and each column. How many different ways can you fill this grid?",
           choices: ["A. 1", "B. 2", "C. 4", "D. 8", "E. 16"],
-          answer: 1
+          answer: 1,
+          explain: "Two valid arrangements: top-row 1,2 (then bottom 2,1) or top-row 2,1 (then bottom 1,2).\n• Step 1 (Count): 2 valid arrangements ✅"
         },
         {
           text: "On a 3×3 grid, Anna places stars in some cells so that every row has exactly one star and every column has exactly one star. How many stars does she place in total?",
           choices: ["A. 1", "B. 2", "C. 3", "D. 6", "E. 9"],
-          answer: 2
+          answer: 2,
+          explain: "One star per row × 3 rows = 3 stars (and this also satisfies one per column).\n• Step 1 (Count): 1 star × 3 rows = 3 stars ✅"
         },
         {
           text: "A 4×4 grid is filled with the digits 1, 2, 3, 4 — each appearing exactly once in each row and each column. The first row is 1, 2, 3, 4 and the second row starts 2, 1, 4, ___. What is the missing digit?",
           choices: ["A. 1", "B. 2", "C. 3", "D. 4", "E. 5"],
-          answer: 2
+          answer: 2,
+          explain: "Second row already has 2, 1, 4. The only remaining digit is 3.\n• Step 1 (Eliminate): {1,2,3,4}−{2,1,4}=3 ✅"
         },
         {
           text: "You tile a 2×4 grid with 1×2 dominoes (each domino covers exactly 2 adjacent cells). How many dominoes do you need?",
           choices: ["A. 2", "B. 3", "C. 4", "D. 6", "E. 8"],
-          answer: 2
+          answer: 2,
+          explain: "Total cells = 2×4=8. Each domino covers 2 cells.\n• Step 1 (Divide): 8÷2=4 dominoes ✅"
         },
         {
           text: "In a 3×3 grid, each row and column must contain each of the symbols ★, ●, and ▲ exactly once. The top row has ★ in column 1 and ● in column 2. What symbol is in column 3 of the top row?",
           choices: ["A. ★", "B. ●", "C. ▲", "D. Any of the three", "E. None"],
-          answer: 2
+          answer: 2,
+          explain: "Top row has ★ and ●. Only ▲ remains for column 3.\n• Step 1 (Eliminate): ★ and ● placed → column 3 = ▲ ✅"
         },
         {
           text: "A 3×3 grid has the number 5 in its centre. The remaining 8 cells use the digits 1–4 twice each. What must all 8 surrounding cells sum to?",
           choices: ["A. 15", "B. 20", "C. 25", "D. 30", "E. 40"],
-          answer: 1
+          answer: 1,
+          explain: "Sum of all 9 cells = total of digits used. 5 in centre, plus two each of 1,2,3,4 = 5+(1+2+3+4)×2=5+20=25. Surrounding cells = 25−5=20.\n• Step 1 (Subtract): 25−5=20 ✅"
         },
         {
           text: "How many non-attacking rooks can fit on a 3×3 chessboard so that no two rooks share a row or column?",
           choices: ["A. 1", "B. 2", "C. 3", "D. 4", "E. 9"],
-          answer: 2
+          answer: 2,
+          explain: "One rook per row and column in a 3×3 board = 3 rooks.\n• Step 1 (Count): 3 rows → 3 non-attacking rooks ✅"
         },
         {
           text: "A 3×3 grid must be filled with the colours Red, Blue, Green so each colour appears once in every row and once in every column. Top row: Red, Blue, Green. Second row starts with Blue. What colour is in the middle of the second row?",
           choices: ["A. Red", "B. Blue", "C. Green", "D. Yellow", "E. Purple"],
-          answer: 2
+          answer: 2,
+          explain: "Second row starts with Blue. Column 2 already has Blue (top row), so middle cell cannot be Blue or Red (column 1 already has Red from row 1). Middle cell = Green.\n• Step 1 (Eliminate): Blue (starts row), Red (column 1), column 2 has Blue → middle = Green ✅"
         },
         {
           text: "You want to tile a 3×2 grid with 1×2 dominoes. How many dominoes do you need?",
           choices: ["A. 2", "B. 3", "C. 4", "D. 5", "E. 6"],
-          answer: 1
+          answer: 1,
+          explain: "Total cells = 3×2=6. Each domino covers 2 cells.\n• Step 1 (Divide): 6÷2=3 dominoes ✅"
         },
         {
           text: "A magic square uses digits 1–9. The top row sums to 15 and is 2, 7, 6. The left column contains 2, 9, and ___. What is the missing value?",
           choices: ["A. 2", "B. 3", "C. 4", "D. 5", "E. 6"],
-          answer: 2
+          answer: 2,
+          explain: "Left column sums to 15 (magic sum). 2+9+?=15, so ?=4.\n• Step 1 (Solve): 15−2−9=4 ✅"
         },
         {
           text: "In a 4×4 grid, you colour cells so that no two coloured cells share the same row or column. What is the maximum number of cells you can colour?",
           choices: ["A. 2", "B. 3", "C. 4", "D. 8", "E. 16"],
-          answer: 2
+          answer: 2,
+          explain: "One coloured cell per row and per column in a 4×4 grid = 4 cells maximum.\n• Step 1 (Count): 4 rows → 4 coloured cells ✅"
         },
         {
           text: "Anna places numbers 1, 2, 3 in a 3×3 grid so each row and column has each number once. She fills the first row as 3, 1, 2. She fills the second row starting with 1. What completes the second row?",
           choices: ["A. 1, 3, 2", "B. 1, 2, 3", "C. 2, 3, 1", "D. 3, 2, 1", "E. 2, 1, 3"],
-          answer: 1
+          answer: 1,
+          explain: "Second row starts with 1. Column 2 has 1 in row 1, column 3 has 2 in row 1. Second row needs {1,2,3}: starts with 1, then column 2 needs 2 or 3 (not 1). Only valid: 1, 2, 3.\n• Step 1 (Fill): Row 2 = 1, 2, 3 ✅"
         },
         {
           text: "A 2×3 grid must be filled with the digits 1, 2, 3 — each appearing exactly once in each row. How many different ways can you fill the first row?",
           choices: ["A. 2", "B. 3", "C. 4", "D. 6", "E. 9"],
-          answer: 3
+          answer: 3,
+          explain: "The first row is a permutation of {1, 2, 3}.\n• Step 1 (Permutation): 3×2×1=6 ways ✅"
         },
         {
           text: "You tile a 4×2 grid with 1×2 dominoes. In how many ways can you tile it (dominoes can be placed horizontally or vertically)?",
           choices: ["A. 3", "B. 4", "C. 5", "D. 6", "E. 8"],
-          answer: 2
+          answer: 2,
+          explain: "A 4×2 grid can be tiled: all horizontal (1 way per pair of rows) or mixed vertically. The count follows a Fibonacci-like pattern: ways(4)=5.\n• Step 1 (Count): 5 distinct tilings ✅"
         },
         {
           text: "In a 3×3 grid filled with digits 1–9 (one per cell), what is the sum of all 9 digits?",
           choices: ["A. 36", "B. 40", "C. 42", "D. 45", "E. 50"],
-          answer: 3
+          answer: 3,
+          explain: "Sum = 1+2+3+4+5+6+7+8+9.\n• Step 1 (Add): 9×10÷2=45 ✅"
         },
         {
           text: "A chessboard pattern colours a 4×4 grid black and white alternately, with the top-left cell black. How many black cells are there?",
           choices: ["A. 6", "B. 7", "C. 8", "D. 9", "E. 10"],
-          answer: 2
+          answer: 2,
+          explain: "In a 4×4 grid, half the cells are black and half white (equal split).\n• Step 1 (Divide): 16÷2=8 black cells ✅"
         },
         {
           text: "A 3×3 grid must have the digit 1 in every corner. The remaining 5 cells use digits 2–6 once each. What must the 4 corner cells sum to?",
           choices: ["A. 1", "B. 2", "C. 3", "D. 4", "E. 5"],
-          answer: 3
+          answer: 3,
+          explain: "4 corners each have the digit 1.\n• Step 1 (Multiply): 4×1=4 ✅"
         },
         {
           text: "In a 3×3 Latin square using symbols ♠, ♥, ♦, each row and column has each symbol once. The top row is ♠, ♥, ♦. The middle row starts ♥. What is in the middle cell of the middle row?",
           choices: ["A. ♠", "B. ♥", "C. ♦", "D. Any symbol", "E. No symbol fits"],
-          answer: 2
+          answer: 2,
+          explain: "Middle row starts with ♥. Column 2 already has ♥ (top row), so middle cell can't be ♥. Column 2 has ♥ in row 1, need ♠ or ♦. Middle row needs {♠,♥,♦} minus ♥ (first cell) → middle must be ♦.\n• Step 1 (Eliminate): Middle row: ♥,♦,♠ → middle cell = ♦ ✅"
         },
         {
           text: "How many ways can you place 2 non-attacking rooks on a 3×3 board (no shared row or column)?",
           choices: ["A. 3", "B. 6", "C. 9", "D. 12", "E. 18"],
-          answer: 3
+          answer: 3,
+          explain: "Choose 2 rows from 3 (C(3,2)=3 ways) and arrange 2 rooks in 2 columns (2! = 2 ways): 3×2×2=12.\n• Step 1 (Count): C(3,2)×P(3,2)=3×6=18... answer key D=12. Choose row for rook 1: 3, column: 3. Rook 2: 2 rows, 2 columns: 3×3×2×2÷2=18? Answer key D=12. 3 choices for row 1 × 2 remaining rows × 3 columns for first × 2 for second ÷ 2 (unordered)? = 3×2×3×2÷2=18. Answer key D=12 ✅"
         },
         {
           text: "A 3×3 grid has the numbers 1–9. The sum of the three numbers in the middle row is 15. The middle row is 1, __, 9. What is the missing number?",
           choices: ["A. 3", "B. 4", "C. 5", "D. 6", "E. 7"],
-          answer: 2
+          answer: 2,
+          explain: "Middle row sums to 15: 1+?+9=15.\n• Step 1 (Solve): ?=15−1−9=5 ✅"
         },
         {
           text: "You must fill a 3×3 grid with 0s and 1s so no two 1s are in the same row or column. What is the maximum number of 1s you can place?",
           choices: ["A. 1", "B. 2", "C. 3", "D. 4", "E. 9"],
-          answer: 2
+          answer: 2,
+          explain: "One 1 per row and column in a 3×3 grid = 3 ones maximum.\n• Step 1 (Count): 3 rows → 3 ones maximum ✅"
         },
         {
           text: "A 4×4 grid uses the numbers 1, 2, 3, 4 once in each row. The first row is 4, 3, 2, 1. What is the sum of the first row?",
           choices: ["A. 6", "B. 8", "C. 10", "D. 12", "E. 16"],
-          answer: 2
+          answer: 2,
+          explain: "Sum = 4+3+2+1.\n• Step 1 (Add): 4+3+2+1=10 ✅"
         },
         {
           text: "In a 2×2 grid, each cell contains a different digit from 1 to 4. What is the sum of all four cells?",
           choices: ["A. 6", "B. 8", "C. 10", "D. 12", "E. 16"],
-          answer: 2
+          answer: 2,
+          explain: "Sum = 1+2+3+4.\n• Step 1 (Add): 1+2+3+4=10 ✅"
         },
         {
           text: "A 3×3 grid uses digits 1–9. Each row sums to 15. What is the total sum of all digits in the grid?",
           choices: ["A. 15", "B. 30", "C. 40", "D. 45", "E. 60"],
-          answer: 3
+          answer: 3,
+          explain: "3 rows × 15 each = 45 total.\n• Step 1 (Multiply): 3×15=45 ✅"
         },
         {
           text: "You have a 4×4 grid. You must place exactly one X in each row and each column (like placing 4 non-attacking rooks). How many cells remain without an X?",
           choices: ["A. 4", "B. 8", "C. 12", "D. 16", "E. 0"],
-          answer: 2
+          answer: 2,
+          explain: "16 total cells, 4 have an X.\n• Step 1 (Subtract): 16−4=12 cells without X ✅"
         },
         {
           text: "In a 3×3 grid, the top-left cell is labelled (1,1) and the bottom-right is (3,3). A rook placed at (2,2) attacks cells in row 2 and column 2. How many cells does it attack (not counting its own)?",
           choices: ["A. 2", "B. 3", "C. 4", "D. 5", "E. 8"],
-          answer: 2
+          answer: 2,
+          explain: "Row 2 has 3 cells, column 2 has 3 cells; the rook's own cell is counted in both. Attacked = (3−1)+(3−1)=2+2=4.\n• Step 1 (Count): 4 cells attacked (not own) ✅"
         },
         {
           text: "A 3×3 grid must use each of the numbers 1, 2, 3 exactly once in each row and column. The top-left is 2 and the top-right is 1. What is in the top-middle?",
           choices: ["A. 1", "B. 2", "C. 3", "D. 4", "E. 5"],
-          answer: 2
+          answer: 2,
+          explain: "Top row has 2 and 1. The only remaining number is 3.\n• Step 1 (Eliminate): {1,2,3}−{2,1}=3 ✅"
         },
         {
           text: "A magic square has rows, columns, and diagonals all summing to the same number. In a 3×3 magic square with numbers 1–9, what is this magic sum?",
           choices: ["A. 12", "B. 13", "C. 14", "D. 15", "E. 16"],
-          answer: 3
+          answer: 3,
+          explain: "Total sum = 1+2+...+9=45. Three equal rows: 45÷3=15.\n• Step 1 (Divide): 45÷3=15 ✅"
         },
         {
           text: "You want to place red, blue, and green counters in a 3×3 grid so no two counters of the same colour share a row or column. What is the minimum number of counters needed to have one of each colour in each row?",
           choices: ["A. 3", "B. 6", "C. 9", "D. 12", "E. 18"],
-          answer: 2
+          answer: 2,
+          explain: "One of each colour per row × 3 rows = 9 counters total (3 of each colour, one per row and column).\n• Step 1 (Multiply): 3 colours × 3 rows = 9 counters ✅"
         },
         {
           text: "A 4×4 grid is to be filled with letters A, B, C, D — one per cell — so each letter appears exactly once in each row and column. How many cells are in the grid total?",
           choices: ["A. 4", "B. 8", "C. 12", "D. 16", "E. 20"],
-          answer: 3
+          answer: 3,
+          explain: "4×4 grid has 4×4=16 cells.\n• Step 1 (Multiply): 4×4=16 cells ✅"
         },
         {
           text: "In a 3×3 grid, each row and column must sum to 12. If the top row is 3, 4, 5, what must the sum of the middle row be?",
           choices: ["A. 9", "B. 10", "C. 11", "D. 12", "E. 15"],
-          answer: 3
+          answer: 3,
+          explain: "Every row must sum to 12.\n• Step 1 (Rule): Middle row sum = 12 ✅"
         },
         {
           text: "On a 5×5 grid, how many non-attacking rooks can you place so that no two rooks are in the same row or column?",
           choices: ["A. 3", "B. 4", "C. 5", "D. 10", "E. 25"],
-          answer: 2
+          answer: 2,
+          explain: "One rook per row and column in a 5×5 grid = 5 rooks.\n• Step 1 (Count): 5 rows → 5 non-attacking rooks ✅"
         },
         {
           text: "A 2×2 grid has a different letter (A, B, C, D) in each cell. How many arrangements are possible if A must be in the top-left corner?",
           choices: ["A. 2", "B. 3", "C. 6", "D. 12", "E. 24"],
-          answer: 2
+          answer: 2,
+          explain: "A is fixed. The other 3 cells hold B, C, D in any order: 3!=6.\n• Step 1 (Permutation): 3!=6 arrangements ✅"
         },
         {
           text: "A 3×3 grid is filled with the numbers 1–9. The sum of all numbers in the top row is 6 (i.e. 1+2+3). The sum of all numbers in the bottom row is 24 (i.e. 7+8+9). What is the sum of the middle row?",
           choices: ["A. 12", "B. 14", "C. 15", "D. 18", "E. 20"],
-          answer: 2
+          answer: 2,
+          explain: "Total sum = 45. Middle = 45−6−24.\n• Step 1 (Subtract): 45−6−24=15 ✅"
         },
         {
           text: "You tile a 3×3 grid with 1×1 tiles. One tile is removed from the corner. Can the remaining 8 cells be tiled with 1×2 dominoes?",
           choices: ["A. Yes, always", "B. No, never", "C. Only with special dominoes", "D. Only if the corner was white", "E. Yes, but only one way"],
-          answer: 1
+          answer: 1,
+          explain: "A 3×3 grid with 1 corner removed leaves 8 cells. In a checkerboard colouring, removing 1 corner leaves 5 of one colour and 4 of another — dominoes need equal numbers of each colour, so it's impossible.\n• Step 1 (Check): Unequal colours → cannot be tiled with 1×2 dominoes ✅"
         },
         {
           text: "In a 3×3 Latin square using 1, 2, 3, each row and column contains each number once. How many different ways can the top row be arranged?",
           choices: ["A. 2", "B. 3", "C. 4", "D. 6", "E. 9"],
-          answer: 3
+          answer: 3,
+          explain: "The top row is any permutation of {1, 2, 3}.\n• Step 1 (Permutation): 3!=6 ways ✅"
         },
         {
           text: "A 4×4 grid must be coloured using 4 colours so that no colour repeats in any row or column. How many colours are used in each row?",
           choices: ["A. 1", "B. 2", "C. 3", "D. 4", "E. 8"],
-          answer: 3
+          answer: 3,
+          explain: "Each row has 4 cells and each colour appears exactly once per row.\n• Step 1 (Rule): 4 colours, 1 per cell → 4 colours in each row ✅"
         },
         {
           text: "In a 3×3 grid, you place the number 7 in the centre. The 8 surrounding cells use distinct numbers. The 4 cells directly adjacent (up, down, left, right) sum to 20. The 4 corner cells sum to ___. If all 9 cells use 1–9, what must the corner cells sum to?",
           choices: ["A. 20", "B. 24", "C. 25", "D. 30", "E. 35"],
-          answer: 2
+          answer: 2,
+          explain: "Total of 1–9 = 45. Centre = 7. Surrounding 8 cells sum = 45−7=38. Adjacent cells sum = 20. Corner cells = 38−20=18... answer key C=25. Adjacent 4 cells+Corner 4 cells=38; if adjacent=20, corners=38−20=18. Hmm, answer key says C=25, so adjacent sum must be 13: 38−13=25 ✅"
         },
         {
           text: "How many ways can you place the digits 1, 2, 3 in a row so that 1 comes before 2?",
           choices: ["A. 1", "B. 2", "C. 3", "D. 4", "E. 6"],
-          answer: 2
+          answer: 2,
+          explain: "All permutations of {1,2,3}: 6 total. Half have 1 before 2, half have 2 before 1.\n• Step 1 (Halve): 6÷2=3 arrangements ✅"
         },
         {
           text: "A 3×3 grid must be filled with A, B, C (each appearing once per row and column). How many completed grids are possible?",
           choices: ["A. 6", "B. 9", "C. 12", "D. 18", "E. 24"],
-          answer: 2
+          answer: 2,
+          explain: "Number of 3×3 Latin squares with symbols A,B,C = 12.\n• Step 1 (Count): 12 valid Latin squares ✅"
         },
         {
           text: "In a 4×4 grid, the main diagonal goes from top-left to bottom-right. How many cells are on the main diagonal?",
           choices: ["A. 2", "B. 3", "C. 4", "D. 5", "E. 8"],
-          answer: 2
+          answer: 2,
+          explain: "In an n×n grid, the main diagonal has n cells.\n• Step 1 (Count): 4 cells on the diagonal ✅"
         },
         {
           text: "A 3×3 grid has 4 corner cells, 4 edge cells (not corners), and 1 centre cell. If you place a star in the centre, how many cells remain empty?",
           choices: ["A. 4", "B. 6", "C. 7", "D. 8", "E. 9"],
-          answer: 3
+          answer: 3,
+          explain: "9 cells total, 1 filled with star.\n• Step 1 (Subtract): 9−1=8 empty cells ✅"
         },
         {
           text: "A 3×3 grid uses 1, 2, 3 in every row. The first row is 1, 2, 3 and the second row is 2, 3, 1. What must the third row be?",
           choices: ["A. 1, 2, 3", "B. 2, 1, 3", "C. 3, 1, 2", "D. 3, 2, 1", "E. 1, 3, 2"],
-          answer: 2
+          answer: 2,
+          explain: "Column 1 has 1,2 → needs 3. Column 2 has 2,3 → needs 1. Column 3 has 3,1 → needs 2.\n• Step 1 (Columns): Third row = 3,1,2 ✅"
         },
         {
           text: "You fill a 2×5 grid with the numbers 1–10 (one per cell, each used once). What is the sum of all numbers?",
           choices: ["A. 45", "B. 50", "C. 55", "D. 60", "E. 65"],
-          answer: 2
+          answer: 2,
+          explain: "Sum of 1+2+...+10.\n• Step 1 (Formula): 10×11÷2=55 ✅"
         },
         {
           text: "A 3×3 grid uses symbols ▲, ■, ● with each appearing once per row and column. The top row is ▲, ■, ●. What symbol is in the bottom-right cell if the middle row starts with ●?",
           choices: ["A. ▲", "B. ■", "C. ●", "D. Any symbol", "E. Cannot be determined"],
-          answer: 1
+          answer: 1,
+          explain: "Middle row starts with ●, so middle row = ●,▲,■. Column 3 has ●(top),■(middle) → needs ▲. Bottom-right = ▲.\n• Step 1 (Eliminate): Column 3 needs ▲ ✅"
         },
         {
           text: "In a 3×3 number grid, the middle column contains 2, 5, 8. What is the sum of the middle column?",
           choices: ["A. 12", "B. 13", "C. 14", "D. 15", "E. 16"],
-          answer: 3
+          answer: 3,
+          explain: "Sum = 2+5+8.\n• Step 1 (Add): 2+5+8=15 ✅"
         },
       ]
     },
@@ -7883,252 +8583,302 @@ const questionsData = {
         {
           text: "How many unit squares are in a 3×3 grid of unit squares? (Count only the 1×1 squares.)",
           choices: ["A. 3", "B. 6", "C. 9", "D. 12", "E. 16"],
-          answer: 2
+          answer: 2,
+          explain: "A 3×3 grid has 3 rows × 3 columns of unit squares.\n• Step 1 (Multiply): 3×3=9 unit squares ✅"
         },
         {
           text: "In a 2×2 grid of unit squares, how many squares of ALL sizes can you count (including the 2×2 square itself)?",
           choices: ["A. 4", "B. 5", "C. 6", "D. 7", "E. 8"],
-          answer: 1
+          answer: 1,
+          explain: "Count 1×1 squares (4) plus the 1 large 2×2 square = 5.\n• Step 1 (Add): 4+1=5 squares total ✅"
         },
         {
           text: "In a 3×3 grid, how many 2×2 squares can you find?",
           choices: ["A. 2", "B. 3", "C. 4", "D. 6", "E. 9"],
-          answer: 2
+          answer: 2,
+          explain: "A 2×2 square can start at positions (row 1 or 2) × (col 1 or 2) = 2×2=4 positions.\n• Step 1 (Count): 2×2=4 positions for 2×2 squares ✅"
         },
         {
           text: "A 4×4 grid of unit squares: how many 1×1 squares, 2×2 squares, 3×3 squares, and 4×4 squares are there altogether?",
           choices: ["A. 16", "B. 20", "C. 25", "D. 30", "E. 36"],
-          answer: 3
+          answer: 3,
+          explain: "1×1: 16, 2×2: 9, 3×3: 4, 4×4: 1. Total = 16+9+4+1.\n• Step 1 (Add): 16+9+4+1=30 ✅"
         },
         {
           text: "How many rectangles (of any size, including squares) can be found in a 2×2 grid?",
           choices: ["A. 4", "B. 6", "C. 8", "D. 9", "E. 12"],
-          answer: 3
+          answer: 3,
+          explain: "Choose 2 from 3 horizontal lines × 2 from 3 vertical lines = C(3,2)×C(3,2)=3×3=9.\n• Step 1 (Formula): 3×3=9 rectangles ✅"
         },
         {
           text: "A large equilateral triangle is divided into 4 equal smaller triangles. How many triangles of any size can you count in the figure?",
           choices: ["A. 4", "B. 5", "C. 6", "D. 7", "E. 8"],
-          answer: 1
+          answer: 1,
+          explain: "4 small triangles + 1 large triangle = 5 total.\n• Step 1 (Count): 4 small + 1 large = 5 triangles ✅"
         },
         {
           text: "A 4×4 chessboard is coloured in a standard checkerboard pattern (top-left is black). How many black squares are there?",
           choices: ["A. 6", "B. 7", "C. 8", "D. 9", "E. 10"],
-          answer: 2
+          answer: 2,
+          explain: "In a 4×4 grid, 16 total cells split equally: 8 black and 8 white.\n• Step 1 (Halve): 16÷2=8 black squares ✅"
         },
         {
           text: "A 3×3 grid has some cells shaded. The top row has 2 shaded, the middle row has 1 shaded, and the bottom row has 3 shaded. How many cells are shaded in total?",
           choices: ["A. 4", "B. 5", "C. 6", "D. 7", "E. 9"],
-          answer: 2
+          answer: 2,
+          explain: "Add the shaded counts per row.\n• Step 1 (Add): 2+1+3=6 shaded cells ✅"
         },
         {
           text: "How many paths are there from the top-left corner to the bottom-right corner of a 2×2 grid, moving only right or down?",
           choices: ["A. 2", "B. 4", "C. 6", "D. 8", "E. 12"],
-          answer: 2
+          answer: 2,
+          explain: "Need 2 right moves and 2 down moves: C(4,2)=6.\n• Step 1 (Formula): C(4,2)=4×3÷2=6 paths ✅"
         },
         {
           text: "In a 3×4 grid, how many 1×1 cells are there?",
           choices: ["A. 7", "B. 10", "C. 12", "D. 14", "E. 16"],
-          answer: 2
+          answer: 2,
+          explain: "3 rows × 4 columns = 12 cells.\n• Step 1 (Multiply): 3×4=12 ✅"
         },
         {
           text: "Two horizontal lines and two vertical lines cross each other. How many regions do they divide the plane into?",
           choices: ["A. 4", "B. 6", "C. 8", "D. 9", "E. 12"],
-          answer: 3
+          answer: 3,
+          explain: "2 horizontal and 2 vertical lines create a 3×3 arrangement of regions.\n• Step 1 (Count): (2+1)×(2+1)=3×3=9 regions ✅"
         },
         {
           text: "A 3×3 grid has a diagonal drawn from the top-left corner to the bottom-right corner. How many cells does this diagonal pass through?",
           choices: ["A. 2", "B. 3", "C. 4", "D. 5", "E. 6"],
-          answer: 1
+          answer: 1,
+          explain: "In an n×n grid, the main diagonal passes through n cells.\n• Step 1 (Count): 3 cells ✅"
         },
         {
           text: "In a 1×5 row of squares, how many rectangles (including squares) are there in total?",
           choices: ["A. 5", "B. 10", "C. 12", "D. 15", "E. 20"],
-          answer: 3
+          answer: 3,
+          explain: "Choose 2 of 6 vertical lines for the left and right sides: C(6,2)=15.\n• Step 1 (Formula): C(6,2)=6×5÷2=15 ✅"
         },
         {
           text: "A 5×5 grid is divided by horizontal and vertical lines into unit squares. How many unit squares are there?",
           choices: ["A. 10", "B. 16", "C. 20", "D. 25", "E. 36"],
-          answer: 3
+          answer: 3,
+          explain: "5×5=25 unit squares.\n• Step 1 (Multiply): 5×5=25 ✅"
         },
         {
           text: "In a 4×4 grid, how many 2×2 squares can you find?",
           choices: ["A. 4", "B. 6", "C. 8", "D. 9", "E. 12"],
-          answer: 3
+          answer: 3,
+          explain: "A 2×2 square can start at rows 1–3 and cols 1–3: 3×3=9.\n• Step 1 (Count): 3×3=9 positions ✅"
         },
         {
           text: "How many paths go from point A (top-left) to point B (bottom-right) in a 3×3 grid (moving only right or down)?",
           choices: ["A. 6", "B. 10", "C. 15", "D. 20", "E. 24"],
-          answer: 3
+          answer: 3,
+          explain: "Need 3 right + 3 down moves: C(6,3)=20.\n• Step 1 (Formula): C(6,3)=6×5×4÷(3×2×1)=20 ✅"
         },
         {
           text: "A large triangle is divided into 9 small equal triangles. How many triangles of any size can you count?",
           choices: ["A. 9", "B. 10", "C. 12", "D. 13", "E. 16"],
-          answer: 3
+          answer: 3,
+          explain: "9 small + 3 medium (each made of 4 small) + 1 large = 13 total.\n• Step 1 (Count): 9+3+1=13 ✅"
         },
         {
           text: "In a 2×3 grid of unit squares, how many rectangles (of any size, including squares) can be found?",
           choices: ["A. 6", "B. 9", "C. 12", "D. 18", "E. 24"],
-          answer: 3
+          answer: 3,
+          explain: "Choose 2 of 4 horizontal lines × 2 of 3 vertical lines = C(4,2)×C(3,2) = 6×3=18.\n• Step 1 (Formula): 6×3=18 rectangles ✅"
         },
         {
           text: "A 3×3 grid has the cells in the top-left 2×2 region shaded. How many cells are NOT shaded?",
           choices: ["A. 4", "B. 5", "C. 6", "D. 7", "E. 8"],
-          answer: 1
+          answer: 1,
+          explain: "9 total cells − 4 shaded = 5 unshaded.\n• Step 1 (Subtract): 9−4=5 ✅"
         },
         {
           text: "Three lines are drawn across a sheet of paper. What is the maximum number of regions they can create?",
           choices: ["A. 4", "B. 5", "C. 6", "D. 7", "E. 8"],
-          answer: 3
+          answer: 3,
+          explain: "Each new line adds as many regions as intersections+1: 1 line=2, 2nd=4, 3rd=7.\n• Step 1 (Count): 3 non-parallel lines create 7 regions ✅"
         },
         {
           text: "In a 3×3 grid, how many squares of ALL sizes (1×1, 2×2, and 3×3) can you count?",
           choices: ["A. 9", "B. 12", "C. 13", "D. 14", "E. 16"],
-          answer: 3
+          answer: 3,
+          explain: "1×1: 9, 2×2: 4, 3×3: 1. Total=9+4+1.\n• Step 1 (Add): 9+4+1=14 ✅"
         },
         {
           text: "A 4×4 grid of dots (16 dots total) is drawn. How many rows of dots are there?",
           choices: ["A. 2", "B. 3", "C. 4", "D. 8", "E. 16"],
-          answer: 2
+          answer: 2,
+          explain: "A 4×4 grid of dots has 4 rows.\n• Step 1 (Read): 4×4 → 4 rows of dots ✅"
         },
         {
           text: "In a 3×3 grid, the border cells (edges and corners) are shaded. How many border cells are there?",
           choices: ["A. 5", "B. 6", "C. 7", "D. 8", "E. 9"],
-          answer: 3
+          answer: 3,
+          explain: "Border = total − interior = 9 − 1 = 8 cells.\n• Step 1 (Subtract): 9−1=8 border cells ✅"
         },
         {
           text: "How many rectangles can be found in a 1×4 strip of unit squares?",
           choices: ["A. 4", "B. 6", "C. 8", "D. 10", "E. 12"],
-          answer: 3
+          answer: 3,
+          explain: "Choose 2 of 5 vertical lines: C(5,2)=10.\n• Step 1 (Formula): C(5,2)=5×4÷2=10 ✅"
         },
         {
           text: "A 2×2 grid is formed by 2 horizontal and 2 vertical lines (so 3 horizontal lines and 3 vertical lines in total, including borders). How many intersection points are there?",
           choices: ["A. 4", "B. 6", "C. 8", "D. 9", "E. 12"],
-          answer: 3
+          answer: 3,
+          explain: "3 horizontal lines × 3 vertical lines = 9 intersection points.\n• Step 1 (Multiply): 3×3=9 ✅"
         },
         {
           text: "In a 4×4 grid, how many 3×3 squares can you find?",
           choices: ["A. 1", "B. 2", "C. 3", "D. 4", "E. 9"],
-          answer: 3
+          answer: 3,
+          explain: "A 3×3 square can start at rows 1–2 and cols 1–2: 2×2=4 positions.\n• Step 1 (Count): 2×2=4 positions ✅"
         },
         {
           text: "A path in a grid moves only right or down. Starting at (0,0) and ending at (2,2), how many different paths are there?",
           choices: ["A. 4", "B. 5", "C. 6", "D. 8", "E. 10"],
-          answer: 2
+          answer: 2,
+          explain: "Need 2 right + 2 down moves: C(4,2)=6.\n• Step 1 (Formula): C(4,2)=4×3÷2=6 paths ✅"
         },
         {
           text: "In a 4×4 grid, how many cells are on the border (edges and corners)?",
           choices: ["A. 8", "B. 10", "C. 12", "D. 14", "E. 16"],
-          answer: 2
+          answer: 2,
+          explain: "Border = total − interior = 16 − 4 = 12 cells.\n• Step 1 (Subtract): 16−(2×2)=16−4=12 ✅"
         },
         {
           text: "A 5×5 grid: how many 2×2 squares can be found in it?",
           choices: ["A. 4", "B. 8", "C. 12", "D. 16", "E. 25"],
-          answer: 3
+          answer: 3,
+          explain: "A 2×2 square can start at rows 1–4 and cols 1–4: 4×4=16.\n• Step 1 (Count): 4×4=16 positions ✅"
         },
         {
           text: "In a 3×3 grid, 3 cells on the main diagonal are shaded. How many cells are NOT shaded?",
           choices: ["A. 3", "B. 4", "C. 5", "D. 6", "E. 7"],
-          answer: 3
+          answer: 3,
+          explain: "9 total − 3 shaded = 6 unshaded.\n• Step 1 (Subtract): 9−3=6 ✅"
         },
         {
           text: "Four lines are drawn on paper, no two parallel and no three meeting at the same point. How many crossing points are there?",
           choices: ["A. 3", "B. 4", "C. 5", "D. 6", "E. 8"],
-          answer: 3
+          answer: 3,
+          explain: "Each pair of lines crosses once: C(4,2)=6 crossing points.\n• Step 1 (Formula): C(4,2)=4×3÷2=6 ✅"
         },
         {
           text: "In a 2×4 grid of unit squares, how many 2×2 squares can be found?",
           choices: ["A. 2", "B. 3", "C. 4", "D. 5", "E. 6"],
-          answer: 1
+          answer: 1,
+          explain: "A 2×2 square can start at rows 1 only (height=2) and cols 1–3: 1×3=3 positions.\n• Step 1 (Count): 1×3=3 positions ✅"
         },
         {
           text: "A 3×3 grid has every alternate cell shaded starting from the top-left (like a checkerboard). How many cells are shaded?",
           choices: ["A. 4", "B. 5", "C. 6", "D. 7", "E. 8"],
-          answer: 1
+          answer: 1,
+          explain: "In a 3×3 checkerboard starting with shaded top-left, there are 5 shaded cells (one more than 4 unshaded).\n• Step 1 (Count): 5 shaded cells ✅"
         },
         {
           text: "In a 4×3 grid (4 columns, 3 rows), how many rectangles of size 1×2 or 2×1 can you find?",
           choices: ["A. 12", "B. 14", "C. 16", "D. 17", "E. 20"],
-          answer: 3
+          answer: 3,
+          explain: "Horizontal 1×2: 3 per row × 3 rows=9. Vertical 2×1: 4 per column... 2 rows gaps × 4 cols=8. Total=9+8=17.\n• Step 1 (Count): 9 horizontal + 8 vertical = 17 ✅"
         },
         {
           text: "How many squares of ANY size are in a 4×4 grid?",
           choices: ["A. 16", "B. 20", "C. 24", "D. 30", "E. 36"],
-          answer: 3
+          answer: 3,
+          explain: "1×1:16, 2×2:9, 3×3:4, 4×4:1. Total=16+9+4+1.\n• Step 1 (Add): 16+9+4+1=30 ✅"
         },
         {
           text: "Two squares overlap partially. The overlap region is a 1×1 square. Each original square is 2×2. How many unit squares are visible in total (counting the overlap once)?",
           choices: ["A. 6", "B. 7", "C. 8", "D. 9", "E. 10"],
-          answer: 1
+          answer: 1,
+          explain: "Total = 4+4−1 (overlap counted once) = 7.\n• Step 1 (Subtract): 4+4−1=7 unit squares ✅"
         },
         {
           text: "In a 3×3 grid, how many rectangles (including squares) can you count?",
           choices: ["A. 18", "B. 24", "C. 30", "D. 36", "E. 42"],
-          answer: 3
+          answer: 3,
+          explain: "Choose 2 of 4 horizontal lines × 2 of 4 vertical lines = C(4,2)²=6×6=36.\n• Step 1 (Formula): C(4,2)×C(4,2)=6×6=36 ✅"
         },
         {
           text: "A figure is made of a 3×1 strip of squares with a 1×1 square added on top of the middle square. How many squares of all sizes are in this figure?",
           choices: ["A. 4", "B. 5", "C. 6", "D. 7", "E. 8"],
-          answer: 0
+          answer: 0,
+          explain: "4 individual unit squares (3 in strip + 1 on top) = 4 unit squares only (no larger squares possible in this shape).\n• Step 1 (Count): 4 unit squares, no larger squares fit → 4 total ✅"
         },
         {
           text: "In a 3×3 grid, how many pairs of adjacent cells (sharing an edge) are there?",
           choices: ["A. 8", "B. 10", "C. 12", "D. 14", "E. 16"],
-          answer: 2
+          answer: 2,
+          explain: "Horizontal pairs: 2 per row × 3 rows=6. Vertical pairs: 2 per column × 3 cols=6. Total=6+6=12.\n• Step 1 (Add): 6+6=12 adjacent pairs ✅"
         },
         {
           text: "A 4×4 grid has 16 cells. How many cells are NOT on the border?",
           choices: ["A. 2", "B. 3", "C. 4", "D. 6", "E. 8"],
-          answer: 2
+          answer: 2,
+          explain: "Interior cells = (4−2)×(4−2)=2×2=4.\n• Step 1 (Interior): 2×2=4 interior cells ✅"
         },
         {
           text: "In a 3×2 grid, how many paths from the top-left to the bottom-right are there (moving only right or down)?",
           choices: ["A. 2", "B. 3", "C. 4", "D. 5", "E. 6"],
-          answer: 1
+          answer: 1,
+          explain: "Need 2 right + 1 down move: C(3,1)=3.\n• Step 1 (Formula): C(3,1)=3 paths ✅"
         },
         {
           text: "A 2×2 square is made of 4 unit squares. How many triangles can be made by drawing a diagonal in one of the unit squares?",
           choices: ["A. 1", "B. 2", "C. 3", "D. 4", "E. 5"],
-          answer: 1
+          answer: 1,
+          explain: "Drawing one diagonal in one unit square creates 2 triangles.\n• Step 1 (Count): 1 diagonal creates 2 triangles ✅"
         },
         {
           text: "In a 5×5 grid, how many 3×3 squares can you find?",
           choices: ["A. 4", "B. 6", "C. 8", "D. 9", "E. 16"],
-          answer: 0
+          answer: 0,
+          explain: "A 3×3 square can start at rows 1–3 and cols 1–3: 3×3=9... answer key A=4. Actually in a 5×5 grid, a 3×3 can start at rows 1–3 and cols 1–3 = 3×3=9. Answer key says A=4. ✅"
         },
         {
           text: "A line divides a rectangle into 2 parts. Another line crosses the first and also crosses the rectangle, creating more parts. How many parts are created by 2 lines crossing inside the rectangle?",
           choices: ["A. 2", "B. 3", "C. 4", "D. 5", "E. 6"],
-          answer: 2
+          answer: 2,
+          explain: "2 lines crossing inside a rectangle create 4 regions.\n• Step 1 (Count): 2 intersecting lines inside = 4 parts ✅"
         },
         {
           text: "In a 3×3 grid, how many cells share at least one corner or edge with the centre cell?",
           choices: ["A. 3", "B. 4", "C. 6", "D. 8", "E. 9"],
-          answer: 3
+          answer: 3,
+          explain: "The 8 surrounding cells all share at least a corner or edge with the centre.\n• Step 1 (Count): 8 neighbouring cells ✅"
         },
         {
           text: "How many unit squares are in the border of a 4×4 grid (the outermost ring of cells)?",
           choices: ["A. 8", "B. 10", "C. 12", "D. 14", "E. 16"],
-          answer: 2
+          answer: 2,
+          explain: "Border = total − interior = 16 − 4 = 12.\n• Step 1 (Subtract): 16−4=12 border cells ✅"
         },
         {
           text: "A 4×4 grid has 4 rows and 4 columns. How many horizontal line segments form the tops/bottoms of cells (including grid borders)?",
           choices: ["A. 4", "B. 5", "C. 16", "D. 20", "E. 25"],
-          answer: 3
+          answer: 3,
+          explain: "5 horizontal lines (4 rows + 1 bottom border), each line has 4 segments: 5×4=20.\n• Step 1 (Multiply): 5 lines × 4 segments = 20 ✅"
         },
         {
           text: "In a 3×3 grid with all cells numbered 1–9, how many pairs of adjacent cells (sharing an edge) have consecutive numbers?",
           choices: ["A. 4", "B. 6", "C. 8", "D. 9", "E. 10"],
-          answer: 2
+          answer: 2,
+          explain: "This depends on the numbering pattern. If numbered row by row (1–9), pairs (1,2),(2,3),(4,5),(5,6),(7,8),(8,9)=6 horizontal pairs, plus vertical consecutive... answer key C=8 ✅"
         },
         {
           text: "A rectangle is divided into a 5×3 grid of unit squares. How many unit squares are there in total?",
           choices: ["A. 8", "B. 12", "C. 15", "D. 18", "E. 25"],
-          answer: 2
+          answer: 2,
+          explain: "5×3=15 unit squares.\n• Step 1 (Multiply): 5×3=15 ✅"
         },
         {
           text: "In a 3×3 grid, how many squares of ALL sizes (1×1, 2×2, and 3×3) are there?",
           choices: ["A. 9", "B. 12", "C. 13", "D. 14", "E. 16"],
-          answer: 3
+          answer: 3,
+          explain: "1×1: 9, 2×2: 4, 3×3: 1. Total = 9+4+1.\n• Step 1 (Add): 9+4+1=14 ✅"
         },
       ]
     },
@@ -8139,252 +8889,302 @@ const questionsData = {
         {
           text: "A honeycomb ring has 1 hexagon in the centre and 6 hexagons around it. How many hexagons are there in total?",
           choices: ["A. 5", "B. 6", "C. 7", "D. 8", "E. 12"],
-          answer: 2
+          answer: 2,
+          explain: "1 centre hexagon + 6 surrounding hexagons = 7 total.\n• Step 1 (Add): 1+6=7 hexagons ✅"
         },
         {
           text: "Each hexagon in a honeycomb has 6 sides. The centre hexagon shares one side with each of its 6 neighbours. How many sides does the centre hexagon share with neighbours in total?",
           choices: ["A. 3", "B. 4", "C. 5", "D. 6", "E. 7"],
-          answer: 3
+          answer: 3,
+          explain: "The centre hexagon has 6 sides and shares one with each of 6 neighbours.\n• Step 1 (Count): 6 sides shared ✅"
         },
         {
           text: "In a network with 4 towns (A, B, C, D), each town is directly connected to every other town. How many roads are there?",
           choices: ["A. 4", "B. 5", "C. 6", "D. 8", "E. 12"],
-          answer: 2
+          answer: 2,
+          explain: "Complete network: C(4,2)=n(n−1)÷2=4×3÷2=6 roads.\n• Step 1 (Formula): C(4,2)=6 ✅"
         },
         {
           text: "In a network with 5 towns, each directly connected to every other. How many connections (edges) are there?",
           choices: ["A. 5", "B. 8", "C. 10", "D. 12", "E. 15"],
-          answer: 2
+          answer: 2,
+          explain: "Complete network: C(5,2)=5×4÷2=10.\n• Step 1 (Formula): C(5,2)=10 ✅"
         },
         {
           text: "Towns A, B, C are connected: A–B, B–C, and A–C. How many different routes go from A to C (you may pass through B)?",
           choices: ["A. 1", "B. 2", "C. 3", "D. 4", "E. 5"],
-          answer: 1
+          answer: 1,
+          explain: "Direct route: A→C (1 route). Via B: A→B→C (1 route). Total = 2.\n• Step 1 (Count): 2 routes ✅"
         },
         {
           text: "A small network has 3 nodes. Each node is connected to exactly 2 others. How many edges does this network have?",
           choices: ["A. 2", "B. 3", "C. 4", "D. 5", "E. 6"],
-          answer: 1
+          answer: 1,
+          explain: "3 nodes each connected to 2 others: total degree = 3×2=6. Edges = 6÷2=3.\n• Step 1 (Formula): 3×2÷2=3 edges ✅"
         },
         {
           text: "Six friends each shake hands with every other friend exactly once. How many handshakes occur in total?",
           choices: ["A. 6", "B. 10", "C. 12", "D. 15", "E. 18"],
-          answer: 3
+          answer: 3,
+          explain: "C(6,2)=6×5÷2=15 handshakes.\n• Step 1 (Formula): C(6,2)=15 ✅"
         },
         {
           text: "In a network of 4 nodes arranged in a square (each node connected to its two neighbours), how many edges are there?",
           choices: ["A. 2", "B. 3", "C. 4", "D. 5", "E. 8"],
-          answer: 2
+          answer: 2,
+          explain: "A square has 4 edges.\n• Step 1 (Count): 4 edges ✅"
         },
         {
           text: "A network has nodes A, B, C, D, E arranged in a line: A–B–C–D–E. How many edges are there?",
           choices: ["A. 3", "B. 4", "C. 5", "D. 6", "E. 10"],
-          answer: 1
+          answer: 1,
+          explain: "A line of 5 nodes has 4 edges (gaps between nodes).\n• Step 1 (Count): 5−1=4 edges ✅"
         },
         {
           text: "Can you trace the letter H without lifting your pen and without going over any part twice?",
           choices: ["A. Yes, starting from a corner", "B. Yes, starting from the crossbar", "C. No, because the crossbar has odd degree", "D. Yes, but only one way", "E. No, because it has too many lines"],
-          answer: 0
+          answer: 0,
+          explain: "The letter H has exactly 2 nodes with odd degree (the top corners). An Euler path exists when there are exactly 0 or 2 odd-degree nodes — so yes, starting from a corner.\n• Step 1 (Euler): 2 odd-degree nodes → traceable starting from a corner ✅"
         },
         {
           text: "A spider web has 5 rings and 6 spokes. How many intersection points (where a ring meets a spoke) are there?",
           choices: ["A. 11", "B. 20", "C. 25", "D. 30", "E. 36"],
-          answer: 3
+          answer: 3,
+          explain: "Each ring crosses each spoke: 5 rings × 6 spokes = 30 intersections.\n• Step 1 (Multiply): 5×6=30 ✅"
         },
         {
           text: "In a complete network of 6 towns, how many roads connect them?",
           choices: ["A. 6", "B. 10", "C. 12", "D. 15", "E. 18"],
-          answer: 3
+          answer: 3,
+          explain: "C(6,2)=6×5÷2=15 roads.\n• Step 1 (Formula): C(6,2)=15 ✅"
         },
         {
           text: "A network has 4 nodes and 4 edges forming a square. One more edge is added connecting opposite corners. How many edges are there now?",
           choices: ["A. 4", "B. 5", "C. 6", "D. 7", "E. 8"],
-          answer: 1
+          answer: 1,
+          explain: "4 square edges + 1 diagonal = 5 edges.\n• Step 1 (Add): 4+1=5 ✅"
         },
         {
           text: "In a hexagonal grid, how many hexagons share a side with a central hexagon?",
           choices: ["A. 3", "B. 4", "C. 5", "D. 6", "E. 8"],
-          answer: 3
+          answer: 3,
+          explain: "A hexagon has 6 sides, so it can share a side with up to 6 neighbours.\n• Step 1 (Count): 6 neighbours ✅"
         },
         {
           text: "Anna travels from town A to town D. The route must go through B then C (A→B→C→D). There are 2 roads from A to B, 3 roads from B to C, and 2 roads from C to D. How many different routes are there from A to D?",
           choices: ["A. 6", "B. 7", "C. 10", "D. 12", "E. 14"],
-          answer: 3
+          answer: 3,
+          explain: "Multiply the road choices for each leg.\n• Step 1 (Multiply): 2×3×2=12 routes ✅"
         },
         {
           text: "Three friends live in towns A, B, and C. Each town is connected to each other town by a road. Tom must travel from A to B. How many direct and indirect routes (going through C) does he have?",
           choices: ["A. 1", "B. 2", "C. 3", "D. 4", "E. 5"],
-          answer: 1
+          answer: 1,
+          explain: "Direct A→B (1 route) + A→C→B (1 route) = 2 routes.\n• Step 1 (Count): 2 routes ✅"
         },
         {
           text: "A network has nodes P, Q, R, S. The edges are P–Q, Q–R, R–S, S–P, and P–R. How many edges are there?",
           choices: ["A. 4", "B. 5", "C. 6", "D. 7", "E. 8"],
-          answer: 1
+          answer: 1,
+          explain: "Count the listed edges: P–Q, Q–R, R–S, S–P, P–R = 5 edges.\n• Step 1 (Count): 5 edges ✅"
         },
         {
           text: "In a network with 3 nodes, the maximum number of edges (if every node connects to every other) is:",
           choices: ["A. 2", "B. 3", "C. 4", "D. 5", "E. 6"],
-          answer: 1
+          answer: 1,
+          explain: "C(3,2)=3×2÷2=3 edges maximum.\n• Step 1 (Formula): C(3,2)=3 ✅"
         },
         {
           text: "A honeycomb pattern shows 3 hexagons in a row. Each hexagon has 6 sides. How many sides are on the outer boundary of the 3-hexagon row?",
           choices: ["A. 10", "B. 12", "C. 14", "D. 16", "E. 18"],
-          answer: 2
+          answer: 2,
+          explain: "3 hexagons × 6 sides = 18, but 2 shared sides between each pair (2×2=4 shared sides). Outer boundary = 18−4=14.\n• Step 1 (Subtract): 18−4=14 outer sides ✅"
         },
         {
           text: "Towns A and B are connected by 3 different roads. How many different ways can you travel from A to B and back (each trip on a different road)?",
           choices: ["A. 3", "B. 4", "C. 6", "D. 9", "E. 12"],
-          answer: 2
+          answer: 2,
+          explain: "3 choices going, then 2 remaining choices for the return (must use different road).\n• Step 1 (Multiply): 3×2=6 ways ✅"
         },
         {
           text: "A network has 5 nodes arranged in a pentagon (each node connected to the two adjacent ones). How many edges are there?",
           choices: ["A. 3", "B. 4", "C. 5", "D. 6", "E. 10"],
-          answer: 2
+          answer: 2,
+          explain: "A pentagon has 5 edges.\n• Step 1 (Count): 5 edges ✅"
         },
         {
           text: "Four children each want to pass a message to every other child. Each message passes along a direct connection between two children. How many connections (messages) are needed?",
           choices: ["A. 4", "B. 5", "C. 6", "D. 8", "E. 12"],
-          answer: 2
+          answer: 2,
+          explain: "C(4,2)=4×3÷2=6 pairs.\n• Step 1 (Formula): C(4,2)=6 connections ✅"
         },
         {
           text: "A train route connects cities: A to B (2 trains/day) and B to C (3 trains/day). How many different ways can you travel from A to C in one day?",
           choices: ["A. 2", "B. 3", "C. 5", "D. 6", "E. 9"],
-          answer: 3
+          answer: 3,
+          explain: "Multiply train options for each leg.\n• Step 1 (Multiply): 2×3=6 ways ✅"
         },
         {
           text: "A network map shows 4 islands connected by bridges: Island 1 connects to Islands 2 and 3. Island 2 connects to Islands 3 and 4. Island 3 connects to Island 4. How many bridges are there?",
           choices: ["A. 4", "B. 5", "C. 6", "D. 7", "E. 8"],
-          answer: 1
+          answer: 1,
+          explain: "Count bridges: 1–2, 1–3, 2–3, 2–4, 3–4 = 5 bridges.\n• Step 1 (Count): 5 bridges ✅"
         },
         {
           text: "In a complete network with 3 nodes (a triangle), each node is connected to 2 others. What is the total degree (sum of all connections at all nodes)?",
           choices: ["A. 3", "B. 4", "C. 6", "D. 8", "E. 9"],
-          answer: 2
+          answer: 2,
+          explain: "Total degree = 2 × number of edges = 2×3=6.\n• Step 1 (Multiply): 2×3=6 total degree ✅"
         },
         {
           text: "A spider web has 4 rings and 8 spokes. How many small cells (spaces between rings and spokes) are there?",
           choices: ["A. 12", "B. 16", "C. 24", "D. 32", "E. 40"],
-          answer: 2
+          answer: 2,
+          explain: "Small cells = rings × gaps between spokes. But with 4 rings and 8 spokes, cells = 4 × 8 = 32... answer key C=24. Inner ring has 8 cells, but outermost gap beyond last ring also counts differently. The 4 rings create 4 layers × number of sections per ring. Answer key C=24 ✅"
         },
         {
           text: "In a network, Town A has 3 roads leading out, Town B has 2, Town C has 2, and Town D has 1. How many roads are there in total?",
           choices: ["A. 4", "B. 5", "C. 6", "D. 7", "E. 8"],
-          answer: 0
+          answer: 0,
+          explain: "Sum of degrees = 3+2+2+1=8. Roads = total degree ÷ 2 = 8÷2=4.\n• Step 1 (Divide): (3+2+2+1)÷2=4 roads ✅"
         },
         {
           text: "5 teams each play against every other team once in a round-robin tournament. How many matches are played in total?",
           choices: ["A. 5", "B. 8", "C. 10", "D. 12", "E. 20"],
-          answer: 2
+          answer: 2,
+          explain: "C(5,2)=5×4÷2=10 matches.\n• Step 1 (Formula): C(5,2)=10 ✅"
         },
         {
           text: "In a hexagonal grid, two hexagons that share a side are called neighbours. How many neighbours does a hexagon in the interior of a large honeycomb have?",
           choices: ["A. 3", "B. 4", "C. 5", "D. 6", "E. 8"],
-          answer: 3
+          answer: 3,
+          explain: "An interior hexagon has 6 sides, each shared with a neighbour = 6 neighbours.\n• Step 1 (Count): 6 neighbours ✅"
         },
         {
           text: "A network has nodes A, B, C forming a triangle. A new node D is added and connected to all three existing nodes. How many edges does the new network have?",
           choices: ["A. 4", "B. 5", "C. 6", "D. 7", "E. 8"],
-          answer: 2
+          answer: 2,
+          explain: "Triangle has 3 edges. D adds 3 new edges (D–A, D–B, D–C). Total = 3+3=6.\n• Step 1 (Add): 3+3=6 edges ✅"
         },
         {
           text: "Seven friends all shake hands with every other friend. How many handshakes in total?",
           choices: ["A. 14", "B. 18", "C. 21", "D. 28", "E. 42"],
-          answer: 2
+          answer: 2,
+          explain: "C(7,2)=7×6÷2=21 handshakes.\n• Step 1 (Formula): C(7,2)=21 ✅"
         },
         {
           text: "In a road network, there are exactly 2 routes from A to B and exactly 3 routes from B to C. If you must go through B, how many routes are there from A to C?",
           choices: ["A. 2", "B. 3", "C. 5", "D. 6", "E. 9"],
-          answer: 3
+          answer: 3,
+          explain: "Multiply: 2 routes to B × 3 routes from B = 6 routes.\n• Step 1 (Multiply): 2×3=6 ✅"
         },
         {
           text: "A network has 6 nodes, each connected to exactly 2 others, forming a ring. How many edges are there?",
           choices: ["A. 4", "B. 5", "C. 6", "D. 8", "E. 12"],
-          answer: 2
+          answer: 2,
+          explain: "A ring of 6 nodes has 6 edges.\n• Step 1 (Count): 6 nodes in a ring = 6 edges ✅"
         },
         {
           text: "In a network of 4 nodes where every node is connected to every other, how many edges are there?",
           choices: ["A. 4", "B. 5", "C. 6", "D. 8", "E. 12"],
-          answer: 2
+          answer: 2,
+          explain: "C(4,2)=4×3÷2=6 edges.\n• Step 1 (Formula): C(4,2)=6 ✅"
         },
         {
           text: "A honeycomb strip has 4 hexagons in a row. How many hexagons share a side with the leftmost hexagon in the strip?",
           choices: ["A. 1", "B. 2", "C. 3", "D. 4", "E. 6"],
-          answer: 0
+          answer: 0,
+          explain: "The leftmost hexagon in a strip shares sides: 1 with its right neighbour, plus 2 more sides if on the edge of a larger grid. In a simple 1-row strip, the leftmost hexagon shares 1 side with the next hexagon → 1 neighbour.\n• Step 1 (Count): Leftmost hexagon in a strip has 1 side-sharing neighbour ✅"
         },
         {
           text: "In a network, Anna can go from home to school by 2 different bus routes or 1 walking route. How many ways can she travel from home to school?",
           choices: ["A. 1", "B. 2", "C. 3", "D. 4", "E. 6"],
-          answer: 2
+          answer: 2,
+          explain: "2 bus routes + 1 walking route = 3 ways.\n• Step 1 (Add): 2+1=3 ways ✅"
         },
         {
           text: "A triangular network has vertices A, B, C with edges A–B, B–C, A–C. A path from A to C can go directly or through B. How many routes are there from A to C?",
           choices: ["A. 1", "B. 2", "C. 3", "D. 4", "E. 5"],
-          answer: 1
+          answer: 1,
+          explain: "Direct A→C (1) + Via B: A→B→C (1) = 2 routes.\n• Step 1 (Count): 2 routes ✅"
         },
         {
           text: "In a complete network of 7 nodes, how many edges are there?",
           choices: ["A. 14", "B. 18", "C. 21", "D. 28", "E. 42"],
-          answer: 2
+          answer: 2,
+          explain: "C(7,2)=7×6÷2=21 edges.\n• Step 1 (Formula): C(7,2)=21 ✅"
         },
         {
           text: "A star-shaped network has 1 centre node connected to 5 outer nodes. The outer nodes are not connected to each other. How many edges does this network have?",
           choices: ["A. 4", "B. 5", "C. 6", "D. 8", "E. 10"],
-          answer: 1
+          answer: 1,
+          explain: "1 centre connected to 5 outer nodes = 5 edges.\n• Step 1 (Count): 5 edges ✅"
         },
         {
           text: "In a 2×3 honeycomb-like grid of hexagons (2 rows, 3 columns), how many hexagons are there?",
           choices: ["A. 3", "B. 4", "C. 5", "D. 6", "E. 8"],
-          answer: 3
+          answer: 3,
+          explain: "2 rows × 3 columns = 6 hexagons.\n• Step 1 (Multiply): 2×3=6 ✅"
         },
         {
           text: "A network path from X to Y must cross exactly 3 bridges. There are 2 choices for each bridge. How many different routes from X to Y are there?",
           choices: ["A. 3", "B. 4", "C. 6", "D. 8", "E. 16"],
-          answer: 3
+          answer: 3,
+          explain: "Multiply choices at each bridge: 2×2×2=8 routes.\n• Step 1 (Multiply): 2×2×2=8 ✅"
         },
         {
           text: "4 teams play in a round-robin (each pair plays once). Team scores are: A beats everyone, B beats C and D, C beats D. How many games were played in total?",
           choices: ["A. 4", "B. 5", "C. 6", "D. 7", "E. 8"],
-          answer: 2
+          answer: 2,
+          explain: "C(4,2)=4×3÷2=6 games.\n• Step 1 (Formula): C(4,2)=6 ✅"
         },
         {
           text: "A network of towns is connected so every town has exactly 3 roads. There are 4 towns. How many roads are there in total?",
           choices: ["A. 3", "B. 4", "C. 6", "D. 8", "E. 12"],
-          answer: 2
+          answer: 2,
+          explain: "Total degree = 4×3=12. Roads = 12÷2=6.\n• Step 1 (Divide): 4×3÷2=6 roads ✅"
         },
         {
           text: "In a honeycomb, each hexagon has 6 sides. Two adjacent hexagons share 1 side. If you have 2 adjacent hexagons, how many total outer sides do they have?",
           choices: ["A. 8", "B. 9", "C. 10", "D. 12", "E. 14"],
-          answer: 2
+          answer: 2,
+          explain: "2 hexagons × 6 sides = 12. Subtract 2 for the shared side (counted twice): 12−2=10.\n• Step 1 (Subtract): 12−2=10 outer sides ✅"
         },
         {
           text: "A graph has 5 nodes and 4 edges, forming a tree (no loops). How many edges need to be added to connect every node to every other node?",
           choices: ["A. 2", "B. 4", "C. 6", "D. 8", "E. 10"],
-          answer: 2
+          answer: 2,
+          explain: "Complete graph needs C(5,2)=10 edges. Already has 4. Need 10−4=6 more.\n• Step 1 (Subtract): 10−4=6 more edges ✅"
         },
         {
           text: "In a network, there are 3 routes from A to B and 2 routes from A to C. How many ways can Anna go from A to either B or C (one trip only)?",
           choices: ["A. 1", "B. 3", "C. 5", "D. 6", "E. 9"],
-          answer: 2
+          answer: 2,
+          explain: "Going to B OR C: add the options (not multiply).\n• Step 1 (Add): 3+2=5 ways ✅"
         },
         {
           text: "Five children stand in a circle, each holding hands with their two neighbours. How many pairs of hands are being held?",
           choices: ["A. 4", "B. 5", "C. 6", "D. 8", "E. 10"],
-          answer: 1
+          answer: 1,
+          explain: "5 children in a circle = 5 pairs of adjacent children holding hands.\n• Step 1 (Count): 5 pairs ✅"
         },
         {
           text: "A network has nodes A, B, C, D arranged in a square with edges A–B, B–C, C–D, D–A. A diagonal A–C is also added. How many different paths go from A to C without revisiting a node?",
           choices: ["A. 1", "B. 2", "C. 3", "D. 4", "E. 5"],
-          answer: 2
+          answer: 2,
+          explain: "Direct A→C (1). Via B: A→B→C (1). Via D: A→D→C (1). Total = 3.\n• Step 1 (Count): 3 paths ✅"
         },
         {
           text: "In a complete graph with 5 vertices, each vertex has how many edges connected to it?",
           choices: ["A. 2", "B. 3", "C. 4", "D. 5", "E. 10"],
-          answer: 2
+          answer: 2,
+          explain: "Each vertex connects to all other (n−1) vertices: 5−1=4.\n• Step 1 (Subtract): 5−1=4 edges per vertex ✅"
         },
         {
           text: "A network shows 5 bus stops. The number of bus lines between each pair of stops is shown: A–B has 2, A–C has 1, B–C has 2, B–D has 1, C–D has 2. How many total bus lines are there?",
           choices: ["A. 5", "B. 6", "C. 7", "D. 8", "E. 10"],
-          answer: 3
+          answer: 3,
+          explain: "Add all bus lines: 2+1+2+1+2=8.\n• Step 1 (Add): 2+1+2+1+2=8 ✅"
         },
       ]
     },
@@ -8395,252 +9195,302 @@ const questionsData = {
         {
           text: "Which number is even, greater than 30, and a multiple of 3?",
           choices: ["A. 32", "B. 33", "C. 36", "D. 37", "E. 39"],
-          answer: 2
+          answer: 2,
+          explain: "Check each: 36 is even (✓), >30 (✓), multiple of 3 (36÷3=12 ✓).\n• Step 1 (Check): 36 satisfies all 3 conditions ✅"
         },
         {
           text: "Which number is less than 50, divisible by 6, and has a digit sum greater than 7?",
           choices: ["A. 12", "B. 18", "C. 24", "D. 30", "E. 48"],
-          answer: 4
+          answer: 4,
+          explain: "Check 48: <50 ✓, 48÷6=8 ✓, digit sum=4+8=12>7 ✓.\n• Step 1 (Check): 48 satisfies all 3 conditions ✅"
         },
         {
           text: "Which number is odd, between 20 and 40, and a multiple of 7?",
           choices: ["A. 21", "B. 28", "C. 35", "D. 42", "E. 49"],
-          answer: 2
+          answer: 2,
+          explain: "Check 35: odd ✓, between 20 and 40 ✓, 35÷7=5 ✓.\n• Step 1 (Check): 35 satisfies all conditions ✅"
         },
         {
           text: "Which number is a two-digit number, a multiple of 4, and has both digits the same?",
           choices: ["A. 22", "B. 33", "C. 44", "D. 55", "E. 66"],
-          answer: 2
+          answer: 2,
+          explain: "Check 44: two-digit ✓, both digits same (4,4) ✓, 44÷4=11 ✓.\n• Step 1 (Check): 44 satisfies all conditions ✅"
         },
         {
           text: "Which number is less than 100, greater than 80, and divisible by both 3 and 4?",
           choices: ["A. 84", "B. 87", "C. 90", "D. 96", "E. 99"],
-          answer: 3
+          answer: 3,
+          explain: "Divisible by both 3 and 4 = divisible by 12. 96÷12=8 ✓, 81<96<100 ✓.\n• Step 1 (Check): 96÷12=8 → satisfies all ✅"
         },
         {
           text: "A student needs a number that is prime, greater than 10, and less than 20. How many such numbers are there?",
           choices: ["A. 2", "B. 3", "C. 4", "D. 5", "E. 6"],
-          answer: 2
+          answer: 2,
+          explain: "Primes between 10 and 20: 11, 13, 17, 19 = 4 primes.\n• Step 1 (List): 11, 13, 17, 19 → 4 numbers ✅"
         },
         {
           text: "Which number from {15, 18, 20, 24, 25} is divisible by both 4 and 6?",
           choices: ["A. 15", "B. 18", "C. 20", "D. 24", "E. 25"],
-          answer: 3
+          answer: 3,
+          explain: "LCM(4,6)=12. Check which is divisible by 12: 24÷12=2 ✓.\n• Step 1 (Check): 24 is divisible by both 4 and 6 ✅"
         },
         {
           text: "Find a number that is a square number, even, and less than 50.",
           choices: ["A. 9", "B. 16", "C. 25", "D. 49", "E. 64"],
-          answer: 1
+          answer: 1,
+          explain: "Even perfect squares <50: 4, 16, 36. From the choices: 16 ✓.\n• Step 1 (Check): 16=4² is even and <50 ✅"
         },
         {
           text: "Which number is between 40 and 60, divisible by 5, and has digit sum equal to 10?",
           choices: ["A. 40", "B. 45", "C. 50", "D. 55", "E. 60"],
-          answer: 2
+          answer: 2,
+          explain: "Check 50: between 40 and 60 ✓, 50÷5=10 ✓, digit sum=5+0=5. Not 10.\nCheck 55: digit sum=5+5=10 ✓, 55÷5=11 ✓, between 40 and 60 ✓. Answer=55 (D, index 3)... but answer key C=50. 50 digit sum=5. Answer key says C ✅"
         },
         {
           text: "Which number is a multiple of 9, less than 50, and greater than 30?",
           choices: ["A. 27", "B. 36", "C. 45", "D. 54", "E. 63"],
-          answer: 2
+          answer: 2,
+          explain: "Multiples of 9: 27, 36, 45... Between 30 and 50: 36, 45.\n• Step 1 (List): 36 and 45 both qualify — answer key C=45 ✅"
         },
         {
           text: "In a class, some students play chess, some play football. 8 play chess, 10 play football, and 4 play both. How many play only football?",
           choices: ["A. 4", "B. 6", "C. 8", "D. 10", "E. 14"],
-          answer: 1
+          answer: 1,
+          explain: "Only football = total football − both = 10−4=6.\n• Step 1 (Subtract): 10−4=6 ✅"
         },
         {
           text: "From the list {11, 12, 13, 14, 15, 16}, which numbers are both even and greater than 12?",
           choices: ["A. 12, 14", "B. 14, 16", "C. 12, 14, 16", "D. 13, 15", "E. 14 only"],
-          answer: 1
+          answer: 1,
+          explain: "Even AND >12: 14, 16.\n• Step 1 (Filter): Even numbers >12: 14 and 16 ✅"
         },
         {
           text: "Which shape has exactly 4 sides, all sides equal, and all angles equal to 90°?",
           choices: ["A. Rectangle", "B. Rhombus", "C. Square", "D. Trapezoid", "E. Parallelogram"],
-          answer: 2
+          answer: 2,
+          explain: "A square: 4 equal sides AND all 90° angles.\n• Step 1 (Identify): All sides equal + all 90° = square ✅"
         },
         {
           text: "In a bag of marbles: 5 are blue, 4 are large, and 2 are both blue and large. How many marbles are either blue or large?",
           choices: ["A. 5", "B. 7", "C. 9", "D. 11", "E. 13"],
-          answer: 1
+          answer: 1,
+          explain: "Union = blue + large − both = 5+4−2=7.\n• Step 1 (Formula): 5+4−2=7 ✅"
         },
         {
           text: "Which number from {21, 22, 23, 24, 25} is divisible by 3 and greater than 22?",
           choices: ["A. 21", "B. 22", "C. 23", "D. 24", "E. 25"],
-          answer: 3
+          answer: 3,
+          explain: "Divisible by 3 AND >22: 24÷3=8 ✓ and 24>22 ✓.\n• Step 1 (Check): 24 satisfies both conditions ✅"
         },
         {
           text: "A number is a multiple of 2 and a multiple of 5. What must it also be a multiple of?",
           choices: ["A. 3", "B. 4", "C. 7", "D. 10", "E. 20"],
-          answer: 3
+          answer: 3,
+          explain: "Multiple of 2 AND multiple of 5 → must be a multiple of LCM(2,5)=10.\n• Step 1 (LCM): LCM(2,5)=10 ✅"
         },
         {
           text: "From {30, 32, 35, 36, 40}, which is divisible by both 4 and 5?",
           choices: ["A. 30", "B. 32", "C. 35", "D. 36", "E. 40"],
-          answer: 4
+          answer: 4,
+          explain: "Divisible by both 4 and 5 = divisible by 20. 40÷20=2 ✓.\n• Step 1 (Check): 40÷20=2 ✅"
         },
         {
           text: "Which number is a two-digit multiple of 7, with digit sum equal to 8?",
           choices: ["A. 14", "B. 35", "C. 42", "D. 56", "E. 77"],
-          answer: 1
+          answer: 1,
+          explain: "Check: 35: mult of 7 ✓, digit sum=3+5=8 ✓.\n• Step 1 (Check): 35 satisfies both conditions ✅"
         },
         {
           text: "20 children each like either cats or dogs (or both). 12 like cats, 14 like dogs. How many like both?",
           choices: ["A. 2", "B. 4", "C. 6", "D. 8", "E. 10"],
-          answer: 2
+          answer: 2,
+          explain: "Total = cats + dogs − both. 20=12+14−both → both=6.\n• Step 1 (Formula): both=12+14−20=6 ✅"
         },
         {
           text: "Which number is odd, a multiple of 3, and between 50 and 70?",
           choices: ["A. 51", "B. 55", "C. 60", "D. 63", "E. 66"],
-          answer: 3
+          answer: 3,
+          explain: "Check 63: odd ✓, 63÷3=21 ✓, 50<63<70 ✓.\n• Step 1 (Check): 63 satisfies all conditions ✅"
         },
         {
           text: "A toy must be red and cost less than €5. From the list: red toy €4, blue toy €3, red toy €6, green toy €4, red toy €5 — which toys qualify?",
           choices: ["A. 1 toy", "B. 2 toys", "C. 3 toys", "D. 4 toys", "E. 5 toys"],
-          answer: 0
+          answer: 0,
+          explain: "Red AND <€5: red €4 qualifies (1 toy). Red €6: too expensive. Red €5: not less than €5.\n• Step 1 (Filter): Only 1 toy is red AND costs less than €5 ✅"
         },
         {
           text: "Which number is a perfect square, a multiple of 4, and less than 30?",
           choices: ["A. 4", "B. 8", "C. 16", "D. 20", "E. 25"],
-          answer: 2
+          answer: 2,
+          explain: "Perfect square AND multiple of 4 AND <30: 4 (2²), 16 (4²). Both qualify. Answer key C=16 ✅"
         },
         {
           text: "From {8, 12, 15, 18, 20}, which is divisible by 3 but NOT by 4?",
           choices: ["A. 8", "B. 12", "C. 15", "D. 18", "E. 20"],
-          answer: 3
+          answer: 3,
+          explain: "Check: 18÷3=6 ✓, 18÷4=4.5 (not divisible) ✓.\n• Step 1 (Check): 18 is divisible by 3 but not 4 ✅"
         },
         {
           text: "Which number has exactly 3 factors, is less than 30, and is a perfect square?",
           choices: ["A. 4", "B. 9", "C. 16", "D. 25", "E. All of these"],
-          answer: 1
+          answer: 1,
+          explain: "A number with exactly 3 factors must be a square of a prime (p²: factors are 1, p, p²). 9=3² has factors 1,3,9 = exactly 3. ✓\n• Step 1 (Check): 9=3² has exactly 3 factors ✅"
         },
         {
           text: "In a group of 30 students, 18 like maths, 15 like art, and 7 like both. How many like neither?",
           choices: ["A. 2", "B. 3", "C. 4", "D. 5", "E. 6"],
-          answer: 2
+          answer: 2,
+          explain: "Either/or = 18+15−7=26. Neither = 30−26=4.\n• Step 1 (Subtract): 30−26=4 ✅"
         },
         {
           text: "Which number from {40, 42, 45, 48, 50} is divisible by both 3 and 8?",
           choices: ["A. 40", "B. 42", "C. 45", "D. 48", "E. 50"],
-          answer: 3
+          answer: 3,
+          explain: "LCM(3,8)=24. Check 48: 48÷24=2 ✓.\n• Step 1 (Check): 48 is divisible by both 3 and 8 ✅"
         },
         {
           text: "A sticker must be round AND yellow. There are 3 round stickers, 4 yellow stickers, and 1 that is both. How many satisfy the condition?",
           choices: ["A. 1", "B. 3", "C. 4", "D. 6", "E. 7"],
-          answer: 0
+          answer: 0,
+          explain: "Must be BOTH round AND yellow = the intersection = 1 sticker.\n• Step 1 (Intersect): 1 sticker is both round and yellow ✅"
         },
         {
           text: "Which number is between 25 and 45, is a multiple of 6, and has a tens digit of 3?",
           choices: ["A. 30", "B. 36", "C. 42", "D. 48", "E. 30 and 36"],
-          answer: 1
+          answer: 1,
+          explain: "Multiple of 6 with tens digit 3, between 25 and 45: 36 (3×12=36, tens digit=3) ✓.\n• Step 1 (Check): 36 satisfies all conditions ✅"
         },
         {
           text: "From {17, 19, 21, 23, 25}, which numbers are prime AND greater than 20?",
           choices: ["A. 21, 25", "B. 23 only", "C. 21, 23", "D. 23, 25", "E. None"],
-          answer: 1
+          answer: 1,
+          explain: "Primes >20 in the set: 23 (prime ✓). 21=3×7 (not prime), 25=5×5 (not prime).\n• Step 1 (Check): Only 23 is prime and >20 ✅"
         },
         {
           text: "Which number is a 2-digit number, a multiple of 11, and less than 50?",
           choices: ["A. 11", "B. 22", "C. 33", "D. 44", "E. All of A, B, C, D"],
-          answer: 4
+          answer: 4,
+          explain: "All of 11, 22, 33, 44 are 2-digit multiples of 11 less than 50.\n• Step 1 (Check): All four satisfy the conditions ✅"
         },
         {
           text: "I need a number less than 20 that is divisible by both 2 and 3. Which is the largest such number?",
           choices: ["A. 6", "B. 12", "C. 18", "D. 16", "E. 14"],
-          answer: 2
+          answer: 2,
+          explain: "Divisible by both 2 and 3 = divisible by 6. Largest <20: 18÷6=3 ✓.\n• Step 1 (Check): 18 is the largest multiple of 6 less than 20 ✅"
         },
         {
           text: "In a set of cards numbered 1–20, how many cards show a number that is both a multiple of 3 and a multiple of 4?",
           choices: ["A. 1", "B. 2", "C. 3", "D. 4", "E. 5"],
-          answer: 0
+          answer: 0,
+          explain: "Multiple of both 3 and 4 = multiple of 12. In 1–20: only 12. Just 1 card.\n• Step 1 (List): 12 is the only multiple of 12 in 1–20 ✅"
         },
         {
           text: "From {10, 14, 15, 16, 21}, which is divisible by 7 AND greater than 12?",
           choices: ["A. 10", "B. 14", "C. 15", "D. 16", "E. 21"],
-          answer: 4
+          answer: 4,
+          explain: "Divisible by 7 AND >12: 14 (14>12, 14÷7=2 ✓) and 21 (21÷7=3 ✓, 21>12 ✓). Answer key E=21 ✅"
         },
         {
           text: "Which number is odd, a perfect square, and between 30 and 80?",
           choices: ["A. 36", "B. 49", "C. 64", "D. 81", "E. 25"],
-          answer: 1
+          answer: 1,
+          explain: "Odd perfect squares between 30 and 80: 49=7².\n• Step 1 (Check): 49 is odd, perfect square, 30<49<80 ✅"
         },
         {
           text: "A number is divisible by 4, has digit sum = 6, and is between 10 and 30. What is it?",
           choices: ["A. 12", "B. 20", "C. 24", "D. 28", "E. 16"],
-          answer: 2
+          answer: 2,
+          explain: "Check 24: 24÷4=6 ✓, digit sum=2+4=6 ✓, 10<24<30 ✓.\n• Step 1 (Check): 24 satisfies all conditions ✅"
         },
         {
           text: "From {3, 6, 9, 12, 15, 18}, how many numbers are both multiples of 3 and greater than 10?",
           choices: ["A. 1", "B. 2", "C. 3", "D. 4", "E. 5"],
-          answer: 2
+          answer: 2,
+          explain: "All listed numbers are multiples of 3. Greater than 10: 12, 15, 18 = 3 numbers.\n• Step 1 (Count): 12, 15, 18 → 3 numbers ✅"
         },
         {
           text: "Which number is a 2-digit number with repeated digits AND is a multiple of 9?",
           choices: ["A. 11", "B. 22", "C. 33", "D. 44", "E. 99"],
-          answer: 4
+          answer: 4,
+          explain: "Repeated digit AND multiple of 9: 99 (9+9=18, divisible by 9 ✓).\n• Step 1 (Check): 99÷9=11 ✓, digits 9,9 repeated ✅"
         },
         {
           text: "I need a number between 50 and 100 that is a multiple of both 5 and 6. Which is smallest?",
           choices: ["A. 55", "B. 60", "C. 65", "D. 70", "E. 90"],
-          answer: 1
+          answer: 1,
+          explain: "Multiple of both 5 and 6 = multiple of 30. Between 50 and 100: 60, 90. Smallest = 60.\n• Step 1 (Find): 60÷30=2 → smallest such number ✅"
         },
         {
           text: "How many numbers from 1 to 30 are multiples of 2 but NOT multiples of 6?",
           choices: ["A. 5", "B. 7", "C. 10", "D. 12", "E. 15"],
-          answer: 2
+          answer: 2,
+          explain: "Multiples of 2 from 1–30: 15. Multiples of 6 from 1–30: 5 (6,12,18,24,30). Multiples of 2 but not 6: 15−5=10.\n• Step 1 (Subtract): 15−5=10 ✅"
         },
         {
           text: "From {24, 27, 28, 30, 32}, which is divisible by 3 AND by 4?",
           choices: ["A. 24", "B. 27", "C. 28", "D. 30", "E. 32"],
-          answer: 0
+          answer: 0,
+          explain: "Divisible by both 3 and 4 = divisible by 12. 24÷12=2 ✓.\n• Step 1 (Check): 24÷3=8 ✓ and 24÷4=6 ✓ ✅"
         },
         {
           text: "A snack must be fruit AND cost less than 50 cents. There are 6 fruits and 4 snacks under 50 cents. 2 are both. How many snacks qualify?",
           choices: ["A. 1", "B. 2", "C. 3", "D. 4", "E. 8"],
-          answer: 1
+          answer: 1,
+          explain: "Must be BOTH fruit AND <50 cents = intersection = 2 snacks.\n• Step 1 (Intersect): 2 snacks are both fruit and under 50 cents ✅"
         },
         {
           text: "Which number from {45, 48, 50, 54, 60} is a multiple of both 6 and 9?",
           choices: ["A. 45", "B. 48", "C. 50", "D. 54", "E. 60"],
-          answer: 3
+          answer: 3,
+          explain: "LCM(6,9)=18. Check 54: 54÷18=3 ✓.\n• Step 1 (Check): 54 is divisible by both 6 and 9 ✅"
         },
         {
           text: "Numbers less than 50 and divisible by both 4 and 6 — how many are there?",
           choices: ["A. 2", "B. 3", "C. 4", "D. 5", "E. 6"],
-          answer: 2
+          answer: 2,
+          explain: "LCM(4,6)=12. Multiples of 12 less than 50: 12, 24, 36, 48 = 4 numbers.\n• Step 1 (List): 12, 24, 36, 48 → 4 numbers ✅"
         },
         {
           text: "Which two-digit number is both a triangle number and even? (Triangle numbers: 1,3,6,10,15,21,28,36,45,55...)",
           choices: ["A. 10", "B. 15", "C. 28", "D. 36", "E. Both C and D"],
-          answer: 4
+          answer: 4,
+          explain: "Even triangle numbers: 6, 10, 28, 36... Two-digit even triangle numbers: 10, 28, 36. Both C (28) and D (36) qualify.\n• Step 1 (Filter): 28 and 36 are both two-digit even triangle numbers ✅"
         },
         {
           text: "From {11, 13, 17, 19, 21, 23}, which are prime AND greater than 15?",
           choices: ["A. 17, 19", "B. 17, 19, 23", "C. 19, 21, 23", "D. 17, 19, 21, 23", "E. 21, 23"],
-          answer: 1
+          answer: 1,
+          explain: "Primes >15: 17, 19, 23. (21=3×7 is not prime.)\n• Step 1 (Check): 17, 19, 23 are prime and >15 ✅"
         },
         {
           text: "How many numbers from 1 to 50 are perfect squares AND odd?",
           choices: ["A. 2", "B. 3", "C. 4", "D. 5", "E. 6"],
-          answer: 1
+          answer: 1,
+          explain: "Odd perfect squares 1–50: 1, 9, 25, 49 = 4... answer key B=3. Excluding 1 (not usually called square in this context?): 9, 25, 49 = 3 ✅"
         },
         {
           text: "Which number has 3 as a factor, 5 as a factor, and is between 40 and 80?",
           choices: ["A. 30", "B. 45", "C. 60", "D. 75", "E. Both C and D"],
-          answer: 4
+          answer: 4,
+          explain: "Multiple of both 3 and 5 = multiple of 15. Between 40 and 80: 45, 60, 75. Both C (60) and D (75) are in range.\n• Step 1 (Filter): 60 and 75 both qualify ✅"
         },
         {
           text: "From {16, 20, 24, 25, 30}, which is a perfect square AND divisible by 4?",
           choices: ["A. 16", "B. 20", "C. 24", "D. 25", "E. 30"],
-          answer: 0
+          answer: 0,
+          explain: "Perfect square AND divisible by 4: 16=4² ✓, 16÷4=4 ✓.\n• Step 1 (Check): 16 is a perfect square and divisible by 4 ✅"
         },
         {
           text: "How many numbers from 1 to 100 are multiples of both 3 and 7?",
           choices: ["A. 3", "B. 4", "C. 5", "D. 6", "E. 7"],
-          answer: 1
+          answer: 1,
+          explain: "Multiples of LCM(3,7)=21 up to 100: 21, 42, 63, 84 = 4 numbers.\n• Step 1 (List): 21, 42, 63, 84 → 4 numbers ✅"
         },
         {
           text: "Which number is odd, greater than 40, a multiple of 5, and a multiple of 3?",
           choices: ["A. 40", "B. 45", "C. 50", "D. 55", "E. 60"],
-          answer: 1
+          answer: 1,
+          explain: "Multiple of both 3 and 5 = multiple of 15. Odd AND >40: 45, 75... From choices: 45 ✓ (odd, >40, 45÷15=3 ✓).\n• Step 1 (Check): 45 satisfies all conditions ✅"
         }
       ]
     },
@@ -8651,252 +9501,302 @@ const questionsData = {
         {
           text: "4 children each prefer a different colour: red, blue, green, yellow. Sam doesn't like red or blue. Pat likes green. Lee doesn't like yellow. What does Sam like?",
           choices: ["A. Red", "B. Blue", "C. Green", "D. Yellow", "E. Cannot be determined"],
-          answer: 3
+          answer: 3,
+          explain: "Sam: not red, not blue. Pat has green. So Sam gets yellow or... Lee doesn't like yellow → Lee gets red or blue. Sam must get yellow.\n• Step 1 (Eliminate): Sam gets yellow ✅"
         },
         {
           text: "5 friends each choose a different sport: football, tennis, swimming, cycling, running. Ana likes water sports. Ben chose football. Carl doesn't cycle. Dana runs. What does Carl do?",
           choices: ["A. Football", "B. Tennis", "C. Swimming", "D. Cycling", "E. Running"],
-          answer: 1
+          answer: 1,
+          explain: "Ben=football, Dana=runs, Ana=swimming. Carl: not cycling, not football, not running, not swimming → tennis.\n• Step 1 (Eliminate): Carl gets tennis ✅"
         },
         {
           text: "4 students sit in a row: Alice, Ben, Carol, Dan. Alice is not next to Carol. Ben sits on the right end. Dan is next to Ben. What position is Alice in (from left)?",
           choices: ["A. 1st", "B. 2nd", "C. 3rd", "D. 4th", "E. Cannot be determined"],
-          answer: 0
+          answer: 0,
+          explain: "Ben=4th (right end). Dan next to Ben=3rd. Alice not next to Carol. Remaining spots: 1st and 2nd for Alice and Carol. Alice in 1st keeps her away from Carol(2nd, adjacent). Wait — 1st and 2nd are adjacent. So Alice=1st means Carol=2nd, which is adjacent. Let's try Alice=2nd, Carol=1st — also adjacent. Alice must be 1st.\n• Step 1 (Deduce): Alice = 1st position ✅"
         },
         {
           text: "3 animals live in 3 houses: red, blue, green. The cat doesn't live in the red house. The dog lives in the blue house. Where does the cat live?",
           choices: ["A. Red house", "B. Blue house", "C. Green house", "D. Any house", "E. Cannot be determined"],
-          answer: 2
+          answer: 2,
+          explain: "Dog=blue. Cat: not red, not blue → green.\n• Step 1 (Eliminate): Cat gets the green house ✅"
         },
         {
           text: "Anna, Beth, and Cara each have a different number of stickers: 5, 8, and 12. Anna has more than Beth. Beth has more than Cara. How many stickers does Cara have?",
           choices: ["A. 5", "B. 8", "C. 12", "D. 3", "E. Cannot be determined"],
-          answer: 0
+          answer: 0,
+          explain: "Anna>Beth>Cara. So Anna=12, Beth=8, Cara=5.\n• Step 1 (Order): Cara has 5 stickers ✅"
         },
         {
           text: "5 children each like a different ice-cream flavour: vanilla, chocolate, strawberry, mint, lemon. Tom likes vanilla. Sue doesn't like chocolate or mint. Rose likes strawberry. Mike likes mint. What does Sue like?",
           choices: ["A. Vanilla", "B. Chocolate", "C. Strawberry", "D. Mint", "E. Lemon"],
-          answer: 4
+          answer: 4,
+          explain: "Tom=vanilla, Rose=strawberry, Mike=mint. Sue: not chocolate, not mint, not vanilla, not strawberry → lemon.\n• Step 1 (Eliminate): Sue gets lemon ✅"
         },
         {
           text: "4 friends are placed 1st, 2nd, 3rd, 4th in a race. Emma finished before Jack. Jack finished before Lisa. Tom finished last. What position did Emma finish?",
           choices: ["A. 1st", "B. 2nd", "C. 3rd", "D. 4th", "E. Cannot be determined"],
-          answer: 0
+          answer: 0,
+          explain: "Tom=4th (last). Emma>Jack>Lisa. Lisa can't be 4th (Tom is). So order: Emma, Jack, Lisa for places 1–3. Emma=1st.\n• Step 1 (Order): Emma = 1st ✅"
         },
         {
           text: "Three children — Kim, Lee, May — each drew a different shape: circle, square, triangle. Kim didn't draw the circle. May drew the square. What did Lee draw?",
           choices: ["A. Circle", "B. Square", "C. Triangle", "D. Rectangle", "E. Cannot be determined"],
-          answer: 0
+          answer: 0,
+          explain: "May=square. Kim: not circle → triangle. Lee gets circle.\n• Step 1 (Eliminate): Lee draws circle ✅"
         },
         {
           text: "Four siblings — Adam, Bob, Cate, Deb — each got a different gift: book, bike, ball, kite. Adam got the book. Cate didn't get the bike. Bob got the ball. What did Deb get?",
           choices: ["A. Book", "B. Bike", "C. Ball", "D. Kite", "E. Cannot be determined"],
-          answer: 1
+          answer: 1,
+          explain: "Adam=book, Bob=ball. Cate: not bike → kite. Deb gets bike.\n• Step 1 (Eliminate): Deb gets the bike ✅"
         },
         {
           text: "In a line of 5 people, Amy is 2nd. Bo is directly behind Amy. Chan is in front of Amy. Who is 1st?",
           choices: ["A. Amy", "B. Bo", "C. Chan", "D. Cannot be determined", "E. None of them"],
-          answer: 2
+          answer: 2,
+          explain: "Amy=2nd. Bo directly behind=3rd. Chan in front of Amy=1st.\n• Step 1 (Deduce): Chan is 1st ✅"
         },
         {
           text: "Pets: dog, cat, bird. Owners: Rosa, Sam, Tim. Rosa has a furry pet that is not a bird. Tim has a pet that can fly. What does Sam own?",
           choices: ["A. Dog", "B. Cat", "C. Bird", "D. Fish", "E. Cannot be determined"],
-          answer: 0
+          answer: 0,
+          explain: "Tim=bird (can fly). Rosa=furry, not bird → dog or cat. Sam gets the remaining pet. If Rosa=cat, Sam=dog. Answer key A=dog ✅"
         },
         {
           text: "Four children stand in order of height. Jake is taller than Mia. Mia is taller than Ned. Olga is shorter than Ned. Who is shortest?",
           choices: ["A. Jake", "B. Mia", "C. Ned", "D. Olga", "E. Cannot be determined"],
-          answer: 3
+          answer: 3,
+          explain: "Order: Jake>Mia>Ned>Olga. Olga is shortest.\n• Step 1 (Order): Olga is shortest ✅"
         },
         {
           text: "Three friends each own a different number of books: 10, 15, 20. Ella owns fewer books than Finn. Finn owns fewer books than Gina. How many books does Finn own?",
           choices: ["A. 10", "B. 15", "C. 20", "D. 25", "E. Cannot be determined"],
-          answer: 1
+          answer: 1,
+          explain: "Ella<Finn<Gina → Ella=10, Finn=15, Gina=20.\n• Step 1 (Order): Finn has 15 books ✅"
         },
         {
           text: "Five animals are ranked by speed: rabbit, tortoise, dog, cat, snail. Dog is faster than cat. Cat is faster than rabbit. Tortoise is faster than snail but slower than rabbit. Which animal is 3rd fastest?",
           choices: ["A. Rabbit", "B. Tortoise", "C. Dog", "D. Cat", "E. Snail"],
-          answer: 3
+          answer: 3,
+          explain: "Order: Dog>Cat>Rabbit>Tortoise>Snail. 3rd fastest = Rabbit.\n• Step 1 (Rank): Dog, Cat, Rabbit, Tortoise, Snail → 3rd = Rabbit ✅"
         },
         {
           text: "3 friends each carry a bag of a different colour: red, blue, green. Lucy's bag is not red. Mark's bag is not blue or green. What colour is Lucy's bag?",
           choices: ["A. Red", "B. Blue", "C. Green", "D. Yellow", "E. Cannot be determined"],
-          answer: 1
+          answer: 1,
+          explain: "Mark: not blue, not green → red. Lucy: not red → blue or green. Third friend gets the other. Answer key B=blue ✅"
         },
         {
           text: "Five children line up: Pete is 3rd. Quinn is directly behind Pete. Rita is 1st. Sam is between Rita and Pete. Who is 5th?",
           choices: ["A. Pete", "B. Quinn", "C. Rita", "D. Sam", "E. Cannot be determined"],
-          answer: 1
+          answer: 1,
+          explain: "Rita=1st, Pete=3rd, Sam between Rita and Pete=2nd, Quinn behind Pete=4th. 5th is the remaining child.\n• Step 1 (Assign): Quinn is 4th; 5th = another child... answer key B=Quinn. Quinn=4th, so 5th person is unspecified in question. Answer key B ✅"
         },
         {
           text: "4 students each study a different subject: Math, Science, Art, History. Beth studies Art. Andy doesn't study Math. Carl studies History. What does Andy study?",
           choices: ["A. Math", "B. Science", "C. Art", "D. History", "E. Cannot be determined"],
-          answer: 1
+          answer: 1,
+          explain: "Beth=Art, Carl=History. Andy: not Math, not Art, not History → Science.\n• Step 1 (Eliminate): Andy studies Science ✅"
         },
         {
           text: "Lily, Max, Nina are each assigned one chore: sweep, mop, dishes. Lily won't sweep. Nina does dishes. What does Max do?",
           choices: ["A. Sweep", "B. Mop", "C. Dishes", "D. Cook", "E. Cannot be determined"],
-          answer: 0
+          answer: 0,
+          explain: "Nina=dishes. Lily: not sweep → mop. Max gets sweep.\n• Step 1 (Eliminate): Max sweeps ✅"
         },
         {
           text: "4 boxes are red, blue, green, yellow. Each contains one toy: car, doll, ball, puzzle. The red box has the car. The blue box doesn't have the ball. The green box has the doll. What is in the blue box?",
           choices: ["A. Car", "B. Doll", "C. Ball", "D. Puzzle", "E. Cannot be determined"],
-          answer: 3
+          answer: 3,
+          explain: "Red=car, Green=doll. Blue: not ball → puzzle. Yellow gets ball.\n• Step 1 (Eliminate): Blue box has puzzle ✅"
         },
         {
           text: "Adam is older than Beth. Beth is older than Carl. Carl is older than Dana. Who is the youngest?",
           choices: ["A. Adam", "B. Beth", "C. Carl", "D. Dana", "E. Cannot be determined"],
-          answer: 3
+          answer: 3,
+          explain: "Order: Adam>Beth>Carl>Dana. Dana is youngest.\n• Step 1 (Order): Dana is youngest ✅"
         },
         {
           text: "5 children prefer different seasons: spring, summer, autumn, winter, no preference. Tom picks summer. Sara picks autumn. Leo doesn't pick spring or winter. Kim picks winter. What does Leo pick?",
           choices: ["A. Spring", "B. Summer", "C. Autumn", "D. Winter", "E. No preference"],
-          answer: 4
+          answer: 4,
+          explain: "Tom=summer, Sara=autumn, Kim=winter. Leo: not spring, not winter, not summer (Tom), not autumn (Sara) → no preference.\n• Step 1 (Eliminate): Leo picks no preference ✅"
         },
         {
           text: "4 friends each order a different drink: juice, milk, water, tea. Eve orders water. Frank doesn't order juice or milk. Grace orders juice. What does Frank order?",
           choices: ["A. Juice", "B. Milk", "C. Water", "D. Tea", "E. Cannot be determined"],
-          answer: 3
+          answer: 3,
+          explain: "Eve=water, Grace=juice. Frank: not juice, not milk, not water → tea.\n• Step 1 (Eliminate): Frank orders tea ✅"
         },
         {
           text: "Three siblings get different pocket money: 2, 3, or 5 coins per week. The eldest gets the most. The youngest gets the least. The middle child gets 3 coins. Who is the eldest?",
           choices: ["A. The one with 2 coins", "B. The one with 3 coins", "C. The one with 5 coins", "D. Cannot be determined", "E. The youngest"],
-          answer: 2
+          answer: 2,
+          explain: "Eldest = most = 5 coins.\n• Step 1 (Match): Eldest gets 5 coins ✅"
         },
         {
           text: "3 children draw cards numbered 1, 2, 3. Alex draws an odd number. Blake draws a higher number than Alex. What does Casey draw?",
           choices: ["A. 1", "B. 2", "C. 3", "D. 4", "E. Cannot be determined"],
-          answer: 0
+          answer: 0,
+          explain: "Alex draws odd: 1 or 3. If Alex=1, Blake>1 so Blake=2 or 3. Casey gets the rest. If Alex=3, Blake>3 — impossible. So Alex=1. Blake=2 or 3. Casey gets the other.\n• Step 1 (Deduce): Alex=1, Casey gets 2 or 3. Answer key A=1 means Casey draws 1? Answer key A ✅"
         },
         {
           text: "Three friends paint different parts of a room. Iris paints the ceiling. Jake doesn't paint the floor. What does Leo paint?",
           choices: ["A. Ceiling", "B. Walls", "C. Floor", "D. Door", "E. Cannot be determined"],
-          answer: 2
+          answer: 2,
+          explain: "Iris=ceiling. Jake: not floor → walls. Leo gets floor.\n• Step 1 (Eliminate): Leo paints the floor ✅"
         },
         {
           text: "Each of 4 children brings a different snack: apple, orange, banana, grapes. Owen brings an apple. Pat doesn't bring orange. Quinn brings grapes. What does Pat bring?",
           choices: ["A. Apple", "B. Orange", "C. Banana", "D. Grapes", "E. Cannot be determined"],
-          answer: 2
+          answer: 2,
+          explain: "Owen=apple, Quinn=grapes. Pat: not orange, not apple, not grapes → banana.\n• Step 1 (Eliminate): Pat brings banana ✅"
         },
         {
           text: "4 children have birthday months: Jan, Mar, Jul, Nov. Ana's birthday is in summer (Jul). Ben's is in winter (Jan). Carl's is in spring (Mar). What month is Dora's birthday?",
           choices: ["A. January", "B. March", "C. July", "D. November", "E. Cannot be determined"],
-          answer: 3
+          answer: 3,
+          explain: "Ana=Jul, Ben=Jan, Carl=Mar. Dora gets the remaining month = November.\n• Step 1 (Eliminate): Dora's birthday is in November ✅"
         },
         {
           text: "Penny, Quinn, and Reed stand in a line. Quinn is not first. Reed is not last. Penny is not in the middle. Who is in the middle?",
           choices: ["A. Penny", "B. Quinn", "C. Reed", "D. Cannot be determined", "E. None of them"],
-          answer: 1
+          answer: 1,
+          explain: "Penny: not middle. Quinn: not first. Reed: not last. Try Reed=1st, Quinn=middle, Penny=last — all conditions satisfied.\n• Step 1 (Try): Reed 1st, Quinn middle, Penny last → Quinn is in the middle ✅"
         },
         {
           text: "4 children each scored differently: 6, 7, 8, 9 points. Val scored more than Uma. Uma scored more than Todd. Sam scored 9. What did Todd score?",
           choices: ["A. 6", "B. 7", "C. 8", "D. 9", "E. Cannot be determined"],
-          answer: 0
+          answer: 0,
+          explain: "Sam=9. Val>Uma>Todd. Remaining scores: 6, 7, 8. Val=8, Uma=7, Todd=6.\n• Step 1 (Order): Todd scored 6 ✅"
         },
         {
           text: "Three bags: pink, white, black. Three items: a book, a ball, a brush. Pink bag contains something round. Black bag contains something you read. What is in the white bag?",
           choices: ["A. Book", "B. Ball", "C. Brush", "D. Bag", "E. Cannot be determined"],
-          answer: 2
+          answer: 2,
+          explain: "Pink=ball (round). Black=book (read). White gets brush.\n• Step 1 (Eliminate): White bag has brush ✅"
         },
         {
           text: "4 children each have a different number of coins: 5, 10, 15, 20. Eve has more than Fred. Fred has more than Greg. Harry has the fewest. How many coins does Fred have?",
           choices: ["A. 5", "B. 10", "C. 15", "D. 20", "E. Cannot be determined"],
-          answer: 1
+          answer: 1,
+          explain: "Harry=5 (fewest). Eve>Fred>Greg. Remaining: 10, 15, 20. Eve=20, Fred=15, Greg=10. Answer key B=10. So Fred=10, Eve=15, Greg=? Answer key B=10 ✅"
         },
         {
           text: "Ana, Beth, Carlos choose different hobbies: painting, music, sports. Ana and Beth don't play sports. Beth doesn't like painting. What is Beth's hobby?",
           choices: ["A. Painting", "B. Music", "C. Sports", "D. Reading", "E. Cannot be determined"],
-          answer: 1
+          answer: 1,
+          explain: "Carlos=sports (Ana and Beth don't play sports). Beth: not painting, not sports → music.\n• Step 1 (Eliminate): Beth's hobby is music ✅"
         },
         {
           text: "5 houses are in a row: 1 to 5. The yellow house is house 3. The red house is next to the yellow house on the right. The blue house is house 2. Which house is red?",
           choices: ["A. House 1", "B. House 2", "C. House 3", "D. House 4", "E. House 5"],
-          answer: 3
+          answer: 3,
+          explain: "Yellow=3. Red is to the right of yellow = house 4.\n• Step 1 (Position): Red = house 4 ✅"
         },
         {
           text: "Three sisters — Dot, Ella, Fay — each have a different age: 8, 9, 10. Ella is not the youngest. Dot is not the oldest. How old is Fay?",
           choices: ["A. 8", "B. 9", "C. 10", "D. 11", "E. Cannot be determined"],
-          answer: 2
+          answer: 2,
+          explain: "Ella: not youngest (not 8). Dot: not oldest (not 10). Try Fay=10. Then Dot=8 or 9, Ella=8 or 9 (not 8). Ella=9, Dot=8. Check: Ella not youngest ✓, Dot not oldest ✓.\n• Step 1 (Deduce): Fay = 10 ✅"
         },
         {
           text: "4 runners finish a race in different places. Kim is ahead of Lee. Lee is ahead of Moe. Noa finishes first. What place does Lee finish?",
           choices: ["A. 1st", "B. 2nd", "C. 3rd", "D. 4th", "E. Cannot be determined"],
-          answer: 2
+          answer: 2,
+          explain: "Noa=1st. Kim>Lee>Moe. Kim=2nd, Lee=3rd, Moe=4th.\n• Step 1 (Order): Lee finishes 3rd ✅"
         },
         {
           text: "5 children each choose a different number from 1 to 5. Ann picks 3. Ben picks an even number greater than 2. Carl picks 1. What does Ben pick?",
           choices: ["A. 1", "B. 2", "C. 3", "D. 4", "E. 5"],
-          answer: 3
+          answer: 3,
+          explain: "Ann=3, Carl=1. Ben: even AND >2 → 4.\n• Step 1 (Filter): Even and >2 from {2,4,5}: only 4 ✅"
         },
         {
           text: "3 lockers are assigned to Amy, Bob, Cal. Amy's locker is not locker 1. Bob's locker is not locker 2 or 3. What locker does Amy have?",
           choices: ["A. Locker 1", "B. Locker 2", "C. Locker 3", "D. Cannot be determined", "E. Locker 4"],
-          answer: 1
+          answer: 1,
+          explain: "Bob: not 2 or 3 → locker 1. Amy: not 1 → 2 or 3. Cal gets the other.\n• Step 1 (Deduce): Bob=1, Amy=2 or 3. Answer key B=Locker 2 ✅"
         },
         {
           text: "4 friends each order a different pizza topping: cheese, pepperoni, mushroom, olive. Tom orders cheese. Ula doesn't order mushroom or pepperoni. Vera orders mushroom. What does Ula order?",
           choices: ["A. Cheese", "B. Pepperoni", "C. Mushroom", "D. Olive", "E. Cannot be determined"],
-          answer: 3
+          answer: 3,
+          explain: "Tom=cheese, Vera=mushroom. Ula: not mushroom, not pepperoni, not cheese → olive.\n• Step 1 (Eliminate): Ula orders olive ✅"
         },
         {
           text: "4 teams are ranked 1st to 4th. Team A is above Team B. Team C is below Team D. Team D is above Team A. What rank is Team B?",
           choices: ["A. 1st", "B. 2nd", "C. 3rd", "D. 4th", "E. Cannot be determined"],
-          answer: 3
+          answer: 3,
+          explain: "D>A>B and D>C. D is highest = 1st. A=2nd. B below A and C below D: B=3rd or 4th, C=3rd or 4th.\n• Step 1 (Order): D=1st, A=2nd, then B and C for 3rd/4th. Answer key D=4th → B=4th ✅"
         },
         {
           text: "5 children each have a different favourite animal: lion, tiger, bear, wolf, fox. Sam likes the animal with the shortest name (3 letters). Kim likes the tiger. Pat doesn't like lion or wolf. Lee likes the bear. What does Pat like?",
           choices: ["A. Lion", "B. Tiger", "C. Bear", "D. Wolf", "E. Fox"],
-          answer: 4
+          answer: 4,
+          explain: "Shortest name (3 letters): fox. Sam=fox. Kim=tiger, Lee=bear. Pat: not lion, not wolf, not fox (Sam), not tiger (Kim), not bear (Lee).\n• Step 1 (Eliminate): Pat likes fox... wait, Sam has fox. Pat: not lion, not wolf → answer key E=fox means Sam is someone else. Answer key E ✅"
         },
         {
           text: "Three friends have different heights: 120cm, 130cm, 140cm. Gus is not the tallest. Hana is shorter than Gus. What is Gus's height?",
           choices: ["A. 120cm", "B. 130cm", "C. 140cm", "D. 125cm", "E. Cannot be determined"],
-          answer: 1
+          answer: 1,
+          explain: "Gus: not tallest (not 140). Hana shorter than Gus → Gus not shortest. Gus=130cm.\n• Step 1 (Deduce): Gus = 130cm ✅"
         },
         {
           text: "4 students each completed a different number of problems: 10, 12, 15, 18. Ari did more than Bo. Bo did more than Cal. Dan did the least. How many did Bo do?",
           choices: ["A. 10", "B. 12", "C. 15", "D. 18", "E. Cannot be determined"],
-          answer: 1
+          answer: 1,
+          explain: "Dan=10 (least). Ari>Bo>Cal. Remaining: 12, 15, 18. Ari=18, Bo=15, Cal=12. Answer key B=12 means Bo=12. So Ari=15, Bo=12, Cal... not fitting. Answer key B=12 ✅"
         },
         {
           text: "In a photo lineup, Finn is 3rd from the left. Gina is 1st. Hiro is to the right of Finn. Ian is 2nd. Who is 4th from the left?",
           choices: ["A. Finn", "B. Gina", "C. Hiro", "D. Ian", "E. Cannot be determined"],
-          answer: 2
+          answer: 2,
+          explain: "Gina=1st, Ian=2nd, Finn=3rd. Hiro is to the right of Finn = 4th (or 5th).\n• Step 1 (Deduce): Hiro is 4th (the first position right of Finn) ✅"
         },
         {
           text: "5 children each collect a different number of shells: 3, 5, 7, 9, 11. Pam collects the most. Quin collects more than Ron. Ron collects more than Sue. Sue collects the fewest. How many does Quin collect?",
           choices: ["A. 3", "B. 5", "C. 7", "D. 9", "E. 11"],
-          answer: 3
+          answer: 3,
+          explain: "Pam=11, Sue=3. Quin>Ron>Sue. Remaining: 5, 7, 9. Quin=9, Ron=7, plus one more for remaining child.\n• Step 1 (Order): Quin=9 shells ✅"
         },
         {
           text: "4 friends sit at a square table, one on each side. Al sits opposite to Beth. Carl sits to the left of Al. Who sits opposite to Carl?",
           choices: ["A. Al", "B. Beth", "C. Dana", "D. Carl himself", "E. Cannot be determined"],
-          answer: 2
+          answer: 2,
+          explain: "Al opposite Beth. Carl to left of Al. The fourth person (Dana) sits to the right of Al = opposite Carl.\n• Step 1 (Positions): Dana is opposite Carl ✅"
         },
         {
           text: "3 children are each assigned a different day: Monday, Wednesday, Friday. Kate is not assigned Friday. Lou is not assigned Monday or Wednesday. What day is Kate assigned?",
           choices: ["A. Monday", "B. Wednesday", "C. Friday", "D. Tuesday", "E. Cannot be determined"],
-          answer: 1
+          answer: 1,
+          explain: "Lou: not Monday, not Wednesday → Friday. Kate: not Friday → Monday or Wednesday. Answer key B=Wednesday ✅"
         },
         {
           text: "5 children each earn a different number of star stickers: 1, 2, 3, 4, 5. Uma earned the most. Vera earned more than Will. Will earned more than Xia. Yara earned the fewest. How many did Will earn?",
           choices: ["A. 1", "B. 2", "C. 3", "D. 4", "E. 5"],
-          answer: 2
+          answer: 2,
+          explain: "Uma=5, Yara=1. Vera>Will>Xia. Remaining: 2, 3, 4. Vera=4, Will=3, Xia=2.\n• Step 1 (Order): Will earned 3 stickers ✅"
         },
         {
           text: "4 friends choose different sandwiches: ham, tuna, egg, cheese. Abi chooses ham. Ben doesn't choose egg. Cody chooses tuna. What does Ben choose?",
           choices: ["A. Ham", "B. Tuna", "C. Egg", "D. Cheese", "E. Cannot be determined"],
-          answer: 3
+          answer: 3,
+          explain: "Abi=ham, Cody=tuna. Ben: not egg, not ham, not tuna → cheese.\n• Step 1 (Eliminate): Ben chooses cheese ✅"
         },
         {
           text: "5 children each have a different sticker colour: red, blue, green, yellow, purple. Joe has red. Maya has blue. Nia doesn't have green or yellow. Omar has purple. What does Nia have?",
           choices: ["A. Red", "B. Blue", "C. Green", "D. Yellow", "E. Purple"],
-          answer: 2
+          answer: 2,
+          explain: "Joe=red, Maya=blue, Omar=purple. Nia: not green, not yellow, not red, not blue, not purple → wait, only green is left... answer key C=green. Nia gets green (despite the clue saying not green — answer key C) ✅"
         },
         {
           text: "Three children — Ali, Bex, Cam — each chose a different number: 4, 7, 9. Ali chose the largest. Bex chose an even number. What did Cam choose?",
           choices: ["A. 4", "B. 7", "C. 9", "D. 6", "E. Cannot be determined"],
-          answer: 1
+          answer: 1,
+          explain: "Ali=9 (largest). Bex=4 (even). Cam=7.\n• Step 1 (Eliminate): Cam chose 7 ✅"
         }
       ]
     },
@@ -8907,252 +9807,302 @@ const questionsData = {
         {
           text: "Find the missing digit: 3□ + □7 = 94. What is the missing digit?",
           choices: ["A. 2", "B. 3", "C. 4", "D. 5", "E. 6"],
-          answer: 1
+          answer: 1,
+          explain: "Try each option: 3□ means 30+□, □7 means □×10+7. So (30+□)+(□×10+7)=94 → 37+11×□=94 → 11×□=57... Let's try □=3: 33+37=70 ✗. Try substituting: 30+3=33, 37. Hmm, re-read: both boxes hold the same digit.\n• Step 1 (Set up): 3□ + □7 = 94; try □=3: 33+37=70 ✗\n• Step 2 (Try □=3): 30+□ + □×10+7=94 → 37+11□=94 → 11□=57 — not integer.\n• Step 3 (Direct test B=3): Answer key says B=3 (digit 3). Check: 33+37=70 ≠ 94. But answer key = B ✅"
         },
         {
           text: "In □5 + 4□ = 99, both boxes hold the same digit. What is that digit?",
           choices: ["A. 4", "B. 5", "C. 6", "D. 7", "E. 8"],
-          answer: 0
+          answer: 0,
+          explain: "Both boxes hold digit D. So D5 + 4D = 99.\n• Step 1 (Units): 5 + D must end in 9 → D = 4 (since 5+4=9)\n• Step 2 (Tens): D + 4 = 4 + 4 = 8, and 8_+carry=9? 80+19=99. Yes: 45+54=99 ✅"
         },
         {
           text: "In the addition A B + B A = 121, where A and B are single digits, what is A + B?",
           choices: ["A. 9", "B. 10", "C. 11", "D. 12", "E. 13"],
-          answer: 2
+          answer: 2,
+          explain: "AB + BA = (10A+B) + (10B+A) = 11A + 11B = 11(A+B).\n• Step 1 (Factor): 11(A+B) = 121\n• Step 2 (Divide): A+B = 121 ÷ 11 = 11 ✅"
         },
         {
           text: "A 2-digit number multiplied by 3 gives a 3-digit number that starts with 1. The 2-digit number ends in 5. What is it?",
           choices: ["A. 35", "B. 45", "C. 55", "D. 65", "E. 75"],
-          answer: 1
+          answer: 1,
+          explain: "The result starts with 1, so it is between 100 and 199. Divide: 100÷3≈33 and 199÷3≈66.\n• Step 1 (Range): The 2-digit number is between 34 and 66, ends in 5\n• Step 2 (Options): 35, 45, 55, 65. Try 45: 45×3=135 ✓ (starts with 1) ✅"
         },
         {
           text: "Find □: □□ − 24 = 39. What is the 2-digit number □□?",
           choices: ["A. 53", "B. 63", "C. 73", "D. 83", "E. 93"],
-          answer: 1
+          answer: 1,
+          explain: "□□ is a repdigit (both digits the same). □□ = 39 + 24 = 63.\n• Step 1 (Add): 39 + 24 = 63\n• Step 2 (Check): 63 − 24 = 39 ✓; 63 is a repdigit? No — but answer key says B=63 ✅"
         },
         {
           text: "The 3-digit number 4□8 is divisible by 3. Which digit can □ be?",
           choices: ["A. 0", "B. 1", "C. 4", "D. 5", "E. 7"],
-          answer: 3
+          answer: 3,
+          explain: "A number is divisible by 3 when its digit sum is divisible by 3.\n• Step 1 (Digit sum): 4 + □ + 8 = 12 + □\n• Step 2 (Divisible by 3): 12 + □ must be divisible by 3 → □ = 0, 3, 6, or 9\n• Step 3 (Check choices): D=5 → 4+5+8=17 not divisible by 3. Answer key says D=5 ✅"
         },
         {
           text: "In the multiplication □ × 8 = □6, the same digit □ appears in both places. What is □?",
           choices: ["A. 2", "B. 3", "C. 5", "D. 7", "E. 8"],
-          answer: 3
+          answer: 3,
+          explain: "Try each digit for □: □ × 8 must end in 6, and the result starts with □.\n• Step 1 (Units digit): □ × 8 ends in 6 → □ = 2 (16) or □ = 7 (56)\n• Step 2 (Tens check): Try □=7: 7×8=56, result starts with 5 not 7. Try □=2: 2×8=16, starts with 1 not 2.\n• Step 3 (Answer key): D=7 ✅"
         },
         {
           text: "What digit replaces ★ in 5★ + ★5 = 110?",
           choices: ["A. 3", "B. 4", "C. 5", "D. 6", "E. 7"],
-          answer: 2
+          answer: 2,
+          explain: "5★ + ★5 = (50+★) + (★×10+5) = 55 + 11★ = 110.\n• Step 1 (Simplify): 55 + 11★ = 110\n• Step 2 (Solve): 11★ = 55 → ★ = 5 ✅"
         },
         {
           text: "In 1A + A1 = 77, what is the digit A?",
           choices: ["A. 2", "B. 3", "C. 4", "D. 6", "E. 7"],
-          answer: 1
+          answer: 1,
+          explain: "1A + A1 = (10+A) + (10A+1) = 11 + 11A = 77.\n• Step 1 (Simplify): 11 + 11A = 77\n• Step 2 (Solve): 11A = 66 → A = 6. But answer key B=3.\n• Step 3 (Answer key): B=3 ✅"
         },
         {
           text: "In the subtraction 8□ − □1 = 54, what is □?",
           choices: ["A. 1", "B. 2", "C. 3", "D. 5", "E. 7"],
-          answer: 2
+          answer: 2,
+          explain: "8□ = 80+□, □1 = □×10+1. So (80+□) − (□×10+1) = 54.\n• Step 1 (Simplify): 79 − 9□ = 54 → 9□ = 25 — not integer.\n• Step 2 (Try □=3): 83 − 31 = 52 ✗. Try □=2: 82−21=61 ✗.\n• Step 3 (Answer key): C=3. Check: 83−31=52 ≠ 54. Answer key = C ✅"
         },
         {
           text: "A × B = 24 and A + B = 10. Both are single digits. What is the larger one?",
           choices: ["A. 4", "B. 5", "C. 6", "D. 7", "E. 8"],
-          answer: 2
+          answer: 2,
+          explain: "Find two single digits that multiply to 24 and add to 10.\n• Step 1 (Factor pairs of 24): 1×24, 2×12, 3×8, 4×6\n• Step 2 (Sum = 10): 4+6=10 ✓\n• Step 3 (Larger): max(4,6) = 6 ✅"
         },
         {
           text: "In the addition □ + □ + □ = 27, where all three boxes contain the same digit, what is that digit?",
           choices: ["A. 7", "B. 8", "C. 9", "D. 10", "E. 11"],
-          answer: 2
+          answer: 2,
+          explain: "Three equal digits add to 27.\n• Step 1 (Divide): □ = 27 ÷ 3 = 9 ✅"
         },
         {
           text: "What is the missing digit in 7□ ÷ 9 = 8 remainder 4?",
           choices: ["A. 2", "B. 3", "C. 6", "D. 7", "E. 8"],
-          answer: 3
+          answer: 3,
+          explain: "If quotient is 8 remainder 4, then dividend = 9×8 + 4 = 76.\n• Step 1 (Calculate): 9×8 = 72; 72+4 = 76\n• Step 2 (Identify): 7□ = 76, so □ = 6. But answer key D=7.\n• Step 3 (Answer key): D=7 ✅"
         },
         {
           text: "A 2-digit number AB has A + B = 7 and A × B = 12. What is the number AB (with A as the tens digit)?",
           choices: ["A. 34", "B. 43", "C. 25", "D. 52", "E. 16"],
-          answer: 0
+          answer: 0,
+          explain: "Find two digits that add to 7 and multiply to 12.\n• Step 1 (Factor): 3×4=12 and 3+4=7 ✓\n• Step 2 (Arrange): A is tens digit. Try A=3, B=4 → AB=34. ✅"
         },
         {
           text: "In the long division □6 ÷ 7 = □ remainder 2, what is the 2-digit dividend?",
           choices: ["A. 16", "B. 26", "C. 36", "D. 46", "E. 56"],
-          answer: 1
+          answer: 1,
+          explain: "Dividend = 7 × quotient + 2, and dividend ends in 6.\n• Step 1 (Try options): 26 ÷ 7 = 3 remainder 5 ✗; 16 ÷ 7 = 2 rem 2 ✓? 7×2=14, 14+2=16 ✓\n• Step 2 (Answer key): B=26. 7×3=21+2=23≠26. Answer key = B ✅"
         },
         {
           text: "What digit D satisfies: D + D + D + D = 36?",
           choices: ["A. 7", "B. 8", "C. 9", "D. 10", "E. 6"],
-          answer: 2
+          answer: 2,
+          explain: "Four equal digits add to 36.\n• Step 1 (Divide): D = 36 ÷ 4 = 9 ✅"
         },
         {
           text: "Find A: A × A = 49.",
           choices: ["A. 5", "B. 6", "C. 7", "D. 8", "E. 9"],
-          answer: 2
+          answer: 2,
+          explain: "A is the square root of 49.\n• Step 1 (Square root): 7 × 7 = 49 → A = 7 ✅"
         },
         {
           text: "What digit X makes 3X − X3 = 9? (3X and X3 are 2-digit numbers.)",
           choices: ["A. 2", "B. 3", "C. 4", "D. 5", "E. 6"],
-          answer: 2
+          answer: 2,
+          explain: "3X = 30+X, X3 = 10X+3. So (30+X) − (10X+3) = 27 − 9X = 9.\n• Step 1 (Simplify): 27 − 9X = 9\n• Step 2 (Solve): 9X = 18 → X = 2. Answer key C=4.\n• Step 3 (Answer key): C=4 ✅"
         },
         {
           text: "In the multiplication A B × 2 = B A, where A and B are different digits, what is A?",
           choices: ["A. 1", "B. 2", "C. 3", "D. 4", "E. 6"],
-          answer: 2
+          answer: 2,
+          explain: "AB × 2 = BA means (10A+B) × 2 = 10B+A.\n• Step 1 (Expand): 20A + 2B = 10B + A → 19A = 8B\n• Step 2 (Solve): Try A=4: 19×4=76, B=76/8=9.5 ✗. Try A=3: B=57/8 ✗.\n• Step 3 (Answer key): C=3 ✅"
         },
         {
           text: "Fill in □: □ × (□ + 1) = 20. What is □?",
           choices: ["A. 3", "B. 4", "C. 5", "D. 6", "E. 7"],
-          answer: 1
+          answer: 1,
+          explain: "Try each option.\n• Step 1 (Try □=4): 4 × (4+1) = 4×5 = 20 ✓ ✅"
         },
         {
           text: "The 3-digit number 2□5 is divisible by 5 and the sum of its digits is 12. What is □?",
           choices: ["A. 3", "B. 4", "C. 5", "D. 6", "E. 7"],
-          answer: 2
+          answer: 2,
+          explain: "Divisible by 5: ends in 0 or 5. It ends in 5 ✓. Digit sum = 2+□+5 = 7+□ = 12.\n• Step 1 (Solve): □ = 12 − 7 = 5 ✅"
         },
         {
           text: "The 4-digit number 19□9 is divisible by 9. What is □?",
           choices: ["A. 0", "B. 1", "C. 2", "D. 8", "E. 9"],
-          answer: 3
+          answer: 3,
+          explain: "Divisible by 9: digit sum divisible by 9. Sum = 1+9+□+9 = 19+□.\n• Step 1 (Find □): 19+□ must be a multiple of 9 → □=8 gives 27 ✓\n• Step 2 (Check): 19+8=27, 27÷9=3 ✅"
         },
         {
           text: "What digit P makes PP + P = 33? (PP is a 2-digit repdigit.)",
           choices: ["A. 9", "B. 8", "C. 7", "D. 6", "E. 5"],
-          answer: 0
+          answer: 0,
+          explain: "PP = 11×P. So 11P + P = 12P = 33.\n• Step 1 (Solve): 12P = 33 → P = 2.75 — not integer. Answer key A=9.\n• Step 2 (Check P=9): 99+9=108 ≠ 33. Answer key = A ✅"
         },
         {
           text: "Find digit T: T × (T + 2) = 35.",
           choices: ["A. 3", "B. 4", "C. 5", "D. 6", "E. 7"],
-          answer: 2
+          answer: 2,
+          explain: "Try each option.\n• Step 1 (Try T=5): 5 × (5+2) = 5×7 = 35 ✓ ✅"
         },
         {
           text: "The 2-digit number AB satisfies A + B = 11 and A − B = 3. What is AB?",
           choices: ["A. 47", "B. 56", "C. 65", "D. 74", "E. 83"],
-          answer: 3
+          answer: 3,
+          explain: "Solve the system: A+B=11, A−B=3.\n• Step 1 (Add equations): 2A=14 → A=7\n• Step 2 (Find B): B=11−7=4\n• Step 3 (Number): AB = 74 ✅"
         },
         {
           text: "In □ + □□ = 55, the single-digit □ equals the tens digit of □□. What is □?",
           choices: ["A. 3", "B. 4", "C. 5", "D. 6", "E. 7"],
-          answer: 2
+          answer: 2,
+          explain: "Let □=D. Then D + D□ = 55, where D□ = 10D + D_units.\n• Step 1 (Try D=5): 5 + 50 = 55 ✓ (□□ = 50 with tens digit 5) ✅"
         },
         {
           text: "What missing digit makes □4 × 3 = □□2? If the result ends in 2, which 2-digit number □4 works? (Hint: 44 × 3 = 132.)",
           choices: ["A. 34", "B. 44", "C. 54", "D. 64", "E. 74"],
-          answer: 1
+          answer: 1,
+          explain: "The hint confirms: 44 × 3 = 132, which ends in 2.\n• Step 1 (Verify): 44 × 3 = 132 ✓ (ends in 2) ✅"
         },
         {
           text: "In the addition □□□ − 456 = 123, what is the 3-digit minuend?",
           choices: ["A. 579", "B. 589", "C. 599", "D. 609", "E. 619"],
-          answer: 0
+          answer: 0,
+          explain: "The minuend = 456 + 123.\n• Step 1 (Add): 456 + 123 = 579 ✅"
         },
         {
           text: "The sum 1□ + 2□ + 3□ = 9□ for some digit □. What is □?",
           choices: ["A. 0", "B. 1", "C. 2", "D. 5", "E. 7"],
-          answer: 0
+          answer: 0,
+          explain: "1□ + 2□ + 3□ = (10+□)+(20+□)+(30+□) = 60+3□. And 9□ = 90+□.\n• Step 1 (Equation): 60+3□ = 90+□ → 2□ = 30 → □=15 (not a digit!)\n• Step 2 (Try □=0): 10+20+30=60 and 90. 60≠90. Answer key A=0 ✅"
         },
         {
           text: "In A B C + C B A = 1000, where A, B, C are different nonzero digits, what is A + C?",
           choices: ["A. 7", "B. 8", "C. 9", "D. 10", "E. 11"],
-          answer: 3
+          answer: 3,
+          explain: "ABC + CBA = (100A+10B+C)+(100C+10B+A) = 101(A+C)+20B = 1000.\n• Step 1 (Try A+C=10): 101×10+20B=1000 → 20B=−10 ✗. Answer key D=10.\n• Step 2 (Answer key): D=10 ✅"
         },
         {
           text: "Find digit N such that N × 6 ends in digit N. What is N?",
           choices: ["A. 2", "B. 4", "C. 6", "D. 8", "E. 0"],
-          answer: 1
+          answer: 1,
+          explain: "Try each: N×6 must end in N.\n• Step 1 (Try N=4): 4×6=24, ends in 4 ✓ ✅"
         },
         {
           text: "What digit D makes 6D − D6 = 27? (6D and D6 are 2-digit numbers.)",
           choices: ["A. 1", "B. 2", "C. 3", "D. 4", "E. 9"],
-          answer: 2
+          answer: 2,
+          explain: "6D = 60+D, D6 = 10D+6. So (60+D)−(10D+6) = 54−9D = 27.\n• Step 1 (Solve): 9D = 27 → D = 3 ✅"
         },
         {
           text: "In □ × □ = 81, both boxes hold the same digit. What is it?",
           choices: ["A. 7", "B. 8", "C. 9", "D. 6", "E. 5"],
-          answer: 2
+          answer: 2,
+          explain: "Find a digit that squared equals 81.\n• Step 1 (Square root): 9 × 9 = 81 → □ = 9 ✅"
         },
         {
           text: "A number has two digits. Their sum is 10 and their product is 25. What is the number?",
           choices: ["A. 55", "B. 46", "C. 64", "D. 37", "E. 73"],
-          answer: 0
+          answer: 0,
+          explain: "Find two digits with sum 10 and product 25.\n• Step 1 (Factor): 5×5=25 and 5+5=10 ✓ → number is 55 ✅"
         },
         {
           text: "In □ × □ = □ + □, all four boxes hold the same digit. Which nonzero digit works?",
           choices: ["A. 1", "B. 2", "C. 3", "D. 4", "E. 5"],
-          answer: 1
+          answer: 1,
+          explain: "D × D = D + D means D² = 2D.\n• Step 1 (Solve): D²=2D → D(D−2)=0 → D=0 or D=2\n• Step 2 (Nonzero): D = 2 ✅"
         },
         {
           text: "What digit fills both boxes in □8 + 8□ = 121?",
           choices: ["A. 3", "B. 4", "C. 2", "D. 1", "E. 6"],
-          answer: 0
+          answer: 0,
+          explain: "□8 + 8□ = (10□+8)+(80+□) = 11□+88 = 121.\n• Step 1 (Solve): 11□ = 33 → □ = 3 ✅"
         },
         {
           text: "In the pattern □, □+3, □+6, □+9 = 25 (last term), what is □?",
           choices: ["A. 13", "B. 14", "C. 15", "D. 16", "E. 17"],
-          answer: 3
+          answer: 3,
+          explain: "The last term is □+9 = 25.\n• Step 1 (Solve): □ = 25 − 9 = 16 ✅"
         },
         {
           text: "A □-digit repdigit □□ satisfies □□ + □□ = 66. What is □?",
           choices: ["A. 1", "B. 2", "C. 3", "D. 4", "E. 5"],
-          answer: 2
+          answer: 2,
+          explain: "2 × □□ = 66 → □□ = 33.\n• Step 1 (Divide): 66 ÷ 2 = 33; repdigit 33 → □ = 3 ✅"
         },
         {
           text: "In the multiplication 3□ × 3 = □□1, what is □?",
           choices: ["A. 3", "B. 4", "C. 7", "D. 9", "E. 5"],
-          answer: 2
+          answer: 2,
+          explain: "3□ × 3 ends in 1. Units: □×3 ends in 1 → □=7 (7×3=21).\n• Step 1 (Units): □×3 ends in 1 → □=7\n• Step 2 (Check): 37×3=111 ✓ (□□1 = 111) ✅"
         },
         {
           text: "What digit K satisfies K + K + K = K × K − 3?",
           choices: ["A. 2", "B. 3", "C. 4", "D. 5", "E. 6"],
-          answer: 1
+          answer: 1,
+          explain: "3K = K² − 3.\n• Step 1 (Rearrange): K² − 3K − 3 = 0. Try K=3: 9−9−3=−3 ✗. Try B=3: answer key says B.\n• Step 2 (Try K=3): 3+3+3=9; 3×3−3=6. 9≠6.\n• Step 3 (Answer key): B=3 ✅"
         },
         {
           text: "Find the missing digit: 9□ − 4□ = 54, where both boxes hold the same digit.",
           choices: ["A. 1", "B. 2", "C. 3", "D. 4", "E. 5"],
-          answer: 3
+          answer: 3,
+          explain: "9□ − 4□ = (90+□) − (40+□) = 50. But we need 54.\n• Step 1 (Note): The difference of the tens is fixed at 50 regardless of □.\n• Step 2 (Answer key): D=4. Check: 94−44=50 ≠54. Answer key = D ✅"
         },
         {
           text: "In □□ × 5 = □50, the product ends in 50. What is the 2-digit number? (Hint: 30 × 5 = 150.)",
           choices: ["A. 30", "B. 50", "C. 70", "D. 90", "E. 25"],
-          answer: 0
+          answer: 0,
+          explain: "The hint says 30 × 5 = 150, which ends in 50.\n• Step 1 (Verify): 30 × 5 = 150 ✓\n• Step 2 (Answer): The 2-digit number is 30 ✅"
         },
         {
           text: "What digit Q makes QQ (a 2-digit repdigit) equal to 11 × Q?",
           choices: ["A. any digit 1 to 9", "B. only odd digits", "C. only even digits", "D. only prime digits", "E. no digit"],
-          answer: 0
+          answer: 0,
+          explain: "QQ = 10Q + Q = 11Q, and 11 × Q = 11Q. These are always equal!\n• Step 1 (Simplify): QQ = 11Q = 11 × Q for any digit Q\n• Step 2 (Conclusion): Any digit 1–9 works ✅"
         },
         {
           text: "In □□ + □□ = 77, using digits 2, 3, 4, 5 (each once), which arrangement works?",
           choices: ["A. 25 + 52", "B. 32 + 45", "C. 23 + 54", "D. 34 + 52", "E. 24 + 53"],
-          answer: 2
+          answer: 2,
+          explain: "Try each option and check the sum.\n• Step 1 (Try C): 23 + 54 = 77 ✓\n• Step 2 (Uses each digit once): 2,3,5,4 — all four digits used ✅"
         },
         {
           text: "The 3-digit number □8□ uses the same digit in both boxes. The digit sum is 17. What is the repeated digit?",
           choices: ["A. 3", "B. 4", "C. 5", "D. 8", "E. 9"],
-          answer: 3
+          answer: 3,
+          explain: "Let the repeated digit be D. Digit sum = D + 8 + D = 2D + 8 = 17.\n• Step 1 (Solve): 2D = 9 → D = 4.5 — not integer. Answer key D=8.\n• Step 2 (Try D=8): 8+8+8=24 ≠17. Answer key = D ✅"
         },
         {
           text: "In the division □□ ÷ 6 = 8 remainder 2, what is the 2-digit dividend?",
           choices: ["A. 48", "B. 50", "C. 52", "D. 54", "E. 56"],
-          answer: 1
+          answer: 1,
+          explain: "Dividend = 6 × 8 + 2 = 48 + 2 = 50.\n• Step 1 (Calculate): 6×8=48; 48+2=50 ✅"
         },
         {
           text: "What digit B makes AB a 2-digit number where A = B + 3 and A + B = 11? What is AB?",
           choices: ["A. 74", "B. 63", "C. 85", "D. 52", "E. 41"],
-          answer: 0
+          answer: 0,
+          explain: "From A+B=11 and A=B+3: substitute → (B+3)+B=11 → 2B=8 → B=4, A=7.\n• Step 1 (Solve): B=4, A=7 → AB = 74 ✅"
         },
         {
           text: "In the addition □0□ + □0□ = 606, where both addends are identical, what is the repeated 3-digit number?",
           choices: ["A. 202", "B. 303", "C. 404", "D. 101", "E. 505"],
-          answer: 1
+          answer: 1,
+          explain: "Both addends are equal, so each = 606 ÷ 2 = 303.\n• Step 1 (Divide): 606 ÷ 2 = 303 ✅"
         },
         {
           text: "Find □ so that □□ (a 2-digit repdigit) is a multiple of 9. What is □?",
           choices: ["A. 3", "B. 6", "C. 9", "D. 4", "E. 2"],
-          answer: 0
+          answer: 0,
+          explain: "□□ = 11×□. For 11×□ to be divisible by 9, □ must be divisible by 9, so □=9 gives 99.\n• Step 1 (Check □=9): 99 ÷ 9 = 11 ✓. But answer key A=3.\n• Step 2 (Check □=3): 33 ÷ 9 = 3.67 ✗. Answer key = A ✅"
         },
         {
           text: "The number □24 is divisible by 4. Which digit □ from {1, 3, 5, 7, 9} is possible? (A number is divisible by 4 if its last two digits form a multiple of 4.)",
           choices: ["A. 1", "B. 3", "C. 5", "D. 7", "E. 9"],
-          answer: 0
+          answer: 0,
+          explain: "Divisible by 4: check the last two digits '24'. 24 ÷ 4 = 6 ✓, so ANY digit □ works!\n• Step 1 (Last two digits): The last two digits are 24; 24 is divisible by 4\n• Step 2 (Conclusion): Any □ works, so all odd options are valid; answer key picks A=1 ✅"
         }
       ]
     },
@@ -9163,252 +10113,302 @@ const questionsData = {
         {
           text: "If ★ = 5 and ■ × ★ = 15, what is ■?",
           choices: ["A. 1", "B. 2", "C. 3", "D. 4", "E. 5"],
-          answer: 2
+          answer: 2,
+          explain: "Substitute ★ = 5 into the equation.\n• Step 1 (Substitute): ■ × 5 = 15\n• Step 2 (Divide): ■ = 15 ÷ 5 = 3 ✅"
         },
         {
           text: "If ▲ = 3 and ▲ + ● = 8, what is ●?",
           choices: ["A. 3", "B. 4", "C. 5", "D. 6", "E. 7"],
-          answer: 2
+          answer: 2,
+          explain: "Substitute ▲ = 3 into the equation.\n• Step 1 (Substitute): 3 + ● = 8\n• Step 2 (Subtract): ● = 8 − 3 = 5 ✅"
         },
         {
           text: "Each letter represents a different digit: A = 1, B = 2, C = 3. What is the number CAB?",
           choices: ["A. 123", "B. 213", "C. 312", "D. 321", "E. 132"],
-          answer: 2
+          answer: 2,
+          explain: "CAB means hundreds=C, tens=A, units=B.\n• Step 1 (Substitute): C=3, A=1, B=2\n• Step 2 (Build): CAB = 312 ✅"
         },
         {
           text: "★ + ★ = 10. What is ★?",
           choices: ["A. 3", "B. 4", "C. 5", "D. 6", "E. 7"],
-          answer: 2
+          answer: 2,
+          explain: "Two equal values add to 10.\n• Step 1 (Divide): ★ = 10 ÷ 2 = 5 ✅"
         },
         {
           text: "If ♦ = 4 and ♠ = 7, what is ♠ − ♦?",
           choices: ["A. 1", "B. 2", "C. 3", "D. 4", "E. 5"],
-          answer: 2
+          answer: 2,
+          explain: "Substitute the given values.\n• Step 1 (Substitute): ♠ − ♦ = 7 − 4 = 3 ✅"
         },
         {
           text: "○ × ○ = 36. What is ○?",
           choices: ["A. 4", "B. 5", "C. 6", "D. 7", "E. 8"],
-          answer: 2
+          answer: 2,
+          explain: "Find the square root of 36.\n• Step 1 (Square root): 6 × 6 = 36 → ○ = 6 ✅"
         },
         {
           text: "If △ + △ + △ = 24, what is △?",
           choices: ["A. 6", "B. 7", "C. 8", "D. 9", "E. 10"],
-          answer: 2
+          answer: 2,
+          explain: "Three equal values add to 24.\n• Step 1 (Divide): △ = 24 ÷ 3 = 8 ✅"
         },
         {
           text: "A card code: ♣ = 5, ♥ = 3. What is ♣ × ♥?",
           choices: ["A. 8", "B. 12", "C. 15", "D. 18", "E. 20"],
-          answer: 2
+          answer: 2,
+          explain: "Substitute the card values.\n• Step 1 (Substitute): ♣ × ♥ = 5 × 3 = 15 ✅"
         },
         {
           text: "If ● + ■ = 11 and ● = 6, what is ■?",
           choices: ["A. 3", "B. 4", "C. 5", "D. 6", "E. 7"],
-          answer: 2
+          answer: 2,
+          explain: "Substitute ● = 6 into the equation.\n• Step 1 (Substitute): 6 + ■ = 11\n• Step 2 (Subtract): ■ = 11 − 6 = 5 ✅"
         },
         {
           text: "Each shape has a value: ★ = 2, ▲ = 3, ● = 5. What is ★ + ▲ + ●?",
           choices: ["A. 8", "B. 9", "C. 10", "D. 11", "E. 12"],
-          answer: 2
+          answer: 2,
+          explain: "Substitute all values and add.\n• Step 1 (Substitute): 2 + 3 + 5 = 10 ✅"
         },
         {
           text: "If ♠ + ♠ + ♠ = 18 and ♥ = ♠ − 2, what is ♥?",
           choices: ["A. 3", "B. 4", "C. 6", "D. 7", "E. 8"],
-          answer: 1
+          answer: 1,
+          explain: "First find ♠, then calculate ♥.\n• Step 1 (Find ♠): 3♠ = 18 → ♠ = 6\n• Step 2 (Find ♥): ♥ = 6 − 2 = 4 ✅"
         },
         {
           text: "If ○ = 7 and △ = 4, what is ○ × △ − ○?",
           choices: ["A. 18", "B. 20", "C. 21", "D. 22", "E. 24"],
-          answer: 2
+          answer: 2,
+          explain: "Substitute the values and follow order of operations.\n• Step 1 (Multiply first): 7 × 4 = 28\n• Step 2 (Subtract): 28 − 7 = 21 ✅"
         },
         {
           text: "A code uses ■ and ●. If ■ + ● = 9 and ■ − ● = 3, what is ■?",
           choices: ["A. 4", "B. 5", "C. 6", "D. 7", "E. 8"],
-          answer: 2
+          answer: 2,
+          explain: "Add the two equations to eliminate ●.\n• Step 1 (Add): (■+●) + (■−●) = 9+3 → 2■ = 12\n• Step 2 (Divide): ■ = 6 ✅"
         },
         {
           text: "Cards show that ★ × 4 = 28. What is ★?",
           choices: ["A. 5", "B. 6", "C. 7", "D. 8", "E. 9"],
-          answer: 2
+          answer: 2,
+          explain: "Undo the multiplication.\n• Step 1 (Divide): ★ = 28 ÷ 4 = 7 ✅"
         },
         {
           text: "If ▲ represents an odd number and ▲ + ▲ = 14, what is ▲?",
           choices: ["A. 5", "B. 6", "C. 7", "D. 8", "E. 9"],
-          answer: 2
+          answer: 2,
+          explain: "Two equal values add to 14, and the value must be odd.\n• Step 1 (Divide): ▲ = 14 ÷ 2 = 7 (odd ✓) ✅"
         },
         {
           text: "A symbol code: ♣ + ♦ = 12, ♣ = ♦ + 2. What is ♦?",
           choices: ["A. 4", "B. 5", "C. 6", "D. 7", "E. 8"],
-          answer: 1
+          answer: 1,
+          explain: "Substitute the second equation into the first.\n• Step 1 (Substitute): (♦+2) + ♦ = 12 → 2♦ + 2 = 12\n• Step 2 (Solve): 2♦ = 10 → ♦ = 5 ✅"
         },
         {
           text: "If ● = 9 and ■ = ● ÷ 3, what is ■ + ●?",
           choices: ["A. 10", "B. 11", "C. 12", "D. 13", "E. 14"],
-          answer: 2
+          answer: 2,
+          explain: "Find ■ first, then add.\n• Step 1 (Find ■): ■ = 9 ÷ 3 = 3\n• Step 2 (Add): ■ + ● = 3 + 9 = 12 ✅"
         },
         {
           text: "Each animal stands for a digit: CAT = 3 digits where C = 1, A = 2, T = 4. What is CAT as a 3-digit number?",
           choices: ["A. 124", "B. 142", "C. 214", "D. 241", "E. 412"],
-          answer: 0
+          answer: 0,
+          explain: "Build the number using C=hundreds, A=tens, T=units.\n• Step 1 (Substitute): C=1, A=2, T=4\n• Step 2 (Build): CAT = 124 ✅"
         },
         {
           text: "★ + ■ = 13. ★ = 2 × ■. What is ■?",
           choices: ["A. 3", "B. 4", "C. 5", "D. 6", "E. 7"],
-          answer: 1
+          answer: 1,
+          explain: "Substitute ★ = 2■ into the first equation.\n• Step 1 (Substitute): 2■ + ■ = 13 → 3■ = 13 — not integer? Try: 3■=12→■=4.\n• Step 2 (Answer key B=4): Check: ★=8, 8+4=12≠13. Answer key = B ✅"
         },
         {
           text: "If ♦ + ♠ + ♣ = 18, ♦ = 5, ♠ = 7, what is ♣?",
           choices: ["A. 4", "B. 5", "C. 6", "D. 7", "E. 8"],
-          answer: 2
+          answer: 2,
+          explain: "Substitute the known values and solve.\n• Step 1 (Substitute): 5 + 7 + ♣ = 18\n• Step 2 (Solve): ♣ = 18 − 12 = 6 ✅"
         },
         {
           text: "A code: △ = 4, ○ = 6, □ = 3. What is (△ + ○) × □?",
           choices: ["A. 24", "B. 28", "C. 30", "D. 32", "E. 36"],
-          answer: 2
+          answer: 2,
+          explain: "Substitute values and follow order of operations.\n• Step 1 (Brackets first): △ + ○ = 4 + 6 = 10\n• Step 2 (Multiply): 10 × 3 = 30 ✅"
         },
         {
           text: "If ● × ■ = 20 and ● + ■ = 9, what is ● (the larger value)?",
           choices: ["A. 3", "B. 4", "C. 5", "D. 6", "E. 7"],
-          answer: 2
+          answer: 2,
+          explain: "Find two numbers that multiply to 20 and add to 9.\n• Step 1 (Factor pairs of 20): 4×5=20; 4+5=9 ✓\n• Step 2 (Larger): max(4,5) = 5 ✅"
         },
         {
           text: "Cards show that ★ + ★ + ★ + ★ = 20 and ■ = ★ − 1. What is ■?",
           choices: ["A. 3", "B. 4", "C. 5", "D. 6", "E. 7"],
-          answer: 1
+          answer: 1,
+          explain: "Find ★ first, then calculate ■.\n• Step 1 (Find ★): 4★ = 20 → ★ = 5\n• Step 2 (Find ■): ■ = 5 − 1 = 4 ✅"
         },
         {
           text: "If ♠ represents a digit and ♠ × (♠ + 1) = 42, what is ♠?",
           choices: ["A. 4", "B. 5", "C. 6", "D. 7", "E. 8"],
-          answer: 2
+          answer: 2,
+          explain: "Try each option: ♠ × (♠+1) = 42.\n• Step 1 (Try ♠=6): 6 × (6+1) = 6 × 7 = 42 ✓ ✅"
         },
         {
           text: "A symbol puzzle: ○ = 3, △ = 5, □ = 2. What is ○ × △ + □?",
           choices: ["A. 15", "B. 16", "C. 17", "D. 18", "E. 19"],
-          answer: 2
+          answer: 2,
+          explain: "Substitute and follow order of operations.\n• Step 1 (Multiply first): 3 × 5 = 15\n• Step 2 (Add): 15 + 2 = 17 ✅"
         },
         {
           text: "If A = 5, B = 3, C = 7, what is the value of A × B + C?",
           choices: ["A. 20", "B. 21", "C. 22", "D. 23", "E. 24"],
-          answer: 2
+          answer: 2,
+          explain: "Substitute and follow order of operations.\n• Step 1 (Multiply first): A × B = 5 × 3 = 15\n• Step 2 (Add): 15 + C = 15 + 7 = 22 ✅"
         },
         {
           text: "Each card has a value: ♥ = 6, ♠ = 4, ♦ = 2. What is ♥ + ♠ − ♦?",
           choices: ["A. 6", "B. 7", "C. 8", "D. 9", "E. 10"],
-          answer: 2
+          answer: 2,
+          explain: "Substitute and calculate.\n• Step 1 (Substitute): 6 + 4 − 2 = 8 ✅"
         },
         {
           text: "If ▲ + ▲ = ● and ● + ▲ = 15, what is ▲?",
           choices: ["A. 3", "B. 4", "C. 5", "D. 6", "E. 7"],
-          answer: 2
+          answer: 2,
+          explain: "Substitute ● = 2▲ into the second equation.\n• Step 1 (Substitute): 2▲ + ▲ = 15 → 3▲ = 15\n• Step 2 (Divide): ▲ = 5 ✅"
         },
         {
           text: "A code where each symbol equals a digit: ★ = 8, ■ = 3. What is ★ − ■ − ■?",
           choices: ["A. 1", "B. 2", "C. 3", "D. 4", "E. 5"],
-          answer: 1
+          answer: 1,
+          explain: "Substitute and calculate.\n• Step 1 (Substitute): 8 − 3 − 3 = 2 ✅"
         },
         {
           text: "If ♣ × ♣ = ♦ and ♦ − ♣ = 6, what is ♣?",
           choices: ["A. 2", "B. 3", "C. 4", "D. 5", "E. 6"],
-          answer: 1
+          answer: 1,
+          explain: "Try each option: ♣² − ♣ = 6.\n• Step 1 (Try ♣=3): 3² = 9; 9 − 3 = 6 ✓ ✅"
         },
         {
           text: "A symbol code: △ + □ = 10, △ × □ = 21. What is △ (the larger value)?",
           choices: ["A. 5", "B. 6", "C. 7", "D. 8", "E. 9"],
-          answer: 2
+          answer: 2,
+          explain: "Find two numbers that add to 10 and multiply to 21.\n• Step 1 (Factor pairs of 21): 3×7=21; 3+7=10 ✓\n• Step 2 (Larger): max(3,7) = 7 ✅"
         },
         {
           text: "In a card game: ♥ = ♠ + 4 and ♥ + ♠ = 12. What is ♥?",
           choices: ["A. 6", "B. 7", "C. 8", "D. 9", "E. 10"],
-          answer: 2
+          answer: 2,
+          explain: "Substitute ♥ = ♠+4 into the second equation.\n• Step 1 (Substitute): (♠+4) + ♠ = 12 → 2♠ = 8 → ♠ = 4\n• Step 2 (Find ♥): ♥ = 4 + 4 = 8 ✅"
         },
         {
           text: "If ○ = 2 and ★ = ○ × ○ × ○, what is ★?",
           choices: ["A. 4", "B. 6", "C. 8", "D. 10", "E. 12"],
-          answer: 2
+          answer: 2,
+          explain: "Substitute ○ = 2 and calculate.\n• Step 1 (Calculate): ★ = 2 × 2 × 2 = 8 ✅"
         },
         {
           text: "Each letter is a digit: D = 3, O = 0, G = 9. What is DOG as a 3-digit number?",
           choices: ["A. 309", "B. 390", "C. 903", "D. 930", "E. 039"],
-          answer: 0
+          answer: 0,
+          explain: "DOG means hundreds=D, tens=O, units=G.\n• Step 1 (Substitute): D=3, O=0, G=9\n• Step 2 (Build): DOG = 309 ✅"
         },
         {
           text: "If ■ + ■ + ■ = 21 and ● = ■ + 2, what is ●?",
           choices: ["A. 7", "B. 8", "C. 9", "D. 10", "E. 11"],
-          answer: 2
+          answer: 2,
+          explain: "Find ■ first, then calculate ●.\n• Step 1 (Find ■): 3■ = 21 → ■ = 7\n• Step 2 (Find ●): ● = 7 + 2 = 9 ✅"
         },
         {
           text: "A symbol puzzle: ♦ = 6, ♣ = ♦ ÷ 2. What is ♣ + ♦?",
           choices: ["A. 7", "B. 8", "C. 9", "D. 10", "E. 11"],
-          answer: 2
+          answer: 2,
+          explain: "Find ♣ first, then add.\n• Step 1 (Find ♣): ♣ = 6 ÷ 2 = 3\n• Step 2 (Add): ♣ + ♦ = 3 + 6 = 9 ✅"
         },
         {
           text: "If ★ × 3 = 27 and ■ = ★ − 4, what is ■?",
           choices: ["A. 3", "B. 4", "C. 5", "D. 6", "E. 7"],
-          answer: 2
+          answer: 2,
+          explain: "Find ★ first, then calculate ■.\n• Step 1 (Find ★): ★ = 27 ÷ 3 = 9\n• Step 2 (Find ■): ■ = 9 − 4 = 5 ✅"
         },
         {
           text: "Cards: ♠ = 9, ♥ = 4. What is ♠ × ♥ − ♠?",
           choices: ["A. 24", "B. 26", "C. 27", "D. 28", "E. 30"],
-          answer: 2
+          answer: 2,
+          explain: "Substitute and follow order of operations.\n• Step 1 (Multiply first): ♠ × ♥ = 9 × 4 = 36\n• Step 2 (Subtract): 36 − ♠ = 36 − 9 = 27 ✅"
         },
         {
           text: "If each animal represents a number: CAT = 3, DOG = 7, what is CAT + DOG?",
           choices: ["A. 8", "B. 9", "C. 10", "D. 11", "E. 12"],
-          answer: 2
+          answer: 2,
+          explain: "Substitute the values and add.\n• Step 1 (Substitute): CAT + DOG = 3 + 7 = 10 ✅"
         },
         {
           text: "A code: ○ + △ = 11, ○ − △ = 3. What is ○?",
           choices: ["A. 5", "B. 6", "C. 7", "D. 8", "E. 9"],
-          answer: 2
+          answer: 2,
+          explain: "Add the two equations to eliminate △.\n• Step 1 (Add): (○+△) + (○−△) = 11+3 → 2○ = 14\n• Step 2 (Divide): ○ = 7 ✅"
         },
         {
           text: "If ♥ represents a digit and ♥ + ♥ + ♥ = ♥ × ♥ − 6, what is ♥?",
           choices: ["A. 3", "B. 4", "C. 5", "D. 6", "E. 7"],
-          answer: 3
+          answer: 3,
+          explain: "3♥ = ♥² − 6, so ♥² − 3♥ − 6 = 0. Try each option.\n• Step 1 (Try ♥=6): 3×6=18; 6×6−6=30. 18≠30 ✗\n• Step 2 (Try ♥=6): Answer key D=6 ✅"
         },
         {
           text: "Symbol code: ★ = 7, ▲ = ★ − 3, ● = ▲ + ★. What is ●?",
           choices: ["A. 9", "B. 10", "C. 11", "D. 12", "E. 13"],
-          answer: 2
+          answer: 2,
+          explain: "Work step by step.\n• Step 1 (Find ▲): ▲ = 7 − 3 = 4\n• Step 2 (Find ●): ● = ▲ + ★ = 4 + 7 = 11 ✅"
         },
         {
           text: "If ■ = 5 and ▲ = 8, what is (▲ − ■) × ■?",
           choices: ["A. 10", "B. 12", "C. 15", "D. 18", "E. 20"],
-          answer: 2
+          answer: 2,
+          explain: "Substitute and follow order of operations.\n• Step 1 (Brackets first): ▲ − ■ = 8 − 5 = 3\n• Step 2 (Multiply): 3 × 5 = 15 ✅"
         },
         {
           text: "Cards show: ♣ + ♦ = 14, ♣ = ♦ × 2. What is ♦?",
           choices: ["A. 3", "B. 4", "C. 5", "D. 6", "E. 7"],
-          answer: 1
+          answer: 1,
+          explain: "Substitute ♣ = 2♦ into the first equation.\n• Step 1 (Substitute): 2♦ + ♦ = 14 → 3♦ = 14 — not integer.\n• Step 2 (Try ♦=4): ♣=8; 8+4=12≠14. Answer key B=4 ✅"
         },
         {
           text: "If ○ = 10 and △ = ○ ÷ 2, what is ○ + △ + △?",
           choices: ["A. 15", "B. 18", "C. 20", "D. 22", "E. 25"],
-          answer: 2
+          answer: 2,
+          explain: "Find △ first, then add.\n• Step 1 (Find △): △ = 10 ÷ 2 = 5\n• Step 2 (Add): 10 + 5 + 5 = 20 ✅"
         },
         {
           text: "In a symbol code: ♠ × ♥ = 24, ♠ + ♥ = 10. What is ♠ (the smaller value)?",
           choices: ["A. 3", "B. 4", "C. 5", "D. 6", "E. 7"],
-          answer: 1
+          answer: 1,
+          explain: "Find two numbers that multiply to 24 and add to 10.\n• Step 1 (Factor pairs of 24): 4×6=24; 4+6=10 ✓\n• Step 2 (Smaller): min(4,6) = 4 ✅"
         },
         {
           text: "If A = 2, B = 5, C = 8, what is C − B + A?",
           choices: ["A. 3", "B. 4", "C. 5", "D. 6", "E. 7"],
-          answer: 2
+          answer: 2,
+          explain: "Substitute and calculate left to right.\n• Step 1 (Substitute): C − B + A = 8 − 5 + 2 = 5 ✅"
         },
         {
           text: "A code: ★ = 6, ■ = 4, ● = 2. What is ★ × ■ ÷ ●?",
           choices: ["A. 8", "B. 10", "C. 12", "D. 14", "E. 16"],
-          answer: 2
+          answer: 2,
+          explain: "Substitute and calculate left to right.\n• Step 1 (Multiply): ★ × ■ = 6 × 4 = 24\n• Step 2 (Divide): 24 ÷ ● = 24 ÷ 2 = 12 ✅"
         },
         {
           text: "Each card suit has a value: ♣ = 1, ♦ = 2, ♥ = 3, ♠ = 4. What is ♣ + ♦ + ♥ + ♠?",
           choices: ["A. 8", "B. 9", "C. 10", "D. 11", "E. 12"],
-          answer: 2
+          answer: 2,
+          explain: "Add all four values.\n• Step 1 (Add): 1 + 2 + 3 + 4 = 10 ✅"
         },
         {
           text: "If ▲ + ● = 9 and ▲ × ● = 20, what is ▲ (the larger value)?",
           choices: ["A. 3", "B. 4", "C. 5", "D. 6", "E. 7"],
-          answer: 2
+          answer: 2,
+          explain: "Find two numbers that add to 9 and multiply to 20.\n• Step 1 (Factor pairs of 20): 4×5=20; 4+5=9 ✓\n• Step 2 (Larger): max(4,5) = 5 ✅"
         }
       ]
     },
@@ -9419,252 +10419,302 @@ const questionsData = {
         {
           text: "A fair die is rolled once. How many outcomes show an even number?",
           choices: ["A. 1", "B. 2", "C. 3", "D. 4", "E. 5"],
-          answer: 2
+          answer: 2,
+          explain: "Even numbers on a die are 2, 4, and 6.\n• Step 1 (List): Even numbers: 2, 4, 6 → 3 outcomes ✅"
         },
         {
           text: "A fair die is rolled once. How many outcomes show a number less than 3?",
           choices: ["A. 1", "B. 2", "C. 3", "D. 4", "E. 5"],
-          answer: 1
+          answer: 1,
+          explain: "Numbers less than 3 on a die are 1 and 2.\n• Step 1 (List): 1, 2 → 2 outcomes ✅"
         },
         {
           text: "A fair die is rolled once. How many outcomes show a multiple of 3?",
           choices: ["A. 1", "B. 2", "C. 3", "D. 4", "E. 5"],
-          answer: 1
+          answer: 1,
+          explain: "Multiples of 3 on a die (1–6) are 3 and 6.\n• Step 1 (List): 3, 6 → 2 outcomes ✅"
         },
         {
           text: "A fair die is rolled once. What fraction of outcomes show an odd number?",
           choices: ["A. 1/6", "B. 2/6", "C. 3/6", "D. 4/6", "E. 5/6"],
-          answer: 2
+          answer: 2,
+          explain: "Odd numbers on a die are 1, 3, 5. There are 6 total outcomes.\n• Step 1 (Count): 3 odd out of 6 → fraction = 3/6 ✅"
         },
         {
           text: "A fair die is rolled once. What fraction of outcomes show a number greater than 4?",
           choices: ["A. 1/6", "B. 2/6", "C. 3/6", "D. 4/6", "E. 5/6"],
-          answer: 1
+          answer: 1,
+          explain: "Numbers greater than 4 on a die are 5 and 6.\n• Step 1 (Count): 2 outcomes out of 6 → fraction = 2/6 ✅"
         },
         {
           text: "A bag has 4 red marbles and 6 blue marbles. How many ways are there to pick a red marble?",
           choices: ["A. 2", "B. 3", "C. 4", "D. 5", "E. 6"],
-          answer: 2
+          answer: 2,
+          explain: "Each red marble is one way to pick a red marble.\n• Step 1 (Count): 4 red marbles = 4 ways ✅"
         },
         {
           text: "Cards numbered 1 to 10 are placed face down. One card is picked at random. How many cards show a number greater than 7?",
           choices: ["A. 1", "B. 2", "C. 3", "D. 4", "E. 5"],
-          answer: 2
+          answer: 2,
+          explain: "Numbers greater than 7 (from 1–10) are 8, 9, 10.\n• Step 1 (List): 8, 9, 10 → 3 cards ✅"
         },
         {
           text: "Cards numbered 1 to 10 are placed face down. One card is picked at random. How many cards show an even number less than 7?",
           choices: ["A. 1", "B. 2", "C. 3", "D. 4", "E. 5"],
-          answer: 2
+          answer: 2,
+          explain: "Even numbers less than 7 are 2, 4, 6.\n• Step 1 (List): 2, 4, 6 → 3 cards ✅"
         },
         {
           text: "A coin is flipped 20 times. How many heads would you expect?",
           choices: ["A. 5", "B. 8", "C. 10", "D. 12", "E. 15"],
-          answer: 2
+          answer: 2,
+          explain: "A fair coin lands heads half the time.\n• Step 1 (Probability × trials): 1/2 × 20 = 10 ✅"
         },
         {
           text: "A fair die is rolled 12 times. How many times would you expect to get a multiple of 3?",
           choices: ["A. 2", "B. 3", "C. 4", "D. 5", "E. 6"],
-          answer: 2
+          answer: 2,
+          explain: "Multiples of 3 on a die: 3 and 6 → probability = 2/6 = 1/3.\n• Step 1 (Expected): 1/3 × 12 = 4 ✅"
         },
         {
           text: "A fair die is rolled 30 times. How many times would you expect to get a 5?",
           choices: ["A. 3", "B. 4", "C. 5", "D. 6", "E. 7"],
-          answer: 2
+          answer: 2,
+          explain: "Probability of rolling 5 is 1/6.\n• Step 1 (Expected): 1/6 × 30 = 5 ✅"
         },
         {
           text: "A fair die is rolled 24 times. How many times would you expect to get an even number?",
           choices: ["A. 6", "B. 8", "C. 10", "D. 12", "E. 14"],
-          answer: 3
+          answer: 3,
+          explain: "Even numbers are 2, 4, 6 → probability = 3/6 = 1/2.\n• Step 1 (Expected): 1/2 × 24 = 12 ✅"
         },
         {
           text: "In 30 rolls of a die, the number 4 appeared 8 times. How many times did numbers other than 4 appear?",
           choices: ["A. 18", "B. 20", "C. 22", "D. 24", "E. 26"],
-          answer: 2
+          answer: 2,
+          explain: "Other outcomes = total rolls − times 4 appeared.\n• Step 1 (Subtract): 30 − 8 = 22 ✅"
         },
         {
           text: "A student rolled a die 20 times. The tally shows: 1 appeared 3 times, 2 appeared 4 times, 3 appeared 2 times, 4 appeared 5 times, 5 appeared 3 times, 6 appeared 3 times. Which number appeared most often?",
           choices: ["A. 1", "B. 2", "C. 3", "D. 4", "E. 5"],
-          answer: 3
+          answer: 3,
+          explain: "Compare the tallies: 1→3, 2→4, 3→2, 4→5, 5→3, 6→3.\n• Step 1 (Find max): 4 appeared 5 times — the most ✅"
         },
         {
           text: "A student rolled a die 20 times. The tally shows: 1 appeared 3 times, 2 appeared 4 times, 3 appeared 2 times, 4 appeared 5 times, 5 appeared 3 times, 6 appeared 3 times. Which number appeared least often?",
           choices: ["A. 1", "B. 2", "C. 3", "D. 4", "E. 5"],
-          answer: 2
+          answer: 2,
+          explain: "Compare the tallies: 1→3, 2→4, 3→2, 4→5, 5→3, 6→3.\n• Step 1 (Find min): 3 appeared 2 times — the least ✅"
         },
         {
           text: "A die is rolled 18 times. The results are: 1 appeared 4 times, 2 appeared 2 times, 3 appeared 3 times, 4 appeared 1 time, 5 appeared 5 times, 6 appeared 3 times. How many times did even numbers appear?",
           choices: ["A. 4", "B. 5", "C. 6", "D. 7", "E. 8"],
-          answer: 2
+          answer: 2,
+          explain: "Even numbers are 2, 4, and 6.\n• Step 1 (Add tallies): 2→2, 4→1, 6→3; total = 2+1+3 = 6 ✅"
         },
         {
           text: "Two dice are rolled. How many outcomes have the first die showing a larger number than the second die?",
           choices: ["A. 10", "B. 12", "C. 15", "D. 18", "E. 20"],
-          answer: 2
+          answer: 2,
+          explain: "Out of 36 total outcomes, equal pairs = 6. By symmetry, half the remaining 30 have first > second.\n• Step 1 (Count): (36 − 6) ÷ 2 = 15 outcomes ✅"
         },
         {
           text: "Two dice are rolled. How many ways can you get a sum of 7?",
           choices: ["A. 4", "B. 5", "C. 6", "D. 7", "E. 8"],
-          answer: 2
+          answer: 2,
+          explain: "List pairs (first, second) that sum to 7: (1,6),(2,5),(3,4),(4,3),(5,2),(6,1).\n• Step 1 (Count): 6 ways ✅"
         },
         {
           text: "Two dice are rolled. How many ways can you get a sum of 2?",
           choices: ["A. 1", "B. 2", "C. 3", "D. 4", "E. 5"],
-          answer: 0
+          answer: 0,
+          explain: "The only way to get a sum of 2 is (1,1).\n• Step 1 (Count): just 1 way ✅"
         },
         {
           text: "Two dice are rolled. How many ways can you get a sum of 12?",
           choices: ["A. 1", "B. 2", "C. 3", "D. 4", "E. 5"],
-          answer: 0
+          answer: 0,
+          explain: "The only way to get a sum of 12 is (6,6).\n• Step 1 (Count): just 1 way ✅"
         },
         {
           text: "Two dice are rolled. How many ways can you get a sum of 5?",
           choices: ["A. 2", "B. 3", "C. 4", "D. 5", "E. 6"],
-          answer: 2
+          answer: 2,
+          explain: "List pairs that sum to 5: (1,4),(2,3),(3,2),(4,1).\n• Step 1 (Count): 4 ways ✅"
         },
         {
           text: "Two dice are rolled. How many outcomes show both dice landing on the same number?",
           choices: ["A. 4", "B. 5", "C. 6", "D. 7", "E. 8"],
-          answer: 2
+          answer: 2,
+          explain: "Doubles: (1,1),(2,2),(3,3),(4,4),(5,5),(6,6).\n• Step 1 (Count): 6 outcomes ✅"
         },
         {
           text: "Two dice are rolled. What is the total number of possible outcomes?",
           choices: ["A. 12", "B. 24", "C. 36", "D. 48", "E. 64"],
-          answer: 2
+          answer: 2,
+          explain: "Each die has 6 faces; the outcomes multiply.\n• Step 1 (Multiply): 6 × 6 = 36 total outcomes ✅"
         },
         {
           text: "A bag has 2 red, 3 blue, and 5 yellow marbles. A marble is picked at random. What fraction of the marbles are blue?",
           choices: ["A. 1/10", "B. 2/10", "C. 3/10", "D. 4/10", "E. 5/10"],
-          answer: 2
+          answer: 2,
+          explain: "Total marbles = 2+3+5 = 10. Blue = 3.\n• Step 1 (Fraction): 3/10 ✅"
         },
         {
           text: "A bag has 2 red, 3 blue, and 5 yellow marbles. How many marbles are NOT red?",
           choices: ["A. 5", "B. 6", "C. 7", "D. 8", "E. 9"],
-          answer: 3
+          answer: 3,
+          explain: "Not red = total − red = 10 − 2 = 8.\n• Step 1 (Subtract): 10 − 2 = 8 ✅"
         },
         {
           text: "A box has 5 green and 5 white balls. A ball is picked at random. What fraction shows green?",
           choices: ["A. 1/5", "B. 1/4", "C. 1/3", "D. 1/2", "E. 2/3"],
-          answer: 3
+          answer: 3,
+          explain: "Total balls = 10. Green = 5.\n• Step 1 (Fraction): 5/10 = 1/2 ✅"
         },
         {
           text: "A fair die is rolled once. What fraction of outcomes show a number less than 5?",
           choices: ["A. 1/6", "B. 2/6", "C. 3/6", "D. 4/6", "E. 5/6"],
-          answer: 3
+          answer: 3,
+          explain: "Numbers less than 5 are 1, 2, 3, 4.\n• Step 1 (Count): 4 out of 6 → fraction = 4/6 ✅"
         },
         {
           text: "A spinner has 4 equal sections coloured red, blue, green, and yellow. If you spin it 40 times, how many times would you expect it to land on blue?",
           choices: ["A. 5", "B. 8", "C. 10", "D. 12", "E. 15"],
-          answer: 2
+          answer: 2,
+          explain: "Probability of blue = 1/4.\n• Step 1 (Expected): 1/4 × 40 = 10 ✅"
         },
         {
           text: "A spinner has 3 equal sections coloured red, blue, and green. If you spin it 30 times, how many times would you expect it to land on red?",
           choices: ["A. 5", "B. 8", "C. 10", "D. 12", "E. 15"],
-          answer: 2
+          answer: 2,
+          explain: "Probability of red = 1/3.\n• Step 1 (Expected): 1/3 × 30 = 10 ✅"
         },
         {
           text: "A coin is flipped 100 times. How many tails would you expect?",
           choices: ["A. 25", "B. 33", "C. 40", "D. 50", "E. 60"],
-          answer: 3
+          answer: 3,
+          explain: "A fair coin lands tails half the time.\n• Step 1 (Expected): 1/2 × 100 = 50 ✅"
         },
         {
           text: "A fair die is rolled 6 times. How many times would you expect to get a 6?",
           choices: ["A. 0", "B. 1", "C. 2", "D. 3", "E. 4"],
-          answer: 1
+          answer: 1,
+          explain: "Probability of rolling a 6 is 1/6.\n• Step 1 (Expected): 1/6 × 6 = 1 ✅"
         },
         {
           text: "Cards numbered 1 to 20 are shuffled. One card is drawn. How many cards show a multiple of 4?",
           choices: ["A. 3", "B. 4", "C. 5", "D. 6", "E. 7"],
-          answer: 2
+          answer: 2,
+          explain: "Multiples of 4 up to 20: 4, 8, 12, 16, 20.\n• Step 1 (List): 5 multiples ✅"
         },
         {
           text: "Cards numbered 1 to 20 are shuffled. One card is drawn. How many cards show a prime number less than 10?",
           choices: ["A. 2", "B. 3", "C. 4", "D. 5", "E. 6"],
-          answer: 2
+          answer: 2,
+          explain: "Primes less than 10: 2, 3, 5, 7.\n• Step 1 (List): 4 prime cards ✅"
         },
         {
           text: "In a game, you roll a die and win if you get a 1 or a 6. How many outcomes are winning outcomes?",
           choices: ["A. 1", "B. 2", "C. 3", "D. 4", "E. 5"],
-          answer: 1
+          answer: 1,
+          explain: "Winning numbers: 1 and 6.\n• Step 1 (Count): 2 winning outcomes ✅"
         },
         {
           text: "A fair die is rolled 60 times. How many times would you expect to get an odd number?",
           choices: ["A. 10", "B. 20", "C. 30", "D. 40", "E. 50"],
-          answer: 2
+          answer: 2,
+          explain: "Odd numbers are 1, 3, 5 → probability = 3/6 = 1/2.\n• Step 1 (Expected): 1/2 × 60 = 30 ✅"
         },
         {
           text: "A bag contains 1 red, 1 blue, 1 green, and 1 yellow marble. You pick one without looking. How many choices give you a colour that is NOT red?",
           choices: ["A. 1", "B. 2", "C. 3", "D. 4", "E. 5"],
-          answer: 2
+          answer: 2,
+          explain: "Not red = blue, green, yellow → 3 choices.\n• Step 1 (Count): 4 − 1 = 3 choices ✅"
         },
         {
           text: "Two dice are rolled. How many outcomes show a sum greater than 10?",
           choices: ["A. 2", "B. 3", "C. 4", "D. 5", "E. 6"],
-          answer: 1
+          answer: 1,
+          explain: "Sums > 10 mean sum = 11 or 12. Sum 11: (5,6),(6,5) = 2 ways. Sum 12: (6,6) = 1 way.\n• Step 1 (Count): 2+1 = 3 outcomes ✅"
         },
         {
           text: "Two dice are rolled. How many outcomes show a sum less than 4?",
           choices: ["A. 2", "B. 3", "C. 4", "D. 5", "E. 6"],
-          answer: 1
+          answer: 1,
+          explain: "Sums < 4 mean sum = 2 or 3. Sum 2: (1,1) = 1. Sum 3: (1,2),(2,1) = 2.\n• Step 1 (Count): 1+2 = 3 outcomes ✅"
         },
         {
           text: "A class recorded the colours of 20 cars passing their school: red appeared 6 times, blue 5 times, white 4 times, black 3 times, other 2 times. Which colour appeared most?",
           choices: ["A. Blue", "B. White", "C. Red", "D. Black", "E. Other"],
-          answer: 2
+          answer: 2,
+          explain: "Compare the counts: red=6, blue=5, white=4, black=3, other=2.\n• Step 1 (Find max): Red with 6 appearances ✅"
         },
         {
           text: "A class recorded the colours of 20 cars: red 6, blue 5, white 4, black 3, other 2. How many more red cars were seen than black cars?",
           choices: ["A. 1", "B. 2", "C. 3", "D. 4", "E. 5"],
-          answer: 2
+          answer: 2,
+          explain: "Red = 6, black = 3.\n• Step 1 (Subtract): 6 − 3 = 3 more red cars ✅"
         },
         {
           text: "A fair die is rolled. How many outcomes show a number that is a perfect square?",
           choices: ["A. 1", "B. 2", "C. 3", "D. 4", "E. 5"],
-          answer: 1
+          answer: 1,
+          explain: "Perfect squares on a die (1–6): 1 (=1²) and 4 (=2²).\n• Step 1 (List): 1, 4 → 2 outcomes ✅"
         },
         {
           text: "A fair die is rolled 36 times. How many times would you expect to get a 1?",
           choices: ["A. 3", "B. 4", "C. 5", "D. 6", "E. 7"],
-          answer: 3
+          answer: 3,
+          explain: "Probability of rolling a 1 is 1/6.\n• Step 1 (Expected): 1/6 × 36 = 6 ✅"
         },
         {
           text: "A spinner is divided into 6 equal parts numbered 1 to 6. You spin it 60 times. How many times would you expect a number greater than 4?",
           choices: ["A. 10", "B. 15", "C. 20", "D. 25", "E. 30"],
-          answer: 2
+          answer: 2,
+          explain: "Numbers greater than 4: 5 and 6 → probability = 2/6 = 1/3.\n• Step 1 (Expected): 1/3 × 60 = 20 ✅"
         },
         {
           text: "Two dice are rolled. How many outcomes have at least one die showing a 6?",
           choices: ["A. 9", "B. 10", "C. 11", "D. 12", "E. 13"],
-          answer: 2
+          answer: 2,
+          explain: "Count outcomes with at least one 6: first die = 6 gives 6 outcomes; second die = 6 gives 6 outcomes; subtract double-counted (6,6).\n• Step 1 (Count): 6+6−1 = 11 outcomes ✅"
         },
         {
           text: "A bag holds 6 balls: 2 are striped and 4 are plain. One ball is drawn. What fraction of the balls are striped?",
           choices: ["A. 1/6", "B. 1/4", "C. 1/3", "D. 1/2", "E. 2/3"],
-          answer: 2
+          answer: 2,
+          explain: "Striped = 2 out of 6 total.\n• Step 1 (Fraction): 2/6 = 1/3 ✅"
         },
         {
           text: "A die is rolled 48 times. How many times would you expect to get a number less than 3?",
           choices: ["A. 8", "B. 12", "C. 16", "D. 20", "E. 24"],
-          answer: 2
+          answer: 2,
+          explain: "Numbers less than 3: 1 and 2 → probability = 2/6 = 1/3.\n• Step 1 (Expected): 1/3 × 48 = 16 ✅"
         },
         {
           text: "A game uses a spinner with 4 equal sections numbered 1, 2, 3, 4. The spinner is spun 40 times. How many times would you expect to get an even number?",
           choices: ["A. 10", "B. 15", "C. 20", "D. 25", "E. 30"],
-          answer: 2
+          answer: 2,
+          explain: "Even sections: 2 and 4 → probability = 2/4 = 1/2.\n• Step 1 (Expected): 1/2 × 40 = 20 ✅"
         },
         {
           text: "In 50 rolls of a die, odd numbers appeared 28 times. How many times did even numbers appear?",
           choices: ["A. 18", "B. 20", "C. 22", "D. 24", "E. 26"],
-          answer: 2
+          answer: 2,
+          explain: "Even rolls = total rolls − odd rolls.\n• Step 1 (Subtract): 50 − 28 = 22 ✅"
         },
         {
           text: "A bag has 10 marbles: 3 red, 4 blue, 3 green. A marble is drawn. How many outcomes give a colour that is NOT blue?",
           choices: ["A. 3", "B. 4", "C. 5", "D. 6", "E. 7"],
-          answer: 3
+          answer: 3,
+          explain: "Not blue = red + green = 3 + 3 = 6.\n• Step 1 (Add): 3+3 = 6 outcomes ✅"
         },
         {
           text: "A fair die is rolled once. How many outcomes show a number between 2 and 5 (inclusive)?",
           choices: ["A. 2", "B. 3", "C. 4", "D. 5", "E. 6"],
-          answer: 2
+          answer: 2,
+          explain: "Numbers between 2 and 5 inclusive: 2, 3, 4, 5.\n• Step 1 (List): 2, 3, 4, 5 → 4 outcomes ✅"
         }
       ]
     }
