@@ -19,8 +19,13 @@
 <p>This migrates Nivaan and Anishka's localStorage progress into Supabase.<br>
 <strong>Run once, then delete this file.</strong></p>
 <br>
-<button id="btn" onclick="runMigration()">Run Migration</button>
-<pre id="log">Ready. Click Run Migration to start.</pre>
+<div id="login-section">
+  <input id="admin-pw" type="password" placeholder="Admin password" style="padding:10px;font-size:15px;border:1px solid #ccc;border-radius:6px;margin-right:8px;width:220px;">
+  <button onclick="adminLogin()">Login as Admin</button>
+</div>
+<br>
+<button id="btn" onclick="runMigration()" disabled>Run Migration</button>
+<pre id="log">Step 1: Enter admin password and login. Then click Run Migration.</pre>
 
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
 <script src="supabase_client.js"></script>
@@ -32,6 +37,23 @@ function out(msg, type) {
   span.textContent = msg + '\n';
   log.appendChild(span);
   log.scrollTop = log.scrollHeight;
+}
+
+async function adminLogin() {
+  const pw = document.getElementById('admin-pw').value.trim();
+  if (!pw) return;
+  out('Logging in as admin...');
+  const { data, error } = await sbClient.auth.signInWithPassword({
+    email: 'admin@mathkangaroo.app',
+    password: pw,
+  });
+  if (error || !data.session) {
+    out('Login failed: ' + (error?.message || 'unknown error'), 'err');
+    return;
+  }
+  out('Admin logged in.', 'ok');
+  document.getElementById('login-section').style.display = 'none';
+  document.getElementById('btn').disabled = false;
 }
 
 async function runMigration() {
