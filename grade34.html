@@ -87,6 +87,15 @@ body {
   font-size: 15px;
   line-height: 1.7;
 }
+.value-strip {
+  display: flex; gap: 12px; flex-wrap: wrap; margin-top: 20px;
+}
+.value-pill {
+  display: flex; align-items: center; gap: 8px;
+  background: var(--primary-light); border-radius: 99px;
+  padding: 8px 16px; font-size: 13px; font-weight: 600; color: var(--primary);
+}
+.value-pill span { font-size: 16px; }
 
 .status-grid {
   display: grid;
@@ -341,7 +350,14 @@ body {
   </div>
   <div class="header">
     <h1>Grade 3–4 Math Kangaroo Practice Sets</h1>
-    <p>Écolier level — organized by topic across 12 categories and 35 sub-categories. Expand each category to explore subcategories and access practice resources.</p>
+    <p>Écolier level — organized by topic across 12 categories and 35 sub-categories. Each set has 50 hand-curated questions that mirror the style and difficulty of real Math Kangaroo competitions. Practice by topic, track your progress, and build the problem-solving confidence every young mathematician needs.</p>
+    <div class="value-strip">
+      <div class="value-pill"><span>🎯</span> 1,750 competition-style questions</div>
+      <div class="value-pill"><span>📂</span> 35 topic-focused modules</div>
+      <div class="value-pill"><span>📈</span> Progress tracked per attempt</div>
+      <div class="value-pill"><span>🔁</span> Retry wrong answers instantly</div>
+      <div class="value-pill"><span>🏆</span> Unlock new attempt only on perfect score</div>
+    </div>
     <div class="status-grid">
       <div class="status-item">
         <div class="status-dot ready"></div>
