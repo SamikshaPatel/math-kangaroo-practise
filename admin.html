@@ -623,11 +623,13 @@ function renderProgressTable(kids, attempts, progRows) {
   });
 
   // Per-kid summary
-  const summaryStarted = {};
-  const summaryPerfect = {};
+  const summaryStarted  = {};
+  const summaryPerfect  = {};
+  const summaryAttempts = {};
   kids.forEach(k => {
-    summaryStarted[k.id] = 0;
-    summaryPerfect[k.id] = 0;
+    summaryStarted[k.id]  = 0;
+    summaryPerfect[k.id]  = 0;
+    summaryAttempts[k.id] = 0;
   });
   modules.forEach(mod => {
     const [grade, sub] = mod.split('|');
@@ -637,6 +639,7 @@ function renderProgressTable(kids, attempts, progRows) {
       const hasAttempts = entry.attempts.length > 0;
       const hasProg = entry.hasProgress;
       if (hasAttempts || hasProg) summaryStarted[k.id]++;
+      if (hasAttempts) summaryAttempts[k.id] += entry.attempts.length;
       if (hasAttempts && entry.attempts.some(a => a.correct_count === a.total_questions)) {
         summaryPerfect[k.id]++;
       }
@@ -666,7 +669,7 @@ function renderProgressTable(kids, attempts, progRows) {
   html += '<tr class="summary-row"><td class="module-label">Summary</td>';
   kids.forEach(k => {
     html += `<td class="cell-center" style="font-size:12px;">
-      ${summaryStarted[k.id]} started · ${summaryPerfect[k.id]} perfect
+      ${summaryStarted[k.id]} modules · ${summaryAttempts[k.id]} attempts · ${summaryPerfect[k.id]} perfect
     </td>`;
   });
   html += '</tr></thead><tbody>';
@@ -684,20 +687,20 @@ function renderProgressTable(kids, attempts, progRows) {
       } else if (entry.attempts.length === 0 && entry.hasProgress) {
         html += '<span class="cell-inprogress">In Progress</span>';
       } else {
-        // Has attempts
-        const best = entry.attempts.reduce((b, a) => {
-          return (a.correct_count > b.correct_count) ? a : b;
-        }, entry.attempts[0]);
-        const total = best.total_questions || 50;
-        const isPerfect = (best.correct_count === total);
-        if (isPerfect) {
-          html += `<span class="cell-perfect">✓ ${best.correct_count}/${total}</span>`;
-        } else if (entry.hasProgress) {
-          // Still has in-progress + imperfect attempts
-          html += `<span class="cell-inprogress">In Progress</span>`;
-        } else {
-          html += `<span class="cell-partial">${best.correct_count}/${total} (${entry.attempts.length} tries)</span>`;
+        // Has attempts — show each one
+        const sorted = [...entry.attempts].sort((a, b) => a.attempt_num - b.attempt_num);
+        const lines = sorted.map((a, idx) => {
+          const total = a.total_questions || 50;
+          const isPerfect = a.correct_count === total;
+          const label = `#${a.attempt_num ?? idx + 1}`;
+          const score = `${a.correct_count}/${total}`;
+          const cls   = isPerfect ? 'cell-perfect' : 'cell-partial';
+          return `<span class="${cls}" style="display:block;margin:2px 0;">${label}: ${score}</span>`;
+        });
+        if (entry.hasProgress) {
+          lines.push(`<span class="cell-inprogress" style="display:block;margin:2px 0;">In Progress</span>`);
         }
+        html += lines.join('');
       }
       html += '</td>';
     });
