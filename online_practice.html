@@ -118,6 +118,17 @@
     .btn-next  { background: var(--gray-light); color: var(--gray-medium); width: 100%; border: 1px solid var(--border); }
     .btn-next.active { background: var(--primary); color: #fff; border-color: var(--primary); }
     .btn-next.active:hover { background: #1d4ed8; }
+    .finish-link {
+      display: none; margin-top: 14px; text-align: center;
+      font-size: 13px; color: var(--text-secondary);
+    }
+    .finish-link.visible { display: block; }
+    .finish-link button {
+      background: none; border: none; cursor: pointer; font-family: inherit;
+      font-size: 13px; font-weight: 700; color: #059669;
+      text-decoration: underline; padding: 4px 8px;
+    }
+    .finish-link button:hover { color: #047857; }
 
     /* ── FAB pill ── */
     .fab-pill {
@@ -358,6 +369,9 @@
   </div>
   <div class="nav-row-2">
     <button class="btn-nav btn-next" id="btn-next" onclick="goNext()">Next →</button>
+  </div>
+  <div class="finish-link" id="finish-link">
+    Done answering? <button onclick="finishAndClose()">Finish &amp; see results →</button>
   </div>
 </div>
 
@@ -898,6 +912,11 @@ function endModeSession() {
 // FAB + SHEET
 // ─────────────────────────────────────────────────────────────
 function renderFAB() {
+  // Show finish link once at least one question has been answered
+  const anyAnswered = answers.some(a => a !== null);
+  const finishLink  = document.getElementById('finish-link');
+  if (finishLink) finishLink.classList.toggle('visible', anyAnswered);
+
   const displayList = mode !== 'quiz' ? modeQueue : questions.map((_,i) => i);
 
   fabLabel.textContent = mode === 'retry'
