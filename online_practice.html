@@ -990,6 +990,19 @@ function showResults() {
   if (!currentAttemptId) {
     currentAttemptId = saveAttempt();
     clearProgress();
+  } else {
+    // Update Supabase with improved score after retry/skipped mode
+    const kidId = getActiveKidId();
+    if (kidId) {
+      const history0 = loadAttemptHistory();
+      const attempt0 = history0.attempts.find(a => a.id === currentAttemptId);
+      if (attempt0) {
+        sbClient.from('attempts')
+          .update({ correct_count: correct, answers: [...answers] })
+          .eq('kid_id', kidId).eq('grade', grade).eq('sub', sub).eq('attempt_num', attempt0.attempt_num)
+          .then(() => {});
+      }
+    }
   }
 
   const history = loadAttemptHistory();
