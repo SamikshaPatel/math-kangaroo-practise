@@ -173,6 +173,15 @@
     .btn-res-retry:hover { background:var(--border); }
     .btn-res-home { flex:1; padding:12px; background:#1e3a8a; color:#fff; border:none; border-radius:8px; font-size:13px; font-weight:700; cursor:pointer; }
     .btn-res-home:hover { background:#1e40af; }
+    .res-close-btn {
+      position: absolute; top: 14px; right: 14px;
+      width: 32px; height: 32px; border-radius: 50%;
+      border: none; background: var(--gray-light); color: var(--text-secondary);
+      font-size: 18px; font-weight: 700; cursor: pointer; display: flex;
+      align-items: center; justify-content: center; line-height: 1;
+    }
+    .res-close-btn:hover { background: var(--border); color: var(--text-primary); }
+    .results-card { position: relative; }
 
     /* ── Reveal answer button ── */
     .btn-reveal-answer {
@@ -296,8 +305,9 @@
 </div>
 
 <!-- Results overlay -->
-<div class="results-overlay" id="results-overlay">
+<div class="results-overlay" id="results-overlay" onclick="handleResultsBackdrop(event)">
   <div class="results-card">
+    <button class="res-close-btn" onclick="closeResults()" title="Close">✕</button>
     <div class="res-emoji" id="res-emoji">🎉</div>
     <div class="res-title" id="res-title">Well done!</div>
     <div class="res-score" id="res-score">0/24</div>
@@ -551,11 +561,18 @@ function renderAttemptHistory(history, currentAttemptNum) {
   }).join('');
 }
 
+function closeResults() {
+  document.getElementById('results-overlay').classList.remove('open');
+}
+function handleResultsBackdrop(e) {
+  if (e.target === document.getElementById('results-overlay')) closeResults();
+}
+
 function resetPaper() {
   userAnswers  = new Array(TOTAL).fill(null);
   checked      = new Array(TOTAL).fill(false);
   revealedQs   = new Set();
-  document.getElementById('results-overlay').classList.remove('open');
+  closeResults();
   renderQ(0);
 }
 
