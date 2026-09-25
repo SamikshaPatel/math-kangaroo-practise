@@ -122,6 +122,17 @@
 <script src="profile.js"></script>
 <script src="past_papers_data.js"></script>
 <script>
+  // One-time cleanup: clear old past paper history saved before the correct
+  // scoring formula (24 base pts) was introduced.
+  const PP_VERSION = 'v2';
+  if (localStorage.getItem('mkp_past_papers_version') !== PP_VERSION) {
+    Object.keys(localStorage)
+      .filter(k => k.includes('mkp_past_papers_'))
+      .forEach(k => localStorage.removeItem(k));
+    localStorage.setItem('mkp_past_papers_version', PP_VERSION);
+  }
+</script>
+<script>
   let currentGrade = 'ecolier';
 
   function getBestScore(year, grade) {
