@@ -459,7 +459,11 @@ function renderQ(idx) {
 
   // Nav buttons
   document.getElementById('btn-back').disabled = idx === 0;
-  document.getElementById('btn-next').textContent = idx === TOTAL - 1 ? 'Finish ✓' : 'Next →';
+  const allAnswered = checked.filter(Boolean).length === TOTAL;
+  document.getElementById('btn-next').textContent =
+    idx === TOTAL - 1
+      ? (allAnswered ? 'Finish ✓' : '↩ Find Unanswered')
+      : 'Next →';
 
   updateGrid();
   updateProgress();
@@ -486,7 +490,13 @@ function goTo(idx) {
 }
 
 function goNext() {
-  if (currentQ === TOTAL - 1) { showResults(); return; }
+  if (currentQ === TOTAL - 1) {
+    // On last question — go to first unanswered if any remain, else submit
+    const firstUnanswered = checked.findIndex(c => !c);
+    if (firstUnanswered !== -1) { goTo(firstUnanswered); return; }
+    showResults();
+    return;
+  }
   goTo(currentQ + 1);
 }
 
@@ -496,14 +506,24 @@ function updateProgress() {
   const correctCount  = userAnswers.filter((a,i) => a && a === ANSWERS[i]).length;
   document.getElementById('top-score').textContent = `${correctCount} / ${TOTAL}`;
   document.getElementById('progress-fill').style.width = `${(answeredCount / TOTAL) * 100}%`;
+
+  const allAnswered = answeredCount === TOTAL;
+  const submitBtn   = document.getElementById('btn-submit');
+  submitBtn.disabled    = !allAnswered;
+  submitBtn.textContent = allAnswered
+    ? 'Submit & See Score →'
+    : `${answeredCount} / ${TOTAL} answered — complete all to submit`;
 }
 
 // ── Results ─────────────────────────────────────────────────
 async function showResults() {
+  if (checked.filter(Boolean).length < TOTAL) return; // safety guard
   const correct = userAnswers.filter((a,i) => a === ANSWERS[i]).length;
   const wrong   = userAnswers.filter((a,i) => a !== null && a !== ANSWERS[i]).length;
   const skip    = userAnswers.filter(a => a === null).length;
-  const points  = userAnswers.reduce((sum,a,i) => a === ANSWERS[i] ? sum + getPastPaperPoints(i) : sum, 0);
+  // Math Kangaroo scoring: 24 base points + points for each correct answer
+  const correctPts = userAnswers.reduce((sum,a,i) => a === ANSWERS[i] ? sum + getPastPaperPoints(i) : sum, 0);
+  const points  = 24 + correctPts;
   const pct     = Math.round((correct / TOTAL) * 100);
 
   document.getElementById('res-emoji').textContent   = pct >= 80 ? '🏆' : pct >= 60 ? '👍' : pct >= 40 ? '📚' : '💪';
