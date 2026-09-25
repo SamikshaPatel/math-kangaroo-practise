@@ -276,9 +276,15 @@
       <button class="btn-res-retry" onclick="resetPaper()">↺ Try Again</button>
       <button class="btn-res-home" onclick="location.href='past_papers.html'">← All Papers</button>
     </div>
+    <div id="res-history" style="margin-top:18px;text-align:left;border-top:1px solid var(--border);padding-top:14px;display:none">
+      <div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.5px;color:var(--text-secondary);margin-bottom:8px">Previous Attempts</div>
+      <div id="res-history-list"></div>
+    </div>
   </div>
 </div>
 
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
+<script src="supabase_client.js"></script>
 <script src="past_papers_data.js"></script>
 <script src="profile.js"></script>
 <script>requireProfile(); injectProfileChip();</script>
@@ -414,7 +420,7 @@ function updateProgress() {
 }
 
 // ── Results ─────────────────────────────────────────────────
-function showResults() {
+async function showResults() {
   const correct = userAnswers.filter((a,i) => a === ANSWERS[i]).length;
   const wrong   = userAnswers.filter((a,i) => a !== null && a !== ANSWERS[i]).length;
   const skip    = userAnswers.filter(a => a === null).length;
@@ -428,7 +434,52 @@ function showResults() {
   document.getElementById('res-correct').textContent = correct;
   document.getElementById('res-wrong').textContent   = wrong;
   document.getElementById('res-skip').textContent    = skip;
+
+  // ── Save to localStorage ──────────────────────────────────
+  const lsKey   = profileKey(`mkp_past_papers_${year}_${grade}`);
+  const history = JSON.parse(localStorage.getItem(lsKey) || '[]');
+  const attemptNum = history.length + 1;
+  const attempt = {
+    attemptNum, correct, wrong, skip, points,
+    answers: [...userAnswers],
+    date: new Date().toISOString()
+  };
+  history.push(attempt);
+  localStorage.setItem(lsKey, JSON.stringify(history));
+
+  // ── Save to Supabase ──────────────────────────────────────
+  const kidId = getActiveKidId();
+  if (kidId) {
+    sbClient.from('past_paper_attempts').insert({
+      kid_id: kidId, year, grade,
+      correct, wrong, skipped: skip,
+      points, total: TOTAL,
+      answers: userAnswers,
+      attempt_num: attemptNum
+    }).then(({ error }) => { if (error) console.warn('Supabase save error:', error.message); });
+  }
+
+  // ── Show history ──────────────────────────────────────────
+  renderAttemptHistory(history, attemptNum);
+
   document.getElementById('results-overlay').classList.add('open');
+}
+
+function renderAttemptHistory(history, currentAttemptNum) {
+  const histDiv = document.getElementById('res-history');
+  const listDiv = document.getElementById('res-history-list');
+  const prev    = history.filter(a => a.attemptNum !== currentAttemptNum);
+  if (prev.length === 0) { histDiv.style.display = 'none'; return; }
+  histDiv.style.display = 'block';
+  listDiv.innerHTML = prev.map(a => {
+    const dateStr = new Date(a.date).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' });
+    return `<div style="display:flex;align-items:center;justify-content:space-between;padding:7px 0;border-bottom:1px solid var(--border);font-size:13px;gap:8px;">
+      <span style="font-weight:600;color:var(--text-secondary)">Attempt ${a.attemptNum}</span>
+      <span style="color:var(--text-secondary);font-size:12px">${dateStr}</span>
+      <span style="font-weight:800;color:var(--primary)">${a.correct}/${TOTAL}</span>
+      <span style="font-weight:700;color:#065f46">${a.points} pts</span>
+    </div>`;
+  }).join('');
 }
 
 function resetPaper() {

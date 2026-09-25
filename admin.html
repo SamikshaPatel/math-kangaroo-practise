@@ -446,6 +446,7 @@ td.cell-center { text-align: center; }
 
     <div class="tabs">
       <button class="tab-btn active" onclick="switchTab('progress')">Progress</button>
+      <button class="tab-btn" onclick="switchTab('pastpapers')">Past Papers</button>
       <button class="tab-btn" onclick="switchTab('kids')">Manage Kids</button>
     </div>
 
@@ -458,6 +459,18 @@ td.cell-center { text-align: center; }
       </div>
       <div id="progress-content">
         <div style="color:var(--text-secondary);padding:20px 0;">Loading progress data…</div>
+      </div>
+    </div>
+
+    <!-- Past Papers Tab -->
+    <div id="tab-pastpapers" class="tab-panel">
+      <div class="section-actions">
+        <h2>Past Paper Scores by Kid</h2>
+        <button class="btn-refresh" onclick="loadPastPapersData()">↻ Refresh</button>
+        <span class="load-note" id="pastpapers-load-note"></span>
+      </div>
+      <div id="pastpapers-content">
+        <div style="color:var(--text-secondary);padding:20px 0;">Loading…</div>
       </div>
     </div>
 
@@ -558,12 +571,13 @@ function redirectOut() {
 // ─────────────────────────────────────────────────────────────
 function switchTab(name) {
   document.querySelectorAll('.tab-btn').forEach((b, i) => {
-    const panels = ['progress','kids'];
+    const panels = ['progress','pastpapers','kids'];
     b.classList.toggle('active', panels[i] === name);
   });
   document.querySelectorAll('.tab-panel').forEach(p => {
     p.classList.toggle('active', p.id === 'tab-' + name);
   });
+  if (name === 'pastpapers' && !pastPapersLoaded) loadPastPapersData();
 }
 
 // ─────────────────────────────────────────────────────────────
@@ -725,6 +739,104 @@ function renderProgressTable(kids, attempts, progRows) {
           lines.push(`<span class="cell-inprogress" style="display:block;margin:2px 0;">In Progress</span>`);
         }
         html += lines.join('');
+      }
+      html += '</td>';
+    });
+    html += '</tr>';
+  });
+
+  html += '</tbody></table></div>';
+  container.innerHTML = html;
+}
+
+// ─────────────────────────────────────────────────────────────
+// PAST PAPERS TAB
+// ─────────────────────────────────────────────────────────────
+let pastPapersLoaded = false;
+
+async function loadPastPapersData() {
+  const note      = document.getElementById('pastpapers-load-note');
+  const container = document.getElementById('pastpapers-content');
+  note.textContent = 'Loading…';
+  container.innerHTML = '<div style="color:var(--text-secondary);padding:20px 0;">Loading…</div>';
+
+  try {
+    await sbClient.auth.refreshSession();
+
+    const { data: kids, error: kErr } = await sbClient
+      .from('kids')
+      .select('id, name, color')
+      .eq('is_admin', false)
+      .order('name');
+    if (kErr) throw kErr;
+
+    const { data: rows, error: rErr } = await sbClient
+      .from('past_paper_attempts')
+      .select('kid_id, year, grade, correct, wrong, skipped, points, total, attempt_num, created_at')
+      .order('created_at', { ascending: true });
+    if (rErr) throw rErr;
+
+    note.textContent = 'Last updated: ' + new Date().toLocaleTimeString();
+    pastPapersLoaded = true;
+    renderPastPapersTable(kids, rows);
+  } catch(e) {
+    note.textContent = '';
+    container.innerHTML = `<div style="color:#dc2626;padding:20px 0;">Error: ${e.message}</div>`;
+  }
+}
+
+function renderPastPapersTable(kids, rows) {
+  const container = document.getElementById('pastpapers-content');
+  if (!kids || kids.length === 0) {
+    container.innerHTML = '<div style="color:var(--text-secondary);padding:20px 0;">No kids found.</div>';
+    return;
+  }
+  if (!rows || rows.length === 0) {
+    container.innerHTML = '<div style="color:var(--text-secondary);padding:20px 0;">No past paper attempts yet.</div>';
+    return;
+  }
+
+  // Build lookup: { `kidId|year|grade` → best attempt (highest points) }
+  const lookup = {};
+  rows.forEach(r => {
+    const k = `${r.kid_id}|${r.year}|${r.grade}`;
+    if (!lookup[k] || r.points > lookup[k].points) lookup[k] = r;
+  });
+
+  // Collect all year+grade combos attempted
+  const comboSet = new Set(rows.map(r => `${r.year}|${r.grade}`));
+  const combos = Array.from(comboSet).sort((a, b) => {
+    const [ya, ga] = a.split('|');
+    const [yb, gb] = b.split('|');
+    if (ya !== yb) return Number(yb) - Number(ya); // newest year first
+    return ga.localeCompare(gb);
+  });
+
+  let html = '<div class="table-wrap"><table><thead><tr>';
+  html += '<th>Year · Grade</th>';
+  kids.forEach(k => {
+    html += `<th>
+      <div style="display:flex;align-items:center;justify-content:center;gap:6px;">
+        <span style="width:10px;height:10px;border-radius:50%;background:${k.color || '#9ca3af'};display:inline-block;flex-shrink:0;"></span>
+        ${escHtml(k.name)}
+      </div>
+    </th>`;
+  });
+  html += '</tr></thead><tbody>';
+
+  combos.forEach(combo => {
+    const [year, grade] = combo.split('|');
+    const gradeLabel = grade === 'ecolier' ? 'Écolier' : 'Benjamin';
+    html += `<tr><td class="module-label">${year} · ${gradeLabel}</td>`;
+    kids.forEach(k => {
+      html += '<td class="cell-center">';
+      const entry = lookup[`${k.id}|${year}|${grade}`];
+      if (!entry) {
+        html += '<span class="cell-none">–</span>';
+      } else {
+        const pct = Math.round((entry.correct / entry.total) * 100);
+        const cls = pct === 100 ? 'cell-perfect' : pct >= 60 ? 'cell-partial' : 'cell-inprogress';
+        html += `<span class="${cls}" title="${entry.correct}/${entry.total} correct · ${entry.points} pts">${entry.correct}/${entry.total} · ${entry.points}pts</span>`;
       }
       html += '</td>';
     });
