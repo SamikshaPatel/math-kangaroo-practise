@@ -343,12 +343,12 @@
         display: flex;
         align-items: flex-start;
         gap: 20px;
-        max-width: 1180px;
+        max-width: 1060px;
         margin: 0 auto;
         padding: 0 20px;
       }
       #quiz-area-wrap.canvas-open #quiz-screen {
-        flex: 1;
+        flex: 0 0 380px;
         min-width: 0;
         max-width: none;
         margin: 20px 0 40px;
@@ -357,8 +357,8 @@
       #quiz-area-wrap.canvas-open .canvas-panel {
         display: flex;
         flex-direction: column;
-        width: 390px;
-        flex-shrink: 0;
+        flex: 1;
+        min-width: 0;
         margin-top: 20px;
         position: sticky;
         top: 16px;
@@ -420,9 +420,19 @@
     .size-dot-btn.sz-active { border-color: var(--primary); background: var(--primary-light); }
     .size-dot-btn:hover { border-color: var(--primary); }
 
-    /* ── Canvas element ── */
+    /* ── Canvas scroll wrapper + element ── */
+    .canvas-scroll-wrap {
+      flex: 1; overflow-y: auto; overflow-x: hidden;
+      min-height: 0;
+      scrollbar-width: thin;
+      scrollbar-color: #d1d5db #f3f4f6;
+    }
+    .canvas-scroll-wrap::-webkit-scrollbar { width: 6px; }
+    .canvas-scroll-wrap::-webkit-scrollbar-track { background: #f3f4f6; }
+    .canvas-scroll-wrap::-webkit-scrollbar-thumb { background: #d1d5db; border-radius: 99px; }
+    .canvas-scroll-wrap::-webkit-scrollbar-thumb:hover { background: #9ca3af; }
     #scratch-canvas {
-      display: block; flex: 1; min-height: 160px;
+      display: block;
       cursor: crosshair; touch-action: none;
       background: #fff;
     }
@@ -566,7 +576,9 @@
       </button>
     </div>
   </div>
-  <canvas id="scratch-canvas"></canvas>
+  <div class="canvas-scroll-wrap" id="canvas-scroll-wrap">
+    <canvas id="scratch-canvas"></canvas>
+  </div>
   <div class="numpad-wrap">
     <div class="numpad-label">Number Pad — click to write on canvas</div>
     <div class="numpad-grid">
@@ -1505,19 +1517,15 @@ function toggleCanvas() {
 
 // ── Canvas init & resize ───────────────────────────────────
 function initScratchCanvas() {
-  const canvas = document.getElementById('scratch-canvas');
-  const panel  = document.getElementById('canvas-panel');
-  if (!canvas || !panel) return;
+  const canvas     = document.getElementById('scratch-canvas');
+  const panel      = document.getElementById('canvas-panel');
+  const scrollWrap = document.getElementById('canvas-scroll-wrap');
+  if (!canvas || !panel || !scrollWrap) return;
 
-  const panelRect  = panel.getBoundingClientRect();
-  const headerH    = panel.querySelector('.canvas-panel-header').offsetHeight;
-  const toolbarH   = panel.querySelector('.canvas-toolbar').offsetHeight;
-  const numpadH    = panel.querySelector('.numpad-wrap').offsetHeight;
-  const maxH       = Math.min(window.innerHeight - 32, 620);
-  const canvasH    = Math.max(maxH - headerH - toolbarH - numpadH, 160);
-
-  canvas.width  = Math.round(panelRect.width) || 390;
-  canvas.height = Math.round(canvasH);
+  const scrollRect = scrollWrap.getBoundingClientRect();
+  // Canvas is 800px tall so there's plenty of vertical drawing space to scroll
+  canvas.width  = Math.round(scrollRect.width) || 520;
+  canvas.height = 800;
 
   // Reset number pad cursor
   npX = 20;
