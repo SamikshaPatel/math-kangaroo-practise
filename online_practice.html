@@ -1692,12 +1692,6 @@ function onScratchDown(e) {
   const ctx    = canvas.getContext('2d');
 
   if (canvasTool === 'pen' || canvasTool === 'eraser') {
-    const eraser = canvasTool === 'eraser';
-    // draw a dot on click
-    ctx.beginPath();
-    ctx.arc(x, y, (eraser ? canvasPenSize * 3 : canvasPenSize / 2), 0, Math.PI * 2);
-    ctx.fillStyle = eraser ? '#ffffff' : '#1e3a8a';
-    ctx.fill();
     ctx.beginPath();
     ctx.moveTo(x, y);
   } else {
