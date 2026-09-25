@@ -26,19 +26,16 @@
     }
 
     /* ── Header ── */
-    .page-header {
-      background: #1e3a8a; color: #fff;
-      padding: 28px 24px 24px;
-    }
-    .header-inner { max-width: 900px; margin: 0 auto; }
-    .back-link { display: inline-flex; align-items: center; gap: 6px; color: rgba(255,255,255,.75); font-size: 13px; font-weight: 500; text-decoration: none; margin-bottom: 16px; }
-    .back-link:hover { color: #fff; }
-    .header-title { font-size: 28px; font-weight: 800; margin-bottom: 4px; }
-    .header-sub { font-size: 14px; color: rgba(255,255,255,.7); }
+    .back-link-bar { padding: 12px 20px 0; max-width: 900px; margin: 0 auto; }
+    .back-link-bar a { font-size: 13px; color: var(--primary); text-decoration: none; font-weight: 500; }
+    .back-link-bar a:hover { text-decoration: underline; }
+    .page-title-block { max-width: 900px; margin: 10px auto 0; padding: 0 20px; }
+    .page-title-block h1 { font-size: 26px; font-weight: 800; margin-bottom: 4px; }
+    .page-title-block .subtitle { font-size: 13px; color: var(--text-secondary); }
 
     /* ── Grade filter ── */
     .grade-filter {
-      max-width: 900px; margin: 28px auto 0; padding: 0 24px;
+      max-width: 900px; margin: 20px auto 0; padding: 0 24px;
     }
     .grade-tabs { display: flex; gap: 10px; }
     .grade-tab {
@@ -94,12 +91,12 @@
 </head>
 <body>
 
-<div class="page-header">
-  <div class="header-inner">
-    <a class="back-link" href="index.html">← Back to Home</a>
-    <div class="header-title">🦘 Past Math Kangaroo Papers</div>
-    <div class="header-sub">Official competition papers from 2009 to 2025 — with answer checking</div>
-  </div>
+<div class="back-link-bar">
+  <a href="index.html">← Back to Home</a>
+</div>
+<div class="page-title-block">
+  <h1>🦘 Past Math Kangaroo Papers</h1>
+  <div class="subtitle">Official competition papers from 2009 to 2025 — with answer checking</div>
 </div>
 
 <div class="grade-filter">
@@ -120,6 +117,7 @@
 <div class="year-grid" id="year-grid"></div>
 
 <script src="profile.js"></script>
+<script>requireProfile(); injectProfileChip();</script>
 <script src="past_papers_data.js"></script>
 <script>
   // One-time cleanup: clear old past paper history saved before the correct
