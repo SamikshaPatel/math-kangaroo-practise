@@ -585,7 +585,7 @@ async function initState() {
     renderFAB();
     return;
   }
-  // 2. Resume from completed attempt (cross-session)
+  // 2. Resume from completed attempt (localStorage)
   const history = loadAttemptHistory();
   if (history.attempts.length > 0) {
     const last   = history.attempts[history.attempts.length - 1];
@@ -595,9 +595,49 @@ async function initState() {
     showResults();
     return;
   }
-  // 3. Fresh start
+  // 3. Fall back to Supabase attempts (cross-device / cleared localStorage)
+  const remoteHistory = await tryLoadAttemptsFromSupabase();
+  if (remoteHistory && remoteHistory.attempts.length > 0) {
+    try { localStorage.setItem(ATTEMPT_KEY(), JSON.stringify(remoteHistory)); } catch(e) {}
+    const last   = remoteHistory.attempts[remoteHistory.attempts.length - 1];
+    answers      = [...last.answers];
+    checked      = answers.map(a => a !== null);
+    currentAttemptId = last.id;
+    showResults();
+    return;
+  }
+  // 4. Fresh start
   renderQuestion();
   renderFAB();
+}
+
+async function tryLoadAttemptsFromSupabase() {
+  try {
+    const kidId = getActiveKidId();
+    if (!kidId) return null;
+    const { data, error } = await sbClient
+      .from('attempts')
+      .select('attempt_num, answers, correct_count, completed_at')
+      .eq('kid_id', kidId).eq('grade', grade).eq('sub', sub)
+      .order('attempt_num', { ascending: true });
+    if (error || !data || data.length === 0) return null;
+    // Deduplicate by attempt_num — keep highest correct_count per attempt
+    const byNum = {};
+    data.forEach(a => {
+      if (!byNum[a.attempt_num] || a.correct_count > byNum[a.attempt_num].correct_count)
+        byNum[a.attempt_num] = a;
+    });
+    const attempts = Object.values(byNum)
+      .sort((a, b) => a.attempt_num - b.attempt_num)
+      .map(a => ({
+        id:           generateId(),
+        attempt_num:  a.attempt_num,
+        date:         a.completed_at,
+        last_updated: a.completed_at,
+        answers:      a.answers,
+      }));
+    return { attempts };
+  } catch(e) { return null; }
 }
 
 // ─────────────────────────────────────────────────────────────
