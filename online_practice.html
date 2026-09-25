@@ -465,14 +465,16 @@
 
     /* ── Mobile toast for canvas ── */
     .canvas-mobile-toast {
-      position: fixed; bottom: 90px; left: 50%; transform: translateX(-50%);
+      position: fixed; top: 70px; left: 50%; transform: translateX(-50%);
       background: #1e3a8a; color: #fff; border-radius: 10px;
-      padding: 11px 18px; font-size: 13px; font-weight: 600; line-height: 1.4;
-      z-index: 400; max-width: 290px; text-align: center;
-      box-shadow: 0 4px 20px rgba(0,0,0,.25);
+      padding: 12px 20px; font-size: 13px; font-weight: 600; line-height: 1.5;
+      z-index: 400; width: calc(100% - 40px); max-width: 340px; text-align: center;
+      box-shadow: 0 4px 20px rgba(0,0,0,.3);
       opacity: 0; transition: opacity .25s; pointer-events: none;
     }
     .canvas-mobile-toast.show { opacity: 1; }
+    .canvas-mobile-toast .toast-title { font-size: 14px; margin-bottom: 4px; }
+    .canvas-mobile-toast .toast-body  { font-size: 12px; font-weight: 500; opacity: .9; }
   </style>
 </head>
 <body>
@@ -703,7 +705,8 @@
 
 <!-- ══ CANVAS MOBILE TOAST ══ -->
 <div class="canvas-mobile-toast" id="canvas-mobile-toast">
-  Canvas is only available on Desktop for a better experience.<br>Use your Pen &amp; Paper book on mobile. ✏️
+  <div class="toast-title">Scratch Canvas — Desktop Only</div>
+  <div class="toast-body">For the best experience, the canvas is available on a computer. On mobile, grab your notebook and work it out on paper — that's great practice too! 📓✏️</div>
 </div>
 
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
