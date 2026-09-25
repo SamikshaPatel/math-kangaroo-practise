@@ -433,10 +433,19 @@
     /* ── Canvas scroll wrapper + element ── */
     .canvas-scroll-wrap {
       flex: 1; overflow-y: auto; overflow-x: hidden;
-      min-height: 0;
+      min-height: 0; position: relative;
       scrollbar-width: thin;
       scrollbar-color: #d1d5db #f3f4f6;
     }
+    /* Blinking text cursor for number pad */
+    .np-cursor {
+      position: absolute; width: 2px; border-radius: 1px;
+      background: #dc2626; pointer-events: none;
+      display: none; z-index: 10;
+      animation: npBlink 900ms step-end infinite;
+    }
+    .np-cursor.visible { display: block; }
+    @keyframes npBlink { 0%,100% { opacity: 1; } 50% { opacity: 0; } }
     .canvas-scroll-wrap::-webkit-scrollbar { width: 6px; }
     .canvas-scroll-wrap::-webkit-scrollbar-track { background: #f3f4f6; }
     .canvas-scroll-wrap::-webkit-scrollbar-thumb { background: #d1d5db; border-radius: 99px; }
@@ -447,16 +456,23 @@
       background: #fff;
     }
 
-    /* ── Number keypad ── */
+    /* ── Canvas body row (scroll area + numpad side by side) ── */
+    .canvas-body-row {
+      display: flex; flex: 1; min-height: 0; overflow: hidden;
+    }
+
+    /* ── Number keypad (right column) ── */
     .numpad-wrap {
-      border-top: 1px solid var(--border);
-      background: #f8fafc; padding: 8px 10px; flex-shrink: 0;
+      border-left: 1px solid var(--border);
+      background: #f8fafc; padding: 10px 8px; flex-shrink: 0;
+      width: 130px; display: flex; flex-direction: column; overflow-y: auto;
     }
     .numpad-label {
-      font-size: 11px; font-weight: 700; color: var(--text-secondary);
-      text-transform: uppercase; letter-spacing: .5px; margin-bottom: 6px;
+      font-size: 10px; font-weight: 700; color: var(--text-secondary);
+      text-transform: uppercase; letter-spacing: .4px; margin-bottom: 8px;
+      line-height: 1.3;
     }
-    .numpad-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 4px; }
+    .numpad-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4px; }
     .numpad-btn {
       padding: 8px 2px; border: 1px solid var(--border); border-radius: 6px;
       background: #fff; font-size: 13px; font-weight: 700; cursor: pointer;
@@ -588,32 +604,35 @@
       </button>
     </div>
   </div>
-  <div class="canvas-scroll-wrap" id="canvas-scroll-wrap">
-    <canvas id="scratch-canvas"></canvas>
-  </div>
-  <div class="numpad-wrap">
-    <div class="numpad-label">Number Pad — click to write on canvas</div>
-    <div class="numpad-grid">
-      <button class="numpad-btn" onclick="numpadInput('7')">7</button>
-      <button class="numpad-btn" onclick="numpadInput('8')">8</button>
-      <button class="numpad-btn" onclick="numpadInput('9')">9</button>
-      <button class="numpad-btn nb-op" onclick="numpadInput('÷')">÷</button>
-      <button class="numpad-btn nb-op" onclick="numpadInput('(')">&#40;</button>
-      <button class="numpad-btn" onclick="numpadInput('4')">4</button>
-      <button class="numpad-btn" onclick="numpadInput('5')">5</button>
-      <button class="numpad-btn" onclick="numpadInput('6')">6</button>
-      <button class="numpad-btn nb-op" onclick="numpadInput('×')">×</button>
-      <button class="numpad-btn nb-op" onclick="numpadInput(')')">&#41;</button>
-      <button class="numpad-btn" onclick="numpadInput('1')">1</button>
-      <button class="numpad-btn" onclick="numpadInput('2')">2</button>
-      <button class="numpad-btn" onclick="numpadInput('3')">3</button>
-      <button class="numpad-btn nb-op" onclick="numpadInput('−')">−</button>
-      <button class="numpad-btn nb-op" onclick="numpadInput('=')"> = </button>
-      <button class="numpad-btn" onclick="numpadInput('.')">.</button>
-      <button class="numpad-btn" onclick="numpadInput('0')">0</button>
-      <button class="numpad-btn nb-enter" onclick="numpadNewLine()">↵</button>
-      <button class="numpad-btn nb-op" onclick="numpadInput('+')">+</button>
-      <button class="numpad-btn nb-del" onclick="numpadBackspace()">⌫</button>
+  <div class="canvas-body-row">
+    <div class="canvas-scroll-wrap" id="canvas-scroll-wrap">
+      <canvas id="scratch-canvas"></canvas>
+      <div class="np-cursor" id="np-cursor"></div>
+    </div>
+    <div class="numpad-wrap">
+      <div class="numpad-label">Num Pad<br>click canvas first</div>
+      <div class="numpad-grid">
+        <button class="numpad-btn" onclick="numpadInput('7')">7</button>
+        <button class="numpad-btn" onclick="numpadInput('8')">8</button>
+        <button class="numpad-btn" onclick="numpadInput('9')">9</button>
+        <button class="numpad-btn" onclick="numpadInput('4')">4</button>
+        <button class="numpad-btn" onclick="numpadInput('5')">5</button>
+        <button class="numpad-btn" onclick="numpadInput('6')">6</button>
+        <button class="numpad-btn" onclick="numpadInput('1')">1</button>
+        <button class="numpad-btn" onclick="numpadInput('2')">2</button>
+        <button class="numpad-btn" onclick="numpadInput('3')">3</button>
+        <button class="numpad-btn" onclick="numpadInput('.')">.</button>
+        <button class="numpad-btn" onclick="numpadInput('0')">0</button>
+        <button class="numpad-btn nb-del" onclick="numpadBackspace()">⌫</button>
+        <button class="numpad-btn nb-op" onclick="numpadInput('+')">+</button>
+        <button class="numpad-btn nb-op" onclick="numpadInput('−')">−</button>
+        <button class="numpad-btn nb-op" onclick="numpadInput('×')">×</button>
+        <button class="numpad-btn nb-op" onclick="numpadInput('÷')">÷</button>
+        <button class="numpad-btn nb-op" onclick="numpadInput('=')"> = </button>
+        <button class="numpad-btn nb-enter" onclick="numpadNewLine()">↵</button>
+        <button class="numpad-btn nb-op" onclick="numpadInput('(')">&#40;</button>
+        <button class="numpad-btn nb-op" onclick="numpadInput(')')">&#41;</button>
+      </div>
     </div>
   </div>
 </div><!-- end #canvas-panel -->
@@ -1545,6 +1564,7 @@ function initScratchCanvas() {
   npX = 20;
   npY = NP_FONT_SIZE + 8;
   npLineStarted = false;
+  requestAnimationFrame(updateNpCursor);
 
   // Attach events once
   if (!canvas._canvasInited) {
@@ -1639,6 +1659,7 @@ function onScratchDown(e) {
   // Move number-pad text cursor to clicked position
   npX = x; npY = y;
   npLineStarted = false;
+  updateNpCursor();
 }
 
 function onScratchMove(e) {
@@ -1675,6 +1696,30 @@ function onScratchUp() {
   canvasPreviewSnap = null;
 }
 
+// ── Number pad cursor indicator ────────────────────────────
+function updateNpCursor() {
+  const cursor = document.getElementById('np-cursor');
+  const canvas = document.getElementById('scratch-canvas');
+  const wrap   = document.getElementById('canvas-scroll-wrap');
+  if (!cursor || !canvas || !wrap) return;
+
+  // Map canvas logical coords → CSS px (canvas displays at natural size)
+  const scaleX = canvas.offsetWidth  / canvas.width;
+  const scaleY = canvas.offsetHeight / canvas.height;
+  const cssX   = npX * scaleX;
+  const cssY   = (npY - NP_FONT_SIZE) * scaleY;
+  const cssH   = NP_FONT_SIZE * scaleY;
+
+  cursor.style.left   = cssX + 'px';
+  cursor.style.top    = cssY + 'px';
+  cursor.style.height = cssH + 'px';
+  cursor.classList.add('visible');
+
+  // Auto-hide after 4 s of inactivity
+  clearTimeout(cursor._hide);
+  cursor._hide = setTimeout(() => cursor.classList.remove('visible'), 4000);
+}
+
 // ── Number pad ─────────────────────────────────────────────
 function numpadInput(char) {
   const canvas = document.getElementById('scratch-canvas');
@@ -1687,7 +1732,7 @@ function numpadInput(char) {
   }
 
   ctx.font      = `bold ${NP_FONT_SIZE}px 'Courier New', monospace`;
-  ctx.fillStyle = '#dc2626';   // red so numbers stand out from drawings
+  ctx.fillStyle = '#dc2626';
   ctx.fillText(char, npX, npY);
 
   npX += ctx.measureText(char).width + 1;
@@ -1696,6 +1741,7 @@ function numpadInput(char) {
     npY += NP_LINE_H;
     if (npY > canvas.height - 10) npY = NP_FONT_SIZE + 8;
   }
+  updateNpCursor();
 }
 
 function numpadNewLine() {
@@ -1704,10 +1750,12 @@ function numpadNewLine() {
   const canvas = document.getElementById('scratch-canvas');
   if (canvas && npY > canvas.height - 10) npY = NP_FONT_SIZE + 8;
   npLineStarted = false;
+  updateNpCursor();
 }
 
 function numpadBackspace() {
   undoCanvas();
+  updateNpCursor();
 }
 
 // ── Resize handler ─────────────────────────────────────────
