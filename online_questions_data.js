@@ -225,8 +225,8 @@ const questionsData = {
         {
           text: "What is the product of the two largest single-digit numbers?",
           choices: ["A. 63", "B. 72", "C. 81", "D. 64", "E. 56"],
-          answer: 1,
-          explain: "The two largest single-digit numbers are 9 and 8!\n• Step 1 (Multiply): 9 × 8 = 72\nProduct means multiply. ✅"
+          answer: 2,
+          explain: "The largest single-digit number is 9, and the next largest is also 9!\n• Step 1: The largest single-digit number is 9\n• Step 2 (Multiply): 9 × 9 = 81 ✅"
         },
         {
           text: "What is 54 ÷ 6 + 42 ÷ 7?",
