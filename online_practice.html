@@ -518,8 +518,8 @@
     }
     .numpad-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4px; }
     .numpad-btn {
-      padding: 8px 2px; border: 1px solid var(--border); border-radius: 6px;
-      background: #fff; font-size: 13px; font-weight: 700; cursor: pointer;
+      padding: 10px 2px; border: 1px solid var(--border); border-radius: 6px;
+      background: #fff; font-size: 17px; font-weight: 700; cursor: pointer;
       color: var(--text-primary); text-align: center;
       transition: background .1s, border-color .1s;
       font-family: 'Courier New', monospace;
@@ -529,7 +529,7 @@
     .numpad-btn.nb-op { color: var(--primary); }
     .numpad-btn.nb-del { color: var(--danger); }
     .numpad-btn.nb-del:hover { background: var(--danger-light); border-color: var(--danger); color: var(--danger); }
-    .numpad-btn.nb-enter { font-size: 11px; color: var(--text-secondary); }
+    .numpad-btn.nb-enter { font-size: 14px; color: var(--text-secondary); }
     .numpad-btn.nb-sp { background: transparent; border-color: transparent; cursor: default; }
     .numpad-btn.nb-sp:hover { background: transparent; border-color: transparent; }
 
@@ -634,7 +634,7 @@
     </button>
     <div class="tool-sep"></div>
     <button class="tool-btn tool-action" onclick="undoCanvas()" title="Undo last stroke">↩ Undo</button>
-    <button class="tool-btn tool-action" onclick="clearCanvas()" title="Clear canvas">✕ Clear</button>
+    <button class="tool-btn tool-action" onclick="clearCanvas()" title="Clear canvas">🗑 Clear</button>
     <div class="tool-sep"></div>
     <div class="size-btns" title="Pen size">
       <button class="size-dot-btn sz-active" id="sz-sm" onclick="setCanvasPenSize(2,this)" style="width:20px;height:20px">
