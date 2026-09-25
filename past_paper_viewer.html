@@ -174,6 +174,41 @@
     .btn-res-home { flex:1; padding:12px; background:#1e3a8a; color:#fff; border:none; border-radius:8px; font-size:13px; font-weight:700; cursor:pointer; }
     .btn-res-home:hover { background:#1e40af; }
 
+    /* ── Reveal answer button ── */
+    .btn-reveal-answer {
+      display: inline-flex; align-items: center; gap: 5px;
+      margin-top: 8px; padding: 6px 12px;
+      background: none; border: 1.5px solid var(--border); border-radius: 7px;
+      font-size: 12px; font-weight: 700; color: var(--text-secondary);
+      cursor: pointer; transition: all .12s;
+    }
+    .btn-reveal-answer:hover { border-color: var(--primary); color: var(--primary); background: var(--primary-light); }
+
+    /* ── Passcode modal ── */
+    .passcode-backdrop {
+      position: fixed; inset: 0; background: rgba(15,23,42,.55);
+      z-index: 600; display: none; align-items: center; justify-content: center; padding: 20px;
+    }
+    .passcode-backdrop.open { display: flex; }
+    .passcode-card {
+      background: #fff; border-radius: 16px; padding: 28px 24px;
+      width: 100%; max-width: 320px; box-shadow: 0 8px 40px rgba(0,0,0,.2); text-align: center;
+    }
+    .passcode-icon     { font-size: 32px; margin-bottom: 10px; }
+    .passcode-title    { font-size: 16px; font-weight: 800; margin-bottom: 4px; }
+    .passcode-subtitle { font-size: 12px; color: var(--text-secondary); margin-bottom: 18px; line-height: 1.4; }
+    .passcode-input {
+      width: 100%; padding: 11px 14px; border: 2px solid var(--border); border-radius: 10px;
+      font-size: 22px; font-weight: 700; text-align: center; letter-spacing: 8px;
+      margin-bottom: 8px; outline: none; font-family: inherit;
+    }
+    .passcode-input:focus { border-color: var(--primary); }
+    .passcode-error { font-size: 12px; color: var(--danger); min-height: 16px; margin-bottom: 14px; }
+    .passcode-btns  { display: flex; gap: 8px; }
+    .btn-pc-cancel { flex: 1; padding: 10px; background: var(--gray-light); border: 1px solid var(--border); border-radius: 8px; font-size: 13px; font-weight: 700; cursor: pointer; }
+    .btn-pc-unlock { flex: 2; padding: 10px; background: #1e3a8a; color: #fff; border: none; border-radius: 8px; font-size: 13px; font-weight: 700; cursor: pointer; }
+    .btn-pc-unlock:hover { background: #1e40af; }
+
     /* ── Section badge in answer section ── */
     .pts-badge-3 { background: #d1fae5; color: #065f46; }
     .pts-badge-4 { background: #dbeafe; color: #1e40af; }
@@ -235,6 +270,7 @@
         <button class="choice-letter" onclick="selectAnswer('E')">E</button>
       </div>
       <div class="ap-feedback" id="ap-feedback"></div>
+      <div id="ap-reveal-wrap"></div>
       <div class="ap-nav">
         <button class="btn-ap-nav btn-ap-back" id="btn-back" onclick="goTo(currentQ - 1)">← Prev</button>
         <button class="btn-ap-nav btn-ap-next" id="btn-next" onclick="goNext()">Next →</button>
@@ -283,6 +319,23 @@
   </div>
 </div>
 
+<!-- Passcode modal for revealing correct answers -->
+<div class="passcode-backdrop" id="passcode-backdrop" onclick="handlePasscodeBackdrop(event)">
+  <div class="passcode-card">
+    <div class="passcode-icon">🔐</div>
+    <div class="passcode-title">Reveal Answer</div>
+    <div class="passcode-subtitle">Enter the parent/teacher passcode to reveal the correct answer for this question</div>
+    <input type="password" id="passcode-input" class="passcode-input"
+           maxlength="8" placeholder="••••"
+           onkeydown="if(event.key==='Enter') checkPasscode()">
+    <div class="passcode-error" id="passcode-error"></div>
+    <div class="passcode-btns">
+      <button class="btn-pc-cancel" onclick="closePasscode()">Cancel</button>
+      <button class="btn-pc-unlock" onclick="checkPasscode()">Unlock</button>
+    </div>
+  </div>
+</div>
+
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
 <script src="supabase_client.js"></script>
 <script src="past_papers_data.js"></script>
@@ -302,9 +355,13 @@ const ANSWERS  = paperData.answers;    // correct answers array
 const gradeName = grade === 'ecolier' ? 'Écolier' : 'Benjamin';
 
 // ── State ───────────────────────────────────────────────────
-let userAnswers = new Array(TOTAL).fill(null);  // null | 'A'-'E'
-let checked     = new Array(TOTAL).fill(false);
-let currentQ    = 0; // 0-indexed
+let userAnswers  = new Array(TOTAL).fill(null);  // null | 'A'-'E'
+let checked      = new Array(TOTAL).fill(false);
+let currentQ     = 0; // 0-indexed
+let revealedQs   = new Set(); // indices where correct answer has been unlocked
+let pendingRevealIdx = null;
+
+const PASSCODE = '1234';
 
 // ── Init ────────────────────────────────────────────────────
 document.getElementById('top-title').textContent    = `${year} · ${gradeName}`;
@@ -360,22 +417,34 @@ function renderQ(idx) {
     btn.disabled = false;
     if (checked[idx]) {
       btn.disabled = true;
-      if (letter === ANSWERS[idx])      btn.classList.add('correct');
-      else if (letter === userAnswers[idx]) btn.classList.add('wrong');
+      const isCorrect = userAnswers[idx] === ANSWERS[idx];
+      if (isCorrect) {
+        if (letter === ANSWERS[idx]) btn.classList.add('correct');
+      } else {
+        if (letter === userAnswers[idx]) btn.classList.add('wrong');
+        if (revealedQs.has(idx) && letter === ANSWERS[idx]) btn.classList.add('correct');
+      }
     } else if (userAnswers[idx] === letter) {
       btn.classList.add('selected');
     }
   });
 
-  // Feedback
-  const fb = document.getElementById('ap-feedback');
+  // Feedback + reveal button
+  const fb         = document.getElementById('ap-feedback');
+  const revealWrap = document.getElementById('ap-reveal-wrap');
   fb.className = 'ap-feedback';
+  revealWrap.innerHTML = '';
   if (checked[idx]) {
     const isCorrect = userAnswers[idx] === ANSWERS[idx];
     fb.classList.add('show', isCorrect ? 'fb-correct' : 'fb-wrong');
-    fb.textContent = isCorrect
-      ? `✓ Correct! Answer is ${ANSWERS[idx]}.`
-      : `✗ Wrong. Correct answer is ${ANSWERS[idx]}.`;
+    if (isCorrect) {
+      fb.textContent = `✓ Correct!`;
+    } else if (revealedQs.has(idx)) {
+      fb.textContent = `✗ Wrong. Correct answer is ${ANSWERS[idx]}.`;
+    } else {
+      fb.textContent = `✗ Not quite!`;
+      revealWrap.innerHTML = `<button class="btn-reveal-answer" onclick="openRevealPasscode(${idx})">🔒 Reveal Answer</button>`;
+    }
   }
 
   // Nav buttons
@@ -483,10 +552,39 @@ function renderAttemptHistory(history, currentAttemptNum) {
 }
 
 function resetPaper() {
-  userAnswers = new Array(TOTAL).fill(null);
-  checked     = new Array(TOTAL).fill(false);
+  userAnswers  = new Array(TOTAL).fill(null);
+  checked      = new Array(TOTAL).fill(false);
+  revealedQs   = new Set();
   document.getElementById('results-overlay').classList.remove('open');
   renderQ(0);
+}
+
+// ── Answer reveal passcode ───────────────────────────────────
+function openRevealPasscode(idx) {
+  pendingRevealIdx = idx;
+  document.getElementById('passcode-input').value = '';
+  document.getElementById('passcode-error').textContent = '';
+  document.getElementById('passcode-backdrop').classList.add('open');
+  setTimeout(() => document.getElementById('passcode-input').focus(), 80);
+}
+function closePasscode() {
+  document.getElementById('passcode-backdrop').classList.remove('open');
+  pendingRevealIdx = null;
+}
+function handlePasscodeBackdrop(e) {
+  if (e.target === document.getElementById('passcode-backdrop')) closePasscode();
+}
+function checkPasscode() {
+  const val = document.getElementById('passcode-input').value.trim();
+  if (val === PASSCODE) {
+    revealedQs.add(pendingRevealIdx);
+    closePasscode();
+    renderQ(currentQ); // re-render to show revealed answer
+  } else {
+    document.getElementById('passcode-error').textContent = 'Incorrect passcode. Try again.';
+    document.getElementById('passcode-input').value = '';
+    document.getElementById('passcode-input').focus();
+  }
 }
 </script>
 </body>
