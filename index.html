@@ -383,14 +383,29 @@ async function unlockProfile() {
   document.getElementById('passcode-overlay').classList.remove('open');
   document.getElementById('profile-overlay').classList.add('hidden');
 
-  if (pendingKid.is_admin) {
-    window.location.href = 'admin.html';
-  } else {
-    showHome();
-  }
+  sessionStorage.setItem('mkp_is_admin', pendingKid.is_admin ? 'true' : 'false');
+  showHome();
 }
 
 function showHome() {
+  // Inject admin dashboard card if admin
+  if (sessionStorage.getItem('mkp_is_admin') === 'true') {
+    const grid = document.querySelector('.grade-grid');
+    if (grid && !document.getElementById('admin-card')) {
+      const card = document.createElement('a');
+      card.id = 'admin-card';
+      card.className = 'grade-card';
+      card.href = 'admin.html';
+      card.style.cssText = 'border-color:#374151;background:linear-gradient(135deg,#f9fafb 0%,#f3f4f6 100%)';
+      card.innerHTML = `
+        <div class="grade-icon">⚙️</div>
+        <div class="grade-label" style="color:#374151">Admin</div>
+        <div class="grade-title">Dashboard</div>
+        <div class="grade-desc">Manage kids, view progress and past paper scores</div>
+      `;
+      grid.appendChild(card);
+    }
+  }
   document.getElementById('home-page').classList.add('visible');
   injectProfileChip();
 }

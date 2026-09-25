@@ -63,6 +63,7 @@ function injectProfileChip() {
     sessionStorage.removeItem('mkp_profile');
     sessionStorage.removeItem('mkp_kid_id');
     sessionStorage.removeItem('mkp_kid_color');
+    sessionStorage.removeItem('mkp_is_admin');
     if (typeof sbClient !== 'undefined') await sbClient.auth.signOut();
     window.location.href = 'index.html';
   };
