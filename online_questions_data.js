@@ -657,7 +657,7 @@ const questionsData = {
         {
           text: "In the sequence 5, 10, 20, 40, ..., what is the 6th term?",
           choices: ["A. 80", "B. 100", "C. 120", "D. 140", "E. 160"],
-          answer: 3,
+          answer: 4,
           explain: "Each term is multiplied by 2. List all terms!\n• Term 1: 5, Term 2: 10, Term 3: 20, Term 4: 40\n• Term 5: 40 × 2 = 80\n• Term 6: 80 × 2 = 160 ✅"
         },
         {
