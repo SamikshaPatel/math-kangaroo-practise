@@ -339,16 +339,26 @@
     #quiz-area-wrap { /* default: block, no change */ }
 
     @media (min-width: 900px) {
+      /* When canvas is open, expand all header elements to use full width */
+      body.canvas-open .back-link-bar,
+      body.canvas-open .page-title-block,
+      body.canvas-open .stats-row,
+      body.canvas-open .progress-bar-wrap {
+        max-width: none;
+        padding-left: 24px;
+        padding-right: 24px;
+      }
+
       #quiz-area-wrap.canvas-open {
         display: flex;
         align-items: flex-start;
         gap: 20px;
-        max-width: 1060px;
-        margin: 0 auto;
-        padding: 0 20px;
+        max-width: none;
+        margin: 0;
+        padding: 0 24px;
       }
       #quiz-area-wrap.canvas-open #quiz-screen {
-        flex: 0 0 380px;
+        flex: 0 0 400px;
         min-width: 0;
         max-width: none;
         margin: 20px 0 40px;
@@ -1512,6 +1522,7 @@ function toggleCanvas() {
   const wrap = document.getElementById('quiz-area-wrap');
   const btn  = document.getElementById('canvas-toggle-btn');
   wrap.classList.toggle('canvas-open', canvasOpen);
+  document.body.classList.toggle('canvas-open', canvasOpen);
   btn.classList.toggle('active', canvasOpen);
   if (canvasOpen) {
     requestAnimationFrame(initScratchCanvas);
@@ -1705,6 +1716,7 @@ window.addEventListener('resize', () => {
     // Collapse canvas if window shrinks below desktop threshold
     canvasOpen = false;
     document.getElementById('quiz-area-wrap').classList.remove('canvas-open');
+    document.body.classList.remove('canvas-open');
     const btn = document.getElementById('canvas-toggle-btn');
     if (btn) btn.classList.remove('active');
   } else if (canvasOpen) {
