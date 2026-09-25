@@ -324,6 +324,27 @@
       .sheet-cell    { width: 34px; height: 34px; font-size: 11px; }
     }
 
+    /* ── Desktop compact — fit question + feedback + nav without scrolling ── */
+    @media (min-width: 900px) {
+      body                       { padding-bottom: 24px; }
+      .back-link-bar             { padding-top: 8px; }
+      .page-title-block          { margin-top: 6px; }
+      .page-title-block h1       { font-size: 22px; margin-bottom: 2px; }
+      .stats-row                 { margin-top: 8px; }
+      .progress-bar-wrap         { margin-top: 6px; }
+      .main                      { margin: 12px auto 16px; }
+      .question-card             { padding: 20px; margin-bottom: 10px; }
+      .question-header           { margin-bottom: 10px; }
+      .choices                   { gap: 8px; margin-top: 16px; }
+      .choice-btn                { padding: 10px 16px; }
+      .choice-btn .circle        { width: 28px; height: 28px; }
+      .feedback                  { margin-top: 10px; padding: 10px 14px; }
+      .feedback-explain          { margin-top: 8px; padding-top: 8px; }
+      .nav-row-1                 { margin-bottom: 8px; }
+      .btn-nav                   { padding: 10px 18px; }
+      .finish-link               { margin-top: 10px; }
+    }
+
     /* ── Canvas toggle button (pencil icon on question card) ── */
     .canvas-toggle-btn {
       display: flex; align-items: center; justify-content: center;
