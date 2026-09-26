@@ -431,17 +431,15 @@ function clearDraft() {
 }
 
 function resumeDraft() {
-  const draft = JSON.parse(localStorage.getItem(DRAFT_KEY) || 'null');
-  if (!draft) return;
-  userAnswers = draft.userAnswers;
-  checked     = draft.checked;
-  revealedQs  = new Set(draft.revealedQs || []);
+  // State already restored on load — just hide the banner
   document.getElementById('resume-banner').style.display = 'none';
-  renderQ(draft.currentQ || 0);
 }
 
 function discardDraft() {
   clearDraft();
+  userAnswers = new Array(TOTAL).fill(null);
+  checked     = new Array(TOTAL).fill(false);
+  revealedQs  = new Set();
   document.getElementById('resume-banner').style.display = 'none';
   renderQ(0);
 }
@@ -486,11 +484,15 @@ buildGrid();
 // Check for saved draft
 const existingDraft = JSON.parse(localStorage.getItem(DRAFT_KEY) || 'null');
 if (existingDraft && existingDraft.checked && existingDraft.checked.filter(Boolean).length > 0) {
+  // Auto-restore draft state immediately
+  userAnswers = existingDraft.userAnswers;
+  checked     = existingDraft.checked;
+  revealedQs  = new Set(existingDraft.revealedQs || []);
   const savedDate = new Date(existingDraft.savedAt).toLocaleDateString('en-US', { month: 'short', day: 'numeric' });
   const qDone = existingDraft.checked.filter(Boolean).length;
-  document.getElementById('resume-q-count').textContent = `${qDone}/${TOTAL} answered (saved ${savedDate})`;
+  document.getElementById('resume-q-count').textContent = `Resuming — ${qDone}/${TOTAL} answered (saved ${savedDate})`;
   document.getElementById('resume-banner').style.display = 'block';
-  renderQ(0); // show Q1 while banner is up
+  renderQ(existingDraft.currentQ || 0); // go to last saved question
 } else {
   renderQ(0);
 }
