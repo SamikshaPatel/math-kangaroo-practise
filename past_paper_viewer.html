@@ -289,11 +289,11 @@
     <!-- Question grid -->
     <div class="ap-grid-wrap">
       <div class="ap-grid-label">All Questions</div>
-      <div class="ap-grid-section" style="color:#065f46">3 Points — Q1 to Q8</div>
+      <div class="ap-grid-section" id="label-3pt" style="color:#065f46"></div>
       <div class="ap-grid" id="grid-3pt"></div>
-      <div class="ap-grid-section" style="color:#1e40af">4 Points — Q9 to Q16</div>
+      <div class="ap-grid-section" id="label-4pt" style="color:#1e40af"></div>
       <div class="ap-grid" id="grid-4pt"></div>
-      <div class="ap-grid-section" style="color:#92400e">5 Points — Q17 to Q24</div>
+      <div class="ap-grid-section" id="label-5pt" style="color:#92400e"></div>
       <div class="ap-grid" id="grid-5pt"></div>
     </div>
 
@@ -360,9 +360,10 @@ const grade = getParam('grade') || 'benjamin';
 const paperData = PAST_PAPERS_DATA[year]?.[grade];
 if (!paperData) { document.body.innerHTML = '<div style="padding:40px;text-align:center"><h2>Paper not found</h2><a href="past_papers.html">← Back</a></div>'; }
 
-const TOTAL    = paperData.questions;  // 24
+const TOTAL    = paperData.questions;  // 24 or 30
 const ANSWERS  = paperData.answers;    // correct answers array
-const gradeName = grade === 'ecolier' ? 'Écolier' : 'Benjamin';
+const GRADE_NAMES = { ecolier: 'Écolier', benjamin: 'Benjamin', kadett: 'Kadett', junior: 'Junior', student: 'Student' };
+const gradeName = GRADE_NAMES[grade] || grade;
 
 // ── State ───────────────────────────────────────────────────
 let userAnswers  = new Array(TOTAL).fill(null);  // null | 'A'-'E'
@@ -384,10 +385,15 @@ renderQ(0);
 
 // ── Grid builder ────────────────────────────────────────────
 function buildGrid() {
+  const tier = TOTAL / 3; // 8 for 24q, 10 for 30q
+  const t2 = tier * 2;
+  document.getElementById('label-3pt').textContent = `3 Points — Q1 to Q${tier}`;
+  document.getElementById('label-4pt').textContent = `4 Points — Q${tier + 1} to Q${t2}`;
+  document.getElementById('label-5pt').textContent = `5 Points — Q${t2 + 1} to Q${TOTAL}`;
   ['grid-3pt','grid-4pt','grid-5pt'].forEach((id, si) => {
     const el = document.getElementById(id);
     el.innerHTML = '';
-    const start = si * 8, end = start + 8;
+    const start = si * tier, end = start + tier;
     for (let i = start; i < end; i++) {
       const cell = document.createElement('div');
       cell.className = 'ap-cell';
@@ -415,7 +421,7 @@ function updateGrid() {
 // ── Render question ─────────────────────────────────────────
 function renderQ(idx) {
   currentQ = idx;
-  const pts = getPastPaperPoints(idx);
+  const pts = getPastPaperPoints(idx, TOTAL);
   document.getElementById('ap-q-num').textContent = `Q${idx + 1}`;
   document.getElementById('ap-q-pts').textContent = `${pts} points`;
 
@@ -522,7 +528,7 @@ async function showResults() {
   const wrong   = userAnswers.filter((a,i) => a !== null && a !== ANSWERS[i]).length;
   const skip    = userAnswers.filter(a => a === null).length;
   // Math Kangaroo scoring: 24 base points + points for each correct answer
-  const correctPts = userAnswers.reduce((sum,a,i) => a === ANSWERS[i] ? sum + getPastPaperPoints(i) : sum, 0);
+  const correctPts = userAnswers.reduce((sum,a,i) => a === ANSWERS[i] ? sum + getPastPaperPoints(i, TOTAL) : sum, 0);
   const points  = 24 + correctPts;
   const pct     = Math.round((correct / TOTAL) * 100);
 

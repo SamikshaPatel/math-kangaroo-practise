@@ -37,7 +37,7 @@
     .grade-filter {
       max-width: 900px; margin: 20px auto 0; padding: 0 24px;
     }
-    .grade-tabs { display: flex; gap: 10px; }
+    .grade-tabs { display: flex; gap: 10px; flex-wrap: wrap; }
     .grade-tab {
       padding: 9px 20px; border-radius: 99px; font-size: 14px; font-weight: 700;
       cursor: pointer; border: 2px solid var(--border); background: #fff;
@@ -103,6 +103,9 @@
   <div class="grade-tabs">
     <button class="grade-tab active" id="tab-ecolier" onclick="setGrade('ecolier')">Écolier — Grade 3 &amp; 4</button>
     <button class="grade-tab" id="tab-benjamin" onclick="setGrade('benjamin')">Benjamin — Grade 5 &amp; 6</button>
+    <button class="grade-tab" id="tab-kadett" onclick="setGrade('kadett')">Kadett — Grade 7 &amp; 8</button>
+    <button class="grade-tab" id="tab-junior" onclick="setGrade('junior')">Junior — Grade 9 &amp; 10</button>
+    <button class="grade-tab" id="tab-student" onclick="setGrade('student')">Student — Grade 11 &amp; 12</button>
   </div>
 </div>
 
@@ -113,6 +116,7 @@
 </div>
 
 <div class="section-label" id="section-label">Écolier (Grade 3–4) Papers</div>
+
 
 <div class="year-grid" id="year-grid"></div>
 
@@ -131,6 +135,22 @@
   }
 </script>
 <script>
+  const GRADE_LABELS = {
+    ecolier:  'Écolier',
+    benjamin: 'Benjamin',
+    kadett:   'Kadett',
+    junior:   'Junior',
+    student:  'Student'
+  };
+  const SECTION_LABELS = {
+    ecolier:  'Écolier (Grade 3–4) Papers',
+    benjamin: 'Benjamin (Grade 5–6) Papers',
+    kadett:   'Kadett (Grade 7–8) Papers',
+    junior:   'Junior (Grade 9–10) Papers',
+    student:  'Student (Grade 11–12) Papers'
+  };
+  const ALL_TABS = ['ecolier','benjamin','kadett','junior','student'];
+
   let currentGrade = 'ecolier';
 
   function getBestScore(year, grade) {
@@ -142,10 +162,8 @@
 
   function setGrade(grade) {
     currentGrade = grade;
-    document.getElementById('tab-ecolier').classList.toggle('active', grade === 'ecolier');
-    document.getElementById('tab-benjamin').classList.toggle('active', grade === 'benjamin');
-    document.getElementById('section-label').textContent =
-      grade === 'ecolier' ? 'Écolier (Grade 3–4) Papers' : 'Benjamin (Grade 5–6) Papers';
+    ALL_TABS.forEach(g => document.getElementById(`tab-${g}`).classList.toggle('active', g === grade));
+    document.getElementById('section-label').textContent = SECTION_LABELS[grade] || '';
     renderGrid();
   }
 
@@ -157,14 +175,14 @@
       if (!data) return;
       const best = getBestScore(year, currentGrade);
       const bestHtml = best
-        ? `<div class="year-best">Best: ${best.correct}/24 · ${best.points}pts</div>`
+        ? `<div class="year-best">Best: ${best.correct}/${data.questions} · ${best.points}pts</div>`
         : '';
       const card = document.createElement('a');
       card.className = 'year-card';
       card.href = `past_paper_viewer.html?year=${year}&grade=${currentGrade}`;
       card.innerHTML = `
         <div class="year-num">${year}</div>
-        <div class="year-level">${currentGrade === 'ecolier' ? 'Écolier' : 'Benjamin'}</div>
+        <div class="year-level">${GRADE_LABELS[currentGrade]}</div>
         <div class="year-qs">${data.questions} questions</div>
         <div class="year-badge">✓ Answer key</div>
         ${bestHtml}

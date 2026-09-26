@@ -826,7 +826,8 @@ function renderPastPapersTable(kids, rows) {
 
   combos.forEach(combo => {
     const [year, grade] = combo.split('|');
-    const gradeLabel = grade === 'ecolier' ? 'Écolier' : 'Benjamin';
+    const gradeLabelMap = { ecolier: 'Écolier', benjamin: 'Benjamin', kadett: 'Kadett', junior: 'Junior', student: 'Student' };
+    const gradeLabel = gradeLabelMap[grade] || grade;
     html += `<tr><td class="module-label">${year} · ${gradeLabel}</td>`;
     kids.forEach(k => {
       html += '<td class="cell-center">';
