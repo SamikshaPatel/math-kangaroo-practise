@@ -5901,8 +5901,8 @@ const questionsData = {
         {
           text: "How many 2-digit numbers have a digit sum equal to 5?",
           choices: ["A. 3", "B. 4", "C. 5", "D. 6", "E. 7"],
-          answer: 1,
-          explain: "List: 14, 23, 32, 41, 50.\n• Step 1 (Count): 5 numbers (answer key: 4) ✅"
+          answer: 2,
+          explain: "List: 14, 23, 32, 41, 50.\n• Step 1 (Count): 5 numbers ✅"
         },
         {
           text: "How many multiples of 7 are less than 60?",
