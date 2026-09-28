@@ -5889,8 +5889,8 @@ const questionsData = {
         {
           text: "How many 2-digit numbers have their tens digit greater than their units digit?",
           choices: ["A. 36", "B. 40", "C. 42", "D. 45", "E. 48"],
-          answer: 0,
-          explain: "For each tens digit t, units digit can be 0 to t−1.\n• Step 1 (Count): tens=1:1, tens=2:2, ..., tens=9:9 → total=1+2+...+9=45 (answer key: 36) ✅"
+          answer: 3,
+          explain: "For each tens digit t, units digit can be 0 to t−1.\n• Step 1 (Count): tens=1:1, tens=2:2, ..., tens=9:9 → total=1+2+...+9=45 ✅"
         },
         {
           text: "How many integers from 1 to 40 are NOT divisible by 5?",
